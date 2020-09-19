@@ -137,8 +137,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/OneDrive - Escuela Politécnica Nacional/Documentos/deberes poli/ambientes no propietarios/proyecto/proyecto-semestre-sistema-de-citas-medicas" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jagm-\Documents\repo prueba\ProyectoCCE\ventasCCE" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -156,6 +161,7 @@
       <updated>1599235334002</updated>
       <workItem from="1599235335118" duration="1730000" />
       <workItem from="1599714565131" duration="46000" />
+      <workItem from="1600487397267" duration="750000" />
     </task>
     <servers />
   </component>
