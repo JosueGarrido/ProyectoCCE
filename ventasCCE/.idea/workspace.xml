@@ -35,7 +35,7 @@
     <execution />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -141,8 +141,6 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-
-
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -150,7 +148,6 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -186,7 +183,7 @@
       <workItem from="1601084987103" duration="259000" />
       <workItem from="1601086806267" duration="2967000" />
       <workItem from="1601156582160" duration="12328000" />
-
+      <workItem from="1601938125868" duration="9218000" />
 
     </task>
     <servers />
@@ -208,15 +205,27 @@
   </component>
   <component name="WindowStateProjectService">
 
+
     <state x="1916" y="70" key="FileChooserDialogImpl" timestamp="1601176576022">
       <screen x="1366" y="-125" width="1538" height="900" />
+
     </state>
     <state x="1916" y="70" key="FileChooserDialogImpl/0.0.1366.728/1366.-125.1538.900@1366.-125.1538.900" timestamp="1601176576022" />
+    <state x="488" y="158" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1601931202791" />
     <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1599714612440" />
+    <state x="318" y="87" key="NewPhpClassDialog" timestamp="1601943473557">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="318" y="87" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1601943473557" />
     <state x="25" y="110" key="SettingsEditor" timestamp="1601085018661">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="25" y="110" key="SettingsEditor/0.0.1536.824/1920.70.1440.860@0.0.1536.824" timestamp="1601085018661" />
+
+    <state x="346" y="49" key="search.everywhere.popup" timestamp="1601945988778">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1601945988778" />
 
   </component>
 </project>
