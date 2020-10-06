@@ -20,7 +20,7 @@ class WebLinksTableSeeder extends Seeder
         for($i = 0; $i < 50; $i++) {
             Web_Links::create([
 
-                'link_type' => $faker->sentence,
+                'link_type' => $faker->url,
                 'link_description' => $faker->sentence,
 
             ]);
