@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33b01b25-7452-4012-b36b-7f16a70ad837" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="33b01b25-7452-4012-b36b-7f16a70ad837" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -137,7 +135,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../ambientes no propietarios/proyecto ambientes/proyecto-semestre-sistema-de-citas-medicas" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -162,6 +160,7 @@
       <workItem from="1599235335118" duration="1730000" />
       <workItem from="1599714565131" duration="46000" />
       <workItem from="1600487397267" duration="750000" />
+      <workItem from="1600732215979" duration="35000" />
     </task>
     <servers />
   </component>
@@ -181,9 +180,9 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1599714612440">
+    <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1600732244600">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1599714612440" />
+    <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1600732244600" />
   </component>
 </project>
