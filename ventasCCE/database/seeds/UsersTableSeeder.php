@@ -51,7 +51,7 @@ class UsersTableSeeder extends Seeder
                 'identity' => $faker->numberBetween(1712654897, 1794879546),
                 'birthday' => $faker->date("Y-m-d"),
                 'phone' => $faker->numberBetween(911111111, 999999999),
-                'location' => $faker->paragraph,
+                'location' => $faker->country,
                 'culture' => $faker->word,
                 'disability' => $faker->boolean,
                 'stage_name' => $faker->word,
