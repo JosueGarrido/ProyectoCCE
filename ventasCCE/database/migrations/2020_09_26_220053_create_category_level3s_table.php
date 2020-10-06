@@ -13,7 +13,7 @@ class CreateCategoryLevel3sTable extends Migration
      */
     public function up()
     {
-        Schema::create('categories_level3', function (Blueprint $table) {
+        Schema::create('category_level3s', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name',50);
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateCategoryLevel3sTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories_level3');
+        Schema::dropIfExists('category_level3s');
     }
 }

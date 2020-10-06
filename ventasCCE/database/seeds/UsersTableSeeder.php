@@ -61,7 +61,7 @@ class UsersTableSeeder extends Seeder
                 'education_level' => $faker->word,
                 'career_name' => $faker->word,
                 'studies_institution' => $faker->word,
-                'social_networks' => $faker->paragraph,
+                'social_networks' => $faker->sentence,
 
             ]);
 
