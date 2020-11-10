@@ -2,18 +2,22 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Sale;
+use App\Http\Resources\Sale as SaleResource;
+use App\Http\Resources\SaleCollection;
+use http\Env\Response;
 use Illuminate\Http\Request;
 
 class SaleController extends Controller
 {
     public function index()
     {
-        return Sale::all();
+        return response()->json(new SaleCollection(Sale::all()),  200);
     }
-    public function show($id)
+    public function show(Sale $id)
     {
-        return Sale::find($id);
+        return response()->json( new SaleResource($id), 200);
     }
     public function store(Request $request)
     {

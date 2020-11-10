@@ -3,17 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\CategoryLevel3;
+use App\Http\Resources\CategoryLevel3 as CategoryLevel3Resource;
+use App\Http\Resources\CategoryLevel3Collection;
 use Illuminate\Http\Request;
 
 class CategoryLevel3Controller extends Controller
 {
     public function index()
     {
-        return CategoryLevel3::all();
+        return response()->json(new CategoryLevel3Collection(CategoryLevel3::all()),  200);
     }
-    public function show($id)
+    public function show(CategoryLevel3 $id)
     {
-        return CategoryLevel3::find($id);
+        return response()->json( new CategoryLevel3Resource($id), 200);
     }
     public function store(Request $request)
     {

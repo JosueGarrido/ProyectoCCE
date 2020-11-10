@@ -2,18 +2,21 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Web_Links;
+use App\Http\Resources\Web_Link as Web_LinkResource;
+use App\Http\Resources\Web_LinkCollection;
 use Illuminate\Http\Request;
 
 class Web_LinksController extends Controller
 {
     public function index()
     {
-        return Web_Links::all();
+        return response()->json(new Web_LinkCollection(Web_Link::all()),  200);
     }
-    public function show($id)
+    public function show(Web_Links $id)
     {
-        return Web_Links::find($id);
+        return response()->json( new Web_LinkResource($id), 200);
     }
     public function store(Request $request)
     {

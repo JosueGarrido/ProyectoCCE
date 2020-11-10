@@ -3,17 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Cultural_Projects;
+use App\Http\Resources\Cultural_Project;
+use App\Http\Resources\Cultural_Project as Cultural_ProjectResource;
+use App\Http\Resources\Cultural_ProjectCollection;
 use Illuminate\Http\Request;
 
 class Cultural_ProjectsController extends Controller
 {
     public function index()
     {
-        return Cultural_Projects::all();
+        return response()->json(new Cultural_ProjectCollection(Cultural_Project::all()),  200);
     }
-    public function show($id)
+    public function show(Cultural_Projects $id)
     {
-        return Cultural_Projects::find($id);
+        return response()->json( new Cultural_ProjectResource($id), 200);
     }
     public function store(Request $request)
     {

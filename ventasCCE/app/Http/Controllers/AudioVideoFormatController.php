@@ -3,17 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\AudioVideoFormat;
+use App\Http\Resources\AudioVideoFormat as AudioVideoFormatResource;
+use App\Http\Resources\AudioVideoFormatCollection;
 use Illuminate\Http\Request;
 
 class AudioVideoFormatController extends Controller
 {
     public function index()
     {
-        return AudioVideoFormat::all();
+        return response()->json(new AudioVideoFormatCollection(AudioVideoFormat::all()),  200);
     }
-    public function show($id)
+    public function show(AudioVideoFormat $id)
     {
-        return AudioVideoFormat::find($id);
+        return response()->json( new AudioVideoFormatResource($id), 200);
     }
     public function store(Request $request)
     {
