@@ -3,17 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\CategoryLevel4;
+use App\Http\Resources\CategoryLevel4 as CategoryLevel4Resource;
+use App\Http\Resources\CategoryLevel4Collection;
 use Illuminate\Http\Request;
 
 class CategoryLevel4Controller extends Controller
 {
     public function index()
     {
-        return CategoryLevel4::all();
+        return response()->json(new CategoryLevel4Collection(CategoryLevel4::all()),  200);
     }
-    public function show($id)
+    public function show(CategoryLevel4 $id)
     {
-        return CategoryLevel4::find($id);
+        return response()->json( new CategoryLevel4Resource($id), 200);
     }
     public function store(Request $request)
     {
