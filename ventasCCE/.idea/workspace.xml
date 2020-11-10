@@ -19,7 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33b01b25-7452-4012-b36b-7f16a70ad837" name="Default Changelist" comment="" />
+    <list default="true" id="33b01b25-7452-4012-b36b-7f16a70ad837" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -143,9 +146,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../../xampp/htdocs/Laravel/blog" />
-
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../front-cce" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -153,7 +154,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -169,7 +170,7 @@
       <method v="2" />
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -189,17 +190,16 @@
       <workItem from="1601156582160" duration="12328000" />
       <workItem from="1601938125868" duration="9218000" />
       <workItem from="1601995991960" duration="2044000" />
-
       <workItem from="1601998371634" duration="5733000" />
       <workItem from="1603156272491" duration="414000" />
       <workItem from="1603213530633" duration="5372000" />
-      <workItem from="1603381118939" duration="4567000" />
-
+      <workItem from="1603381118939" duration="5649000" />
+      <workItem from="1603758982886" duration="660000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -213,29 +213,21 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <ignored-roots>
-      <path value="$PROJECT_DIR$/.." />
-      <path value="$PROJECT_DIR$" />
-    </ignored-roots>
-  </component>
   <component name="WindowStateProjectService">
     <state x="361" y="91" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601996876713">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="361" y="91" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1601996876713" />
-
     <state x="499" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603385662338">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="499" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1603385662338" />
-    <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1603289800472">
+    <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1603759111344">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="1916" y="70" key="FileChooserDialogImpl/0.0.1366.728/1366.-125.1538.900@1366.-125.1538.900" timestamp="1601176576022" />
     <state x="488" y="158" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1601931202791" />
-    <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1603289800472" />
-
+    <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1603759111344" />
     <state width="189" height="457" key="HiddenNamespacesPopup" timestamp="1601996875273">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -244,15 +236,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="318" y="87" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1601943473557" />
-    <state x="22" y="18" key="SettingsEditor" timestamp="1602274236426">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="25" y="110" key="SettingsEditor" timestamp="1601085018661">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="22" y="18" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1602274236426" />
     <state x="25" y="110" key="SettingsEditor/0.0.1536.824/1920.70.1440.860@0.0.1536.824" timestamp="1601085018661" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1602273917220">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1602273917220" />
     <state x="346" y="49" key="search.everywhere.popup" timestamp="1601945988778">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

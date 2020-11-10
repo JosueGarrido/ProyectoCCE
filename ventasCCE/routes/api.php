@@ -104,4 +104,8 @@ Route::post('weblinks', 'Web_LinksController@store');
 Route::put('weblinks/{id}', 'Web_LinksController@update');
 Route::delete('weblinks/{id}', 'Web_LinksController@delete');
 
+Route::group(['middleware' => ['jwt.verify']], function() {
+
+});
+
 
