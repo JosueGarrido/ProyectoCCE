@@ -106,9 +106,9 @@ const MainLayout = props => {
                  } }
                  className='logo-menta'>
               Elaborado por: <br />
-              <a href='https://grupomenta.com' rel='noopener noreferrer' target='_blank'>
-                <img src={ logo } alt='Profe a Tiempo' height={ 50 } />
-              </a>
+              {/*<a href='https://grupomenta.com' rel='noopener noreferrer' target='_blank'>*/}
+              {/*  <img src={ logo } alt='Profe a Tiempo' height={ 50 } />*/}
+              {/*</a>*/}
             </Col>
 
             <Col xs={ {
@@ -121,12 +121,12 @@ const MainLayout = props => {
                  } }
                  className='contact-links'>
               <p><strong>Contáctanos</strong></p>
-              <p><MailOutlined /> <a href='mailto:chalo.salvador@grupomenta.com'>chalo.salvador@grupomenta.com</a></p>
-              <p><WhatsAppOutlined /> <a href='https://wa.me/593984794808' target='_blank' rel='noopener noreferrer'>+593
-                9-8479-4808</a></p>
-              <p><GithubOutlined /> <a href='https://github.com/chalosalvador'
+              <p><MailOutlined /> <a href='mailto:josue.garrido@epn.edu.ec'>josue.garrido@epn.edu.ec</a></p>
+              <p><WhatsAppOutlined /> <a href='https://wa.me/593983160344' target='_blank' rel='noopener noreferrer'>+593
+                9-8316-0344</a></p>
+              <p><GithubOutlined /> <a href='https://github.com/josuegarrido'
                                        target='_blank'
-                                       rel='noopener noreferrer'>@chalosalvador</a>
+                                       rel='noopener noreferrer'>@josuegarrido</a>
               </p>
             </Col>
           </Row>
