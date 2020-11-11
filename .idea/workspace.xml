@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="e60e72b3-ccd3-470c-9dfd-6bed47741995" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/AudioVideoFormatController.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/AudioVideoFormatController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/CategoryLevel1Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/CategoryLevel1Controller.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/CategoryLevel2Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/CategoryLevel2Controller.php" afterDir="false" />
@@ -25,6 +44,10 @@
       <change beforePath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/RecognitionCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/RecognitionCollection.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/SaleCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/SaleCollection.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/UserCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/UserCollection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ventasCCE/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_09_26_173929_create_cultural__projects_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_09_26_173929_create_cultural__projects_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_09_26_175407_create_recognitions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_09_26_175407_create_recognitions_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_09_26_221353_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_09_26_221353_create_products_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +60,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/ventasCCE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/ventasCCE/app/Policies/Web_LinksPolicy.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -168,17 +194,36 @@
       <updated>1605056365767</updated>
       <workItem from="1605056366856" duration="22000" />
       <workItem from="1605056396536" duration="400000" />
-      <workItem from="1605059244792" duration="5074000" />
+      <workItem from="1605059244792" duration="14752000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605075741004">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/1920.70.1440.860@0.0.1536.824" timestamp="1605075741004" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1605056413236">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/1920.70.1440.860@0.0.1536.824" timestamp="1605056413236" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1605069729686">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824/1920.70.1440.860@0.0.1536.824" timestamp="1605069729686" />
   </component>
 </project>

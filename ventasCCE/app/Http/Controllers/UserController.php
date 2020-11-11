@@ -30,14 +30,18 @@ class UserController extends Controller{
     ];
     public function index()
     {
+      //  $this->authorize('viewAny', User::class);
+
         return new UserCollection(User::paginate (25));
     }
     public function show($id)
     {
+        $this->authorize('view', $id);
         return response()->json( new UserResource($id), 200);
     }
     public function store(Request $request)
     {
+        $this->authorize('create', User::class);
         $request->validate(self::$rules,self::$messages);
         return User::create($request->all());
     }

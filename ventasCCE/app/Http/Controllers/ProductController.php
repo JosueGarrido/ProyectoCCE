@@ -25,19 +25,24 @@ class ProductController extends Controller
     ];
     public function index()
     {
+       // $this->authorize('viewAny', Product::class);
+
         return new ProductCollection(Product::paginate (25));
     }
     public function show(Product $id)
     {
+        $this->authorize('view', $id);
         return response()->json( new ProductResource($id), 200);
     }
     public function store(Request $request)
     {
+        $this->authorize('create', Product::class);
         $request->validate(self::$rules,self::$messages);
         return Product::create($request->all());
     }
     public function update(Request $request, $id)
     {
+        $this->authorize('update',$id);
         $products = Product::findOrFail($id);
         $products->update($request->all());
         return $products;

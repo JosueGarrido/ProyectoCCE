@@ -23,19 +23,24 @@ class Cultural_ProjectsController extends Controller
     ];
     public function index()
     {
+      //  $this->authorize('viewAny', Cultural_Project::class);
+
         return new RecognitionCollection(Recognition::paginate (25));
     }
     public function show(Cultural_Projects $id)
     {
+        $this->authorize('view', $id);
         return response()->json( new Cultural_ProjectResource($id), 200);
     }
     public function store(Request $request)
     {
+        $this->authorize('create', Cultural_Project::class);
         $request->validate(self::$rules,self::$messages);
         return Cultural_Projects::create($request->all());
     }
     public function update(Request $request, $id)
     {
+        $this->authorize('update',$id);
         $culturalprojects = Cultural_Projects::findOrFail($id);
         $culturalprojects->update($request->all());
         return $culturalprojects;

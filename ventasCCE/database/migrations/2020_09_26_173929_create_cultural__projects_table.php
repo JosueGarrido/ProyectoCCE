@@ -16,7 +16,7 @@ class CreateCulturalProjectsTable extends Migration
         Schema::create('cultural__projects', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->char('project_name');
+            $table->char('project_name',30);
             $table->char('project_description');
             $table->char('project_type');
             $table->char('project_place');
