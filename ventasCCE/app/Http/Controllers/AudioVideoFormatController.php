@@ -9,9 +9,19 @@ use Illuminate\Http\Request;
 
 class AudioVideoFormatController extends Controller
 {
+    private static $rules =[
+        'name' => 'required|string|max:30',
+        'description' => 'required|string|max:30',
+
+
+    ];
+    private static $messages =[
+        'required' => 'El campo :attribute es obligatorio.',
+
+    ];
     public function index()
     {
-        return response()->json(new AudioVideoFormatCollection(AudioVideoFormat::all()),  200);
+        return new AudioVideoFormatCollection(AudioVideoFormat::paginate (25));
     }
     public function show(AudioVideoFormat $id)
     {
@@ -19,6 +29,7 @@ class AudioVideoFormatController extends Controller
     }
     public function store(Request $request)
     {
+        $request->validate(self::$rules,self::$messages);
         return AudioVideoFormat::create($request->all());
     }
     public function update(Request $request, $id)

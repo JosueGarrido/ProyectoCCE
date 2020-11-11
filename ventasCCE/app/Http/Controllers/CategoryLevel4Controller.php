@@ -9,9 +9,17 @@ use Illuminate\Http\Request;
 
 class CategoryLevel4Controller extends Controller
 {
+    private static $rules =[
+        'name' => 'required|string|max:30',
+
+    ];
+    private static $messages =[
+        'required' => 'El campo :attribute es obligatorio.',
+
+    ];
     public function index()
     {
-        return response()->json(new CategoryLevel4Collection(CategoryLevel4::all()),  200);
+        return new CategoryLevel4Collection(CategoryLevel4::paginate (25));
     }
     public function show(CategoryLevel4 $id)
     {
@@ -19,6 +27,7 @@ class CategoryLevel4Controller extends Controller
     }
     public function store(Request $request)
     {
+        $request->validate(self::$rules,self::$messages);
         return CategoryLevel4::create($request->all());
     }
     public function update(Request $request, $id)
