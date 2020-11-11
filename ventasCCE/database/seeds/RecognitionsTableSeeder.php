@@ -2,6 +2,7 @@
 
 use App\Recognition;
 use Illuminate\Database\Seeder;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class RecognitionsTableSeeder extends Seeder
 {
@@ -16,16 +17,23 @@ class RecognitionsTableSeeder extends Seeder
         Recognition::truncate();
 
         $faker = \Faker\Factory::create();
-        // Crear artículos ficticios en la tabla
-        for($i = 0; $i < 50; $i++) {
-            Recognition::create([
-
-                'reco_name' => $faker->word,
-                'reco_description' => $faker->sentence,
-                'reco_type' => $faker->word,
-                'reco_place' => $faker->word,
-
-            ]);
+        // Obtenemos la lista de todos los usuarios creados e
+        // iteramos sobre cada uno y simulamos un inicio de
+        // sesión con cada uno para crear productos en su nombre
+        $users = App\User::all();
+        foreach ($users as $user) {
+            // iniciamos sesión con este usuario
+            JWTAuth::attempt(['email' => $user->email, 'password' => '123456']);
+            // Y ahora con este usuario creamos algunos productos
+            $num_cultural_projects = 5;
+            for ($j = 0; $j < $num_cultural_projects; $j++) {
+                Recognition::create([
+                    'reco_name' => $faker->word,
+                    'reco_description' => $faker->sentence,
+                    'reco_type' => $faker->word,
+                    'reco_place' => $faker->word,
+                ]);
+            }
         }
     }
 }
