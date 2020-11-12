@@ -20,8 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33b01b25-7452-4012-b36b-7f16a70ad837" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/CulturalProyectsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CulturalProyectsTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +150,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../front-cce" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -159,6 +163,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="C:\Users\jagm-\Documents\ProyectoCCE\ProyectoCCE\ventasCCE" />
       <recent name="C:\xampp\htdocs\ProyectoCCE\ventasCCE" />
       <recent name="C:\Users\jagm-\Documents\repo prueba\ProyectoCCE\ventasCCE" />
@@ -195,6 +200,8 @@
       <workItem from="1603213530633" duration="5372000" />
       <workItem from="1603381118939" duration="5649000" />
       <workItem from="1603758982886" duration="660000" />
+      <workItem from="1605140824357" duration="113000" />
+      <workItem from="1605140938195" duration="3552000" />
     </task>
     <servers />
   </component>
@@ -228,6 +235,22 @@
     <state x="1916" y="70" key="FileChooserDialogImpl/0.0.1366.728/1366.-125.1538.900@1366.-125.1538.900" timestamp="1601176576022" />
     <state x="488" y="158" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1601931202791" />
     <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1603759111344" />
+    <state width="1358" height="199" key="GridCell.Tab.0.bottom" timestamp="1605140896851">
+      <screen x="0" y="23" width="1440" height="821" />
+    </state>
+    <state width="1358" height="199" key="GridCell.Tab.0.bottom/0.23.1440.821@0.23.1440.821" timestamp="1605140896851" />
+    <state width="1358" height="199" key="GridCell.Tab.0.center" timestamp="1605140896850">
+      <screen x="0" y="23" width="1440" height="821" />
+    </state>
+    <state width="1358" height="199" key="GridCell.Tab.0.center/0.23.1440.821@0.23.1440.821" timestamp="1605140896850" />
+    <state width="1358" height="199" key="GridCell.Tab.0.left" timestamp="1605140896849">
+      <screen x="0" y="23" width="1440" height="821" />
+    </state>
+    <state width="1358" height="199" key="GridCell.Tab.0.left/0.23.1440.821@0.23.1440.821" timestamp="1605140896849" />
+    <state width="1358" height="199" key="GridCell.Tab.0.right" timestamp="1605140896851">
+      <screen x="0" y="23" width="1440" height="821" />
+    </state>
+    <state width="1358" height="199" key="GridCell.Tab.0.right/0.23.1440.821@0.23.1440.821" timestamp="1605140896851" />
     <state width="189" height="457" key="HiddenNamespacesPopup" timestamp="1601996875273">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

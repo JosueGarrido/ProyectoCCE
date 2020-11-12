@@ -6,6 +6,8 @@ use App\Http\Resources\UserCollection;
 use App\User;
 use App\Http\Resources\User as UserResource;
 use Illuminate\Http\Request;
+use Tymon\JWTAuth\Exceptions\JWTException;
+use JWTAuth;
 
 
 class UserController extends Controller{
@@ -34,6 +36,7 @@ class UserController extends Controller{
       //  $this->authorize('viewAny', User::class);
 
         return new UserCollection(User::paginate (25));
+    }
 
     public function authenticate(Request $request)
     {
@@ -45,16 +48,18 @@ class UserController extends Controller{
         } catch (JWTException $e) {
             return response()->json(['error' => 'could_not_create_token'], 500);
         }
-        return response()->json(compact('token'));
+        $user = JWTAuth::user();
+
+        return response()->json(compact('token', 'user'));
 
     }
     public function register(Request $request)
     {
 
-        $this->authorize('view', $id);
-        return response()->json( new UserResource($id), 200);
+      //  $this->authorize('view', $id);
+      //  return response()->json( new UserResource($id), 200);
 
-     /*   $validator = Validator::make($request->all(), [
+       $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
@@ -68,17 +73,17 @@ class UserController extends Controller{
             'password' => Hash::make($request->get('password')),
         ]);
         $token = JWTAuth::fromUser($user);
-        return response()->json(compact('user','token'),201);  */
+        return response()->json(compact('user','token'),201);
 
     }
     public function getAuthenticatedUser()
     {
 
-        $this->authorize('create', User::class);
-        $request->validate(self::$rules,self::$messages);
-        return User::create($request->all());
+       // $this->authorize('create', User::class);
+     //   $request->validate(self::$rules,self::$messages);
+      //  return User::create($request->all());
 
-   /*   try {
+     try {
             if (! $user = JWTAuth::parseToken()->authenticate()) {
                 return response()->json(['user_not_found'], 404);
             }
@@ -89,9 +94,9 @@ class UserController extends Controller{
         } catch (Tymon\JWTAuth\Exceptions\JWTException $e) {
             return response()->json(['token_absent'], $e->getStatusCode());
         }
-        return response()->json(compact('user'));  */
+        return response()->json(compact('user'));
 
- 
+
     }
     public function update(Request $request, $id)
     {

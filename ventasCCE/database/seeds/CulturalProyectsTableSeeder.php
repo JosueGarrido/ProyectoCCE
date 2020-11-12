@@ -28,7 +28,7 @@ class CulturalProyectsTableSeeder extends Seeder
             $num_cultural_projects = 5;
             for ($j = 0; $j < $num_cultural_projects; $j++) {
                 Cultural_Projects::create([
-                    'project_name'=> $faker->sentence,
+                    'project_name'=> $faker->userName,
                     'project_description'=> $faker->sentence,
                     'project_type'=> $faker->word,
                     'project_place'=> $faker->locale,

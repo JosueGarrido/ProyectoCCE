@@ -24,7 +24,7 @@ class User extends Authenticatable  implements JWTSubject
         'career_name','studies_institution','social_networks'
     ];
     const ROLE_SUPERADMIN = 'ROLE_SUPERADMIN';
-    const ROLE_ADMIN = 'ROLE_ADMIN';
+    const ROLE_ARTIST = 'ROLE_ARTIST';
     const ROLE_USER = 'ROLE_USER';
 
    /** private const ROLES_HIERARCHY = [
@@ -33,8 +33,8 @@ class User extends Authenticatable  implements JWTSubject
         self::ROLE_USER => []
     ];**/
     private const ROLES_HIERARCHY = [
-        self::ROLE_SUPERADMIN => [self::ROLE_ADMIN],
-        self::ROLE_ADMIN => [self::ROLE_USER],
+        self::ROLE_SUPERADMIN => [self::ROLE_ARTIST],
+        self::ROLE_ARTIST => [self::ROLE_USER],
         self::ROLE_USER => []
     ];
 
@@ -85,6 +85,7 @@ class User extends Authenticatable  implements JWTSubject
             }
         }
         return false;
+    }
 
     public function web_links()
     {
