@@ -29,7 +29,7 @@ class User extends Authenticatable  implements JWTSubject
 
    /** private const ROLES_HIERARCHY = [
         self::ROLE_SUPERADMIN => [self::ROLE_ADMIN, self::ROLE_USER],
-        self::ROLE_ADMIN => [self::ROLE_USER],
+        self::ROLE_ARTIST => [self::ROLE_USER],
         self::ROLE_USER => []
     ];**/
     private const ROLES_HIERARCHY = [

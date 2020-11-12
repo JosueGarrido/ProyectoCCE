@@ -71,7 +71,7 @@ class PhotoFormatPolicy
      */
     public function delete(User $user, PhotoFormat $photoFormat)
     {
-        return $user->isGranted(User::ROLE_ADMIN);
+        return $user->isGranted(User::ROLE_ARTIST);
     }
 
     /**

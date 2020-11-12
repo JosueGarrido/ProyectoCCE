@@ -2,14 +2,12 @@
 
 namespace App\Policies;
 
-use App\Recognition;
 use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class RecognitionPolicy
+class UserPolicy
 {
     use HandlesAuthorization;
-
     public function before(User $user, $ability)
     {
         if ($user->isGranted(User::ROLE_SUPERADMIN)) {
@@ -17,7 +15,7 @@ class RecognitionPolicy
         }
     }
     /**
-     * Determine whether the user can view any recognitions.
+     * Determine whether the user can view any models.
      *
      * @param  \App\User  $user
      * @return mixed
@@ -28,19 +26,19 @@ class RecognitionPolicy
     }
 
     /**
-     * Determine whether the user can view the recognition.
+     * Determine whether the user can view the model.
      *
      * @param  \App\User  $user
-     * @param  \App\Recognition  $recognition
+     * @param  \App\User  $model
      * @return mixed
      */
-    public function view(User $user, Recognition $recognition)
+    public function view(User $user, User $model)
     {
         return $user->isGranted(User::ROLE_USER);
     }
 
     /**
-     * Determine whether the user can create recognitions.
+     * Determine whether the user can create models.
      *
      * @param  \App\User  $user
      * @return mixed
@@ -51,49 +49,49 @@ class RecognitionPolicy
     }
 
     /**
-     * Determine whether the user can update the recognition.
+     * Determine whether the user can update the model.
      *
      * @param  \App\User  $user
-     * @param  \App\Recognition  $recognition
+     * @param  \App\User  $model
      * @return mixed
      */
-    public function update(User $user, Recognition $recognition)
+    public function update(User $user, User $model)
     {
-        return $user->isGranted(User::ROLE_USER) && $user->id === $recognition->user_id;
+        return $user->isGranted(User::ROLE_USER) && $user->id === $user->user_id;
     }
 
     /**
-     * Determine whether the user can delete the recognition.
+     * Determine whether the user can delete the model.
      *
      * @param  \App\User  $user
-     * @param  \App\Recognition  $recognition
+     * @param  \App\User  $model
      * @return mixed
      */
-    public function delete(User $user, Recognition $recognition)
+    public function delete(User $user, User $model)
     {
         return $user->isGranted(User::ROLE_ARTIST);
     }
 
     /**
-     * Determine whether the user can restore the recognition.
+     * Determine whether the user can restore the model.
      *
      * @param  \App\User  $user
-     * @param  \App\Recognition  $recognition
+     * @param  \App\User  $model
      * @return mixed
      */
-    public function restore(User $user, Recognition $recognition)
+    public function restore(User $user, User $model)
     {
         //
     }
 
     /**
-     * Determine whether the user can permanently delete the recognition.
+     * Determine whether the user can permanently delete the model.
      *
      * @param  \App\User  $user
-     * @param  \App\Recognition  $recognition
+     * @param  \App\User  $model
      * @return mixed
      */
-    public function forceDelete(User $user, Recognition $recognition)
+    public function forceDelete(User $user, User $model)
     {
         //
     }

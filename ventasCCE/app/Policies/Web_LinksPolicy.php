@@ -70,7 +70,7 @@ class Web_LinksPolicy
      */
     public function delete(User $user, Web_Links $webLinks)
     {
-        return $user->isGranted(User::ROLE_ADMIN);
+        return $user->isGranted(User::ROLE_ARTIST);
     }
 
     /**

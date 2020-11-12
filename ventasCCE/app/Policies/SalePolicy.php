@@ -73,7 +73,7 @@ class SalePolicy
      */
     public function delete(User $user, Sale $sale)
     {
-        return $user->isGranted(User::ROLE_ADMIN);
+        return $user->isGranted(User::ROLE_ARTIST);
     }
 
     /**

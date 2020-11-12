@@ -70,7 +70,7 @@ class ProductPolicy
      */
     public function delete(User $user, Product $product)
     {
-        return $user->isGranted(User::ROLE_ADMIN);
+        return $user->isGranted(User::ROLE_ARTIST);
     }
 
     /**

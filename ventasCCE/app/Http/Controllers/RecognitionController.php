@@ -22,13 +22,13 @@ class RecognitionController extends Controller
     ];
     public function index()
     {
-        //$this->authorize('viewAny', Recognition::class);
+        ////$this->authorize('viewAny', Recognition::class);
 
         return new RecognitionCollection(RecognitionCollection::paginate (25));
     }
     public function show(Recognition $id)
     {
-        $this->authorize('view', $id);
+       // $this->authorize('view', $id);
         return response()->json( new RecognitionResource($id), 200);
     }
     public function store(Request $request)
