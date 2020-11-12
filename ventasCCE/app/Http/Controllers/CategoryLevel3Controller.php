@@ -19,19 +19,23 @@ class CategoryLevel3Controller extends Controller
     ];
     public function index()
     {
+        //$this->authorize('viewAny', CategoryLevel3::class);
         return new CategoryLevel3Collection(CategoryLevel3::paginate (25));
     }
     public function show(CategoryLevel3 $id)
     {
+        $this->authorize('view', $id);
         return response()->json( new CategoryLevel3Resource($id), 200);
     }
     public function store(Request $request)
     {
+        $this->authorize('create', CategoryLevel3::class);
         $request->validate(self::$rules,self::$messages);
         return CategoryLevel3::create($request->all());
     }
     public function update(Request $request, $id)
     {
+        $this->authorize('update',$id);
         $category3 = CategoryLevel3::findOrFail($id);
         $category3->update($request->all());
         return $category3;

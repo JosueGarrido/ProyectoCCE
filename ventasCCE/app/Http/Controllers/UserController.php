@@ -31,6 +31,8 @@ class UserController extends Controller{
     ];
     public function index()
     {
+      //  $this->authorize('viewAny', User::class);
+
         return new UserCollection(User::paginate (25));
 
     public function authenticate(Request $request)
@@ -49,6 +51,7 @@ class UserController extends Controller{
     public function register(Request $request)
     {
 
+        $this->authorize('view', $id);
         return response()->json( new UserResource($id), 200);
 
      /*   $validator = Validator::make($request->all(), [
@@ -70,7 +73,12 @@ class UserController extends Controller{
     }
     public function getAuthenticatedUser()
     {
-      try {
+
+        $this->authorize('create', User::class);
+        $request->validate(self::$rules,self::$messages);
+        return User::create($request->all());
+
+   /*   try {
             if (! $user = JWTAuth::parseToken()->authenticate()) {
                 return response()->json(['user_not_found'], 404);
             }
@@ -81,10 +89,9 @@ class UserController extends Controller{
         } catch (Tymon\JWTAuth\Exceptions\JWTException $e) {
             return response()->json(['token_absent'], $e->getStatusCode());
         }
-        return response()->json(compact('user'));
+        return response()->json(compact('user'));  */
 
-   //     $request->validate(self::$rules,self::$messages);
-     //   return User::create($request->all());
+ 
     }
     public function update(Request $request, $id)
     {

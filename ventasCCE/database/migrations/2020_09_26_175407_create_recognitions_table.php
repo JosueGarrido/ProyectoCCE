@@ -15,7 +15,7 @@ class CreateRecognitionsTable extends Migration
     {
         Schema::create('recognitions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->char('reco_name');
+            $table->char('reco_name',30);
             $table->char('reco_description');
             $table->char('reco_type');
             $table->char('reco_place');
