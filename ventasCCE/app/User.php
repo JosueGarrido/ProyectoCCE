@@ -60,6 +60,7 @@ class User extends Authenticatable  implements JWTSubject
     {
         return [];
     }
+
     /**public function isGranted($role)
     {
         return $role === $this->role || in_array($role,
@@ -84,5 +85,26 @@ class User extends Authenticatable  implements JWTSubject
             }
         }
         return false;
+
+    public function web_links()
+    {
+        return $this->hasMany('App\Web_Links');
+    }
+    public function cultural_projects()
+    {
+        return $this->hasMany('App\Cultural_Projects');
+    }
+    public function recognitions()
+    {
+        return $this->hasMany('App\Recognition');
+    }
+    public function sales()
+    {
+        return $this->hasMany('App\Sale');
+    }
+    public function products()
+    {
+        return $this->hasMany('App\Product');
+
     }
 }
