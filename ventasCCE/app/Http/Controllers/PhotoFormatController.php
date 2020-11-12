@@ -9,9 +9,19 @@ use Illuminate\Http\Request;
 
 class PhotoFormatController extends Controller
 {
+    private static $rules =[
+        'name' => 'required|string|max:30',
+        'description' => 'required|string|max:250',
+
+
+    ];
+    private static $messages =[
+        'required' => 'El campo :attribute es obligatorio.',
+
+    ];
     public function index()
     {
-        return response()->json(new PhotoFormatCollection(PhotoFormat::all()),  200);
+        return new PhotoFormatCollection(PhotoFormat::paginate (25));
     }
     public function show(PhotoFormat $id)
     {
@@ -19,6 +29,7 @@ class PhotoFormatController extends Controller
     }
     public function store(Request $request)
     {
+        $request->validate(self::$rules,self::$messages);
         return PhotoFormat::create($request->all());
     }
     public function update(Request $request, $id)

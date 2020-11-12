@@ -1,13 +1,38 @@
 <?php
 namespace App\Http\Controllers;
+
+
+use App\Http\Resources\UserCollection;
 use App\User;
+use App\Http\Resources\User as UserResource;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
-use JWTAuth;
-use Tymon\JWTAuth\Exceptions\JWTException;
-class UserController extends Controller
-{
+
+
+class UserController extends Controller{
+    private static $rules =[
+        'name' => 'required|string|max:30',
+        'lastname' => 'required|string|max:30',
+        'email' => 'required',
+        'password' => 'required',
+        'identity' => 'required',
+        'birthday' => 'required',
+        'phone' => 'required',
+        'profile_picture' => 'required',
+        'location' => 'required',
+        'culture' => 'required',
+        'stage_name' => 'required|unique:user',
+        'field_cultural' => 'required',
+        'main_activity' => 'required',
+        'education_level' => 'required',
+    ];
+    private static $messages =[
+        'required' => 'El campo :attribute es obligatorio.',
+
+    ];
+    public function index()
+    {
+        return new UserCollection(User::paginate (25));
+
     public function authenticate(Request $request)
     {
         $credentials = $request->only('email', 'password');
@@ -19,10 +44,14 @@ class UserController extends Controller
             return response()->json(['error' => 'could_not_create_token'], 500);
         }
         return response()->json(compact('token'));
+
     }
     public function register(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+
+        return response()->json( new UserResource($id), 200);
+
+     /*   $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
@@ -36,11 +65,12 @@ class UserController extends Controller
             'password' => Hash::make($request->get('password')),
         ]);
         $token = JWTAuth::fromUser($user);
-        return response()->json(compact('user','token'),201);
+        return response()->json(compact('user','token'),201);  */
+
     }
     public function getAuthenticatedUser()
     {
-        try {
+      try {
             if (! $user = JWTAuth::parseToken()->authenticate()) {
                 return response()->json(['user_not_found'], 404);
             }
@@ -52,5 +82,21 @@ class UserController extends Controller
             return response()->json(['token_absent'], $e->getStatusCode());
         }
         return response()->json(compact('user'));
+
+   //     $request->validate(self::$rules,self::$messages);
+     //   return User::create($request->all());
+    }
+    public function update(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
+        $user->update($request->all());
+        return$user;
+    }
+    public function delete(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
+        $user->delete();
+        return 204;
+
     }
 }

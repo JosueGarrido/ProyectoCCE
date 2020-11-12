@@ -9,9 +9,23 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    private static $rules =[
+        'name' => 'required|string|max:30',
+        'description' => 'required|string|max:150',
+        'price' => 'required|float',
+        'stock' => 'required|int',
+        'image' => 'required',
+        'location' => 'required',
+        'score' => 'required',
+
+    ];
+    private static $messages =[
+        'required' => 'El campo :attribute es obligatorio.',
+
+    ];
     public function index()
     {
-        return response()->json(new ProductCollection(Product::all()),  200);
+        return new ProductCollection(Product::paginate (25));
     }
     public function show(Product $id)
     {
@@ -19,6 +33,7 @@ class ProductController extends Controller
     }
     public function store(Request $request)
     {
+        $request->validate(self::$rules,self::$messages);
         return Product::create($request->all());
     }
     public function update(Request $request, $id)

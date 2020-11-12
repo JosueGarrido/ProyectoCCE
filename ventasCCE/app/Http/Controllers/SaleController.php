@@ -11,9 +11,21 @@ use Illuminate\Http\Request;
 
 class SaleController extends Controller
 {
+    private static $rules =[
+        'date_buy_sale' => 'required',
+        'total_buy_sale' => 'required',
+        'quantity_buy_sale' => 'required',
+
+
+
+    ];
+    private static $messages =[
+        'required' => 'El campo :attribute es obligatorio.',
+
+    ];
     public function index()
     {
-        return response()->json(new SaleCollection(Sale::all()),  200);
+        return new SaleCollection(Sale::paginate (25));
     }
     public function show(Sale $id)
     {
@@ -21,6 +33,7 @@ class SaleController extends Controller
     }
     public function store(Request $request)
     {
+        $request->validate(self::$rules,self::$messages);
         return Sale::create($request->all());
     }
     public function update(Request $request, $id)
