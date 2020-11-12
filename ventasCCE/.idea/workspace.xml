@@ -20,11 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33b01b25-7452-4012-b36b-7f16a70ad837" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/CulturalProyectsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CulturalProyectsTableSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -201,7 +198,7 @@
       <workItem from="1603381118939" duration="5649000" />
       <workItem from="1603758982886" duration="660000" />
       <workItem from="1605140824357" duration="113000" />
-      <workItem from="1605140938195" duration="3552000" />
+      <workItem from="1605140938195" duration="8189000" />
     </task>
     <servers />
   </component>

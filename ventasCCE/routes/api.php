@@ -15,13 +15,14 @@ use Illuminate\Http\Request;
 */
 //Rutas usuarios
 
-Route::post('register', 'UserController@register');
-Route::post('login', 'UserController@authenticate');
 
+Route::post('login', 'UserController@authenticate');
+Route::post('register', 'UserController@register');
+Route::get('users', 'UserController@index');
 
 Route::group(['middleware' => ['jwt.verify']], function() {
 
-    Route::get('users', 'UserController@index');
+
     Route::get('users/{id}', 'UserController@show');
     Route::post('users', 'UserController@store');
     Route::put('users/{id}', 'UserController@update');

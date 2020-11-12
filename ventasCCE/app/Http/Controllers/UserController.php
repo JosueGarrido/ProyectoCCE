@@ -2,10 +2,12 @@
 namespace App\Http\Controllers;
 
 
-use App\Http\Resources\UserCollection;
+//use App\Http\Resources\UserCollection;
 use App\User;
 use App\Http\Resources\User as UserResource;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use JWTAuth;
 
@@ -31,9 +33,34 @@ class UserController extends Controller{
         'required' => 'El campo :attribute es obligatorio.',
 
     ];
+
+    public function index()
+    {
+      // $this->authorize('viewAny', User::class);
+
+        return new UserCollection(User::paginate (25));
+    }
+
+    public function authenticate(Request $request)
+    {
+        $credentials = $request->only('email', 'password');
+        try {
+            if (! $token = JWTAuth::attempt($credentials)) {
+                return response()->json(['error' => 'invalid_credentials'], 400);
+            }
+        } catch (JWTException $e) {
+            return response()->json(['error' => 'could_not_create_token'], 500);
+        }
+        $user = JWTAuth::user();
+
+        return response()->json(compact('token', 'user'));
+
+    }
+
+
     public function register(Request $request){
 
-        $status ='inactivo';
+
         // $validator = Validator::make($request->all(), [
 
         $request->validate([
@@ -65,27 +92,27 @@ class UserController extends Controller{
 
 
         $user = User::create([
-            'name' => $request->get(name),
-            'last_name' => $request->get(last_name),
-            'email' => $request->get(email),
-            'email_verified_at' => $request->get(email_verified_at),
+            'name' => $request->get('name'),
+            'last_name' => $request->get('last_name'),
+            'email' => $request->get('email'),
+            'email_verified_at' => $request->get('email_verified_at'),
             'password' => Hash::make($request->get('password')),
-            'identity' => $request->get(identity),
-            'birthday' => $request->get(birthday),
-            'phone' => $request->get(phone),
-            'location' => $request->get(location),
-            'culture' => $request->get(culture),
-            'disability' => $request->get(disability),
-            'stage_name' => $request->get(stage_name),
-            'field_cultural' => $request->get(field_cultural),
-            'main_activity' => $request->get(main_activity),
-            'secondary_activity' => $request->get(secondary_activity),
-            'education_level' => $request->get(education_level),
-            'career_name' => $request->get(career_name),
-            'studies_institution' => $request->get(studies_institution),
-            'social_networks' => $request->get(social_networks),
+            'identity' => $request->get('identity'),
+            'birthday' => $request->get('birthday'),
+            'phone' => $request->get('phone'),
+            'location' => $request->get('location'),
+            'culture' => $request->get('culture'),
+            'disability' => $request->get('disability'),
+            'stage_name' => $request->get('stage_name'),
+            'field_cultural' => $request->get('field_cultural'),
+            'main_activity' => $request->get('main_activity'),
+            'secondary_activity' => $request->get('secondary_activity'),
+            'education_level' => $request->get('education_level'),
+            'career_name' => $request->get('career_name'),
+            'studies_institution' => $request->get('studies_institution'),
+            'social_networks' => $request->get('social_networks'),
             //'specialty_id' => $request->get('specialty_id'),
-          //  'status' => $status,
+            //  'status' => $status,
             // 'role' => $request->get('role')
 
         ]);
@@ -95,37 +122,12 @@ class UserController extends Controller{
             $user->image = $path;
             $user->save();*/
 
-
-
-
-
         $token = JWTAuth::fromUser($user);
-
-        return response()->json(compact('user', 'token'),201);
-    }
-    public function index()
-    {
-      // $this->authorize('viewAny', User::class);
-
-        return new UserCollection(User::paginate (25));
+        return response()->json(compact('user','token'),201);
     }
 
-    public function authenticate(Request $request)
-    {
-        $credentials = $request->only('email', 'password');
-        try {
-            if (! $token = JWTAuth::attempt($credentials)) {
-                return response()->json(['error' => 'invalid_credentials'], 400);
-            }
-        } catch (JWTException $e) {
-            return response()->json(['error' => 'could_not_create_token'], 500);
-        }
-        $user = JWTAuth::user();
 
-        return response()->json(compact('token', 'user'));
-
-    }
-    public function register(Request $request)
+  /*  public function register (Request $request)
     {
 
       //  $this->authorize('view', $id);
@@ -147,7 +149,7 @@ class UserController extends Controller{
         $token = JWTAuth::fromUser($user);
         return response()->json(compact('user','token'),201);
 
-    }
+    }  */
     public function getAuthenticatedUser()
     {
 
@@ -182,5 +184,19 @@ class UserController extends Controller{
         $user->delete();
         return 204;
 
+    }
+    public function logout()
+    {
+        try {
+            JWTAuth::invalidate(JWTAuth::getToken());
+
+            return response()->json([
+                "status" => "success",
+                "message" => "User successfully logged out."
+            ], 200);
+        } catch (JWTException $e) {
+            // something went wrong whilst attempting to encode the token
+            return response()->json(["message" => "No se pudo cerrar la sesión."], 500);
+        }
     }
 }
