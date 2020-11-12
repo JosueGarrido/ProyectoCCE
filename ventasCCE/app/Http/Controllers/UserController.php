@@ -28,9 +28,81 @@ class UserController extends Controller{
         'required' => 'El campo :attribute es obligatorio.',
 
     ];
+    public function register(Request $request){
+
+        $status ='inactivo';
+        // $validator = Validator::make($request->all(), [
+
+        $request->validate([
+            'name' => 'required|string|max:30',
+            'last_name' => 'required|string|max:30',
+            'email' => 'required|string|unique:users|email|max:50',
+            'email_verified_at' => 'required|string|unique:users|email|max:50',
+            'password' => 'required|string|min:6|confirmed',
+            'identity' => 'required',
+            'birthday' => 'required',
+            'phone' => 'required|integer|unique:users',
+            'location' => 'required',
+            'culture' => 'required',
+            'disability' => 'required',
+            'stage_name' => 'required',
+            'field_cultural' => 'required',
+            'main_activity' => 'required',
+            'secondary_activity' => 'required',
+            'education_level' => 'required',
+            'career_name' => 'required',
+            'studies_institution' => 'required',
+            'social_networks' => 'required',
+
+            //'status' => 'required',
+        ],self::$messages);
+        /*if($validator->fails()){
+            return response()->json($validator->errors()->toJson(), 400);
+        }*/
+
+
+        $user = User::create([
+            'name' => $request->get(name),
+            'last_name' => $request->get(last_name),
+            'email' => $request->get(email),
+            'email_verified_at' => $request->get(email_verified_at),
+            'password' => Hash::make($request->get('password')),
+            'identity' => $request->get(identity),
+            'birthday' => $request->get(birthday),
+            'phone' => $request->get(phone),
+            'location' => $request->get(location),
+            'culture' => $request->get(culture),
+            'disability' => $request->get(disability),
+            'stage_name' => $request->get(stage_name),
+            'field_cultural' => $request->get(field_cultural),
+            'main_activity' => $request->get(main_activity),
+            'secondary_activity' => $request->get(secondary_activity),
+            'education_level' => $request->get(education_level),
+            'career_name' => $request->get(career_name),
+            'studies_institution' => $request->get(studies_institution),
+            'social_networks' => $request->get(social_networks),
+            //'specialty_id' => $request->get('specialty_id'),
+          //  'status' => $status,
+            // 'role' => $request->get('role')
+
+        ]);
+
+        /*    $user = new User($request->all());
+            $path = $request->image->register('public/users');
+            $user->image = $path;
+            $user->save();*/
+
+
+
+
+
+        $token = JWTAuth::fromUser($user);
+
+        return response()->json(compact('user', 'token'),201);
+    }
     public function index()
     {
-      //  $this->authorize('viewAny', User::class);
+      // $this->authorize('viewAny', User::class);
 
         return new UserCollection(User::paginate (25));
     }

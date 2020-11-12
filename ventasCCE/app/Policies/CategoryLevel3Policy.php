@@ -71,7 +71,7 @@ class CategoryLevel3Policy
      */
     public function delete(User $user, CategoryLevel3 $categoryLevel3)
     {
-        return $user->isGranted(User::ROLE_ADMIN);
+        return $user->isGranted(User::ROLE_ARTIST);
     }
 
     /**

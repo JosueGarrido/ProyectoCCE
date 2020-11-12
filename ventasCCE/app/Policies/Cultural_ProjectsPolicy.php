@@ -71,7 +71,7 @@ class Cultural_ProjectsPolicy
      */
     public function delete(User $user, Cultural_Projects $culturalProjects)
     {
-        return $user->isGranted(User::ROLE_ADMIN);
+        return $user->isGranted(User::ROLE_ARTIST);
     }
 
     /**

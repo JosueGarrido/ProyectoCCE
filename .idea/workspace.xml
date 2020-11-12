@@ -20,6 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e60e72b3-ccd3-470c-9dfd-6bed47741995" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/AudioVideoFormatPolicy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/CategoryLevel1Policy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/CategoryLevel2Policy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/CategoryLevel3Policy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/CategoryLevel4Policy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/Cultural_ProjectsPolicy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/PhotoFormatPolicy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/ProductPolicy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/RecognitionPolicy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/SalePolicy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/Web_LinksPolicy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_11_11_004507_add_role_column_user.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/AudioVideoFormatController.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/AudioVideoFormatController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/CategoryLevel1Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/CategoryLevel1Controller.php" afterDir="false" />
@@ -194,7 +206,8 @@
       <updated>1605056365767</updated>
       <workItem from="1605056366856" duration="22000" />
       <workItem from="1605056396536" duration="400000" />
-      <workItem from="1605059244792" duration="14752000" />
+      <workItem from="1605059244792" duration="15121000" />
+      <workItem from="1605147177739" duration="5720000" />
     </task>
     <servers />
   </component>
@@ -211,6 +224,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605075741004">

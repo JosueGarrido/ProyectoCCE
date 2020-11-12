@@ -70,7 +70,7 @@ class AudioVideoFormatPolicy
      */
     public function delete(User $user, AudioVideoFormat $audioVideoFormat)
     {
-        return $user->isGranted(User::ROLE_ADMIN);
+        return $user->isGranted(User::ROLE_ARTIST);
     }
 
     /**
