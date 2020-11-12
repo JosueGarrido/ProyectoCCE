@@ -62,25 +62,11 @@ const MainLayout = props => {
                 </Col>
 
                 <Col xs={ 22 } md={ 4 } className='logos-social-header' align='right'>
-                  <a href='https://www.facebook.com'
-                     target='_blank'
-                     rel='noopener noreferrer'
-                     style={ {
-                       marginLeft: 30,
-                       marginRight: 30
-                     } }>
-                    <FacebookOutlined />
-                  </a>
-
-                  <a href='https://www.instagram.com' target='_blank' rel='noopener noreferrer'>
-                    <InstagramOutlined />
-                  </a>
                 </Col>
               </Row>
             </Header>
           </Col>
         </Row>
-
 
         <Content className='content'>
           <Row type='flex' justify='center' style={ { flex: 'auto' } }>
@@ -93,22 +79,23 @@ const MainLayout = props => {
         <Footer className='footer'>
           <Row>
             <Col xs={ { span: 24 } } md={ 8 } className='logo-blanco'>
-              LOGO
+              <img src={ logo } alt='Profe a Tiempo' height={ 50 } />
             </Col>
-
             <Col xs={ {
-              span: 24,
+              span: 20,
               offset: 0
             } }
                  md={ {
                    span: 5,
-                   offset: 3
+                   offset: -1
                  } }
                  className='logo-menta'>
-              Elaborado por: <br />
-              {/*<a href='https://grupomenta.com' rel='noopener noreferrer' target='_blank'>*/}
-              {/*  <img src={ logo } alt='Profe a Tiempo' height={ 50 } />*/}
-              {/*</a>*/}
+
+              <p><strong>Contáctanos</strong></p>
+              <p>(02) 222-1006</p>
+              <p>Av. 6 de Diciembre, Quito 170136</p>
+              <p><strong>Quito - Ecuador</strong></p>
+
             </Col>
 
             <Col xs={ {
@@ -120,6 +107,12 @@ const MainLayout = props => {
                    offset: 4
                  } }
                  className='contact-links'>
+
+              <p><strong>Nosotros</strong></p>
+              <p><Link to={ Routes.QUESTIONS } style={ { marginRight: 20 } }>Quiénes somos</Link></p>
+              <p><Link to={ Routes.QUESTIONS } style={ { marginRight: 20 } }>Términos y Condiciones</Link></p>
+              <p><Link to={ Routes.QUESTIONS } style={ { marginRight: 20 } }>Vende tu Arte</Link></p>
+
               <p><strong>Contáctanos</strong></p>
               <p><MailOutlined /> <a href='mailto:josue.garrido@epn.edu.ec'>josue.garrido@epn.edu.ec</a></p>
               <p><WhatsAppOutlined /> <a href='https://wa.me/593983160344' target='_blank' rel='noopener noreferrer'>+593
@@ -141,10 +134,19 @@ const MainLayout = props => {
             </Col>
             <Col xs={ 24 } md={ 4 } className='footer-links'>
               <Link to={ Routes.ABOUT }>Términos y condiciones</Link>
+
             </Col>
 
-            <Col xs={ 24 } md={ 8 } className='logos-social'>
-              <strong>Síguenos en:</strong>
+            <Col xs={ {
+              span: 24,
+              offset: 0
+            } }
+                 md={ {
+                   span: 4,
+                   offset: 4
+                 } }
+                 className='logos-social'>
+              <strong>Síguenos:</strong>
               <a href='https://www.facebook.com'
                  target='_blank'
                  rel='noopener noreferrer'
@@ -154,7 +156,6 @@ const MainLayout = props => {
                  } }>
                 <FacebookOutlined />
               </a>
-
               <a href='https://www.instagram.com' target='_blank' rel='noopener noreferrer'>
                 <InstagramOutlined />
               </a>
