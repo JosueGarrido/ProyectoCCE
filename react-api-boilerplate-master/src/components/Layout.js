@@ -90,10 +90,12 @@ const MainLayout = props => {
                    offset: -1
                  } }
                  className='logo-menta'>
+
               <p><strong>Contáctanos</strong></p>
               <p>(02) 222-1006</p>
               <p>Av. 6 de Diciembre, Quito 170136</p>
               <p><strong>Quito - Ecuador</strong></p>
+
             </Col>
 
             <Col xs={ {
@@ -105,10 +107,34 @@ const MainLayout = props => {
                    offset: 4
                  } }
                  className='contact-links'>
+
               <p><strong>Nosotros</strong></p>
               <p><Link to={ Routes.QUESTIONS } style={ { marginRight: 20 } }>Quiénes somos</Link></p>
               <p><Link to={ Routes.QUESTIONS } style={ { marginRight: 20 } }>Términos y Condiciones</Link></p>
               <p><Link to={ Routes.QUESTIONS } style={ { marginRight: 20 } }>Vende tu Arte</Link></p>
+
+              <p><strong>Contáctanos</strong></p>
+              <p><MailOutlined /> <a href='mailto:josue.garrido@epn.edu.ec'>josue.garrido@epn.edu.ec</a></p>
+              <p><WhatsAppOutlined /> <a href='https://wa.me/593983160344' target='_blank' rel='noopener noreferrer'>+593
+                9-8316-0344</a></p>
+              <p><GithubOutlined /> <a href='https://github.com/josuegarrido'
+                                       target='_blank'
+                                       rel='noopener noreferrer'>@josuegarrido</a>
+              </p>
+            </Col>
+          </Row>
+
+          <Row type='flex' justify='space-between' align='bottom'>
+            <Col xs={ 24 } md={ 8 }>
+              { moment().format( 'YYYY' ) } - Para uso libre.
+            </Col>
+
+            <Col xs={ 24 } md={ 4 } className='footer-links'>
+              <Link to={ Routes.ABOUT } style={ { marginRight: 20 } }>Preguntas frecuentes</Link>
+            </Col>
+            <Col xs={ 24 } md={ 4 } className='footer-links'>
+              <Link to={ Routes.ABOUT }>Términos y condiciones</Link>
+
             </Col>
 
             <Col xs={ {
