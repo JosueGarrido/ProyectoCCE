@@ -14,7 +14,7 @@ use Illuminate\Http\Request;
 |
 */
 //Rutas usuarios
-
+Route::group(['middleware' => ['cors']], function () {
 
 Route::post('login', 'UserController@authenticate');
 Route::post('register', 'UserController@register');
@@ -115,6 +115,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
 
 
     });
+});
 
 
 

@@ -22,6 +22,10 @@
     <list default="true" id="33b01b25-7452-4012-b36b-7f16a70ad837" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Cors.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Cors.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/JwtMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/JwtMiddleware.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/jwt.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/jwt.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -199,6 +203,9 @@
       <workItem from="1603758982886" duration="660000" />
       <workItem from="1605140824357" duration="113000" />
       <workItem from="1605140938195" duration="8189000" />
+      <workItem from="1605222350446" duration="743000" />
+      <workItem from="1605284730208" duration="1846000" />
+      <workItem from="1605320596417" duration="1010000" />
     </task>
     <servers />
   </component>
@@ -256,6 +263,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="318" y="87" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1601943473557" />
+    <state x="440" y="160" key="RollbackChangesDialog" timestamp="1605204172124">
+      <screen x="0" y="23" width="1440" height="816" />
+    </state>
+    <state x="440" y="160" key="RollbackChangesDialog/0.23.1440.816@0.23.1440.816" timestamp="1605204172124" />
     <state x="25" y="110" key="SettingsEditor" timestamp="1601085018661">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
