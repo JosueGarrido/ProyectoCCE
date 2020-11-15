@@ -24,8 +24,8 @@
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Cors.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Cors.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/JwtMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/JwtMiddleware.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/jwt.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/jwt.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/Category2TableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/Category2TableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/Category3TableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/Category3TableSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -206,6 +206,8 @@
       <workItem from="1605222350446" duration="743000" />
       <workItem from="1605284730208" duration="1846000" />
       <workItem from="1605320596417" duration="1010000" />
+      <workItem from="1605323604115" duration="4802000" />
+      <workItem from="1605389250631" duration="7680000" />
     </task>
     <servers />
   </component>

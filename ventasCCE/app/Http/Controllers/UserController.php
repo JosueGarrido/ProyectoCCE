@@ -13,6 +13,7 @@ use JWTAuth;
 
 
 class UserController extends Controller{
+
     private static $rules =[
         'name' => 'required|string|max:30',
         'lastname' => 'required|string|max:30',
@@ -37,8 +38,8 @@ class UserController extends Controller{
     public function index()
     {
       // $this->authorize('viewAny', User::class);
-
-        return new UserCollection(User::paginate (25));
+        return User::all();
+        //return new UserCollection(User::paginate (25));
     }
 
     public function authenticate(Request $request)
@@ -58,38 +59,35 @@ class UserController extends Controller{
     }
 
 
-    public function register(Request $request){
+    public function register (Request $request)
+    {
 
+      //  $this->authorize('view', $id);
+      //  return response()->json( new UserResource($id), 200);
 
-        // $validator = Validator::make($request->all(), [
+      // $validator = Validator::make($request->all(), [
 
-        $request->validate([
-            'name' => 'required|string|max:30',
-            'last_name' => 'required|string|max:30',
-            'email' => 'required|string|unique:users|email|max:50',
-            'email_verified_at' => 'required|string|unique:users|email|max:50',
-            'password' => 'required|string|min:6|confirmed',
-            'identity' => 'required',
-            'birthday' => 'required',
-            'phone' => 'required|integer|unique:users',
-            'location' => 'required',
-            'culture' => 'required',
-            'disability' => 'required',
-            'stage_name' => 'required',
-            'field_cultural' => 'required',
-            'main_activity' => 'required',
-            'secondary_activity' => 'required',
-            'education_level' => 'required',
-            'career_name' => 'required',
-            'studies_institution' => 'required',
-            'social_networks' => 'required',
-
-            //'status' => 'required',
+           $request->validate([
+           'name' => 'required|string|max:30',
+           'last_name' => 'required|string|max:30',
+           'email' => 'required|string|unique:users|email|max:50',
+           'email_verified_at' => 'required|string|unique:users|email|max:50',
+           'password' => 'required|string|min:6|confirmed',
+           'identity' => 'required',
+           'birthday' => 'required',
+           'phone' => 'required|integer|unique:users',
+           'location' => 'required',
+           'culture' => 'required',
+           'disability' => 'required',
+           'stage_name' => 'required',
+           'field_cultural' => 'required',
+           'main_activity' => 'required',
+           'secondary_activity' => 'required',
+           'education_level' => 'required',
+           'career_name' => 'required',
+           'studies_institution' => 'required',
+           'social_networks' => 'required',
         ],self::$messages);
-        /*if($validator->fails()){
-            return response()->json($validator->errors()->toJson(), 400);
-        }*/
-
 
         $user = User::create([
             'name' => $request->get('name'),
@@ -111,47 +109,13 @@ class UserController extends Controller{
             'career_name' => $request->get('career_name'),
             'studies_institution' => $request->get('studies_institution'),
             'social_networks' => $request->get('social_networks'),
-            //'specialty_id' => $request->get('specialty_id'),
-            //  'status' => $status,
-            // 'role' => $request->get('role')
-
         ]);
 
-        /*    $user = new User($request->all());
-            $path = $request->image->register('public/users');
-            $user->image = $path;
-            $user->save();*/
 
-        $token = JWTAuth::fromUser($user);
-        //return response()->json(compact('user','token'),201);
-        return response()->json(new UserResource($user, $token), 201);
-
-    }
-
-
-  /*  public function register (Request $request)
-    {
-
-      //  $this->authorize('view', $id);
-      //  return response()->json( new UserResource($id), 200);
-
-       $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-        ]);
-        if($validator->fails()){
-            return response()->json($validator->errors()->toJson(), 400);
-        }
-        $user = User::create([
-            'name' => $request->get('name'),
-            'email' => $request->get('email'),
-            'password' => Hash::make($request->get('password')),
-        ]);
         $token = JWTAuth::fromUser($user);
         return response()->json(compact('user','token'),201);
 
-    }  */
+    }
     public function getAuthenticatedUser()
     {
 
@@ -159,20 +123,18 @@ class UserController extends Controller{
      //   $request->validate(self::$rules,self::$messages);
       //  return User::create($request->all());
 
-     try {
+        try{
             if (! $user = JWTAuth::parseToken()->authenticate()) {
-                return response()->json(['message'=>'user_not_found'], 404);
+                return response()->json(['message' => 'user not found'], 404);
             }
-        } catch (Tymon\JWTAuth\Exceptions\TokenExpiredException $e) {
-            return response()->json(['message'=>'token_expired'], $e->getStatusCode());
-        } catch (Tymon\JWTAuth\Exceptions\TokenInvalidException $e) {
-            return response()->json(['message'=>'token_invalid'], $e->getStatusCode());
+        }catch(Tymon\JWTAuth\Exceptions\TokenExpiredException $e){
+            return response()->json(['message' => 'token expired'], $e->getStatusCode());
+        }catch (Tymon\JWTAuth\Exceptions\TokenInvalidException $e) {
+            return response()->json(['message' => 'token_invalid'], $e->getStatusCode());
         } catch (Tymon\JWTAuth\Exceptions\JWTException $e) {
-            return response()->json(['message'=>'token_absent'], $e->getStatusCode());
+            return response()->json(['message' => 'token_absent'], $e->getStatusCode());
         }
-        //return response()->json(compact('user'));
-        return response()->json(new UserResource($user), 200);
-
+        return response()->json(new UserResource($user));
 
     }
     public function update(Request $request, $id)

@@ -35,6 +35,7 @@ class ProductTableSeeder extends Seeder
                     'image' => $faker->word,
                     'location' => $faker->country,
                     'score' => $faker->numberBetween(1,10),
+                    'category_id' => $faker->numberBetween(1,6),
                 ]);
             }
         }

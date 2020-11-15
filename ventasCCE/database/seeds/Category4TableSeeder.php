@@ -15,7 +15,17 @@ class Category4TableSeeder extends Seeder
         //Vaciar la tabla.
         CategoryLevel4::truncate();
 
-        $faker = \Faker\Factory::create();
+
+        CategoryLevel4::create([
+            'name'=> 'Fieltro',
+            'category3_id'=> '1',
+        ]);
+        CategoryLevel4::create([
+            'name'=> 'Otros',
+            'category3_id'=> '2',
+        ]);
+
+    /*    $faker = \Faker\Factory::create();
         // Crear categorías ficticias en la tabla
         for($i = 0; $i < 50; $i++) {
             CategoryLevel4::create([
@@ -23,7 +33,7 @@ class Category4TableSeeder extends Seeder
                 'name' => $faker->word,
 
             ]);
-        }
+        }  */
 
     }
 }

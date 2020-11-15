@@ -19,6 +19,7 @@ Route::group(['middleware' => ['cors']], function () {
 Route::post('login', 'UserController@authenticate');
 Route::post('register', 'UserController@register');
 Route::get('users', 'UserController@index');
+Route::delete('users/{id}', 'UserController@delete');
 
 Route::group(['middleware' => ['jwt.verify']], function() {
 
@@ -26,7 +27,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('users/{id}', 'UserController@show');
     Route::post('users', 'UserController@store');
     Route::put('users/{id}', 'UserController@update');
-    Route::delete('users/{id}', 'UserController@delete');
+
 
     //Rutas audio/video formats
     Route::get('audioformats', 'AudioVideoFormatController@index');

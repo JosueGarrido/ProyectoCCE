@@ -21,6 +21,7 @@ class Photo_FormatsTableSeeder extends Seeder
             PhotoFormat::create([
                 'name' => $faker->word,
                 'description' => $faker->sentence,
+                'category_id' => $faker->numberBetween(1,6),
             ]);
         }
 

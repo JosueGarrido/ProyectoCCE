@@ -21,6 +21,7 @@ class Audio_Video_FormatsTableSeeder extends Seeder
             AudioVideoFormat::create([
                 'name' => $faker->word,
                 'description' => $faker->sentence,
+                'category_id' => $faker->numberBetween(1,6),
             ]);
         }
 
