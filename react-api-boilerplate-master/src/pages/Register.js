@@ -33,16 +33,32 @@ const Register = () => {
 
   const onFinish = async( userData ) => {
     console.log( 'Received values of form: ', userData );
-    const { name, email, password, password_confirmation, editorial, short_bio } = userData;
+    const { name, last_name, email, email_verified_at, password, password_confirmation, identity,
+        birthday, phone, location, culture, disability, stage_name, field_cultural, main_activity,
+        secondary_activity, education_level, career_name, studies_institution,social_networks } = userData;
 
     try {
       const user = await API.post( '/register', {
         name,
+        last_name,
         email,
+        email_verified_at,
         password,
         password_confirmation,
-        editorial,
-        short_bio
+        identity,
+        birthday,
+        phone,
+        location,
+        culture,
+        disability,
+        stage_name,
+        field_cultural,
+        main_activity,
+        secondary_activity,
+        education_level,
+        career_name,
+        studies_institution,
+        social_networks
       } );
 
       console.log( 'User', user );
@@ -85,6 +101,19 @@ const Register = () => {
                        hasFeedback
             >
               <Input prefix={ <UserOutlined /> } placeholder='Nombre' />
+
+            </Form.Item>
+
+            <Form.Item name='last_name'
+                        rules={ [
+                            {
+                                required: true,
+                                message: 'Ingresa tu apellido'
+                            }
+                        ] }
+                        hasFeedback
+          >
+              <Input prefix={ <UserOutlined /> } placeholder='Apellido' />
             </Form.Item>
 
             <Form.Item name='email'
@@ -102,6 +131,30 @@ const Register = () => {
             >
               <Input prefix={ <MailOutlined /> } placeholder='Email' />
             </Form.Item>
+
+              <Form.Item name='email_verified_at'
+                         rules={ [
+                             {
+                                 required: true,
+                                 message: 'Ingresa tu nombre de usuario'
+                             },
+                             {
+                                 type: 'email',
+                                 message: 'Ingresa un correo válido'
+                             },
+                             ( { getFieldValue } ) => ({
+                                 validator( rule, value ) {
+                                     if( !value || getFieldValue( 'email' ) === value ) {
+                                         return Promise.resolve();
+                                     }
+                                     return Promise.reject( 'Los correos no coinciden' );
+                                 },
+                             }),
+                         ] }
+                         hasFeedback
+              >
+                  <Input prefix={ <MailOutlined /> } placeholder='Verificar Email' />
+              </Form.Item>
 
             <Form.Item name='password'
                        rules={ [
@@ -140,11 +193,11 @@ const Register = () => {
                               placeholder='Confirma tu clave' />
             </Form.Item>
 
-            <Form.Item name='editorial'
+            <Form.Item name='identity'
                        rules={ [
                          {
                            required: true,
-                           message: 'Ingresa el nombre de la editorial donde trabajas'
+                           message: 'Ingresa la identidad con la cual te consideras'
                          }
                        ] }
                        hasFeedback
@@ -152,22 +205,174 @@ const Register = () => {
               <Input prefix={ <EditOutlined /> } placeholder='Editorial' />
             </Form.Item>
 
-            <Form.Item name='short_bio'
+            <Form.Item name='birthday'
                        rules={ [
                          {
                            required: true,
-                           message: 'Cuéntanos un poco sobre ti.'
+                           message: 'Ingresa tu fecha de nacimiento.'
                          }
                        ] }
                        hasFeedback
             >
               <Input.TextArea prefix={ <FileTextOutlined /> }
-                              placeholder='Biografía corta'
-                              autoSize={ {
-                                minRows: 2,
-                                maxRows: 6
-                              } } />
+                              placeholder='yyyy-mm-dd'
+                               />
             </Form.Item>
+
+              <Form.Item name='phone'
+                         rules={ [
+                             {
+                                 required: true,
+                                 message: 'Ingresa tu número de telefono'
+                             }
+                         ] }
+                         hasFeedback
+              >
+                  <Input prefix={ <UserOutlined /> } placeholder='Número de telefono' />
+
+              </Form.Item>
+
+              <Form.Item name='location'
+                         rules={ [
+                             {
+                                 required: true,
+                                 message: 'Ingresa tu localidad'
+                             }
+                         ] }
+                         hasFeedback
+              >
+                  <Input prefix={ <UserOutlined /> } placeholder='Localidad' />
+
+              </Form.Item>
+
+              <Form.Item name='culture'
+                         rules={ [
+                             {
+                                 required: true,
+                                 message: 'Ingresa tu cultura'
+                             }
+                         ] }
+                         hasFeedback
+              >
+                  <Input prefix={ <UserOutlined /> } placeholder='Culture' />
+
+              </Form.Item>
+              <Form.Item name='disability'
+                         rules={ [
+                             {
+                                 required: true,
+                                 message: 'Ingresa tu disability'
+                             }
+                         ] }
+                         hasFeedback
+              >
+                  <Input prefix={ <UserOutlined /> } placeholder='disability' />
+
+              </Form.Item>
+
+              <Form.Item name='stage_name'
+                         rules={ [
+                             {
+                                 required: true,
+                                 message: 'Ingresa tu stage name'
+                             }
+                         ] }
+                         hasFeedback
+              >
+                  <Input prefix={ <UserOutlined /> } placeholder='Stage name' />
+
+              </Form.Item>
+
+              <Form.Item name='field_cultural'
+                         rules={ [
+                             {
+                                 required: true,
+                                 message: 'Ingresa tu field cultural'
+                             }
+                         ] }
+                         hasFeedback
+              >
+                  <Input prefix={ <UserOutlined /> } placeholder='field_cultural' />
+
+              </Form.Item>
+
+              <Form.Item name='main_activity'
+                         rules={ [
+                             {
+                                 required: true,
+                                 message: 'Ingresa tu Activida principal'
+                             }
+                         ] }
+                         hasFeedback
+              >
+                  <Input prefix={ <UserOutlined /> } placeholder='Main_activity' />
+
+              </Form.Item>
+
+              <Form.Item name='secondary_activity'
+                         rules={ [
+                             {
+                                 required: true,
+                                 message: 'Ingresa tu actividad secudanria'
+                             }
+                         ] }
+                         hasFeedback
+              >
+                  <Input prefix={ <UserOutlined /> } placeholder='actividad secudaria' />
+
+              </Form.Item>
+
+              <Form.Item name='education_level'
+                         rules={ [
+                             {
+                                 required: true,
+                                 message: 'Ingresa tu nivel de educación'
+                             }
+                         ] }
+                         hasFeedback
+              >
+                  <Input prefix={ <UserOutlined /> } placeholder='Nivel de educación' />
+
+              </Form.Item>
+
+              <Form.Item name='career_name'
+                         rules={ [
+                             {
+                                 required: true,
+                                 message: 'Ingresa tu nombre de carrera'
+                             }
+                         ] }
+                         hasFeedback
+              >
+                  <Input prefix={ <UserOutlined /> } placeholder='Nombre de carrera' />
+
+              </Form.Item>
+
+              <Form.Item name='studies_institution'
+                         rules={ [
+                             {
+                                 required: true,
+                                 message: 'Ingresa tu intitucion'
+                             }
+                         ] }
+                         hasFeedback
+              >
+                  <Input prefix={ <UserOutlined /> } placeholder='institucion' />
+
+              </Form.Item>
+
+              <Form.Item name='social_networks'
+                         rules={ [
+                             {
+                                 required: true,
+                                 message: 'Ingresa tu red social'
+                             }
+                         ] }
+                         hasFeedback
+              >
+                  <Input prefix={ <UserOutlined /> } placeholder='red social' />
+
+              </Form.Item>
 
             <Form.Item>
               <Button type='primary' htmlType='submit' className='login-form-button'>
