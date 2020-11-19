@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Routes from '../constants/routes';
 import API from '../data/index';
-import { Switch, Button, Col, Form, Input, message, Row, Typography, Card, Select, DatePicker } from 'antd';
+import {Space, Switch, Button, Col, Form, Input, message, Row, Typography, Card, Select, DatePicker } from 'antd';
 import {
     LockOutlined,
     UserOutlined,
@@ -43,6 +43,7 @@ const Register = () => {
 
   const { setAuthenticated, setCurrentUser } = useAuth();
     const [countries,setCountries]= useState([]);
+    const [province,setProvince]= useState([]);
     const formItemLayout = {
         labelCol: {
             xs: { span: 24 },
@@ -67,7 +68,24 @@ const Register = () => {
         };
         getCountries();
 
+
     },[]);
+
+    useEffect(()=>{
+
+        const getProvince = async () => {
+            const provinceResponse = await fetch('https://gist.githubusercontent.com/JosueGarrido/bbab87a7577e96d08095c7f8fe0a0519/raw/4b68c7c9fea5ddeb0602bc8f706b04aca8978aa2/provincias.json');
+            const provinceJson = await provinceResponse.json();
+
+            console.log('provincejson',Object.values(provinceJson));
+            setProvince( Object.values(provinceJson));
+        };
+        getProvince();
+
+    },[]);
+
+
+
 
 
 
@@ -176,6 +194,7 @@ const Register = () => {
                     <Input prefix={ <CalendarOutlined /> } placeholder='YYYY-MM-DD' />
 
                 </Form.Item>
+
                 <Form.Item name='culture'
                            label="¿Cómo se autoidentifica según su cultura y costumbres?"
                            extra="Por favor ingrese como se autoidentifica."
@@ -202,6 +221,7 @@ const Register = () => {
 
                 </Form.Item>
                 <Form.Item name='disability'
+                           defaultValue='0'
                            label="¿Tiene usted algún tipo de discapacidad?"
                            extra="Por favor indique si tiene algún tipo de discapacidad."
                            hasFeedback
@@ -224,11 +244,14 @@ const Register = () => {
                                  ] }
                                  hasFeedback
                       >
+
                           <Select
                               placeholder="Selecciona el país en el que resides"
                           >
+
                               {
-                                  countries.map((countries,i)=><Option key={i} value={countries.name} >{countries.name}</Option>)
+
+                                  countries.map((countries,index)=><Option key={index} value={countries.name} >{countries.name}</Option>)
                               }
 
                           </Select>
@@ -252,11 +275,12 @@ const Register = () => {
                                              hasFeedback
                                   >
                                       <Select
-                                          placeholder="Ingresa tu provincia"
+                                          placeholder="Selecciona el país en el que resides"
                                       >
-                                          <Option value="male">male</Option>
-                                          <Option value="female">female</Option>
-                                          <Option value="other">other</Option>
+                                          {
+                                              province.map((province,i)=><Option key={i} value={province.provincia} >{province.provincia}</Option>)
+                                          }
+
                                       </Select>
                                   </Form.Item>
                               ) : null;
@@ -268,7 +292,7 @@ const Register = () => {
                           shouldUpdate={(prevValues, currentValues) => prevValues.province !== currentValues.province}
                       >
                           {({ getFieldValue }) => {
-                              return getFieldValue('province') === 'other' ? (
+                              return getFieldValue('province') === 'AZUAY' ? (
                                   <Form.Item name='city'
                                              label="Cantón de domicilio"
                                              rules={ [
@@ -451,7 +475,7 @@ const Register = () => {
                        ] }
                        hasFeedback
             >
-              <Input prefix={ <EditOutlined /> } placeholder='Editorial' />
+              <Input prefix={ <EditOutlined /> } placeholder='Identidad' />
             </Form.Item>
 
               <Form.Item name='stage_name'
