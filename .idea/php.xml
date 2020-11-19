@@ -24,7 +24,6 @@
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/console" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/fideloper/proxy" />
-      <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/polyfill-php73" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/debug" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/polyfill-php70" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/event-dispatcher-contracts" />
@@ -47,7 +46,6 @@
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/http-client-contracts" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/http-foundation" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/process" />
-      <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/polyfill-php80" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/hamcrest/hamcrest-php" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/ramsey/uuid" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/facade/flare-client-php" />
@@ -98,6 +96,8 @@
       <path value="$PROJECT_DIR$/ventasCCE/vendor/nesbot/carbon" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/facade/ignition" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/polyfill-php73" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />

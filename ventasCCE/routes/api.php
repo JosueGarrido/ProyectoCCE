@@ -112,6 +112,13 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::post('weblinks', 'Web_LinksController@store');
     Route::put('weblinks/{id}', 'Web_LinksController@update');
     Route::delete('weblinks/{id}', 'Web_LinksController@delete');
+    //trajectory
+    Route::get('trajectories', 'TrajectoryController@index');
+    Route::get('trajectories/{id}', 'TrajectoryController@show');
+    Route::post('trajectories', 'TrajectoryController@store');
+    Route::put('trajectories/{id}', 'TrajectoryController@update');
+    Route::delete('trajectories/{id}', 'TrajectoryController@delete');
+
 
 
 

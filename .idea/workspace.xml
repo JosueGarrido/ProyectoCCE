@@ -20,46 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e60e72b3-ccd3-470c-9dfd-6bed47741995" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/AudioVideoFormatPolicy.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/CategoryLevel1Policy.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/CategoryLevel2Policy.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/CategoryLevel3Policy.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/CategoryLevel4Policy.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/Cultural_ProjectsPolicy.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/PhotoFormatPolicy.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/ProductPolicy.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/RecognitionPolicy.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/SalePolicy.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/Web_LinksPolicy.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_11_11_004507_add_role_column_user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/AudioVideoFormatController.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/AudioVideoFormatController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/CategoryLevel1Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/CategoryLevel1Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/CategoryLevel2Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/CategoryLevel2Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/CategoryLevel3Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/CategoryLevel3Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/CategoryLevel4Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/CategoryLevel4Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/Cultural_ProjectsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/Cultural_ProjectsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/PhotoFormatController.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/PhotoFormatController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/RecognitionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/RecognitionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/SaleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/SaleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/Web_LinksController.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/Web_LinksController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/AudioVideoFormatCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/AudioVideoFormatCollection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/CategoryLevel1Collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/CategoryLevel1Collection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/CategoryLevel2Collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/CategoryLevel2Collection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/CategoryLevel3Collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/CategoryLevel3Collection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/CategoryLevel4Collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/CategoryLevel4Collection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/Cultural_ProjectCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/Cultural_ProjectCollection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/PhotoFormatCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/PhotoFormatCollection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/ProductCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/ProductCollection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/RecognitionCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/RecognitionCollection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/SaleCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/SaleCollection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/UserCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/UserCollection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ventasCCE/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_09_26_173929_create_cultural__projects_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_09_26_173929_create_cultural__projects_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_09_26_175407_create_recognitions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_09_26_175407_create_recognitions_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_09_26_221353_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_09_26_221353_create_products_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +33,7 @@
     <execution />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/ventasCCE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/ventasCCE/app/Policies/Web_LinksPolicy.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
@@ -100,7 +62,6 @@
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/console" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/fideloper/proxy" />
-      <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/polyfill-php73" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/debug" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/polyfill-php70" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/event-dispatcher-contracts" />
@@ -123,7 +84,6 @@
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/http-client-contracts" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/http-foundation" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/process" />
-      <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/polyfill-php80" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/hamcrest/hamcrest-php" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/ramsey/uuid" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/facade/flare-client-php" />
@@ -174,6 +134,8 @@
       <path value="$PROJECT_DIR$/ventasCCE/vendor/nesbot/carbon" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/facade/ignition" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/polyfill-php73" />
     </include_path>
   </component>
   <component name="ProjectId" id="1k7f5Km5g7Y6gMbeADAEC8TLvRd" />
@@ -186,7 +148,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Fclan" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ventasCCE" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -194,7 +156,14 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Proyecto CCE\ProyectoCCE\ventasCCE\app\Http\Controllers\Auth" />
+      <recent name="C:\xampp\htdocs\Proyecto CCE\ProyectoCCE\ventasCCE" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -208,6 +177,10 @@
       <workItem from="1605056396536" duration="400000" />
       <workItem from="1605059244792" duration="15121000" />
       <workItem from="1605147177739" duration="5720000" />
+      <workItem from="1605581119359" duration="1601000" />
+      <workItem from="1605748712228" duration="2646000" />
+      <workItem from="1605753216085" duration="1517000" />
+      <workItem from="1605754742133" duration="432000" />
     </task>
     <servers />
   </component>
@@ -227,17 +200,29 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605075741004">
+    <state x="446" y="31" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605754123868">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/1920.70.1440.860@0.0.1536.824" timestamp="1605075741004" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1605056413236">
+    <state x="446" y="31" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824/1920.70.1440.860@0.0.1536.824" timestamp="1605754123868" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605753636804">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/1920.70.1440.860@0.0.1536.824" timestamp="1605056413236" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/1920.70.1440.860@0.0.1536.824" timestamp="1605753636804" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1605581130075">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/1920.70.1440.860@0.0.1536.824" timestamp="1605581130075" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1605754285896">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824/1920.70.1440.860@0.0.1536.824" timestamp="1605754285896" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1605069729686">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824/1920.70.1440.860@0.0.1536.824" timestamp="1605069729686" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1605754638501">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.70.1440.860@0.0.1536.824" timestamp="1605754638501" />
   </component>
 </project>
