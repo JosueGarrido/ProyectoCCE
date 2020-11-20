@@ -8,7 +8,7 @@ import {
     MailOutlined,
     EditOutlined,
     FileTextOutlined,
-    CalendarOutlined, SettingOutlined, PhoneOutlined
+    CalendarOutlined, SettingOutlined, PhoneOutlined, FacebookFilled, InstagramFilled, TwitterCircleFilled, ChromeFilled
 } from '@ant-design/icons';
 import ErrorList from '../components/ErrorList';
 import { translateMessage } from '../utils/translateMessage';
@@ -22,7 +22,7 @@ import moment from 'moment';
 import 'moment/locale/zh-cn';
 import locale from 'antd/lib/locale/zh_CN';
 
-const { Title } = Typography;
+const { Text, Title } = Typography;
 const { Option } = Select;
 
 
@@ -141,7 +141,7 @@ const Register = () => {
 
       <Row justify='center' className='login'>
         <Col span={ 24 }>
-            <Card title="FORMULARIO DE REGISTRO DE INFORMACIÓN: ARTISTAS"  >
+            <Card title="FORMULARIO DE REGISTRO DE INFORMACIÓN: ARTISTAS"  extra="*Información obligatoria" >
           <Form name='register-form'
                 {...formItemLayout}
                 className='register-form'
@@ -152,6 +152,19 @@ const Register = () => {
                 onFinish={ onFinish }
           >
             <Card style={{ margin: 10 }} type="inner" title="INFORMACIÓN PERSONAL"  >
+                <Form.Item name='identity'
+                           label="Cédula de Identidad"
+                           extra="Por favor ingrese su cédula de identidad."
+                           rules={ [
+                               {
+                                   required: true,
+                                   message: 'Ingresa su cédula de identidad'
+                               }
+                           ] }
+                           hasFeedback
+                >
+                    <Input prefix={<UserOutlined />} placeholder='Cédula de Identidad' />
+                </Form.Item>
                 <Form.Item name='name'
                            label="Nombre"
                            extra="Por favor ingrese sus nombre."
@@ -424,92 +437,148 @@ const Register = () => {
                   >
                       <Input addonBefore='@' placeholder='Verificar Email' />
                   </Form.Item>
-                  <Card style={{ margin: 10 }} type="inner" title="TRAYECTORIA"  >
 
-                      <Form.Item name='start_date'
-                                 label="Año de inicio de su actividad artístico cultural"
-                                 extra="Por favor ingresa el año de inicio de su actividad artístico cultural."
-                                 rules={ [
-                                     {
-                                         required: true,
-                                         message: 'Ingresa el año de inicio de su actividad artístico cultural.'
-                                     }
-                                 ] }
-                                 hasFeedback
-                      >
-                          <Input prefix={ <CalendarOutlined /> } placeholder='YYYY-MM-DD' />
+              </Card>
 
-                      </Form.Item>
-                      <Form.Item name='trajectory_description'
-                                 label="Descripción de su trayectoria"
-                                 extra="Por favor describe tu trayectoria artístico cultural, poniendo énfasis en el lapso
+              <Card style={{ margin: 10 }} type="inner" title="TRAYECTORIA ARTÍSTICO/CULTURAL"  >
+
+              <Card style={{ margin: 10 }} type="inner" title="TRAYECTORIA"  >
+
+                  <Form.Item name='start_date'
+                             label="Año de inicio de su actividad artístico cultural"
+                             extra="Por favor ingresa el año de inicio de su actividad artístico cultural."
+                             rules={ [
+                                 {
+                                     required: true,
+                                     message: 'Ingresa el año de inicio de su actividad artístico cultural.'
+                                 }
+                             ] }
+                             hasFeedback
+                  >
+                      <Input prefix={ <CalendarOutlined /> } placeholder='YYYY-MM-DD' />
+
+                  </Form.Item>
+                  <Form.Item name='trajectory_description'
+                             label="Descripción de su trayectoria"
+                             extra="Por favor describe tu trayectoria artístico cultural, poniendo énfasis en el lapso
                                  de tiempo y lugares en los que ha desarrollado su actividad cultural. Adicionalmente debe
                                  tener en cuenta que su trayectoria debe ir acorde al ÁMBITO y TIPO DE ACTIVIDAD que registró."
 
 
-                                 rules={ [
-                                     {
-                                         required: true,
-                                         message: 'Por favor describe tu trayectoria artístico cultural.'
-                                     }
-                                 ] }
+                             rules={ [
+                                 {
+                                     required: true,
+                                     message: 'Por favor describe tu trayectoria artístico cultural.'
+                                 }
+                             ] }
+                             hasFeedback
+                  >
+                      <Input.TextArea prefix={ <EditOutlined /> } placeholder='Descripción' />
+
+                  </Form.Item>
+              </Card>
+              </Card>
+
+              <Card style={{ margin: 10 }} type="inner" title="ENLACES WEB"  >
+
+                  <Card style={{ margin: 10 }} type="inner" title="Redes Sociales" >
+
+                      <Form.Item name='social_networks'
+                                 label="Facebook"
+
                                  hasFeedback
                       >
-                          <Input.TextArea prefix={ <EditOutlined /> } placeholder='Descripción' />
+                          <Input addonBefore={<FacebookFilled />} placeholder='Facebook' />
 
                       </Form.Item>
+                      <Form.Item name='instagram'
+                                 label="Instagram"
+
+                                 hasFeedback
+                      >
+                          <Input addonBefore={<InstagramFilled />} placeholder='Instagram' />
+
+                      </Form.Item>
+                      <Form.Item name='twitter'
+                                 label="Twitter"
+
+                                 hasFeedback
+                      >
+                          <Input addonBefore={<TwitterCircleFilled />} placeholder='Twitter' />
+
+                      </Form.Item>
+                      <Form.Item name='otro'
+                                 label="Otro"
+
+                                 hasFeedback
+                      >
+                          <Input addonBefore={<ChromeFilled />} placeholder='Otro' />
+
+                      </Form.Item>
+                      <Text type="secondary">Ingresar los links de internet que nos lleven a visualizar su perfil personal
+                          (o de la agrupación que pertenece) en las distintas redes sociales detalladas.
+                          Esta información servirá para crear un catálogo de artistas y gestores culturales y sus datos
+                          son importantes para contactarlos.</Text>
+
                   </Card>
               </Card>
 
+              <Card style={{ margin: 10 }} type="inner" title="Datos de acceso" >
 
-              <Form.Item name='password'
-                       rules={ [
-                         {
-                           required: true,
-                           message: 'Ingresa tu clave'
-                         }
-                       ] }
-                       hasFeedback
-            >
-              <Input.Password prefix={ <LockOutlined /> }
-                              iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
-                              placeholder='Clave' />
-            </Form.Item>
+                  <Form.Item name='identity'
+                             label="Cédula de Identidad"
+                             rules={ [
+                                 {
+                                     required: true,
+                                     message: 'Ingresa su cédula de identidad'
+                                 }
+                             ] }
+                             hasFeedback
+                  >
+                      <Input addonBefore={<UserOutlined />} placeholder='Cédula de Identidad' disabled/>
+                  </Form.Item>
 
-            <Form.Item name='password_confirmation'
-                       dependencies={ [ 'password' ] }
-                       hasFeedback
-                       rules={ [
-                         {
-                           required: true,
-                           message: 'Confirma tu clave',
-                         },
-                         ( { getFieldValue } ) => ({
-                           validator( rule, value ) {
-                             if( !value || getFieldValue( 'password' ) === value ) {
-                               return Promise.resolve();
-                             }
-                             return Promise.reject( 'Las claves no coinciden' );
-                           },
-                         }),
-                       ] }
-            >
-              <Input.Password prefix={ <LockOutlined /> }
-                              iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
-                              placeholder='Confirma tu clave' />
-            </Form.Item>
+                  <Form.Item name='password'
+                             label="Contraseña"
+                             rules={ [
+                                 {
+                                     required: true,
+                                     message: 'Ingrese su contraseña'
+                                 }
+                             ] }
+                             hasFeedback
+                  >
+                      <Input.Password addonBefore={<LockOutlined />}
+                                      iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
+                                      placeholder='Contraseña' />
+                  </Form.Item>
 
-            <Form.Item name='identity'
-                       rules={ [
-                         {
-                           required: true,
-                           message: 'Ingresa la identidad con la cual te consideras'
-                         }
-                       ] }
-                       hasFeedback
-            >
-              <Input prefix={ <EditOutlined /> } placeholder='Identidad' />
-            </Form.Item>
+                  <Form.Item name='password_confirmation'
+                             label="Confirmar Contraseña"
+                             dependencies={ [ 'password' ] }
+                             hasFeedback
+                             rules={ [
+                                 {
+                                     required: true,
+                                     message: 'Confirma tu Contraseña',
+                                 },
+                                 ( { getFieldValue } ) => ({
+                                     validator( rule, value ) {
+                                         if( !value || getFieldValue( 'password' ) === value ) {
+                                             return Promise.resolve();
+                                         }
+                                         return Promise.reject( 'Las contraseñas no coinciden' );
+                                     },
+                                 }),
+                             ] }
+                  >
+                      <Input.Password addonBefore={<LockOutlined />}
+                                      iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
+                                      placeholder='Confirma tu clave' />
+                  </Form.Item>
+
+
+              </Card>
 
               <Form.Item name='stage_name'
                          rules={ [
@@ -599,19 +668,6 @@ const Register = () => {
                          hasFeedback
               >
                   <Input prefix={ <UserOutlined /> } placeholder='institucion' />
-
-              </Form.Item>
-
-              <Form.Item name='social_networks'
-                         rules={ [
-                             {
-                                 required: true,
-                                 message: 'Ingresa tu red social'
-                             }
-                         ] }
-                         hasFeedback
-              >
-                  <Input prefix={ <UserOutlined /> } placeholder='red social' />
 
               </Form.Item>
 
