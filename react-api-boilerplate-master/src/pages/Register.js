@@ -2,13 +2,16 @@ import React, {useEffect, useState} from 'react';
 import Routes from '../constants/routes';
 import API from '../data/index';
 import { Switch, Button, Col, Form, Input, message, Row, Typography, Card, Select, DatePicker, Table, Modal, Space } from 'antd';
+
 import {
     LockOutlined,
     UserOutlined,
     MailOutlined,
     EditOutlined,
     FileTextOutlined,
-    CalendarOutlined, SettingOutlined, PhoneOutlined,PlusOutlined,DeleteOutlined
+    CalendarOutlined, SettingOutlined, PhoneOutlined, PlusOutlined, DeleteOutlined,
+  FacebookFilled, InstagramFilled, TwitterCircleFilled, ChromeFilled
+
 } from '@ant-design/icons';
 import ErrorList from '../components/ErrorList';
 import { translateMessage } from '../utils/translateMessage';
@@ -22,7 +25,7 @@ import moment from 'moment';
 import 'moment/locale/zh-cn';
 import locale from 'antd/lib/locale/zh_CN';
 
-const { Title } = Typography;
+const { Text, Title } = Typography;
 const { Option } = Select;
 
 
@@ -78,6 +81,7 @@ const Register = ({
     const [ form ] = Form.useForm();
     const { setAuthenticated, setCurrentUser } = useAuth();
     const [countries,setCountries]= useState([]);
+    const [province,setProvince]= useState([]);
     const formItemLayout = {
         labelCol: {
             xs: { span: 24 },
@@ -203,7 +207,24 @@ const Register = ({
         };
         getCountries();
 
+
     },[]);
+
+    useEffect(()=>{
+
+        const getProvince = async () => {
+            const provinceResponse = await fetch('https://gist.githubusercontent.com/JosueGarrido/bbab87a7577e96d08095c7f8fe0a0519/raw/4b68c7c9fea5ddeb0602bc8f706b04aca8978aa2/provincias.json');
+            const provinceJson = await provinceResponse.json();
+
+            console.log('provincejson',Object.values(provinceJson));
+            setProvince( Object.values(provinceJson));
+        };
+        getProvince();
+
+    },[]);
+
+
+
 
 
 
@@ -259,7 +280,7 @@ const Register = ({
 
       <Row justify='center' className='login'>
         <Col span={ 24 }>
-            <Card title="FORMULARIO DE REGISTRO DE INFORMACIÓN: ARTISTAS"  >
+            <Card title="FORMULARIO DE REGISTRO DE INFORMACIÓN: ARTISTAS"  extra="*Información obligatoria" >
           <Form name='register-form'
                 {...formItemLayout}
                 className='register-form'
@@ -270,6 +291,19 @@ const Register = ({
                 onFinish={ onFinish }
           >
             <Card style={{ margin: 10 }} type="inner" title="INFORMACIÓN PERSONAL"  >
+                <Form.Item name='identity'
+                           label="Cédula de Identidad"
+                           extra="Por favor ingrese su cédula de identidad."
+                           rules={ [
+                               {
+                                   required: true,
+                                   message: 'Ingresa su cédula de identidad'
+                               }
+                           ] }
+                           hasFeedback
+                >
+                    <Input prefix={<UserOutlined />} placeholder='Cédula de Identidad' />
+                </Form.Item>
                 <Form.Item name='name'
                            label="Nombre"
                            extra="Por favor ingrese sus nombre."
@@ -312,6 +346,7 @@ const Register = ({
                     <Input prefix={ <CalendarOutlined /> } placeholder='YYYY-MM-DD' />
 
                 </Form.Item>
+
                 <Form.Item name='culture'
                            label="¿Cómo se autoidentifica según su cultura y costumbres?"
                            extra="Por favor ingrese como se autoidentifica."
@@ -338,6 +373,7 @@ const Register = ({
 
                 </Form.Item>
                 <Form.Item name='disability'
+                           defaultValue='0'
                            label="¿Tiene usted algún tipo de discapacidad?"
                            extra="Por favor indique si tiene algún tipo de discapacidad."
                            hasFeedback
@@ -360,11 +396,14 @@ const Register = ({
                                  ] }
                                  hasFeedback
                       >
+
                           <Select
                               placeholder="Selecciona el país en el que resides"
                           >
+
                               {
-                                  countries.map((countries,i)=><Option key={i} value={countries.name} >{countries.name}</Option>)
+
+                                  countries.map((countries,index)=><Option key={index} value={countries.name} >{countries.name}</Option>)
                               }
 
                           </Select>
@@ -388,11 +427,12 @@ const Register = ({
                                              hasFeedback
                                   >
                                       <Select
-                                          placeholder="Ingresa tu provincia"
+                                          placeholder="Selecciona el país en el que resides"
                                       >
-                                          <Option value="male">male</Option>
-                                          <Option value="female">female</Option>
-                                          <Option value="other">other</Option>
+                                          {
+                                              province.map((province,i)=><Option key={i} value={province.provincia} >{province.provincia}</Option>)
+                                          }
+
                                       </Select>
                                   </Form.Item>
                               ) : null;
@@ -404,7 +444,7 @@ const Register = ({
                           shouldUpdate={(prevValues, currentValues) => prevValues.province !== currentValues.province}
                       >
                           {({ getFieldValue }) => {
-                              return getFieldValue('province') === 'other' ? (
+                              return getFieldValue('province') === 'AZUAY' ? (
                                   <Form.Item name='city'
                                              label="Cantón de domicilio"
                                              rules={ [
@@ -537,9 +577,47 @@ const Register = ({
                       <Input addonBefore='@' placeholder='Verificar Email' />
                   </Form.Item>
 
-
-
               </Card>
+
+              <Card style={{ margin: 10 }} type="inner" title="TRAYECTORIA ARTÍSTICO/CULTURAL"  >
+
+              <Card style={{ margin: 10 }} type="inner" title="TRAYECTORIA"  >
+
+                  <Form.Item name='start_date'
+                             label="Año de inicio de su actividad artístico cultural"
+                             extra="Por favor ingresa el año de inicio de su actividad artístico cultural."
+                             rules={ [
+                                 {
+                                     required: true,
+                                     message: 'Ingresa el año de inicio de su actividad artístico cultural.'
+                                 }
+                             ] }
+                             hasFeedback
+                  >
+                      <Input prefix={ <CalendarOutlined /> } placeholder='YYYY-MM-DD' />
+
+                  </Form.Item>
+                  <Form.Item name='trajectory_description'
+                             label="Descripción de su trayectoria"
+                             extra="Por favor describe tu trayectoria artístico cultural, poniendo énfasis en el lapso
+                                 de tiempo y lugares en los que ha desarrollado su actividad cultural. Adicionalmente debe
+                                 tener en cuenta que su trayectoria debe ir acorde al ÁMBITO y TIPO DE ACTIVIDAD que registró."
+
+
+                             rules={ [
+                                 {
+                                     required: true,
+                                     message: 'Por favor describe tu trayectoria artístico cultural.'
+                                 }
+                             ] }
+                             hasFeedback
+                  >
+                      <Input.TextArea prefix={ <EditOutlined /> } placeholder='Descripción' />
+
+                  </Form.Item>
+              </Card>
+              </Card>
+
 
 
 
@@ -969,54 +1047,107 @@ const Register = ({
 
               </Card>
 
-              <Form.Item name='password'
-                       rules={ [
-                         {
-                           required: true,
-                           message: 'Ingresa tu clave'
-                         }
-                       ] }
-                       hasFeedback
-            >
-              <Input.Password prefix={ <LockOutlined /> }
-                              iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
-                              placeholder='Clave' />
-            </Form.Item>
+              
 
-            <Form.Item name='password_confirmation'
-                       dependencies={ [ 'password' ] }
-                       hasFeedback
-                       rules={ [
-                         {
-                           required: true,
-                           message: 'Confirma tu clave',
-                         },
-                         ( { getFieldValue } ) => ({
-                           validator( rule, value ) {
-                             if( !value || getFieldValue( 'password' ) === value ) {
-                               return Promise.resolve();
-                             }
-                             return Promise.reject( 'Las claves no coinciden' );
-                           },
-                         }),
-                       ] }
-            >
-              <Input.Password prefix={ <LockOutlined /> }
-                              iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
-                              placeholder='Confirma tu clave' />
-            </Form.Item>
+            <Card style={{ margin: 10 }} type="inner" title="ENLACES WEB"  >
+                  <Card style={{ margin: 10 }} type="inner" title="Redes Sociales" >
 
-            <Form.Item name='identity'
-                       rules={ [
-                         {
-                           required: true,
-                           message: 'Ingresa la identidad con la cual te consideras'
-                         }
-                       ] }
-                       hasFeedback
-            >
-              <Input prefix={ <EditOutlined /> } placeholder='Editorial' />
-            </Form.Item>
+                      <Form.Item name='social_networks'
+                                 label="Facebook"
+
+                                 hasFeedback
+                      >
+                          <Input addonBefore={<FacebookFilled />} placeholder='Facebook' />
+
+                      </Form.Item>
+                      <Form.Item name='instagram'
+                                 label="Instagram"
+
+                                 hasFeedback
+                      >
+                          <Input addonBefore={<InstagramFilled />} placeholder='Instagram' />
+
+                      </Form.Item>
+                      <Form.Item name='twitter'
+                                 label="Twitter"
+
+                                 hasFeedback
+                      >
+                          <Input addonBefore={<TwitterCircleFilled />} placeholder='Twitter' />
+
+                      </Form.Item>
+                      <Form.Item name='otro'
+                                 label="Otro"
+
+                                 hasFeedback
+                      >
+                          <Input addonBefore={<ChromeFilled />} placeholder='Otro' />
+
+                      </Form.Item>
+                      <Text type="secondary">Ingresar los links de internet que nos lleven a visualizar su perfil personal
+                          (o de la agrupación que pertenece) en las distintas redes sociales detalladas.
+                          Esta información servirá para crear un catálogo de artistas y gestores culturales y sus datos
+                          son importantes para contactarlos.</Text>
+
+                  </Card>
+              </Card>
+
+              <Card style={{ margin: 10 }} type="inner" title="Datos de acceso" >
+
+                  <Form.Item name='identity'
+                             label="Cédula de Identidad"
+                             rules={ [
+                                 {
+                                     required: true,
+                                     message: 'Ingresa su cédula de identidad'
+                                 }
+                             ] }
+                             hasFeedback
+                  >
+                      <Input addonBefore={<UserOutlined />} placeholder='Cédula de Identidad' disabled/>
+                  </Form.Item>
+
+                  <Form.Item name='password'
+                             label="Contraseña"
+                             rules={ [
+                                 {
+                                     required: true,
+                                     message: 'Ingrese su contraseña'
+                                 }
+                             ] }
+                             hasFeedback
+                  >
+                      <Input.Password addonBefore={<LockOutlined />}
+                                      iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
+                                      placeholder='Contraseña' />
+                  </Form.Item>
+
+                  <Form.Item name='password_confirmation'
+                             label="Confirmar Contraseña"
+                             dependencies={ [ 'password' ] }
+                             hasFeedback
+                             rules={ [
+                                 {
+                                     required: true,
+                                     message: 'Confirma tu Contraseña',
+                                 },
+                                 ( { getFieldValue } ) => ({
+                                     validator( rule, value ) {
+                                         if( !value || getFieldValue( 'password' ) === value ) {
+                                             return Promise.resolve();
+                                         }
+                                         return Promise.reject( 'Las contraseñas no coinciden' );
+                                     },
+                                 }),
+                             ] }
+                  >
+                      <Input.Password addonBefore={<LockOutlined />}
+                                      iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
+                                      placeholder='Confirma tu clave' />
+                  </Form.Item>
+
+
+              </Card>
 
               <Form.Item name='stage_name'
                          rules={ [
@@ -1109,25 +1240,13 @@ const Register = ({
 
               </Form.Item>
 
-              <Form.Item name='social_networks'
-                         rules={ [
-                             {
-                                 required: true,
-                                 message: 'Ingresa tu red social'
-                             }
-                         ] }
-                         hasFeedback
-              >
-                  <Input prefix={ <UserOutlined /> } placeholder='red social' />
-
-              </Form.Item>
-
             <Form.Item>
               <Button type='primary' htmlType='submit' className='login-form-button'>
                 Registrarme
               </Button>
               <div><Link to={ Routes.LOGIN }>Ya tengo una cuenta</Link></div>
             </Form.Item>
+
           </Form>
             </Card>
 
