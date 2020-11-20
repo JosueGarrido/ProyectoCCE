@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Routes from '../constants/routes';
 import API from '../data/index';
-import { Switch, Button, Col, Form, Input, message, Row, Typography, Card, Select, DatePicker, Table, Modal, Space } from 'antd';
-
+import { Upload, Switch, Button, Col, Form, Input, message, Row, Typography, Card, Select, DatePicker, Table, Modal, Space } from 'antd';
 import {
     LockOutlined,
     UserOutlined,
@@ -21,9 +20,8 @@ import { Link } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import { useAuth } from '../providers/Auth';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons/lib';
-import moment from 'moment';
 import 'moment/locale/zh-cn';
-import locale from 'antd/lib/locale/zh_CN';
+import ImgCrop from 'antd-img-crop';
 
 const { Text, Title } = Typography;
 const { Option } = Select;
@@ -223,12 +221,33 @@ const Register = ({
 
     },[]);
 
+    const [fileList, setFileList] = useState([]);
+
+    const onChange = ({ fileList: newFileList }) => {
+        setFileList(newFileList);
+    };
+
+    const onPreview = async file => {
+        let src = file.url;
+        if (!src) {
+            src = await new Promise(resolve => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file.originFileObj);
+                reader.onload = () => resolve(reader.result);
+            });
+        }
+        const image = new Image();
+        image.src = src;
+        const imgWindow = window.open(src);
+        imgWindow.document.write(image.outerHTML);
+    };
 
 
 
 
 
-  const onFinish = async( userData ) => {
+
+    const onFinish = async( userData ) => {
     console.log( 'Received values of form: ', userData );
     const { name, last_name, email, email_verified_at, password, password_confirmation, identity,
         birthday, phone, location, culture, disability, stage_name, field_cultural, main_activity,
@@ -344,11 +363,10 @@ const Register = ({
                            hasFeedback
                 >
                     <Input prefix={ <CalendarOutlined /> } placeholder='YYYY-MM-DD' />
-
                 </Form.Item>
 
                 <Form.Item name='culture'
-                           label="¿Cómo se autoidentifica según su cultura y costumbres?"
+                           label="¿Cómo se autoidentifica según su cultura?"
                            extra="Por favor ingrese como se autoidentifica."
                            rules={ [
                                {
@@ -373,7 +391,7 @@ const Register = ({
 
                 </Form.Item>
                 <Form.Item name='disability'
-                           defaultValue='0'
+                           initialValue='0'
                            label="¿Tiene usted algún tipo de discapacidad?"
                            extra="Por favor indique si tiene algún tipo de discapacidad."
                            hasFeedback
@@ -382,6 +400,55 @@ const Register = ({
                     <Switch checkedChildren="SI" unCheckedChildren="NO"/>
 
                 </Form.Item>
+                <Form.Item
+                    noStyle
+                    shouldUpdate={(prevValues, currentValues) => prevValues.disability !== currentValues.disability}
+                >
+                    {({ getFieldValue }) => {
+                        return getFieldValue('disability') === 'on' ? (
+                            <Form.Item name='province'
+                                       label="Provincia de domicilio"
+                                       rules={ [
+                                           {
+                                               required: true,
+                                               message: 'Ingresa tu localidad'
+                                           }
+                                       ] }
+                                       hasFeedback
+                            >
+                                <Select
+                                    placeholder="Selecciona el país en el que resides"
+                                >
+                                    {
+                                        province.map((province,i)=><Option key={i} value={province.provincia} >{province.provincia}</Option>)
+                                    }
+
+                                </Select>
+                            </Form.Item>
+                        ) : null;
+                    }}
+                </Form.Item>
+
+                <Form.Item name='image_profile'
+                           label="Imagen de perfil"
+                           extra="Por favor seleccione una foto con la cual sus clientes lo puedan reconocer."
+                           hasFeedback
+                >
+
+                    <ImgCrop rotate>
+                        <Upload
+                            action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                            listType="picture-card"
+                            fileList={fileList}
+                            onChange={onChange}
+                            onPreview={onPreview}
+                        >
+                            {fileList.length < 1 && '+ Upload'}
+                        </Upload>
+                    </ImgCrop>
+
+                </Form.Item>
+
 
             </Card>
 
@@ -396,18 +463,13 @@ const Register = ({
                                  ] }
                                  hasFeedback
                       >
-
                           <Select
                               placeholder="Selecciona el país en el que resides"
                           >
-
                               {
-
                                   countries.map((countries,index)=><Option key={index} value={countries.name} >{countries.name}</Option>)
                               }
-
                           </Select>
-
                       </Form.Item>
 
                       <Form.Item
