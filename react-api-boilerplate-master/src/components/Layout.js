@@ -70,7 +70,7 @@ const MainLayout = props => {
 
         <Content className='content'>
           <Row type='flex' justify='center' style={ { flex: 'auto' } }>
-            <Col xs={ 22 } md={ 20 }>
+            <Col xs={ 12 } md={ 20 }>
               { props.children }
             </Col>
           </Row>

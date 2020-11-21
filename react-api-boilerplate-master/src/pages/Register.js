@@ -322,7 +322,8 @@ const Register = ({
 
   return (
     <>
-      <Title style={ { textAlign: 'center' } }>REGISTRO DE ARTISTAS</Title>
+            <Title style={ {marginTop:15, textAlign: 'center' } }>REGISTRO DE ARTISTAS</Title>
+
 
       <Row justify='center' className='login'>
         <Col span={ 24 }>
@@ -426,34 +427,6 @@ const Register = ({
 
                     <Switch checkedChildren="SI" unCheckedChildren="NO"/>
 
-                </Form.Item>
-                <Form.Item
-                    noStyle
-                    shouldUpdate={(prevValues, currentValues) => prevValues.disability !== currentValues.disability}
-                >
-                    {({ getFieldValue }) => {
-                        return getFieldValue('disability') === 'on' ? (
-                            <Form.Item name='province'
-                                       label="Provincia de domicilio"
-                                       rules={ [
-                                           {
-                                               required: true,
-                                               message: 'Ingresa tu localidad'
-                                           }
-                                       ] }
-                                       hasFeedback
-                            >
-                                <Select
-                                    placeholder="Selecciona el país en el que resides"
-                                >
-                                    {
-                                        province.map((province,i)=><Option key={i} value={province.provincia} >{province.provincia}</Option>)
-                                    }
-
-                                </Select>
-                            </Form.Item>
-                        ) : null;
-                    }}
                 </Form.Item>
 
                 <Form.Item name='image_profile'
@@ -668,6 +641,9 @@ const Register = ({
 
               </Card>
 
+
+              <Card style={{ margin: 10 }} type="inner" title="TRAYECTORIA ARTÍSTICO / CULTURAL">
+
               <Card style={{ margin: 10 }} type="inner" title="INFORMACIÓN CULTURAL">
 
                   <Form.Item name='career_name'
@@ -762,48 +738,41 @@ const Register = ({
 
               <Card style={{ margin: 10 }} type="inner" title="TRAYECTORIA ARTÍSTICO/CULTURAL"  >
 
-              <Card style={{ margin: 10 }} type="inner" title="TRAYECTORIA"  >
+                  <Card style={{ margin: 10 }} type="inner" title="TRAYECTORIA"  >
 
-                  <Form.Item name='start_date'
-                             label="Año de inicio de su actividad artístico cultural"
-                             extra="Por favor ingresa el año de inicio de su actividad artístico cultural."
-                             rules={ [
-                                 {
-                                     required: true,
-                                     message: 'Ingresa el año de inicio de su actividad artístico cultural.'
-                                 }
-                             ] }
-                             hasFeedback
-                  >
-                      <Input prefix={ <CalendarOutlined /> } placeholder='YYYY-MM-DD' />
+                      <Form.Item name='start_date'
+                                 label="Año de inicio de su actividad artístico cultural"
+                                 extra="Por favor ingresa el año de inicio de su actividad artístico cultural."
+                                 rules={ [
+                                     {
+                                         required: true,
+                                         message: 'Ingresa el año de inicio de su actividad artístico cultural.'
+                                     }
+                                 ] }
+                                 hasFeedback
+                      >
+                          <Input prefix={ <CalendarOutlined /> } placeholder='YYYY-MM-DD' />
 
-                  </Form.Item>
-                  <Form.Item name='trajectory_description'
-                             label="Descripción de su trayectoria"
-                             extra="Por favor describe tu trayectoria artístico cultural, poniendo énfasis en el lapso
+                      </Form.Item>
+                      <Form.Item name='trajectory_description'
+                                 label="Descripción de su trayectoria"
+                                 extra="Por favor describe tu trayectoria artístico cultural, poniendo énfasis en el lapso
                                  de tiempo y lugares en los que ha desarrollado su actividad cultural. Adicionalmente debe
                                  tener en cuenta que su trayectoria debe ir acorde al ÁMBITO y TIPO DE ACTIVIDAD que registró."
 
 
-                             rules={ [
-                                 {
-                                     required: true,
-                                     message: 'Por favor describe tu trayectoria artístico cultural.'
-                                 }
-                             ] }
-                             hasFeedback
-                  >
-                      <Input.TextArea prefix={ <EditOutlined /> } placeholder='Descripción' />
+                                 rules={ [
+                                     {
+                                         required: true,
+                                         message: 'Por favor describe tu trayectoria artístico cultural.'
+                                     }
+                                 ] }
+                                 hasFeedback
+                      >
+                          <Input.TextArea prefix={ <EditOutlined /> } placeholder='Descripción' />
 
-                  </Form.Item>
-              </Card>
-              </Card>
-
-
-
-
-
-              <Card style={{ margin: 10 }} type="inner" title="TRAYECTORIA ARTÍSTICO / CULTURAL">
+                      </Form.Item>
+                  </Card>
 
                   <Modal key="Mod1"
                          visible={ visible1 }
