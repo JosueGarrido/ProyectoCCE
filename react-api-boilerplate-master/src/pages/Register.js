@@ -1,3 +1,4 @@
+
 import React, {useEffect, useState} from 'react';
 import Routes from '../constants/routes';
 import API from '../data/index';
@@ -72,10 +73,12 @@ const Register = ({
     }
     const [ list, setList ] = useState( [{reco: '',place:''}] );
     const [ visible1, setVisible1 ] = useState( false );
-
     const [ visible2, setVisible2 ] = useState( false );
     const [ visible3, setVisible3 ] = useState( false );
     const [ visible4, setVisible4 ] = useState( false );
+    const [ visible5, setVisible5 ] = useState( false );
+    const [ visible6, setVisible6 ] = useState( false );
+
     const [ form ] = Form.useForm();
     const { setAuthenticated, setCurrentUser } = useAuth();
     const [countries,setCountries]= useState([]);
@@ -136,6 +139,32 @@ const Register = ({
         document.querySelector( '#reco_place' ).value='';
     };
 
+    const columnsLink = [
+        {
+            title: 'Descripción Corta del Enlace',
+            dataIndex: 'link_description',
+        },
+        {
+            title: 'Enlace Web de la actividad',
+            dataIndex: 'link_type',
+        }
+    ]
+
+    const columnsActivity = [
+        {
+            title: 'Ámbito principal de la actividad cultural',
+            dataIndex: 'field_cultural',
+        },
+        {
+            title: 'Tipo actividad principal',
+            dataIndex: 'main_activity',
+        },
+        {
+            title: 'Tipo actividad secundaria',
+            dataIndex: 'secondary_activity',
+        }
+    ]
+
     const columnsProject = [
         {
             title: 'Nombre del proyecto',
@@ -194,6 +223,8 @@ const Register = ({
     ]
 
 
+
+
     useEffect(()=>{
 
         const getCountries = async () => {
@@ -241,10 +272,6 @@ const Register = ({
         const imgWindow = window.open(src);
         imgWindow.document.write(image.outerHTML);
     };
-
-
-
-
 
 
     const onFinish = async( userData ) => {
@@ -641,6 +668,98 @@ const Register = ({
 
               </Card>
 
+              <Card style={{ margin: 10 }} type="inner" title="INFORMACIÓN CULTURAL">
+
+                  <Form.Item name='career_name'
+                             initialValue='0'
+                             label="¿Tiene usted nombre artistico?"
+                             extra="Por favor indique si tiene algún nombre artistico."
+                             hasFeedback
+                  >
+                      <Switch checkedChildren="SI" unCheckedChildren="NO"/>
+
+                  </Form.Item>
+
+                  <Card style={{ margin: 10 }} type="inner" title="Ámbito principal de la actividad cultural">
+                  <Form.Item name='field_cultural'
+                             label="Ámbito principal de la actividad cultural"
+                             extra="Seleccione el ámbito principal de la actividad cultural vinculado com la persona"
+                             rules={ [
+                                 {
+                                     required: true,
+                                     message: 'Seleccione el ámbito'
+                                 }
+                             ] }
+                             hasFeedback
+                  >
+                      <Select
+                          placeholder="Seleccione el ámbito"
+                      >
+                          <Option value="ARTES VIVAS Y ESCÉNICAS">ARTES VIVAS Y ESCÉNICAS</Option>
+                          <Option value="ARTES PLÁSTICAS Y VISUALES">ARTES PLÁSTICAS Y VISUALES</Option>
+                          <Option value="ARTES LITERARIAS, NARRATIVAS Y PRODUCCIÓN EDITORIAL ">ARTES LITERARIAS, NARRATIVAS Y PRODUCCIÓN EDITORIAL </Option>
+                          <Option value="ARTES CINEMATOGRÁFICAS Y AUDIOVISUALES">ARTES CINEMATOGRÁFICAS Y AUDIOVISUALES</Option>
+                          <Option value="ARTES MUSICALES Y SONORAS ">ARTES MUSICALES Y SONORAS </Option>
+                          <Option value="DISEÑO Y ARTES APLICADAS Y ARTESANÍAS">DISEÑO Y ARTES APLICADAS Y ARTESANÍAS</Option>
+                          <Option value="MEMORIA SOCIAL">MEMORIA SOCIAL</Option>
+                          <Option value="PATRIMONIO CULTURAL ">PATRIMONIO CULTURAL </Option>
+                      </Select>
+                  </Form.Item>
+                      <Form.Item name='main_activity'
+                                 label="Tipo de actividad principal"
+                                 extra="Seleccione el tipo de actividad principal del ámbito que selecciono con aterioridad"
+                                 rules={ [
+                                     {
+                                         required: true,
+                                         message: 'Seleccione el tipo de actividad'
+                                     }
+                                 ] }
+                                 hasFeedback
+                      >
+                          <Select
+                              placeholder="Seleccione la actividad"
+                          >
+                              <Option value="CREADOR">CREADOR</Option>
+                              <Option value="PRODUCTOR">PRODUCTOR</Option>
+                              <Option value="GESTOR CULTURAL">GESTOR CULTURAL </Option>
+                              <Option value="INVESTIGADOR ">INVESTIGADOR</Option>
+                              <Option value="TÉCNICO ">TÉCNICO</Option>
+                              <Option value="DOCENTE">DOCENTE</Option>
+                              <Option value="MEMORIA SOCIAL">MEMORIA SOCIAL</Option>
+                              <Option value="OTRO TRABAJADOR DE LA CULTURA ">OTRO TRABAJADOR DE LA CULTURA </Option>
+                          </Select>
+                      </Form.Item>
+
+                      <Form.Item name='secondary_activity'
+                                 label="Tipo de actividad secundaria"
+                                 extra="Seleccione el tipo de actividad secundaria del ámbito que selecciono con aterioridad"
+                                 rules={ [
+                                     {
+                                         required: true,
+                                         message: 'Seleccione el tipo de actividad'
+                                     }
+                                 ] }
+                                 hasFeedback
+                      >
+                          <Select
+                              placeholder="Seleccione la actividad"
+                          >
+                              <Option value="CREADOR">CREADOR</Option>
+                              <Option value="PRODUCTOR">PRODUCTOR</Option>
+                              <Option value="GESTOR CULTURAL">GESTOR CULTURAL </Option>
+                              <Option value="INVESTIGADOR ">INVESTIGADOR</Option>
+                              <Option value="TÉCNICO ">TÉCNICO</Option>
+                              <Option value="DOCENTE">DOCENTE</Option>
+                              <Option value="MEMORIA SOCIAL">MEMORIA SOCIAL</Option>
+                              <Option value="OTRO TRABAJADOR DE LA CULTURA ">OTRO TRABAJADOR DE LA CULTURA </Option>
+                              <Option value="OTRA ACTIVIDAD ">OTRA ACTIVIDAD </Option>
+                          </Select>
+                      </Form.Item>
+
+              </Card>
+              </Card>
+
+
               <Card style={{ margin: 10 }} type="inner" title="TRAYECTORIA ARTÍSTICO/CULTURAL"  >
 
               <Card style={{ margin: 10 }} type="inner" title="TRAYECTORIA"  >
@@ -918,9 +1037,6 @@ const Register = ({
 
                   </Card>
 
-
-
-
               </Card>
 
               <Card style={{ margin: 10 }} type="inner" title="FORMACIÓN Y CAPACITACIÓN">
@@ -1014,15 +1130,11 @@ const Register = ({
 
                       </Table>
 
-
                   </Card>
-
-
-
 
                   <Modal key="Mod4"
                          visible={ visible4 }
-                         title='Ingresar educación formal inconclusa o en curso'
+                         title='Ingresar educación formal inconcluso en curso'
                          okText='Agregar'
                          confirmLoading={ isSaving }
                          cancelText='Cancelar'
@@ -1098,20 +1210,87 @@ const Register = ({
                       <br />
                       <br />
                       <Table columns={columnsInconclusa} >
-
                       </Table>
-
-
                   </Card>
-
-
-
-
               </Card>
 
-              
 
+              <Modal key="Mod5"
+                     visible={ visible5 }
+                     title='Añadir enlace'
+                     okText='Agregar'
+                     confirmLoading={ isSaving }
+                     cancelText='Cancelar'
+                     onOk={  onCreate1}
+                     update={ false }
+                     onCancel={ () => {
+                         setVisible5( false );
+                     } }
+              >
+
+                  <Form
+
+                      form={ form }
+                      layout='vertical'
+                      name='form_in_modal'
+                      initialValues={{ remember: true }}
+                      onFinish={onFinish}
+                      onFinishFailed={onFinishFailed}                      >
+
+                      <Form.Item
+                          name='link_description'
+                          label='Descripción'
+                          rules={ [
+                              {
+                                  required: true,
+                                  message: 'Ingresa descripcion corta'
+                              }
+                          ] }>
+                          <Input type='textarea' />
+                      </Form.Item>
+
+                      <Form.Item
+                          name='link_type'
+                          label='Enlace web'
+                          rules={ [
+                              {
+                                  required: true,
+                                  message: 'Ingresa enlace web'
+                              }
+                          ] }>
+                          <Input type='textarea' />
+                      </Form.Item>
+
+
+                  </Form>
+              </Modal>
             <Card style={{ margin: 10 }} type="inner" title="ENLACES WEB"  >
+
+                <Card style={{ margin: 10 }} type="inner" title="Registro de enlaces"  >
+
+                    <Button
+
+                        visible={ visible5 }
+                        type="primary"
+                        icon={<PlusOutlined />}
+
+                        onClick={ () => {
+                            setVisible5( true );
+                        } }
+                    >
+                        Nuevo Enlace Web
+
+                    </Button>
+                    <br />
+                    <br />
+                    <Table columns={columnsLink} >
+
+                    </Table>
+
+                </Card>
+
+
+
                   <Card style={{ margin: 10 }} type="inner" title="Redes Sociales" >
 
                       <Form.Item name='social_networks'
