@@ -1,8 +1,10 @@
 import React from 'react';
-import { Menu, Divider, Row, Col } from 'antd';
+import { Menu, Divider, Row, Col, Layout, Typography } from 'antd';
 import {SettingOutlined, ShoppingOutlined} from '@ant-design/icons';
 
+const { Title } = Typography;
 const { SubMenu } = Menu;
+const { Content, Sider } = Layout;
 
 const ArtistDashboard = () => (
     <>
@@ -10,7 +12,7 @@ const ArtistDashboard = () => (
             <Col>
         <Menu
 
-            style={{ width: 256 }}
+            style={{ marginTop:50, width: 256 }}
             defaultSelectedKeys={['1']}
             defaultOpenKeys={['sub1']}
             mode="inline"
@@ -51,13 +53,17 @@ const ArtistDashboard = () => (
             </Col>
 
 
-            <Col span={ 6 } align='end'>
-                <h1 className='title'>
-                    Página Dashboard
-                </h1>
-                <h1 className='title'>
-                    xddddddd
-                </h1>
+            <Col span={ 18 } >
+
+                <Content style={{ margin: '2px 18px 0' }}>
+                    <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
+
+                        <Title style={ { marginTop:15, textAlign: 'center' } }>Bienvenido a tu cuenta</Title>
+                        content
+                        content123
+
+                    </div>
+                </Content>
             </Col>
 
         </Row>

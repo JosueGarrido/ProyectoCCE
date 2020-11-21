@@ -39,7 +39,7 @@ const Login = () => {
   return (
     <>
       {
-        <Row justify='center' className='login'>
+        <Row style={{marginTop:20}} justify='center' className='login'>
           <Col span={ 8 }>
             <Form
               name='login-form'
