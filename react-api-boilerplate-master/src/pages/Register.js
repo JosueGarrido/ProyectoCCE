@@ -1457,10 +1457,10 @@ const Register = ({
               <div><Link to={ Routes.LOGIN }>Ya tengo una cuenta</Link></div>
             </Form.Item>
 
+
+            </Card>
           </Form>
             </Card>
-
-
         </Col>
       </Row>
     </>
