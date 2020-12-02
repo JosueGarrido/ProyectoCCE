@@ -5,6 +5,8 @@
   "dependencies": {
     "@ant-design/icons": "^4.2.2",
     "@loadable/component": "^5.13.1",
+    "@rpldy/root": "https://github.com/rpldy/react-uploady.git",
+    "@rpldy/upload-button": "^0.7.4",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -40,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@rpldy/upload-preview": "^0.7.4"
   }
 }

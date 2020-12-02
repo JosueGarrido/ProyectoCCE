@@ -22,7 +22,12 @@ const loadableOptions = { fallback: <Loading /> };
 
 const AsyncHome = loadable( () => import( '../pages/Index' ), loadableOptions );
 const AsyncLogin = loadable( () => import( '../pages/Login' ), loadableOptions );
-const AsyncDashboardArtist = loadable( () => import( '../pages/ArtistDashboard' ), loadableOptions );
+const AsyncDashboardArtist = loadable( () => import( '../pages/ArtistResumeDashboard' ), loadableOptions );
+const AsyncDashboardPublicationsArtist = loadable( () => import( '../pages/ArtistPublicationsDashboard' ), loadableOptions );
+const AsyncDashboardQuestionsArtist = loadable( () => import( '../pages/ArtistQuestionsDashboard' ), loadableOptions );
+const AsyncDashboardSellArtist = loadable( () => import( '../pages/ArtistSellDashboard' ), loadableOptions );
+const AsyncDashboardMetricsArtist = loadable( () => import( '../pages/ArtistMetricsDashboard' ), loadableOptions );
+const AsyncDashboardReputationArtist = loadable( () => import( '../pages/ArtistReputationDashboard' ), loadableOptions );
 const AsyncRegister = loadable( () => import( '../pages/Register' ), loadableOptions );
 const AsyncPrivate = loadable( () => import( '../pages/Private' ), loadableOptions );
 const AsyncArticles = loadable( () => import( '../pages/Articles' ), loadableOptions );
@@ -48,6 +53,11 @@ const AppRouter = () => (
     <PublicRoute path={ Routes.LOGIN } component={ AsyncLogin } />
     <PublicRoute path={ Routes.REGISTER } component={ AsyncRegister } />
     <PublicRoute path={ Routes.ARTIST_DASHBOARD } component={ AsyncDashboardArtist } />
+      <PublicRoute path={ Routes.ARTIST_PUBLICATIONS_DASHBOARD } component={ AsyncDashboardPublicationsArtist } />
+      <PublicRoute path={ Routes.ARTIST_QUESTIONS_DASHBOARD } component={ AsyncDashboardQuestionsArtist } />
+      <PublicRoute path={ Routes.ARTIST_SELL_DASHBOARD } component={ AsyncDashboardSellArtist } />
+      <PublicRoute path={ Routes.ARTIST_METRICS_DASHBOARD } component={ AsyncDashboardMetricsArtist } />
+      <PublicRoute path={ Routes.ARTIST_REPUTATION_DASHBOARD } component={ AsyncDashboardReputationArtist } />
     <PublicRoute path={ Routes.ARTICLES } component={ AsyncArticles } />
     <PublicRoute path={ Routes.ABOUT } component={ AsyncAbout } />
 
