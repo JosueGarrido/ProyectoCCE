@@ -10,7 +10,9 @@ import {
     EditOutlined,
     FileTextOutlined,
     CalendarOutlined, SettingOutlined, PhoneOutlined, PlusOutlined, DeleteOutlined,
+
     FacebookFilled, InstagramFilled, TwitterCircleFilled, ChromeFilled, UploadOutlined
+
 
 } from '@ant-design/icons';
 import ErrorList from '../components/ErrorList';
@@ -28,6 +30,7 @@ import ProfilePictureUpload from "../components/ProfilePictureUpload";
 const { Text, Title } = Typography;
 const { Option } = Select;
 
+
 function getBase64( file, callback ) {
     console.log( 'file', file );
     const reader = new FileReader();
@@ -36,6 +39,7 @@ function getBase64( file, callback ) {
 }
 
 const Register = () => {
+
     // const auth = useAuth();
     // const router = useRouter();
 
@@ -49,6 +53,7 @@ const Register = () => {
     //
     //   checkAuthentication();
     // }, [ auth ] );
+
     const [ imageUrl, setImageUrl ] = useState( null );
     const [ fileList, setFileList ] = useState( [] );
     const [ isSaving, setIsSaving ] = useState( false );
@@ -182,7 +187,7 @@ const Register = () => {
         const name = document.querySelector( '#reco_name' ).value;
         const place = document.querySelector( '#reco_place' ).value;
 
-       setList(list)
+        setList(list)
         console.log('name',list);
         document.querySelector( '#reco_name' ).value = '';
         document.querySelector( '#reco_place' ).value='';
@@ -204,10 +209,7 @@ const Register = () => {
             title: 'Ámbito principal de la actividad cultural',
             dataIndex: 'field_cultural',
         },
-        {
-            title: 'Tipo actividad principal',
-            dataIndex: 'main_activity',
-        },
+
         {
             title: 'Tipo actividad secundaria',
             dataIndex: 'secondary_activity',
@@ -405,6 +407,7 @@ const Register = () => {
     <>
 
             <Title style={ {marginTop:15, textAlign: 'center' } }>REGISTRO DE ARTISTAS</Title>
+
 
       <Row justify='center' className='login'>
         <Col span={ 24 }>
