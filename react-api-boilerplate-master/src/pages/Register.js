@@ -373,10 +373,8 @@ const Register = () => {
         data.append( 'town', userData.town );
         data.append( 'culture', userData.culture );
         data.append( 'disability', userData.disability === true ? 1 : 0);
-        data.append( 'disability_porcentage', userData.disability_porcentage);
         data.append( 'stage_name', userData.stage_name );
         data.append( 'field_cultural', userData.field_cultural );
-        data.append( 'main_activity', userData.main_activity );
         data.append( 'secondary_activity', userData.secondary_activity );
         data.append( 'education_level', userData.education_level );
         data.append( 'career_name', userData.career_name );
@@ -558,7 +556,7 @@ const Register = () => {
                 >
                     {({ getFieldValue }) => {
                         return getFieldValue('disability') === true ? (
-                            <Form.Item name='porcentaje_de_discapacidad'
+                            <Form.Item name='disability_porcentage'
                                        label="Porcentaje de discapacidad"
                                        initialValue={null}
                                        rules={ [
@@ -762,6 +760,17 @@ const Register = () => {
 
 
                   </Form.Item>
+
+                  <Form.Item name='whatsapp'
+                             initialValue= {false}
+                             label="¿Tiene usted whatsapp?"
+                             extra="Por favor indique si tiene el chat de whatsapp disponible."
+                             hasFeedback
+                  >
+
+                      <Switch checkedChildren="SI" unCheckedChildren="NO"  onChange={onCheck}/>
+
+                  </Form.Item>
                   <Form.Item name='email'
                              label="Correo electrónico"
                              rules={ [
@@ -854,38 +863,12 @@ const Register = () => {
                           <Select
                               placeholder="Seleccione el ámbito"
                           >
-                              <Option value="ARTES VIVAS Y ESCÉNICAS">ARTES VIVAS Y ESCÉNICAS</Option>
-                              <Option value="ARTES PLÁSTICAS Y VISUALES">ARTES PLÁSTICAS Y VISUALES</Option>
-                              <Option value="ARTES LITERARIAS, NARRATIVAS Y PRODUCCIÓN EDITORIAL ">ARTES LITERARIAS, NARRATIVAS Y PRODUCCIÓN EDITORIAL </Option>
-                              <Option value="ARTES CINEMATOGRÁFICAS Y AUDIOVISUALES">ARTES CINEMATOGRÁFICAS Y AUDIOVISUALES</Option>
-                              <Option value="ARTES MUSICALES Y SONORAS ">ARTES MUSICALES Y SONORAS </Option>
-                              <Option value="DISEÑO Y ARTES APLICADAS Y ARTESANÍAS">DISEÑO Y ARTES APLICADAS Y ARTESANÍAS</Option>
-                              <Option value="MEMORIA SOCIAL">MEMORIA SOCIAL</Option>
-                              <Option value="PATRIMONIO CULTURAL ">PATRIMONIO CULTURAL </Option>
-                          </Select>
-                      </Form.Item>
-                      <Form.Item name='main_activity'
-                                 label="Tipo de actividad principal"
-                                 extra="Seleccione el tipo de actividad principal del ámbito que selecciono con aterioridad"
-                                 rules={ [
-                                     {
-                                         required: true,
-                                         message: 'Seleccione el tipo de actividad'
-                                     }
-                                 ] }
-                                 hasFeedback
-                      >
-                          <Select
-                              placeholder="Seleccione la actividad"
-                          >
-                              <Option value="CREADOR">CREADOR</Option>
-                              <Option value="PRODUCTOR">PRODUCTOR</Option>
-                              <Option value="GESTOR CULTURAL">GESTOR CULTURAL </Option>
-                              <Option value="INVESTIGADOR ">INVESTIGADOR</Option>
-                              <Option value="TÉCNICO ">TÉCNICO</Option>
-                              <Option value="DOCENTE">DOCENTE</Option>
-                              <Option value="MEMORIA SOCIAL">MEMORIA SOCIAL</Option>
-                              <Option value="OTRO TRABAJADOR DE LA CULTURA ">OTRO TRABAJADOR DE LA CULTURA </Option>
+                              <Option value="ARTES ESCÉNICAS">ARTES ESCÉNICAS</Option>
+                              <Option value="ARTES PLÁSTICAS">ARTES PLÁSTICAS</Option>
+                              <Option value="ARTES LITERARIAS">ARTES LITERARIAS </Option>
+                              <Option value="ARTES AUDIOVISUALES">ARTES AUDIOVISUALES</Option>
+                              <Option value="ARTES MUSICALES">ARTES MUSICALES </Option>
+                              <Option value="ARTESANÍAS">ARTESANÍAS</Option>
                           </Select>
                       </Form.Item>
 
@@ -903,15 +886,12 @@ const Register = () => {
                           <Select
                               placeholder="Seleccione la actividad"
                           >
-                              <Option value="CREADOR">CREADOR</Option>
                               <Option value="PRODUCTOR">PRODUCTOR</Option>
                               <Option value="GESTOR CULTURAL">GESTOR CULTURAL </Option>
                               <Option value="INVESTIGADOR ">INVESTIGADOR</Option>
                               <Option value="TÉCNICO ">TÉCNICO</Option>
                               <Option value="DOCENTE">DOCENTE</Option>
-                              <Option value="MEMORIA SOCIAL">MEMORIA SOCIAL</Option>
                               <Option value="OTRO TRABAJADOR DE LA CULTURA ">OTRO TRABAJADOR DE LA CULTURA </Option>
-                              <Option value="OTRA ACTIVIDAD ">OTRA ACTIVIDAD </Option>
                           </Select>
                       </Form.Item>
 
@@ -961,489 +941,239 @@ const Register = () => {
                       </Form.Item>
                   </Card>
 
-                  <Modal key="Mod1"
-                         visible={ visible1 }
-                         title='Ingresar nuevo reconocimiento'
-                         okText='Agregar'
-                         confirmLoading={ isSaving }
-                         cancelText='Cancelar'
-                         onOk={() => handleAddReconocimiento() }
-                         update={ false }
-                         onCancel={ () => {
-                             setVisible1( false );
-                         } }
-                  >
 
-                      <Form
-
-                          form={ form }
-                          layout='vertical'
-                          name='form_in_modal'
-                          initialValues={{ remember: true }}
-                          onFinish={onFinish}
-
-                          onFinishFailed={onFinishFailed}                      >
-                          <Form.Item
-                              name='reco_type'
-                              label='Tipo de Reconocimiento'
-                              rules={ [
-                                  {
-                                      required: true,
-                                      message: 'Ingresa el tipo de reconocimiento'
-                                  }
-                              ] }
-                          >
-                              <Select placeholder="Selecciona el tipo de reconocimiento">
-                                  <Option value="male">GALARDÓN / PREMIO</Option>
-                                  <Option value="female">RECONOCIMIENTO</Option>
-                              </Select>
-                          </Form.Item>
-                          <Form.Item
-                              name='reco_name'
-                              label='Nombre de Reconocimiento'
-                              rules={ [
-                                  {
-                                      required: true,
-                                      message: 'Ingresa el nombre del reconocimiento'
-                                  }
-                              ] }>
-                              <Input type='textarea' id='reco_name'/>
-                          </Form.Item>
-
-                          <Form.Item
-                              name='reco_description'
-                              label='Descripción'
-                              rules={ [
-                                  {
-                                      required: true,
-                                      message: 'Ingresa la descripción del reconocimiento'
-                                  }
-                              ] }>
-                              <Input type='textarea' />
-                          </Form.Item>
-
-                          <Form.Item
-                              name='reco_place'
-                              label='Lugar'
-                              rules={ [
-                                  {
-                                      required: true,
-                                      message: 'Ingresa el lugar del reconocimiento'
-                                  }
-                              ] }>
-                              <Input type='textarea' id='reco_place'/>
-                          </Form.Item>
-
-                          <Form.Item
-                              name='reco_year'
-                              label='Año'
-                              rules={ [
-                                  {
-                                      required: true,
-                                      message: 'Ingresa el año del reconocimiento'
-                                  }
-                              ] }
-                          >
-                              <Space direction="vertical">
-                                  <DatePicker picker="year" bordered={false} placeholder='Año'/>
-                              </Space>
-
-                          </Form.Item>
-                          <Button onClick={()=>handleAddReconocimiento()}>ok</Button>
-                      </Form>
-                  </Modal>
                   <Card style={{ margin: 10 }} type="inner" title="RECONOCIMIENTOS">
-                      <Button
-                          type="primary"
-                          icon={<PlusOutlined />}
-
-                          onClick={ () => {
-                              setVisible1( true );
-                          } }
-                      >
-                          Nuevo Reconocimiento
-                      </Button>
-                      <br />
-                      <br />
-                      {
-                          list.map((lista)=>(
-
-                      <Table
-                          columns={columnsReco}
-                          dataSource=
+                      <Form.Item
+                          name='reco_type'
+                          label='Tipo de Reconocimiento'
+                          rules={ [
                               {
-                                  lista.reco
+                                  required: true,
+                                  message: 'Ingresa el tipo de reconocimiento'
+                              }
+                          ] }
+                      >
+                          <Select placeholder="Selecciona el tipo de reconocimiento">
+                              <Option value="male">GALARDÓN / PREMIO</Option>
+                              <Option value="female">RECONOCIMIENTO</Option>
+                          </Select>
+                      </Form.Item>
+                      <Form.Item
+                          name='reco_name'
+                          label='Nombre de Reconocimiento'
+                          rules={ [
+                              {
+                                  required: true,
+                                  message: 'Ingresa el nombre del reconocimiento'
+                              }
+                          ] }>
+                          <Input type='textarea' id='reco_name'/>
+                      </Form.Item>
 
+                      <Form.Item
+                          name='reco_description'
+                          label='Descripción'
+                          rules={ [
+                              {
+                                  required: true,
+                                  message: 'Ingresa la descripción del reconocimiento'
+                              }
+                          ] }>
+                          <Input type='textarea' />
+                      </Form.Item>
 
-                              }>
+                      <Form.Item
+                          name='reco_place'
+                          label='Lugar'
+                          rules={ [
+                              {
+                                  required: true,
+                                  message: 'Ingresa el lugar del reconocimiento'
+                              }
+                          ] }>
+                          <Input type='textarea' id='reco_place'/>
+                      </Form.Item>
 
-                      </Table>
-                          ))
-                      }
+                      <Form.Item
+                          name='reco_year'
+                          label='Año'
+                          rules={ [
+                              {
+                                  required: true,
+                                  message: 'Ingresa el año del reconocimiento'
+                              }
+                          ] }
+                      >
+                          <Space direction="vertical">
+                              <DatePicker picker="year" bordered={false} placeholder='Año'/>
+                          </Space>
 
+                      </Form.Item>
 
                   </Card>
 
-
-
-
-                  <Modal key="Mod2"
-                         visible={ visible2 }
-                         title='Ingresar nuevo proyecto cultural'
-                         okText='Agregar'
-                         confirmLoading={ isSaving }
-                         cancelText='Cancelar'
-                         onOk={  onCreate1}
-                         update={ false }
-                         onCancel={ () => {
-                             setVisible2( false );
-                         } }
-                  >
-
-                      <Form
-
-                          form={ form }
-                          layout='vertical'
-                          name='form_in_modal'
-                          initialValues={{ remember: true }}
-                          onFinish={onFinish}
-                          onFinishFailed={onFinishFailed}                      >
-                          <Form.Item
-                              name='name_project'
-                              label='Nombre del Proyecto'
-                              rules={ [
-                                  {
-                                      required: true,
-                                      message: 'Ingresa el nombre del proyecto'
-                                  }
-                              ] }
-                          >
-                              <Input type='textarea' />
-                          </Form.Item>
-                          <Form.Item
-                              name='rol_project'
-                              label='Rol en el Proyecto'
-                              rules={ [
-                                  {
-                                      required: true,
-                                      message: 'Ingresa el rol en el proyecto'
-                                  }
-                              ] }>
-                              <Input type='textarea' />
-                          </Form.Item>
-
-                          <Form.Item
-                              name='description_project'
-                              label='Descripción'
-                              rules={ [
-                                  {
-                                      required: true,
-                                      message: 'Ingresa la descripción del proyecto'
-                                  }
-                              ] }>
-                              <Input type='textarea' />
-                          </Form.Item>
-
-                          <Form.Item
-                              name='place_project'
-                              label='Lugar'
-                              rules={ [
-                                  {
-                                      required: true,
-                                      message: 'Ingresa el lugar del proyecto'
-                                  }
-                              ] }>
-                              <Input type='textarea' />
-                          </Form.Item>
-
-                          <Form.Item
-                              name='year_project'
-                              label='Año'
-                              rules={ [
-                                  {
-                                      required: true,
-                                      message: 'Ingresa el año del proyecto'
-                                  }
-                              ] }
-                          >
-                              <Space direction="vertical">
-                                  <DatePicker picker="year" bordered={false} placeholder='Año'/>
-                              </Space>
-
-                          </Form.Item>
-                      </Form>
-                  </Modal>
                   <Card style={{ margin: 10 }} type="inner" title="PROYECTOS CULTURALES">
-                      <Button
-                          type="primary"
-                          icon={<PlusOutlined />}
-
-                          onClick={ () => {
-                              setVisible2( true );
-                          } }
+                      <Form.Item
+                          name='name_project'
+                          label='Nombre del Proyecto'
+                          rules={ [
+                              {
+                                  required: true,
+                                  message: 'Ingresa el nombre del proyecto'
+                              }
+                          ] }
                       >
-                          Nuevo Proyecto Cultural
-                      </Button>
-                      <br />
-                      <br />
-                      <Table columns={columnsProject} >
+                          <Input type='textarea' />
+                      </Form.Item>
+                      <Form.Item
+                          name='rol_project'
+                          label='Rol en el Proyecto'
+                          rules={ [
+                              {
+                                  required: true,
+                                  message: 'Ingresa el rol en el proyecto'
+                              }
+                          ] }>
+                          <Input type='textarea' />
+                      </Form.Item>
 
-                      </Table>
+                      <Form.Item
+                          name='description_project'
+                          label='Descripción'
+                          rules={ [
+                              {
+                                  required: true,
+                                  message: 'Ingresa la descripción del proyecto'
+                              }
+                          ] }>
+                          <Input type='textarea' />
+                      </Form.Item>
 
+                      <Form.Item
+                          name='place_project'
+                          label='Lugar'
+                          rules={ [
+                              {
+                                  required: true,
+                                  message: 'Ingresa el lugar del proyecto'
+                              }
+                          ] }>
+                          <Input type='textarea' />
+                      </Form.Item>
 
+                      <Form.Item
+                          name='year_project'
+                          label='Año'
+                          rules={ [
+                              {
+                                  required: true,
+                                  message: 'Ingresa el año del proyecto'
+                              }
+                          ] }
+                      >
+                          <Space direction="vertical">
+                              <DatePicker picker="year" bordered={false} placeholder='Año'/>
+                          </Space>
+
+                      </Form.Item>
                   </Card>
 
               </Card>
 
               <Card style={{ margin: 10 }} type="inner" title="FORMACIÓN Y CAPACITACIÓN">
 
-                  <Modal key="Mod3"
-                         visible={ visible3 }
-                         title='Ingresar educación formal finalizada'
-                         okText='Agregar'
-                         confirmLoading={ isSaving }
-                         cancelText='Cancelar'
-                         onOk={  onCreate1}
-                         update={ false }
-                         onCancel={ () => {
-                             setVisible3( false );
-                         } }
-                  >
-
-                      <Form
-
-                          form={ form }
-                          layout='vertical'
-                          name='form_in_modal'
-                          initialValues={{ remember: true }}
-                          onFinish={onFinish}
-                          onFinishFailed={onFinishFailed}                      >
-                          <Form.Item
-                              name='name_institute'
-                              label='Nombre de la institución'
-                              rules={ [
-                                  {
-                                      required: true,
-                                      message: 'Ingresa el nombre de la institución'
-                                  }
-                              ] }
-                          >
-                              <Input type='textarea' />
-                          </Form.Item>
-                          <Form.Item
-                              name='name_title'
-                              label='Nombre del Título'
-                              rules={ [
-                                  {
-                                      required: true,
-                                      message: 'Ingresa el nombre del Título'
-                                  }
-                              ] }>
-                              <Input type='textarea' />
-                          </Form.Item>
-
-                          <Form.Item
-                              name='name_area'
-                              label='Área'
-                              rules={ [
-                                  {
-                                      required: true,
-                                      message: 'Ingresa el nombre del área'
-                                  }
-                              ] }>
-                              <Input type='textarea' />
-                          </Form.Item>
-
-                          <Form.Item
-                              name='type'
-                              label='Tipo'
-                              rules={ [
-                                  {
-                                      required: true,
-                                      message: 'Ingresa el tipo de formación'
-                                  }
-                              ] }>
-                              <Input type='textarea' />
-                          </Form.Item>
-
-
-                      </Form>
-                  </Modal>
-                  <Card style={{ margin: 10 }} type="inner" title="EDUCACIÓN FORMAL FINALIZADA">
-                      <Button
-                          type="primary"
-                          icon={<PlusOutlined />}
-
-                          onClick={ () => {
-                              setVisible3( true );
-                          } }
-                      >
-                          Ingresar Educación Formal Finalizada
-                      </Button>
-                      <br />
-                      <br />
-                      <Table columns={columnsFormal} >
-
-                      </Table>
-
-                  </Card>
-
-                  <Modal key="Mod4"
-                         visible={ visible4 }
-                         title='Ingresar educación formal inconcluso en curso'
-                         okText='Agregar'
-                         confirmLoading={ isSaving }
-                         cancelText='Cancelar'
-                         onOk={  onCreate1}
-                         update={ false }
-                         onCancel={ () => {
-                             setVisible4( false );
-                         } }
-                  >
-
-                      <Form
-
-                          form={ form }
-                          layout='vertical'
-                          name='form_in_modal'
-                          initialValues={{ remember: true }}
-                          onFinish={onFinish}
-                          onFinishFailed={onFinishFailed}                      >
-                          <Form.Item
-                              name='education_level'
-                              label='Tipo de Formación'
-                              rules={ [
-                                  {
-                                      required: true,
-                                      message: 'Ingresa el tipo de formación'
-                                  }
-                              ] }
-                          >
-                              <Select placeholder="Selecciona el tipo de formación">
-                                  <Option value="male">INCONCLUSO</Option>
-                                  <Option value="female">EN CURSO</Option>
-                                  <Option value="female">EGRESADO</Option>
-                              </Select>
-                          </Form.Item>
-                          <Form.Item
-                              name='career_name'
-                              label='Nombre de la carrera'
-                              rules={ [
-                                  {
-                                      required: true,
-                                      message: 'Ingresa el nombre de la carrer'
-                                  }
-                              ] }>
-                              <Input type='textarea' />
-                          </Form.Item>
-
-                          <Form.Item
-                              name='studies_institution'
-                              label='Centro de estudios'
-                              rules={ [
-                                  {
-                                      required: true,
-                                      message: 'Ingresa la centro de estudios'
-                                  }
-                              ] }>
-                              <Input type='textarea' />
-                          </Form.Item>
-
-
-                      </Form>
-                  </Modal>
                   <Card style={{ margin: 10 }} type="inner" title="EDUCACIÓN FORMAL INCONCLUSA O EN CURSO">
-                      <Button
-                          type="primary"
-                          icon={<PlusOutlined />}
-
-                          onClick={ () => {
-                              setVisible4( true );
-                          } }
+                      <Form.Item
+                          name='education_type'
+                          label='Tipo de Intrucción'
+                          rules={ [
+                              {
+                                  required: true,
+                                  message: 'Ingresa el tipo de Intrucción'
+                              }
+                          ] }
                       >
-                          Ingresar Educación Formal Inconclusa o en Curso
-                      </Button>
-                      <br />
-                      <br />
-                      <Table columns={columnsInconclusa} >
-                      </Table>
+                          <Select placeholder="Selecciona el tipo de formación">
+                              <Option value="PRIMARIA">PRIMARIA</Option>
+                              <Option value="SECUNDARIA">SECUNDARIA</Option>
+                              <Option value="TERCER NIVEL">TERCER NIVEL</Option>
+                              <Option value="CUARTO NIVEL">CUARTO NIVEL</Option>
+                              <Option value="DOCTORADO">DOCTORADO</Option>
+                              <Option value="OTROS">OTROS</Option>
+                          </Select>
+                      </Form.Item>
+                      <Form.Item
+                          name='education_level'
+                          label='Tipo de Formación'
+                          rules={ [
+                              {
+                                  required: true,
+                                  message: 'Ingresa el tipo de formación'
+                              }
+                          ] }
+                      >
+                          <Select placeholder="Selecciona el tipo de formación">
+                              <Option value="INCONCLUSO">INCONCLUSO</Option>
+                              <Option value="EN CURSO">EN CURSO</Option>
+                              <Option value="EGRESADO">EGRESADO</Option>
+                              <Option value="FINALIZADO">FINALIZADO</Option>
+                          </Select>
+                      </Form.Item>
+                      <Form.Item
+                          name='career_name'
+                          label='Nombre de la carrera'
+                          rules={ [
+                              {
+                                  required: true,
+                                  message: 'Ingresa el nombre de la carrer'
+                              }
+                          ] }>
+                          <Input type='textarea' />
+                      </Form.Item>
+
+                      <Form.Item
+                          name='studies_institution'
+                          label='Centro de estudios'
+                          rules={ [
+                              {
+                                  required: true,
+                                  message: 'Ingresa la centro de estudios'
+                              }
+                          ] }>
+                          <Input type='textarea' />
+                      </Form.Item>
+
                   </Card>
               </Card>
-
-
-              <Modal key="Mod5"
-                     visible={ visible5 }
-                     title='Añadir enlace'
-                     okText='Agregar'
-                     confirmLoading={ isSaving }
-                     cancelText='Cancelar'
-                     onOk={  onCreate1}
-                     update={ false }
-                     onCancel={ () => {
-                         setVisible5( false );
-                     } }
-              >
-
-                  <Form
-
-                      form={ form }
-                      layout='vertical'
-                      name='form_in_modal'
-                      initialValues={{ remember: true }}
-                      onFinish={onFinish}
-                      onFinishFailed={onFinishFailed}                      >
-
-                      <Form.Item
-                          name='link_description'
-                          label='Descripción'
-                          rules={ [
-                              {
-                                  required: true,
-                                  message: 'Ingresa descripcion corta'
-                              }
-                          ] }>
-                          <Input type='textarea' />
-                      </Form.Item>
-
-                      <Form.Item
-                          name='link_type'
-                          label='Enlace web'
-                          rules={ [
-                              {
-                                  required: true,
-                                  message: 'Ingresa enlace web'
-                              }
-                          ] }>
-                          <Input type='textarea' />
-                      </Form.Item>
-
-
-                  </Form>
-              </Modal>
 
 
             <Card style={{ margin: 10 }} type="inner" title="ENLACES WEB"  >
 
                 <Card style={{ margin: 10 }} type="inner" title="Registro de enlaces"  >
 
-                    <Button
+                    <Form.Item
+                        name='link_description'
+                        label='Descripción'
+                        rules={ [
+                            {
+                                required: true,
+                                message: 'Ingresa descripcion corta'
+                            }
+                        ] }>
+                        <Input type='textarea' />
+                    </Form.Item>
 
-                        visible={ visible5 }
-                        type="primary"
-                        icon={<PlusOutlined />}
-
-                        onClick={ () => {
-                            setVisible5( true );
-                        } }
-                    >
-                        Nuevo Enlace Web
-
-                    </Button>
-                    <br />
-                    <br />
-                    <Table columns={columnsLink} >
-
-                    </Table>
+                    <Form.Item
+                        name='link_type'
+                        label='Enlace web'
+                        rules={ [
+                            {
+                                required: true,
+                                message: 'Ingresa enlace web'
+                            }
+                        ] }>
+                        <Input type='textarea' />
+                    </Form.Item>
 
                 </Card>
 
@@ -1548,45 +1278,6 @@ const Register = () => {
 
               </Card>
 
-
-              <Form.Item name='education_level'
-                         rules={ [
-                             {
-                                 required: true,
-                                 message: 'Ingresa tu nivel de educación'
-                             }
-                         ] }
-                         hasFeedback
-              >
-                  <Input prefix={ <UserOutlined /> } placeholder='Nivel de educación' />
-
-              </Form.Item>
-
-              <Form.Item name='career_name'
-                         rules={ [
-                             {
-                                 required: true,
-                                 message: 'Ingresa tu nombre de carrera'
-                             }
-                         ] }
-                         hasFeedback
-              >
-                  <Input prefix={ <UserOutlined /> } placeholder='Nombre de carrera' />
-
-              </Form.Item>
-
-              <Form.Item name='studies_institution'
-                         rules={ [
-                             {
-                                 required: true,
-                                 message: 'Ingresa tu intitucion'
-                             }
-                         ] }
-                         hasFeedback
-              >
-                  <Input prefix={ <UserOutlined /> } placeholder='institucion' />
-
-              </Form.Item>
 
             <Form.Item>
               <Button type='primary' htmlType='submit' className='login-form-button'>
