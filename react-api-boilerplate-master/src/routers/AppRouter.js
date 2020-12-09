@@ -52,18 +52,18 @@ const AppRouter = () => (
     <PublicRoute exact path={ Routes.HOME } component={ AsyncHome } />
     <PublicRoute path={ Routes.LOGIN } component={ AsyncLogin } />
     <PublicRoute path={ Routes.REGISTER } component={ AsyncRegister } />
-    <PublicRoute path={ Routes.ARTIST_DASHBOARD } component={ AsyncDashboardArtist } />
-      <PublicRoute path={ Routes.ARTIST_PUBLICATIONS_DASHBOARD } component={ AsyncDashboardPublicationsArtist } />
-      <PublicRoute path={ Routes.ARTIST_QUESTIONS_DASHBOARD } component={ AsyncDashboardQuestionsArtist } />
-      <PublicRoute path={ Routes.ARTIST_SELL_DASHBOARD } component={ AsyncDashboardSellArtist } />
-      <PublicRoute path={ Routes.ARTIST_METRICS_DASHBOARD } component={ AsyncDashboardMetricsArtist } />
-      <PublicRoute path={ Routes.ARTIST_REPUTATION_DASHBOARD } component={ AsyncDashboardReputationArtist } />
     <PublicRoute path={ Routes.ARTICLES } component={ AsyncArticles } />
     <PublicRoute path={ Routes.ABOUT } component={ AsyncAbout } />
 
     <PrivateRoute path={ Routes.PRIVATE } component={ AsyncPrivate } />
     <PrivateRoute path={ Routes.ARTICLE_ID } component={ AsyncArticle } />
     <PrivateRoute path={ Routes.LOGOUT } component={ AsyncLogout } />
+      <PrivateRoute path={ Routes.ARTIST_DASHBOARD } component={ AsyncDashboardArtist } />
+      <PrivateRoute path={ Routes.ARTIST_PUBLICATIONS_DASHBOARD } component={ AsyncDashboardPublicationsArtist } />
+      <PrivateRoute path={ Routes.ARTIST_QUESTIONS_DASHBOARD } component={ AsyncDashboardQuestionsArtist } />
+      <PrivateRoute path={ Routes.ARTIST_SELL_DASHBOARD } component={ AsyncDashboardSellArtist } />
+      <PrivateRoute path={ Routes.ARTIST_METRICS_DASHBOARD } component={ AsyncDashboardMetricsArtist } />
+      <PrivateRoute path={ Routes.ARTIST_REPUTATION_DASHBOARD } component={ AsyncDashboardReputationArtist } />
 
     <Route component={ NotFoundPage } />
   </Switch>

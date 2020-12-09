@@ -19,6 +19,7 @@ class UsersTableSeeder extends Seeder
 
         $password = Hash::make('123456');
 
+        $image_name = $faker->image('public/storage/user', 400, 300, null, false);
         User::create([
             'name'=> 'Administrador',
             'last_name' => 'Jaramillo',
@@ -26,12 +27,16 @@ class UsersTableSeeder extends Seeder
             'identity' => '1754488524',
             'birthday' => '1996-10-10',
             'phone' => '993731322',
-            'location' => 'Quito-Ecuador',
+            'profile_picture' => 'user/' . $image_name,
+            'country' => 'Ecuador',
+            'province' => 'Pichincha',
+            'city' => 'Quito',
+            'town' => 'Chillogallo',
             'culture' => 'Mestizo',
             'disability' => '0',
+            'disability_porcentage' => null,
             'stage_name' => 'FranXa',
             'field_cultural' => 'AAAAAA',
-            'main_activity' => 'Pintor',
             'secondary_activity'=> 'Escultor',
             'education_level' => 'Secuendaria',
             'career_name' => 'abc',
@@ -42,7 +47,7 @@ class UsersTableSeeder extends Seeder
             ]);
 
         for ($i = 0; $i < 10; $i++) {
-
+            $image_name = $faker->image('public/storage/user', 400, 300, null, false);
             User::create([
                 'name' => $faker->firstName,
                 'last_name' => $faker->lastName,
@@ -51,12 +56,16 @@ class UsersTableSeeder extends Seeder
                 'identity' => $faker->numberBetween(1712654897, 1794879546),
                 'birthday' => $faker->date("Y-m-d"),
                 'phone' => $faker->numberBetween(911111111, 999999999),
-                'location' => $faker->country,
+                'profile_picture' => 'user/' . $image_name,
+                'country' => $faker->country,
+                'province' => $faker->city,
+                'city' => $faker->city,
+                'town' => $faker->city,
                 'culture' => $faker->word,
                 'disability' => $faker->boolean,
+                'disability_porcentage' => $faker->numberBetween(30,80),
                 'stage_name' => $faker->word,
                 'field_cultural' => $faker->word,
-                'main_activity' => $faker->word,
                 'secondary_activity'=> $faker->word,
                 'education_level' => $faker->word,
                 'career_name' => $faker->word,
