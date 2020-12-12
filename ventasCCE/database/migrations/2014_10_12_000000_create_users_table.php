@@ -32,6 +32,7 @@ class CreateUsersTable extends Migration
             $table->boolean('disability');
             $table->integer('disability_porcentage')->nullable();
             $table->string('stage_name')->nullable();
+            $table->string('shop_name');
             $table->string('field_cultural');
             $table->string('secondary_activity');
             $table->string('education_level');

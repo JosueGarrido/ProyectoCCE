@@ -20,7 +20,7 @@ class User extends Authenticatable  implements JWTSubject
 //agregar profile picture y birthday
     protected $fillable = [
         'name','last_name', 'email', 'password','identity','birthday','phone','profile_picture','country','province','city','town',
-        'culture','disability','disability_porcentage','stage_name','field_cultural','secondary_activity','education_level',
+        'culture','disability','disability_porcentage','stage_name','shop_name','field_cultural','secondary_activity','education_level',
         'career_name','studies_institution','social_networks'
     ];
     const ROLE_SUPERADMIN = 'ROLE_SUPERADMIN';
@@ -106,6 +106,21 @@ class User extends Authenticatable  implements JWTSubject
     public function products()
     {
         return $this->hasMany('App\Product');
-
+    }
+    public function trajectories()
+    {
+        return $this->hasMany('App\Trajectory');
+    }
+    public function question()
+    {
+        return $this->hasMany('App\Questions');
+    }
+    public function answer()
+    {
+        return $this->hasMany('App\Answers');
+    }
+    public function reputation()
+    {
+        return $this->hasMany('App\Reputation');
     }
 }

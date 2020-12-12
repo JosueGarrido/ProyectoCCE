@@ -43,14 +43,14 @@ class TrajectoryController extends Controller
     public function update(Request $request, $id)
     {
         $this->authorize('update',$id);
-        $sales = Trajectory::findOrFail($id);
-        $sales->update($request->all());
-        return $sales;
+        $trajectories = Trajectory::findOrFail($id);
+        $trajectories->update($request->all());
+        return $trajectories;
     }
     public function delete(Request $request, $id)
     {
-        $sales = Trajectory::findOrFail($id);
-        $sales->delete();
+        $trajectories = Trajectory::findOrFail($id);
+        $trajectories->delete();
         return 204;
     }
 }
