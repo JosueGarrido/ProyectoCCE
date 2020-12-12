@@ -1,10 +1,10 @@
 <?php
 
-use App\Product;
+use App\Questions;
 use Illuminate\Database\Seeder;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
-class ProductTableSeeder extends Seeder
+class QuestionsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,7 +14,7 @@ class ProductTableSeeder extends Seeder
     public function run()
     {
         //Vaciar la tabla.
-        Product::truncate();
+        Questions::truncate();
 
         $faker = \Faker\Factory::create();
         // Obtenemos la lista de todos los usuarios creados e
@@ -25,17 +25,11 @@ class ProductTableSeeder extends Seeder
             // iniciamos sesión con este usuario
             JWTAuth::attempt(['email' => $user->email, 'password' => '123456']);
             // Y ahora con este usuario creamos algunos productos
-            $num_articles = 5;
-            for ($j = 0; $j < $num_articles; $j++) {
-                Product::create([
-                    'name' => $faker->domainWord,
-                    'description' => $faker->sentence,
-                    'price' => $faker->randomFloat(2,1,10000),
-                    'stock' => $faker->numberBetween(5,25),
-                    'sales' => $faker->numberBetween(1,5),
-                    'image' => $faker->word,
-                    'location' => $faker->city,
-                    'category_id' => $faker->numberBetween(1,6),
+            $num_questions = 2;
+            for ($j = 0; $j < $num_questions; $j++) {
+                Questions::create([
+                    'question' => $faker->sentence,
+                    'product_id' => $faker->numberBetween(1,55),
                 ]);
             }
         }

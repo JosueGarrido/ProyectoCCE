@@ -19,7 +19,7 @@ class UsersTableSeeder extends Seeder
 
         $password = Hash::make('123456');
 
-        $image_name = $faker->image('public/storage/user', 400, 300, null, false);
+        $image_name = $faker->image('public/storage/user', 200, 200, null, false);
         User::create([
             'name'=> 'Administrador',
             'last_name' => 'Jaramillo',
@@ -36,6 +36,7 @@ class UsersTableSeeder extends Seeder
             'disability' => '0',
             'disability_porcentage' => null,
             'stage_name' => 'FranXa',
+            'shop_name' => 'FranXa',
             'field_cultural' => 'AAAAAA',
             'secondary_activity'=> 'Escultor',
             'education_level' => 'Secuendaria',
@@ -47,7 +48,7 @@ class UsersTableSeeder extends Seeder
             ]);
 
         for ($i = 0; $i < 10; $i++) {
-            $image_name = $faker->image('public/storage/user', 400, 300, null, false);
+            $image_name = $faker->image('public/storage/user', 200, 200, null, false);
             User::create([
                 'name' => $faker->firstName,
                 'last_name' => $faker->lastName,
@@ -65,6 +66,7 @@ class UsersTableSeeder extends Seeder
                 'disability' => $faker->boolean,
                 'disability_porcentage' => $faker->numberBetween(30,80),
                 'stage_name' => $faker->word,
+                'shop_name' => $faker->word,
                 'field_cultural' => $faker->word,
                 'secondary_activity'=> $faker->word,
                 'education_level' => $faker->word,

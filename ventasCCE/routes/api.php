@@ -113,6 +113,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::post('weblinks', 'Web_LinksController@store');
     Route::put('weblinks/{id}', 'Web_LinksController@update');
     Route::delete('weblinks/{id}', 'Web_LinksController@delete');
+
     //trajectory
     Route::get('trajectories', 'TrajectoryController@index');
     Route::get('trajectories/{id}', 'TrajectoryController@show');
@@ -120,7 +121,26 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::put('trajectories/{id}', 'TrajectoryController@update');
     Route::delete('trajectories/{id}', 'TrajectoryController@delete');
 
+    //questions
+    Route::get('questions', 'QuestionsController@index');
+    Route::get('questions/{id}', 'QuestionsController@show');
+    Route::post('questions', 'QuestionsController@store');
+    Route::put('questions/{id}', 'QuestionsController@update');
+    Route::delete('questions/{id}', 'QuestionsController@delete');
 
+    //answers
+    Route::get('answers', 'AnswersController@index');
+    Route::get('answers/{id}', 'AnswersController@show');
+    Route::post('answers', 'AnswersController@store');
+    Route::put('answers/{id}', 'AnswersController@update');
+    Route::delete('answers/{id}', 'AnswersController@delete');
+
+    //reputation
+    Route::get('reputations', 'ReputationController@index');
+    Route::get('reputations/{id}', 'ReputationController@show');
+    Route::post('reputations', 'ReputationController@store');
+    Route::put('reputations/{id}', 'ReputationController@update');
+    Route::delete('reputations/{id}', 'ReputationController@delete');
 
 
     });

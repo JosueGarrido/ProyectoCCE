@@ -5,20 +5,24 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 
-class Trajectory extends Model
+class Answers extends Model
 {
-    protected $fillable =['start_date','trajectory_description'];
+    protected $fillable =['answer'];
 
     public static function boot()
     {
         parent::boot();
-        static::creating(function ($trayectories) {
-            $trayectories->user_id = Auth::id();
+        static::creating(function ($questions) {
+            $questions->user_id = Auth::id();
         });
     }
 
     public function user()
     {
         return $this->belongsTo('App\User');
+    }
+    public function Question()
+    {
+        return $this->belongsTo('App\Questions');
     }
 }

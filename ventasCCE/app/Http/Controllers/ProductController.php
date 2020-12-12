@@ -16,7 +16,6 @@ class ProductController extends Controller
         'stock' => 'required|int',
         'image' => 'required',
         'location' => 'required',
-        'score' => 'required',
 
     ];
     private static $messages =[
