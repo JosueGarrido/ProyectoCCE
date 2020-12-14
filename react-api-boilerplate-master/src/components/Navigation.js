@@ -50,6 +50,7 @@ const Navigation = ( props ) => {
           width: 'fit-content'
         } }
       >
+
         <Menu.Item key={ Routes.HOME }>
           <Link to={ Routes.HOME } style={ linkStyle }>Home</Link>
         </Menu.Item>
@@ -68,6 +69,10 @@ const Navigation = ( props ) => {
 
         <Menu.Item key={ Routes.ABOUT }>
           <Link to={ Routes.ABOUT } style={ linkStyle }>About</Link>
+        </Menu.Item>
+
+        <Menu.Item key={ Routes.HOW_TO_BUY}>
+          <Link to={ Routes.HOW_TO_BUY } style={ linkStyle }>¿Cómo Comprar?</Link>
         </Menu.Item>
 
         {
