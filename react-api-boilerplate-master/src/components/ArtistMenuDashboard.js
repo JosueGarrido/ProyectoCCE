@@ -49,6 +49,7 @@ const ArtistMenuDashboard = () => (
                         </Menu.Item>
                     </SubMenu>
                     <Divider/>
+
                     <SubMenu
                         key="configuracion"
                         title={
