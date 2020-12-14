@@ -1,12 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Resources\TrajectoryCollection;
+
 use App\Trajectory;
-use App\Http\Resources\TrajectoryCollection as TrajectoryResource;
-
-
-use Facade\Ignition\Tabs\Tab;
+use App\Http\Resources\Trajectory as TrajectoryResource;
+use App\Http\Resources\TrajectoryCollection;
 use Illuminate\Http\Request;
 
 
@@ -15,9 +13,6 @@ class TrajectoryController extends Controller
     private static $rules =[
         'start_date' => 'required',
         'trajectory_description' => 'required',
-
-
-
 
     ];
     private static $messages =[

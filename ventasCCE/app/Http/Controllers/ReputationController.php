@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Reputation;
+use App\Http\Resources\Reputation as ReputationResource;
 use App\Http\Resources\ReputationCollection;
-use App\Http\Resources\ReputationCollection as ReputationResource;
 use Illuminate\Http\Request;
 
 class ReputationController extends Controller

@@ -11,14 +11,7 @@ class Product extends JsonResource
      *
      * @param  \Illuminate\Http\Request  $request
      * @return array
-     *  $table->bigIncrements('id');
-    $table->string('name');
-    $table->string('description');
-    $table->float('price',6,2);
-    $table->integer('stock');
-    $table->string('image');
-    $table->string('location',50);
-    $table->integer('score');
+     *
      */
     public function toArray($request)
     {
@@ -31,6 +24,7 @@ class Product extends JsonResource
             'sales' => $this ->sales,
             'image' => $this ->image,
             'location' => $this ->location,
+            'user_id' => $this ->user_id,
 
         ];
     }
