@@ -18,6 +18,8 @@ class Questions extends JsonResource
         return [
             'id' => $this ->id,
             'question' => $this ->question,
+            'user_id' => $this ->user_id,
+            'product_id' => $this ->product_id,
 
         ];
     }

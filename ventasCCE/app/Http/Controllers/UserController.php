@@ -43,7 +43,11 @@ class UserController extends Controller{
         return User::all();
         //return new UserCollection(User::paginate (25));
     }
-
+    public function show(User $user)
+    {
+        $this->authorize('view', $user);
+        return response()->json( new UserResource($user), 200);
+    }
     public function image(User $user)
     {
         return response()->download(public_path(Storage::url($user->profile_picture)), $user->name);

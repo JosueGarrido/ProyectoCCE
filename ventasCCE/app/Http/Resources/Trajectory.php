@@ -19,6 +19,7 @@ class Trajectory extends JsonResource
             'id' => $this ->id,
             'star_date' => $this ->star_date,
             'trajectory_description' => $this ->trajectory_description,
+            'user_id' => $this ->user_id,
 
         ];
     }

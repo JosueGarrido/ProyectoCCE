@@ -19,6 +19,11 @@ class Reputation extends JsonResource
             'id' => $this ->id,
             'score' => $this ->score,
             'comment' => $this ->comment,
+            'user' => "/api/users/" . $this->user_id,
+            'user_data' => $this->user,
+            'product_id' => $this ->product_id,
+            'created_at' => $this ->created_at,
+
         ];
     }
 }
