@@ -53,6 +53,7 @@ const ArtistQuestionsDashboard = () => (
 
 
                             </Col>
+
                             <Col  xs={10} sm={18} md={10} style={ { marginBottom: 30 } } >
                                 <p>N° de Publicaciones: </p>
                             </Col>

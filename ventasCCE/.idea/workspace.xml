@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33b01b25-7452-4012-b36b-7f16a70ad837" name="Default Changelist" comment="">
+
       <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/ArtistMenuDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/ArtistMenuDashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/ArtistResumeDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/ArtistResumeDashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/styles/app.css" afterDir="false" />
@@ -37,6 +38,7 @@
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_26_175207_create_web__links_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_26_175207_create_web__links_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +163,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../react-api-boilerplate-master" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -225,8 +227,10 @@
       <workItem from="1606920116480" duration="1624000" />
       <workItem from="1607320925948" duration="2135000" />
       <workItem from="1607466218129" duration="973000" />
-      <workItem from="1607720923593" duration="14213000" />
-      <workItem from="1607791927805" duration="18002000" />
+      <workItem from="1607720923593" duration="13670000" />
+      <workItem from="1607913623193" duration="2494000" />
+      <workItem from="1607985102938" duration="1937000" />
+
     </task>
     <servers />
   </component>
@@ -255,11 +259,12 @@
     </state>
     <state x="468" y="195" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1607967457476" />
     <state x="499" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1603385662338" />
-    <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1603759111344">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="549" y="178" key="FileChooserDialogImpl" timestamp="1607985110306">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="1916" y="70" key="FileChooserDialogImpl/0.0.1366.728/1366.-125.1538.900@1366.-125.1538.900" timestamp="1601176576022" />
     <state x="488" y="158" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1601931202791" />
+    <state x="549" y="178" key="FileChooserDialogImpl/0.0.1536.824/1920.70.1440.860@0.0.1536.824" timestamp="1607985110306" />
     <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1603759111344" />
     <state width="1358" height="199" key="GridCell.Tab.0.bottom" timestamp="1605140896851">
       <screen x="0" y="23" width="1440" height="821" />
