@@ -12,8 +12,8 @@ class Reputation extends Model
     public static function boot()
     {
         parent::boot();
-        static::creating(function ($questions) {
-            $questions->user_id = Auth::id();
+        static::creating(function ($reputation) {
+            $reputation->user_id = Auth::id();
         });
     }
 

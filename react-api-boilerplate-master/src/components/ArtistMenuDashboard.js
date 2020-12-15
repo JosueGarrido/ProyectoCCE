@@ -1,12 +1,10 @@
 import React from 'react';
-import { Menu, Divider, Row, Col, Layout, Typography } from 'antd';
+import { Menu, Divider, Row, Col } from 'antd';
 import {LoadingOutlined, LogoutOutlined, SettingOutlined, ShoppingOutlined} from '@ant-design/icons';
 import Routes from "../constants/routes";
 import {Link} from "react-router-dom";
 
-const { Title } = Typography;
 const { SubMenu } = Menu;
-const { Content, Sider } = Layout;
 
 const ArtistMenuDashboard = () => (
     <>
