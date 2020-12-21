@@ -19,7 +19,7 @@ class UsersTableSeeder extends Seeder
 
         $password = Hash::make('123456');
 
-        $image_name = $faker->image('public/storage/user', 200, 200, null, false);
+        $image_name = $faker->image('./public/storage/user', 200, 200, null, false);
         User::create([
             'name'=> 'Administrador',
             'last_name' => 'Jaramillo',
@@ -48,7 +48,7 @@ class UsersTableSeeder extends Seeder
             ]);
 
         for ($i = 0; $i < 10; $i++) {
-            $image_name = $faker->image('public/storage/user', 200, 200, null, false);
+            $image_name = $faker->image('./public/storage/user', 200, 200, null, false);
             User::create([
                 'name' => $faker->firstName,
                 'last_name' => $faker->lastName,

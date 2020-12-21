@@ -20,23 +20,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33b01b25-7452-4012-b36b-7f16a70ad837" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/ArtistMenuDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/ArtistMenuDashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/ReputationList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/ReputationList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/data/useArticleComments.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/data/useArticleComments.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/data/useReputationList.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/ArtistResumeDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/ArtistResumeDashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/styles/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RecognitionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RecognitionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReputationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReputationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TrajectoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TrajectoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/Answers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/Answers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Resources/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/Questions.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/Questions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Resources/Reputation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/Reputation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/Trajectory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/Trajectory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Reputation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Reputation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_26_175207_create_web__links_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_26_175207_create_web__links_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/QuestionsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/QuestionsTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/ReputationTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ReputationTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,7 +224,11 @@
       <workItem from="1607320925948" duration="2135000" />
       <workItem from="1607466218129" duration="973000" />
       <workItem from="1607720923593" duration="14213000" />
-      <workItem from="1607791927805" duration="18002000" />
+      <workItem from="1607791927805" duration="20563000" />
+      <workItem from="1608070500785" duration="550000" />
+      <workItem from="1608072083442" duration="4730000" />
+      <workItem from="1608347064436" duration="1310000" />
+      <workItem from="1608392892821" duration="2041000" />
     </task>
     <servers />
   </component>
@@ -250,10 +252,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="361" y="91" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1601996876713" />
-    <state x="468" y="195" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1607967457476">
+    <state x="468" y="195" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608072505096">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="468" y="195" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1607967457476" />
+    <state x="468" y="195" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1608072505096" />
     <state x="499" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1603385662338" />
     <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1603759111344">
       <screen x="0" y="0" width="1536" height="864" />

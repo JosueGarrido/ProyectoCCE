@@ -25,7 +25,7 @@ class ReputationTableSeeder extends Seeder
             // iniciamos sesión con este usuario
             JWTAuth::attempt(['email' => $user->email, 'password' => '123456']);
             // Y ahora con este usuario creamos algunos productos
-            $num_reputations = 2;
+            $num_reputations = 10;
             for ($j = 0; $j < $num_reputations; $j++) {
                 Reputation::create([
                     'score' => $faker->numberBetween(1,5),

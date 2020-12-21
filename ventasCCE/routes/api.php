@@ -21,10 +21,11 @@ Route::group(['middleware' => ['cors']], function () {
     Route::get('users', 'UserController@index');
     Route::delete('users/{user}', 'UserController@delete');
     Route::get('users/{user}/profile_picture', 'UserController@image');
-    Route::get('products', 'ProductController@index');
+    Route::get('products', 'ProductController@indexall');
 
     Route::group(['middleware' => ['jwt.verify']], function() {
 
+        Route::get('user', 'UserController@getAuthenticatedUser');
         Route::get('users/{user}', 'UserController@show');
         Route::post('users', 'UserController@store');
         Route::put('users/{user}', 'UserController@update');
@@ -86,6 +87,9 @@ Route::group(['middleware' => ['cors']], function () {
         Route::put('products/{id}', 'ProductController@update');
         Route::delete('products/{id}', 'ProductController@delete');
 
+        //Productos de un usuario
+        Route::get('users/{user}/products/', 'ProductController@index');
+
         //Reconocimientos
         Route::get('recognitions', 'RecognitionController@index');
         Route::get('recognitions/{id}', 'RecognitionController@show');
@@ -131,10 +135,11 @@ Route::group(['middleware' => ['cors']], function () {
 
         //reputation
         Route::get('reputations', 'ReputationController@index');
-        Route::get('reputations/{reputation}', 'ReputationController@show');
+        Route::get('reputations/{id}', 'ReputationController@show');
         Route::post('reputations', 'ReputationController@store');
         Route::put('reputations/{id}', 'ReputationController@update');
         Route::delete('reputations/{id}', 'ReputationController@delete');
+
 
     });
 });

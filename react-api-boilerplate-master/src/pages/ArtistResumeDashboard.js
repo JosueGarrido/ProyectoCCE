@@ -11,7 +11,7 @@ const {  Content, Sider } = Layout;
 
 const ArtistResumeDashboard = () => {
 
-    const {isAuthenticated, currentUser} = useAuth();
+    const {currentUser} = useAuth();
 
 
     return (

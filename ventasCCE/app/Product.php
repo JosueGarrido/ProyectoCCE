@@ -27,7 +27,7 @@ class Product extends Model
     }
     public function question()
     {
-        return $this->hasMany('App\Question');
+        return $this->hasMany('App\Questions');
     }
     public function reputation()
     {
