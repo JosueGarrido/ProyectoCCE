@@ -1,13 +1,49 @@
 import React, { useEffect, useState } from 'react';
 import { Skeleton, Card, Col, Row, Radio, Typography, Button, Avatar, Rate } from 'antd';
-import { useReputationList } from '../data/useReputationList';
+import { useProductsList } from '../data/useProductsList';
+import { useUserList } from '../data/useUserList';
 import ShowError from './ShowError';
+import {LoadingOutlined, LogoutOutlined} from "@ant-design/icons";
+import {useAuth} from "../providers/Auth";
 
 const { Text, Title } = Typography;
 const {Meta} = Card;
+
 const ReputationList = ( props ) => {
 
-        const { reputations, isLoading, isError, mutate } = useReputationList();
+    const {currentUser} = useAuth();
+
+        const { products, isLoading, isError, mutate } = useProductsList(currentUser && currentUser.id);
+        const { users } = useUserList();
+
+
+    //console.log('productos', products);
+    const commentsconcat = [];
+    const comments = [];
+    const user = [];
+
+
+
+    if (products !== undefined) {
+        for (var i=0; i< (products.length); i++ ){
+            commentsconcat.push(products[i].comment);
+        }
+    }
+
+    for (var n = 0; n < commentsconcat.length; n++ ){
+        Array.prototype.push.apply(comments, commentsconcat[n]);
+    }
+
+
+
+    if (users !== undefined) {
+        console.log('usuarios', users);
+    }
+
+    console.log('comentarios', comments);
+
+
+
         // const [ articles, setArticles ] = useState( props.articles );
 
         // useEffect( () => {
@@ -15,18 +51,12 @@ const ReputationList = ( props ) => {
         //   setArticles( props.articles );
         // }, [ props.articles ] );
 
-        const handleChangeCategory = ( e ) => {
-            // setArticles( props.articles.filter( ( article ) => e.target.value === 'all' || article.category_data.id ===
-            // e.target.value ) );
-        };
-
         if( isLoading ) {
             return <Row justify='center' gutter={ 30 }>
                 {
                     [ ...new Array( 9 ) ].map( ( _, i ) =>
-                        <Col xs={ 24 } sm={ 12 } md={ 8 } style={ { marginBottom: 30 } } key={ i }>
+                        <Col xs={ 24 } sm={ 18 } md={ 24 } style={ { marginBottom: 20 } } key={ i }>
                             <div style={ { textAlign: 'center' } }>
-                                <Skeleton.Image style={ { width: 200 } } />
                                 <Card title='' extra='' cover='' loading />
                             </div>
                         </Col>
@@ -44,19 +74,26 @@ const ReputationList = ( props ) => {
 
                 <Row justify='center' gutter={ 30 }>
                     {
-                        reputations.map( ( reputations, i ) => (
+                        comments.map( ( reputations, i ) => (
                             <Col xs={ 24 } sm={ 18 } md={ 24 } style={ { marginBottom: 20 } } key={ i }>
                                 { reputations.comment
                                     ? <Card>
-                                        <Meta
-                                            avatar={<Avatar
-                                                size={90}
-                                                alt={ reputations.user_data.name }
-                                                src={ `http://localhost:8000/storage/${ reputations.user_data.profile_picture }` }
-                                            />}
-                                            title={`Nombre del Comprador: ${ reputations.user_data.name } ${ reputations.user_data.last_name }`}
-                                            description={`Descripción: ${reputations.comment}`}
-                                        />
+                                        {
+                                            users === undefined
+                                                ? <Text>No cargan los datos</Text>
+                                                :
+                                                <Meta
+                                                      avatar={<Avatar
+                                                        size={90}
+                                                        alt={ users[reputations.user_id-1].name }
+                                                        src={ `http://localhost:8000/storage/${ users[reputations.user_id-1].profile_picture }` }
+                                                      />}
+
+
+                                                    title={`Nombre del Comprador: ${users[reputations.user_id-1].name} ${users[reputations.user_id-1].last_name}`}
+                                                    description={`Descripción: ${reputations.comment}`}
+                                                />
+                                        }
 
                                         <Text type='secondary'><Text strong>Valoración: </Text>
                                             <Rate disabled defaultValue={ reputations.score } />
@@ -65,13 +102,13 @@ const ReputationList = ( props ) => {
 
                                     </Card>
                                     : <div style={ { textAlign: 'center' } }>
-                                        <Skeleton.Image style={ { width: 200 } } />
                                         <Card title='' extra='' cover='' loading />
                                     </div>
                                 }
                             </Col>
                         ) )
                     }
+
                 </Row>
             </>
         );

@@ -25,7 +25,7 @@ class QuestionsTableSeeder extends Seeder
             // iniciamos sesión con este usuario
             JWTAuth::attempt(['email' => $user->email, 'password' => '123456']);
             // Y ahora con este usuario creamos algunos productos
-            $num_questions = 2;
+            $num_questions = 10;
             for ($j = 0; $j < $num_questions; $j++) {
                 Questions::create([
                     'question' => $faker->sentence,
