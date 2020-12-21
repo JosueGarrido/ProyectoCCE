@@ -30,7 +30,7 @@ class Product extends JsonResource
             'stock' => $this ->stock,
             'image' => $this ->image,
             'location' => $this ->location,
-            'score' => $this ->score,
+
 
         ];
     }

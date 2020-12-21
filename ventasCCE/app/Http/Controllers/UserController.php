@@ -77,7 +77,7 @@ class UserController extends Controller{
            'birthday' => 'required',
            'phone' => 'required|integer|unique:users',
            'location' => 'required',
-           'culture' => 'required',
+          /* 'culture' => 'required',
            'disability' => 'required',
            'stage_name' => 'required',
            'field_cultural' => 'required',
@@ -86,7 +86,7 @@ class UserController extends Controller{
            'education_level' => 'required',
            'career_name' => 'required',
            'studies_institution' => 'required',
-           'social_networks' => 'required',
+           'social_networks' => 'required',*/
         ],self::$messages);
 
         $user = User::create([
@@ -99,7 +99,7 @@ class UserController extends Controller{
             'birthday' => $request->get('birthday'),
             'phone' => $request->get('phone'),
             'location' => $request->get('location'),
-            'culture' => $request->get('culture'),
+           /* 'culture' => $request->get('culture'),
             'disability' => $request->get('disability'),
             'stage_name' => $request->get('stage_name'),
             'field_cultural' => $request->get('field_cultural'),
@@ -108,7 +108,7 @@ class UserController extends Controller{
             'education_level' => $request->get('education_level'),
             'career_name' => $request->get('career_name'),
             'studies_institution' => $request->get('studies_institution'),
-            'social_networks' => $request->get('social_networks'),
+            'social_networks' => $request->get('social_networks'),*/
         ]);
 
 

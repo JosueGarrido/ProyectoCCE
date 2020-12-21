@@ -25,16 +25,7 @@ class CreateUsersTable extends Migration
             $table->integer('phone');
             //$table->image('profile_picture');
             $table->string('location');
-            $table->string('culture');
-            $table->boolean('disability');
-            $table->text('stage_name');
-            $table->string('field_cultural');
-            $table->string('main_activity');
-            $table->string('secondary_activity');
-            $table->string('education_level');
-            $table->string('career_name');
-            $table->string('studies_institution');
-            $table->string('social_networks');
+
             $table->rememberToken();
             $table->timestamps();
         });

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class Product extends Model
 {
-    protected $fillable=['name','description','price','stock','image','location','score'];
+    protected $fillable=['name','description','price','stock','image','location', 'category_id'];
 
     public static function boot()
     {
