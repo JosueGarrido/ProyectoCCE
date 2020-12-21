@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { usePublicationList } from '../data/usePublicationList';
 import ShowError from './ShowError';
 import {Form, Input, Select} from "../pages/Antd";
+import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
 import Publications from "../pages/Publications";
 import API from "../data";
 import ErrorList from "./ErrorList";
@@ -94,8 +95,9 @@ const AppointmentList = (props ) => {
                     {
                         products.map((product, index)=>{
                             return (
-                                <Col>
+                                <Col >
                                     <Card
+
                                         onClick={ () => {
                                             handleViewDetails(product.id)
                                             handleViewName(product.name)
@@ -108,7 +110,7 @@ const AppointmentList = (props ) => {
 
                                         }}
                                         style={{
-                                            width: 500,
+                                            width: 1000,
                                             marginRight: 20,
                                             marginBottom: 30,
                                             background: '#fffff'
@@ -118,36 +120,30 @@ const AppointmentList = (props ) => {
 
 
                                     >
+
+
                                         <Meta
-                                            avatar={<Avatar size={64} src="https://draherraizmedicoypaciente.files.wordpress.com/2013/12/sin-tc3adtulo.png" />}
-                                            title={`Nombre: ${product.name} 
-                                            Descripción: ${product.description} Precio: ${product.price} 
-                                            Stock: ${product.stock} Ubicación: ${product.location}
-                                            Score: ${product.score}`}
+                                            avatar={<Avatar size={200} src="https://www.elcomercio.com/files/article_main/uploads/2017/08/06/5987d8614c821.jpeg" />}
+                                            title={`Nombre: ${product.name}`}
+                                            description={`Descripción: ${product.description}
+                                            `}
+
 
                                         />
 
+                                        <div style={{display: 'inline-block', padding: 'auto'}}>
+                                            <p>Precio: ${product.price} </p>
+                                            <p>Stock: {product.stock} </p>
+                                            <p>Ubicación: {product.location} </p>
+                                            <p>Score: {product.score} </p>
+
+                                            <Button icon ={<EditOutlined />} type="primary"> Editar</Button>
+                                            <Button icon={<DeleteOutlined />} type="primary" danger>Eliminar</Button>
+                                        </div>
+
+
                                     </Card>
-                                    <Modal
-                                        title={`Publicacion: ${currentPublicationId}`}
-                                        visible={showModal}
 
-                                        onOk={ () => handleOk()}
-                                        onCancel={ () => handleCancel()}
-                                    >
-                                        Nombre: {currentPublicationName}
-                                        <Divider/>
-                                        Descripción: {currentPublicationDescription}
-                                        <Divider/>
-                                        Precio: {currentPublicationDescription}
-                                        <Divider/>
-                                        Stock: {currentPublicationStock}
-                                        <Divider/>
-                                        Ubicación: {currentPublicationLocation}
-                                        <Divider/>
-                                        Score: {currentPublicationScore}
-
-                                    </Modal>
 
 
                                 </Col>

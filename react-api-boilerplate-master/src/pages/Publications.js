@@ -4,8 +4,7 @@ import { translateMessage } from '../utils/translateMessage';
 import PublicationList from '../components/PublicationList';
 
 import {
-    DatePicker,
-    TimePicker,
+    Upload,
     Form,
     Input,
     InputNumber,
@@ -19,10 +18,16 @@ import {
     Select
 } from 'antd';
 import { useAuth } from '../providers/Auth';
-import {CarryOutOutlined} from '@ant-design/icons';
+import {CarryOutOutlined, PlusOutlined} from '@ant-design/icons';
 import { mutate } from 'swr';
 import Cookies from "js-cookie";
 import ErrorList from "../components/ErrorList";
+import {usePublicationList} from "../data/usePublicationList";
+import {useCategories} from "../data/useCategories";
+import {useCategories2} from "../data/useCategories2";
+import {useCategories3} from "../data/useCategories3";
+import {useCategories4} from "../data/useCategories4";
+import {Card} from "./Antd";
 
 
 
@@ -42,6 +47,12 @@ export const fetchAppointments = async() => {
  * @constructor
  */
 const {Option} = Select;
+function getBase64( file, callback ) {
+    console.log( 'file', file );
+    const reader = new FileReader();
+    reader.addEventListener( 'load', () => callback( reader.result ) );
+    reader.readAsDataURL( file );
+}
 
 const Publications = ( {
                            update,
@@ -51,8 +62,14 @@ const Publications = ( {
                        } ) => {
 
     const [ submitting, setSubmitting ] = useState( false );
+    const { categories, isLoading, isError } = useCategories();
+    const { categories2, isLoading2, isError2 } = useCategories2();
+    const { categories3, isLoading3, isError3 } = useCategories3();
+    const { categories4, isLoading4, isError4 } = useCategories4();
     const [ form ] = Form.useForm();
     const [ isSaving, setIsSaving ] = useState( false );
+    const [ imageUrl, setImageUrl ] = useState( null );
+    const [ fileList, setFileList ] = useState( [] );
     const onCreate = async values => {
         console.log( 'Received values of form: ', values );
 
@@ -63,17 +80,21 @@ const Publications = ( {
 
                 // use form data to be able to send a file to the server
                 const data = new FormData();
-                data.append( 'name', values.datetime );
+                data.append( 'name', values.name );
                 data.append( 'description', values.description );
                 data.append( 'price', values.price );
                 data.append( 'stock', values.stock );
+                data.append( 'image', values.image[ 0 ] );
                 data.append( 'location', values.location );
-                data.append( 'score', values.score );
+                data.append('category_id', values.category_id)
+
 
 
                 try {
                     await API.post( '/products', data ); // post data to server
                     form.resetFields();
+                    setFileList( [] );
+                    setImageUrl( null );
                     setIsSaving( false );
                     await mutate('/products');
                     //onSubmit();
@@ -122,6 +143,43 @@ const Publications = ( {
 
             message.error( translateMessage( error.message ) );
         }
+    };
+
+    const normPhotoFile = e => {
+        console.log( 'Upload event:', e );
+        const file = e.file;
+        const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
+        if( !isJpgOrPng ) {
+            message.error( 'La imagen debe tener formato JPG o PNG' );
+            setFileList( [] );
+            setImageUrl( null );
+            return null;
+        }
+        const isLt2M = file.size / 1024 / 1024 < 2;
+        if( !isLt2M ) {
+            message.error( 'La imagen debe ser menor a 2MB' );
+            setFileList( [] );
+            setImageUrl( null );
+            return null;
+        }
+
+        if( file.status === 'removed' ) {
+            setFileList( [] );
+            setImageUrl( null );
+            return null;
+        }
+
+        getBase64( e.file, imageUrl => setImageUrl( imageUrl ) );
+
+        if( Array.isArray( e ) ) {
+            return e;
+        }
+
+        console.log( 'e.file', e.file );
+        console.log( 'e.fileList', e.fileList );
+        setFileList( [ file ] );
+
+        return e && [ e.file ];
     };
 
     const handleViewDetails = () => {
@@ -182,16 +240,118 @@ const Publications = ( {
                                hasFeedback>
                         <Input />
                     </Form.Item>
-                    <Form.Item name='time'
-                               label="Hora"
+                    <Form.Item name='price'
+                               label="Precio"
                                rules={ [
                                    {
                                        required: true,
-                                       message: 'Ingrese la hora en la que requiere la cita'
+                                       message: 'Ingrese el precio del producto'
                                    }
                                ] }
                                hasFeedback>
                         <Input />
+                    </Form.Item>
+
+                    <Form.Item name='stock'
+                               label="Stock"
+                               rules={ [
+                                   {
+                                       required: true,
+                                       message: 'Ingrese la cantidad de productos '
+                                   }
+                               ] }
+                               hasFeedback>
+                        <Input />
+                    </Form.Item>
+
+                    <Form.Item name='image'
+                               label='Upload'
+                               valuePropName='fileList'
+                               getValueFromEvent={ normPhotoFile }
+                               rules={ [
+                                   {
+                                       required: true,
+                                       message: 'Sube tu foto'
+                                   }
+                               ] }
+                    >
+                        <Upload name='files'
+                                accept='image/jpeg,image/png'
+                                listType='picture-card'
+                                multiple={ false }
+                                showUploadList={ false }
+                                beforeUpload={ () => false }
+                            // onChange={ handleChangePhoto }
+                                fileList={ fileList }
+                        >
+                            { imageUrl
+                                ? <img src={ imageUrl } alt='Foto' style={ { width: '80px' } } />
+                                : <div>
+                                    <PlusOutlined />
+                                    <div className='ant-upload-text'>Upload</div>
+                                </div> }
+                        </Upload>
+                    </Form.Item>
+                    <Form.Item name='location'
+                               label="Ubicación"
+                               rules={ [
+                                   {
+                                       required: true,
+                                       message: 'Ingrese la ciudad'
+                                   }
+                               ] }
+                               hasFeedback>
+                        <Input />
+                    </Form.Item>
+
+                    <Form.Item name='category_id'
+                               label='Categoria'
+                               rules={ [
+                                   {
+                                       required: true,
+                                       message: 'Selecciona una categoria'
+                                   }
+                               ] }
+                    >
+                        <Select style={ { width: 315 } } onChange={ handleChangeCategory } loading={ !categories }>
+                            {
+                                categories && categories.map( ( category, index ) =>
+                                    <Option value={ category.id } key={ index }>{` ${ category.name } `}</Option>
+                                )
+                            }
+                        </Select>
+                    </Form.Item>
+
+
+                    <Form.Item
+                        noStyle
+                        shouldUpdate={(prevValues, currentValues) => prevValues.category_id !== currentValues.category_id}
+                    >
+                        {({ getFieldValue }) => {
+                            return getFieldValue('category_id') === 'Artes plasticas' ? (
+                                <Form.Item name='category_id'
+                                           label="Categoria 2"
+                                           rules={ [
+                                               {
+                                                   required: true,
+                                                   message: 'Seleccione'
+                                               }
+                                           ] }
+                                           hasFeedback
+                                >
+                                    <Select
+                                        placeholder="Selecciona "
+                                    >
+                                        {
+                                            categories2 && categories2.map( ( category2, index ) =>
+                                                <Option value={ category2.id } key={ index }>{` ${ category2.name } `}</Option>
+                                            )
+                                        }
+
+                                    </Select>
+                                </Form.Item>
+                            ) : null;
+                        }}
                     </Form.Item>
 
                 </Form>
