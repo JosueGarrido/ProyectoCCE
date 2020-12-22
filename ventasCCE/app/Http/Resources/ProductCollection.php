@@ -14,11 +14,13 @@ class ProductCollection extends ResourceCollection
      */
     public function toArray($request)
     {
-        return [
+      /*  return [
             "data" => $this -> collection,
             "links" => [
                 "self" =>"link"
             ]
-        ];
+        ];*/
+
+        return parent::toArray($request);
     }
 }

@@ -1287,6 +1287,15 @@ const Register = () => {
             </Form.Item>
 
 
+<<<<<<< HEAD
+            </Card>
+          </Form>
+            </Card>
+        </Col>
+      </Row>
+    </>
+  );
+=======
           </Form>
               </Card>
             </Col>
@@ -1294,6 +1303,7 @@ const Register = () => {
 
         </>
     );
+>>>>>>> dev
 };
 
 export default withoutAuth( Register );
