@@ -1,16 +1,15 @@
-/**
- * Created by chalosalvador on 2/7/20
- */
 import React, { useState } from 'react';
 
 import Routes from '../constants/routes';
 import { useAuth } from '../providers/Auth';
-import { Menu } from 'antd';
+import { Menu,Button } from 'antd';
 import { LogoutOutlined, LoginOutlined, LoadingOutlined, UserOutlined } from '@ant-design/icons';
 import { Link, useLocation } from 'react-router-dom';
 import '../styles/navigation.css';
-
-const linkStyle = {};
+const { SubMenu } = Menu;
+const linkStyle = {
+    color: 'white',
+};
 
 const Navigation = ( props ) => {
   let location = useLocation();
@@ -38,38 +37,39 @@ const Navigation = ( props ) => {
   };
 
   return (
-    <>
-      <Menu
-        mode={ props.mode }
-        onClick={ handleClick }
-        className='menu'
-        theme='dark'
-        selectedKeys={ [ menuState.current ] }
-        style={ {
-          lineHeight: '64px',
-          width: 'fit-content'
-        } }
-      >
 
-        <Menu.Item key={ Routes.HOME }>
-          <Link to={ Routes.HOME } style={ linkStyle }>Home</Link>
-        </Menu.Item>
+      <>
+        <Menu
+            mode={ props.mode }
+            onClick={ handleClick }
+            className='menu'
+            theme='light'
+            selectedKeys={ [ menuState.current ] }
+            style={ {
+              lineHeight: '64px',
+              width: 'fit-content'
+            } }
+        >
 
-        <Menu.Item key={ Routes.ARTICLES }>
-          <Link to={ Routes.ARTICLES } style={ linkStyle }>Articles</Link>
-        </Menu.Item>    
 
-        <Menu.Item key={ Routes.PRIVATE }>
-          <Link to={ Routes.PRIVATE } style={ linkStyle }>Privada</Link>
-        </Menu.Item>
 
-        <Menu.Item key={ Routes.ANTD }>
-          <Link to={ Routes.ANTD } style={ linkStyle }>ANTD</Link>
-        </Menu.Item>
+            <SubMenu  key={ Routes.ABOUT } className='scale-up-bottom' style={ linkStyle } title="Categorías">
+                <Menu.ItemGroup className='sub-menu' >
+                    <Menu.Item key="1">Artes Musicales</Menu.Item>
+                    <Menu.Item key="2">Artes Literarias</Menu.Item>
+                    <Menu.Item key="3">Artes Escénicas</Menu.Item>
+                    <Menu.Item key="4">Artes Plásticas</Menu.Item>
+                    <Menu.Item key="5">Artes Visuales</Menu.Item>
+                    <Menu.Item key="6">Artesanías</Menu.Item>
+                </Menu.ItemGroup>
+            </SubMenu>
 
-        <Menu.Item key={ Routes.ABOUT }>
-          <Link to={ Routes.ABOUT } style={ linkStyle }>About</Link>
-        </Menu.Item>
+
+
+          <Menu.Item key={ Routes.ARTICLES } className='scale-up-bottom'>
+              <Link to={ Routes.ARTICLES } style={ linkStyle }>Artistas</Link>
+          </Menu.Item>
+        </Menu >
 
         <Menu.Item key={ Routes.HOW_TO_BUY}>
           <Link to={ Routes.HOW_TO_BUY } style={ linkStyle }>¿Cómo Comprar?</Link>
@@ -79,37 +79,8 @@ const Navigation = ( props ) => {
           isAuthenticated
             ? <Menu.SubMenu icon={ <UserOutlined /> } title={ currentUser && currentUser.name }>
 
-                <Menu.Item key={ Routes.LOGIN }>
-                  <Link to={ Routes.ARTIST_DASHBOARD } className='artist-dashboard'>
-                    {
-                      isCheckingAuth
-                          ? <LoadingOutlined />
-                          : <><LogoutOutlined /> Dashboard</>
-                    }
-                  </Link>
-                </Menu.Item>
-              <Menu.Item key={ Routes.LOGIN }>
-                <Link to={ Routes.LOGOUT } className='logout-link'>
-                  {
-                    isCheckingAuth
-                      ? <LoadingOutlined />
-                      : <><LogoutOutlined /> Salir</>
-                  }
-                </Link>
-              </Menu.Item>
-            </Menu.SubMenu>
-            : <Menu.Item key={ Routes.LOGIN }>
-              <Link to={ Routes.LOGIN }>
-                {
-                  isCheckingAuth
-                    ? <LoadingOutlined />
-                    : <><LoginOutlined /> Ingresar</>
-                }
-              </Link>
-            </Menu.Item>
-        }
-      </Menu>
-    </>
+
+      </>
   );
 };
 
