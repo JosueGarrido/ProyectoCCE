@@ -20,26 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33b01b25-7452-4012-b36b-7f16a70ad837" name="Default Changelist" comment="">
-
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/ReputationList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/ReputationList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/data/useArticleComments.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/data/useArticleComments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/data/useReputationList.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/ArtistResumeDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/ArtistResumeDashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/Reputation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/Reputation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/QuestionsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/QuestionsTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/ReputationTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ReputationTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-
-
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +172,7 @@
       <method v="2" />
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -231,13 +214,12 @@
       <workItem from="1607720923593" duration="13670000" />
       <workItem from="1607913623193" duration="2494000" />
       <workItem from="1607985102938" duration="1937000" />
-
-
+      <workItem from="1608607235959" duration="1737000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -256,7 +238,6 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="361" y="91" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1601996876713" />
-
     <state x="444" y="166" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1607987596775">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

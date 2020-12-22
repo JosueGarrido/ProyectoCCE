@@ -23,7 +23,7 @@ const loadableOptions = { fallback: <Loading /> };
 const AsyncHome = loadable( () => import( '../pages/Index' ), loadableOptions );
 const AsyncLogin = loadable( () => import( '../pages/Login' ), loadableOptions );
 
-const AsyncDashboardArtist = loadable( () => import( '../pages/ArtistDashboard' ), loadableOptions );
+//const AsyncDashboardArtist = loadable( () => import( '../pages/ArtistDashboard' ), loadableOptions );
 const AsyncPublications = loadable( () => import( '../pages/Publications' ), loadableOptions );
 
 const AsyncDashboardArtist = loadable( () => import( '../pages/ArtistResumeDashboard' ), loadableOptions );
@@ -58,11 +58,8 @@ const AppRouter = () => (
     <PublicRoute exact path={ Routes.HOME } component={ AsyncHome } />
     <PublicRoute path={ Routes.LOGIN } component={ AsyncLogin } />
     <PublicRoute path={ Routes.REGISTER } component={ AsyncRegister } />
-
     <PublicRoute path={ Routes.ARTIST_DASHBOARD } component={ AsyncDashboardArtist } />
-
     <PublicRoute path={ Routes.PUBLICATIONS } component={ AsyncPublications } />
-
       <PublicRoute path={ Routes.ARTIST_PUBLICATIONS_DASHBOARD } component={ AsyncDashboardPublicationsArtist } />
       <PublicRoute path={ Routes.ARTIST_QUESTIONS_DASHBOARD } component={ AsyncDashboardQuestionsArtist } />
       <PublicRoute path={ Routes.ARTIST_SELL_DASHBOARD } component={ AsyncDashboardSellArtist } />

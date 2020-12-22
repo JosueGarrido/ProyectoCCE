@@ -122,8 +122,8 @@ class UserController extends Controller{
             'education_level' => $request->get('education_level'),
             'career_name' => $request->get('career_name'),
             'studies_institution' => $request->get('studies_institution'),
-            'social_networks' => $request->get('social_networks'),*/
-        ]);
+            'social_networks' => $request->get('social_networks'),
+        ]); */
 
 
        // $token = JWTAuth::fromUser($user);  */
