@@ -22,7 +22,7 @@ import Cookies from 'js-cookie';
 import { useAuth } from '../providers/Auth';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons/lib';
 import 'moment/locale/zh-cn';
-import ImgCrop from 'antd-img-crop';
+//import ImgCrop from 'antd-img-crop';
 
 const { Text, Title } = Typography;
 const { Option } = Select;
@@ -432,7 +432,7 @@ const Register = ({
                                            hasFeedback
                                 >
 
-                                    <ImgCrop rotate>
+                                    {/*<ImgCrop rotate>
                                         <Upload
                                             action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
                                             listType="picture-card"
@@ -442,7 +442,9 @@ const Register = ({
                                         >
                                             {fileList.length < 1 && '+ Upload'}
                                         </Upload>
-                                    </ImgCrop>
+                                    </ImgCrop>*/}
+
+
 
                                 </Form.Item>
 

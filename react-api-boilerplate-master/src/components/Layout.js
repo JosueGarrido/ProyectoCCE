@@ -1,18 +1,20 @@
-/**
- * Created by chalosalvador on 3/1/20
- */
 import React from 'react';
 import Routes from '../constants/routes';
 import Navigation from './Navigation';
-import { Layout, Row, Col, Button, Popover } from 'antd';
-import { FacebookOutlined, InstagramOutlined, GithubOutlined, MailOutlined, WhatsAppOutlined } from '@ant-design/icons';
+import Navigation2 from './Navigation2';
+import { Layout, Row, Col, Button, Popover, Input } from 'antd';
+import { FacebookFilled, InstagramFilled, TwitterCircleFilled, GithubOutlined, MailOutlined, WhatsAppOutlined } from '@ant-design/icons';
+import logoW from '../images/logoW.png';
 import logo from '../images/logo-menta.png';
 import moment from 'moment';
+import { AudioOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
-
+import '../styles/navigation.css';
+import logoCCE from '../images/cce-logo.png';
 const Header = Layout.Header;
 const Content = Layout.Content;
 const Footer = Layout.Footer;
+const { Search } = Input;
 
 /**
  * Este componente renderiza los elementos comunes para toda la aplicación
@@ -26,145 +28,140 @@ const Footer = Layout.Footer;
 const MainLayout = props => {
   console.log( 'props', props );
   return (
-    <div className='app'>
-      <Layout>
-        <Row type='flex' justify='center' className='header-wrapper'>
-          <Col span={ 20 }>
-            <Header className='header'>
-              <Row type='flex' justify='space-between' align='bottom'>
-                <Col xs={ 24 } md={ 6 } className='logo-wrapper'>
-                  <a href={ process.env.REACT_APP_DOMAIN }>
-                    <img className='logo' src={ logo } alt='Grupo Menta' /></a>
-                </Col>
+      <div className='app'>
+        <Layout>
 
-                <Col md={ 14 } align='right' className='main-menu'>
-                  <Navigation mode='horizontal' />
-                </Col>
+          <Row type='flex' justify='center' className='header-wrapper'>
+            <Col span={ 20 }>
+              <Header className='header'>
+                <Row type='flex' justify='space-between' align='bottom'>
 
-                <Col xs={ 2 } align='right' className='responsive-menu-button'>
-                  <Popover content={ <Navigation mode='vertical' /> }
-                           trigger='click'
-                           placement='rightTop'
-                           overlayClassName='responsive-menu-wrapper'>
-                    <Button type='primary'>
-                      <svg viewBox='64 64 896 896'
-                           focusable='false'
-                           className=''
-                           data-icon='menu'
-                           width='1em'
-                           height='1em'
-                           fill='currentColor'
-                           aria-hidden='true'>
-                        <path d='M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z'></path>
-                      </svg>
-                    </Button>
-                  </Popover>
-                </Col>
 
-                <Col xs={ 22 } md={ 4 } className='logos-social-header' align='right'>
-                </Col>
-              </Row>
-            </Header>
-          </Col>
-        </Row>
+                  <Col span={6} align='left' className='main-menu'>
+                    <Navigation mode='horizontal' />
 
-        <Content className='content'>
-          <Row type='flex' justify='center' style={ { flex: 'auto' } }>
-            <Col xs={ 12 } md={ 20 }>
-              { props.children }
-            </Col>
-          </Row>
-        </Content>
+                  </Col >
+                  <Col span={10} align='center'>
+                    <a href={Routes.HOME} >
+                      <img className='logoW' src={ logoW }  />
+                    </a>
+                  </Col>
+                  <Col span={8} align='right'>
+                    <Navigation2 mode='horizontal' />
+                  </Col>
+                 </Row>
+                <Row>
+                  <Col span={6}></Col>
 
-        <Footer className='footer'>
-          <Row>
-            <Col xs={ { span: 24 } } md={ 8 } className='logo-blanco'>
-              <img src={ logo } alt='Profe a Tiempo' height={ 50 } />
-            </Col>
-            <Col xs={ {
-              span: 20,
-              offset: 0
-            } }
-                 md={ {
-                   span: 5,
-                   offset: -1
-                 } }
-                 className='logo-menta'>
+                  <Col span={12} align='center' className="search__container" >
+                      <input className="search__input" type="text" placeholder="¿Qué desea buscar?"/>
+                  </Col>
 
-              <p><strong>Contáctanos</strong></p>
-              <p>(02) 222-1006</p>
-              <p>Av. 6 de Diciembre, Quito 170136</p>
-              <p><strong>Quito - Ecuador</strong></p>
+                  <Col span={6}></Col>
+
+                </Row>
+              </Header>
 
             </Col>
 
-            <Col xs={ {
-              span: 24,
-              offset: 0
-            } }
-                 md={ {
-                   span: 4,
-                   offset: 4
-                 } }
-                 className='contact-links'>
-
-              <p><strong>Nosotros</strong></p>
-              <p><Link to={ Routes.QUESTIONS } style={ { marginRight: 20 } }>Quiénes somos</Link></p>
-              <p><Link to={ Routes.QUESTIONS } style={ { marginRight: 20 } }>Términos y Condiciones</Link></p>
-              <p><Link to={ Routes.QUESTIONS } style={ { marginRight: 20 } }>Vende tu Arte</Link></p>
-
-              <p><strong>Contáctanos</strong></p>
-              <p><MailOutlined /> <a href='mailto:josue.garrido@epn.edu.ec'>josue.garrido@epn.edu.ec</a></p>
-              <p><WhatsAppOutlined /> <a href='https://wa.me/593983160344' target='_blank' rel='noopener noreferrer'>+593
-                9-8316-0344</a></p>
-              <p><GithubOutlined /> <a href='https://github.com/josuegarrido'
-                                       target='_blank'
-                                       rel='noopener noreferrer'>@josuegarrido</a>
-              </p>
-            </Col>
           </Row>
 
-          <Row type='flex' justify='space-between' align='bottom'>
-            <Col xs={ 24 } md={ 8 }>
-              { moment().format( 'YYYY' ) } - Para uso libre.
-            </Col>
 
-            <Col xs={ 24 } md={ 4 } className='footer-links'>
-              <Link to={ Routes.ABOUT } style={ { marginRight: 20 } }>Preguntas frecuentes</Link>
-            </Col>
-            <Col xs={ 24 } md={ 4 } className='footer-links'>
-              <Link to={ Routes.ABOUT }>Términos y condiciones</Link>
+          <Content className='app'>
+            <Row type='flex' justify='center' style={ { flex: 'auto' } }>
+              <Col span={24}>
+                { props.children }
+              </Col>
+            </Row>
+          </Content>
 
-            </Col>
+          <Footer className='footer'>
+            <Row>
+              <Col span={8} className='logo-w'>
+                <img src={logoW}  height={ 50 }/>
+              </Col>
 
-            <Col xs={ {
-              span: 24,
-              offset: 0
-            } }
-                 md={ {
-                   span: 4,
-                   offset: 4
-                 } }
-                 className='logos-social'>
-              <strong>Síguenos:</strong>
-              <a href='https://www.facebook.com'
-                 target='_blank'
-                 rel='noopener noreferrer'
-                 style={ {
-                   marginLeft: 30,
-                   marginRight: 30
-                 } }>
-                <FacebookOutlined />
-              </a>
-              <a href='https://www.instagram.com' target='_blank' rel='noopener noreferrer'>
-                <InstagramOutlined />
-              </a>
-            </Col>
-          </Row>
-        </Footer>
-      </Layout>
-    </div>
+              <Col span={8}
+                   className='footerTitle'>
+                Encuéntranos en: <br /><br />
+                <input className="search__input" type="text" placeholder="Encuentranos"/><br/><br/>
+               <Row className='redes' >
+                 <Col span={8}>
+                   <a href='https://www.facebook.com'
+                      target='_blank'
+                      rel='noopener noreferrer' >
+
+                     <FacebookFilled  style={{textAlign:'right'}}/>
+                   </a>
+                 </Col>
+                 <Col span={8}>
+                   <a href='https://www.instagram.com' target='_blank' rel='noopener noreferrer'>
+                     <InstagramFilled style={{textAlign:'center'}}/>
+                   </a>
+                 </Col>
+                 <Col span={8}>
+                   <a href='https://www.twitter.com' target='_blank' rel='noopener noreferrer'>
+                     <TwitterCircleFilled style={{textAlign:'left'}}/>
+                   </a>
+                 </Col>
+
+               </Row>
+
+
+
+
+
+              </Col>
+
+              <Col span={8} align='right'>
+                <Link to={ Routes.ABOUT }  style={ {
+                  marginLeft: 70,
+                  marginRight: 10,
+                  textDecoration: 'none',
+                  textAlign:'right',
+                } }  className='questions'>¿Quiénes Somos? </Link>
+                <Link to={ Routes.ABOUT }  style={ {
+                  marginLeft: 70,
+                  marginRight: 10,
+                  textDecoration: 'none',
+                  textAlign:'right',
+                } }  className='questions'>Términos y Condiciones </Link>
+                <Link to={ Routes.ABOUT }  style={ {
+                  marginLeft: 70,
+                  marginRight: 10,
+                  textDecoration: 'none',
+                  textAlign:'right',
+                } }  className='questions'>Preguntas Frecuentes </Link>
+                <Link to={ Routes.ABOUT }  style={ {
+                  marginLeft: 70,
+                  marginRight: 10,
+                  textDecoration: 'none',
+                  textAlign:'right',
+                } }  className='questions'>Políticas de Privacidad </Link>
+
+              </Col>
+            </Row>
+            <Row>
+              <Col span={8}>
+
+              </Col>
+              <Col span={8}  className='logo-blanco'>
+
+                  <p className='questions1'>Con el aval de:</p>
+                  <img src={logoCCE}height={ 50 } style={{textAlign:'center'}}/><br/><br/>
+                  <p>© 2020 CCE Quito-Ecuador - Todos los derechos reservados -</p>
+              </Col>
+              <Col span={8}>
+
+              </Col>
+            </Row>
+
+          </Footer>
+        </Layout>
+      </div >
   );
 };
 
 export default MainLayout;
+
+

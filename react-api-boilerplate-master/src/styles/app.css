@@ -10,15 +10,15 @@ body {
     box-sizing: border-box;
 }
 .site-layout-background {
-    background: #fff;
+    background: white;
 }
 
 .ant-layout {
-    min-height: 100vh;
+    min-height: 200vh;
 }
 
 .header-wrapper {
-    background: #000000;
+    background: url("../images/footer.png");
 }
 
 .ant-menu {
@@ -137,10 +137,17 @@ code {
 
 .footer {
     /*text-align: center;*/
-    padding: 30px 20px;
+    padding: 30px 10px;
     min-height: 200px;
-    background-color: #2e2a25ee;
+    background: url("../images/footer.png");
     color: #ffffff;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    width: 100% ;
+    text-align: center;
 }
 
 .footer a {
@@ -215,11 +222,21 @@ code {
     .footer {
         padding: 30px 100px;
         min-height: 200px;
-        background-color: rgba(0, 0, 0, 0.93);
+        background: url("../images/footer.png");
         color: #ffffff;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 100%;
+        width: 100% ;
+        text-align: center;
     }
 
     .logo-blanco {
+        text-align: center;
+    }
+    .logo-w{
         text-align: left;
     }
 
@@ -258,3 +275,300 @@ code {
 
 /*// Extra large devices (large desktops, 1200px and up)*/
 /*!*@media (min-width: 1200px) { ... }*!*/
+
+
+
+.container-carousel{
+    padding:0;
+    height: auto;
+    width: auto;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    color: #fff;
+
+    textAlign: 'center';
+    background: #364d79;
+
+
+}
+@-webkit-keyframes swing-in-top-fwd{0%{-webkit-transform:rotateX(-100deg);transform:rotateX(-100deg);-webkit-transform-origin:top;transform-origin:top;opacity:0}100%{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);-webkit-transform-origin:top;transform-origin:top;opacity:1}}@keyframes swing-in-top-fwd{0%{-webkit-transform:rotateX(-100deg);transform:rotateX(-100deg);-webkit-transform-origin:top;transform-origin:top;opacity:0}100%{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);-webkit-transform-origin:top;transform-origin:top;opacity:1}}
+.logoW{
+    width: 120%;
+    height: 120%;
+    -webkit-animation:swing-in-top-fwd 3s cubic-bezier(.175,.885,.32,1.275) both;animation:swing-in-top-fwd 3s cubic-bezier(.175,.885,.32,1.275) both;
+}
+
+/* seccion que es wasywallpay*/
+.imgExplanation{
+    background-image: url("../images/home_images/explicacion.png");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    width: 100% ;
+    text-align: center;
+}
+
+/* seccion como comprar*/
+.imgHowBuy{
+    background-image: url("../images/home_images/como-comprar.png");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    width: 100% ;
+    text-align: center;
+}
+
+@font-face {
+    font-family: Geometos;
+    src:local('Geometos'),
+    url("./fonts/Geometos.ttf") format("truetype");
+
+}
+@font-face {
+    font-family: Geosans;
+    src:local('Geometos'),
+    url("./fonts/GeosansLight.ttf") format("truetype");
+
+}
+
+@font-face {
+    font-family: Kiona;
+    src:local('Kiona'),
+    url("./fonts/Kiona-Regular.ttf") format("truetype");
+
+}
+
+.title{
+    font-family: Geometos;
+    font-size: 30pt;
+    color: white;
+}
+.text{
+    font-family: GeosansSimple;
+    font-size: 15pt;
+    text-align: justify;
+    color: white;
+}
+
+.title1{
+    font-family: Geometos;
+    font-size: 50pt;
+    text-align: right;
+    color: white;
+}
+.subtitle{
+    font-family: Kiona;
+    font-size: medium;
+    color: black;
+}
+.subtitle2{
+    font-family: Geometos;
+    font-size: 30pt;
+    color: black;
+    text-align: center;
+}
+.categories{
+    width: 170px;
+}
+.btnCategories{
+    margin: 20px 10px;
+    border: none;
+    padding: 10px 44px;
+    position: relative;
+}
+.btnCategories::before {
+    -webkit-transition: all 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    content: '';
+    width: 50%;
+    height: 100%;
+    background: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.btnCategories .btnCategories-text {
+    color: white;
+    mix-blend-mode: difference;
+}
+
+.btnCategories:hover::before {
+    background: black;
+    width: 100%;
+}
+
+/*boton VER MAS*/
+
+.button-container-2 {
+    position: relative;
+    width: 100px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7vh;
+    overflow: hidden;
+    border: 1px solid #000;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    transition: 0.5s;
+    letter-spacing: 1px;
+    border-radius: 8px;
+}
+.button-container-2 button {
+    width: 101%;
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    background: #000;
+    -webkit-mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png");
+    mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png");
+    -webkit-mask-size: 3000% 100%;
+    mask-size: 3000% 100%;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    -webkit-animation: ani2 0.7s steps(29) forwards;
+    animation: ani2 0.7s steps(29) forwards;
+}
+.button-container-2 button:hover {
+    -webkit-animation: ani 0.7s steps(29) forwards;
+    animation: ani 0.7s steps(29) forwards;
+}
+
+.mas {
+    position: absolute;
+    color: #000;
+    text-align: center;
+    width: 101%;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    position: absolute;
+    font-size: 11px;
+    margin-top: 17px;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+@-webkit-keyframes ani {
+    from {
+        -webkit-mask-position: 0 0;
+        mask-position: 0 0;
+    }
+    to {
+        -webkit-mask-position: 100% 0;
+        mask-position: 100% 0;
+    }
+}
+@keyframes ani {
+    from {
+        -webkit-mask-position: 0 0;
+        mask-position: 0 0;
+    }
+    to {
+        -webkit-mask-position: 100% 0;
+        mask-position: 100% 0;
+    }
+}
+@-webkit-keyframes ani2 {
+    from {
+        -webkit-mask-position: 100% 0;
+        mask-position: 100% 0;
+    }
+    to {
+        -webkit-mask-position: 0 0;
+        mask-position: 0 0;
+    }
+}
+@keyframes ani2 {
+    from {
+        -webkit-mask-position: 100% 0;
+        mask-position: 100% 0;
+    }
+    to {
+        -webkit-mask-position: 0 0;
+        mask-position: 0 0;
+    }
+}
+a {
+    color: #00ff95;
+}
+
+
+/*CATEGORIAS*/
+
+.flip-container {
+    margin: 10px;
+    width: 170px;
+    display: inline-block;
+}
+.flip-container:hover .card {
+    transform: rotateY(180deg);
+}
+.card, .front, .back {
+    width: 60px;
+    height: 95px;
+
+}
+.card {
+    transition: 0.5s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+.front, .back {
+    backface-visibility: hidden;
+    position: absolute;
+}
+.front {
+    z-index: 1;
+    transform: rotateY(180deg);
+    background: url("../images/Categories_logos/icono-artes-escénicas1.png") no-repeat;
+
+
+}
+.back {
+    z-index: 2; /* back side, placed above front */
+    transform: rotateY(0deg);
+    background: url("../images/Categories_logos/icono-artes-escénicas2.png") no-repeat;
+
+}
+
+/*otro*/
+.imgs img{
+    width:100%;
+    height:100px;
+}
+/*
+    Aquí aplicamos la transición al selector 'imgs' de 0.3 segundos  y con un modificador de a todo 'all'
+*/
+.imgs{
+    transition:0.3s all;
+}
+/*
+    Cuando el curso está sobre la imagen , la pseudo-clase 'hover' se activa y aplica una margen superior
+    de valor -100px. Lo cual muestra un efecto de cambio
+*/
+.container:hover .imgs{
+    margin-top:-100px;
+}
+
+/* FOOTER STYLES*/
+
+.footerTitle{
+    font-family: Geometos;
+    font-size: x-large;
+}
+.questions{
+    text-decoration: none;
+    text-align: right;
+
+
+}

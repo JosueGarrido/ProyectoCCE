@@ -7,7 +7,7 @@ import AppRouter from '../routers/AppRouter';
 import history from '../utils/history';
 import 'antd/dist/antd.css';
 import '../styles/app.css';
-
+import Carousel from '../components/Carousel';
 /**
  * Show the loading bar on page transition
  */
@@ -32,6 +32,7 @@ const App = () => (
   <Router history={ history }>
     <AuthProvider>
       <MainLayout>
+
         <AppRouter />
       </MainLayout>
     </AuthProvider>
