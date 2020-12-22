@@ -24,7 +24,7 @@ class RecognitionController extends Controller
     {
         ////$this->authorize('viewAny', Recognition::class);
 
-        return new RecognitionCollection(RecognitionCollection::paginate (25));
+        return new RecognitionCollection(Recognition::paginate (25));
     }
     public function show(Recognition $id)
     {

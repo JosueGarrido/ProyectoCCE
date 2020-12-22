@@ -25,8 +25,8 @@ class WebLinksTableSeeder extends Seeder
             // iniciamos sesión con este usuario
             JWTAuth::attempt(['email' => $user->email, 'password' => '123456']);
             // Y ahora con este usuario creamos algunos productos
-            $num_cultural_projects = 5;
-            for ($j = 0; $j < $num_cultural_projects; $j++) {
+            $num_web_links = 5;
+            for ($j = 0; $j < $num_web_links; $j++) {
                 Web_Links::create([
                     'link_type' => $faker->url,
                     'link_description' => $faker->sentence,

@@ -19,9 +19,9 @@ class User extends Authenticatable  implements JWTSubject
      */
 //agregar profile picture y birthday
     protected $fillable = [
-        'name','last_name', 'email', 'password','identity','birthday','phone','location',
-        'culture','disability','stage_name','field_cultural','main_activity','secondary_activity','education_level',
-        'career_name','studies_institution','social_networks'
+
+        'name','last_name', 'email', 'password','identity','birthday','phone','location'
+
     ];
     const ROLE_SUPERADMIN = 'ROLE_SUPERADMIN';
     const ROLE_ARTIST = 'ROLE_ARTIST';
@@ -43,6 +43,14 @@ class User extends Authenticatable  implements JWTSubject
         'password', 'remember_token',
     ];
 
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+    public function getJWTCustomClaims()
+    {
+        return [];
+    }
     /**
      * The attributes that should be cast to native types.
      *
@@ -52,14 +60,7 @@ class User extends Authenticatable  implements JWTSubject
         'email_verified_at' => 'datetime',
     ];
 
-    public function getJWTIdentifier()
-    {
-        return $this->getKey();
-    }
-    public function getJWTCustomClaims()
-    {
-        return [];
-    }
+
 
     /**public function isGranted($role)
     {
@@ -106,6 +107,25 @@ class User extends Authenticatable  implements JWTSubject
     public function products()
     {
         return $this->hasMany('App\Product');
+    }
+    public function trajectories()
+    {
+        return $this->hasMany('App\Trajectory');
+    }
+    public function question()
+    {
+        return $this->hasMany('App\Questions');
+    }
+    public function answer()
+    {
+        return $this->hasMany('App\Answers');
+    }
+    public function reputation()
+    {
+        return $this->hasMany('App\Reputation');
+    }
 
+    public function userable(){
+        return $this->morphTo();
     }
 }

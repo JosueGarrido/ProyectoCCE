@@ -31,10 +31,11 @@ class ProductTableSeeder extends Seeder
                     'name' => $faker->domainWord,
                     'description' => $faker->sentence,
                     'price' => $faker->randomFloat(2,1,10000),
-                    'stock' => $faker->numberBetween(1,25),
+                    'stock' => $faker->numberBetween(5,25),
+                    'sales' => $faker->numberBetween(1,5),
                     'image' => $faker->word,
                     'location' => $faker->country,
-                    'score' => $faker->numberBetween(1,10),
+
                     'category_id' => $faker->numberBetween(1,6),
                 ]);
             }

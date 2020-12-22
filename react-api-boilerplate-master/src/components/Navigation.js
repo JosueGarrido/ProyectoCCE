@@ -37,6 +37,7 @@ const Navigation = ( props ) => {
   };
 
   return (
+
       <>
         <Menu
             mode={ props.mode }
@@ -51,6 +52,7 @@ const Navigation = ( props ) => {
         >
 
 
+
             <SubMenu  key={ Routes.ABOUT } className='scale-up-bottom' style={ linkStyle } title="Categorías">
                 <Menu.ItemGroup className='sub-menu' >
                     <Menu.Item key="1">Artes Musicales</Menu.Item>
@@ -63,10 +65,20 @@ const Navigation = ( props ) => {
             </SubMenu>
 
 
+
           <Menu.Item key={ Routes.ARTICLES } className='scale-up-bottom'>
               <Link to={ Routes.ARTICLES } style={ linkStyle }>Artistas</Link>
           </Menu.Item>
         </Menu >
+
+        <Menu.Item key={ Routes.HOW_TO_BUY}>
+          <Link to={ Routes.HOW_TO_BUY } style={ linkStyle }>¿Cómo Comprar?</Link>
+        </Menu.Item>
+
+        {
+          isAuthenticated
+            ? <Menu.SubMenu icon={ <UserOutlined /> } title={ currentUser && currentUser.name }>
+
 
       </>
   );

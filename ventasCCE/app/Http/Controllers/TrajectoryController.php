@@ -1,12 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Resources\TrajectoryCollection;
+
 use App\Trajectory;
-use App\Http\Resources\TrajectoryCollection as TrajectoryResource;
-
-
-use Facade\Ignition\Tabs\Tab;
+use App\Http\Resources\Trajectory as TrajectoryResource;
+use App\Http\Resources\TrajectoryCollection;
 use Illuminate\Http\Request;
 
 
@@ -15,9 +13,6 @@ class TrajectoryController extends Controller
     private static $rules =[
         'start_date' => 'required',
         'trajectory_description' => 'required',
-
-
-
 
     ];
     private static $messages =[
@@ -43,14 +38,14 @@ class TrajectoryController extends Controller
     public function update(Request $request, $id)
     {
         $this->authorize('update',$id);
-        $sales = Trajectory::findOrFail($id);
-        $sales->update($request->all());
-        return $sales;
+        $trajectories = Trajectory::findOrFail($id);
+        $trajectories->update($request->all());
+        return $trajectories;
     }
     public function delete(Request $request, $id)
     {
-        $sales = Trajectory::findOrFail($id);
-        $sales->delete();
+        $trajectories = Trajectory::findOrFail($id);
+        $trajectories->delete();
         return 204;
     }
 }

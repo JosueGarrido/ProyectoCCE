@@ -1,6 +1,8 @@
 import React from 'react';
 import { Menu, Divider, Row, Col, Layout, Typography } from 'antd';
 import {SettingOutlined, ShoppingOutlined} from '@ant-design/icons';
+import Routes from "../constants/routes";
+import {Link} from "react-router-dom";
 
 const { Title } = Typography;
 const { SubMenu } = Menu;
@@ -27,7 +29,9 @@ const ArtistDashboard = () => (
                 }
             >
                 <Menu.Item key="Resumen">Resumen</Menu.Item>
-                <Menu.Item key="Publicaciones">Publicaciones</Menu.Item>
+                <Menu.Item key={ Routes.PUBLICATIONS }>
+                    <Link to={ Routes.PUBLICATIONS }>Publicaciones</Link>
+                </Menu.Item>
                 <Menu.Item key="Preguntas">Preguntas</Menu.Item>
                 <Menu.Item key="Ventas">Ventas</Menu.Item>
                 <Menu.Item key="Métricas">Métricas</Menu.Item>
