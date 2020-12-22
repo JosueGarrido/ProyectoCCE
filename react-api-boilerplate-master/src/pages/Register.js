@@ -1290,14 +1290,6 @@ const Register = () => {
             </Form.Item>
 
 
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> 6ebc374eee0de09ee50807830a49c82b3da16ed7
->>>>>>> 5d7a644 (xdd)
           </Form>
               </Card>
             </Col>
