@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import API from '../data/index';
 import { translateMessage } from '../utils/translateMessage';
 import ErrorList from './ErrorList';
-import { useArticleComments } from '../data/useArticleComments';
 import Routes from '../constants/routes';
 import { Link } from 'react-router-dom';
 
@@ -110,7 +109,7 @@ const processCommentsData = ( comments ) => {
     console.log( 'comment', comment );
     if( comment.text ) {
       return ({
-        // actions: [ <span key='comment-list-reply-to-0'>Reply to</span> ],
+
         author: <Link to={ Routes.USERS_ID }>{ comment.user_data.name }</Link>,
         avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
         content: <p>{ comment.text }</p>,

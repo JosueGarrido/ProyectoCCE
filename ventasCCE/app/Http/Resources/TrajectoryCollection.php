@@ -7,7 +7,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
 class TrajectoryCollection extends JsonResource
 {
     /**
-     * Transform the resource into an array.
+     * Transform the resource collection into an array.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return array
@@ -15,11 +15,10 @@ class TrajectoryCollection extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this ->id,
-            'star_date' => $this ->star_date,
-            'trajectory_description' => $this ->trajectory_description,
-
-
+            "data" => $this -> collection,
+            "links" => [
+                "self" =>"link"
+            ]
         ];
     }
 }

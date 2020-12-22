@@ -7,6 +7,7 @@ use App\User;
 use App\Http\Resources\User as UserResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use JWTAuth;
@@ -22,10 +23,11 @@ class UserController extends Controller{
         'identity' => 'required',
         'birthday' => 'required',
         'phone' => 'required',
-        'profile_picture' => 'required',
+        'profile_picture' => 'required|image|dimensions:min_width=200,min_height=200',
         'location' => 'required',
         'culture' => 'required',
         'stage_name' => 'required|unique:user',
+        'shop_name' => 'required',
         'field_cultural' => 'required',
         'main_activity' => 'required',
         'education_level' => 'required',
@@ -40,6 +42,15 @@ class UserController extends Controller{
       // $this->authorize('viewAny', User::class);
         return User::all();
         //return new UserCollection(User::paginate (25));
+    }
+    public function show(User $user)
+    {
+        $this->authorize('view', $user);
+        return response()->json( new UserResource($user), 200);
+    }
+    public function image(User $user)
+    {
+        return response()->download(public_path(Storage::url($user->profile_picture)), $user->name);
     }
 
     public function authenticate(Request $request)
@@ -78,10 +89,12 @@ class UserController extends Controller{
            'phone' => 'required|integer|unique:users',
            'location' => 'required',
           /* 'culture' => 'required',
+           'profile_picture' => 'image|dimensions:min_width=200,min_height=200',
+           'country' => 'required',
+           'culture' => 'required',
            'disability' => 'required',
-           'stage_name' => 'required',
+           'shop_name' => 'required',
            'field_cultural' => 'required',
-           'main_activity' => 'required',
            'secondary_activity' => 'required',
            'education_level' => 'required',
            'career_name' => 'required',
@@ -89,7 +102,7 @@ class UserController extends Controller{
            'social_networks' => 'required',*/
         ],self::$messages);
 
-        $user = User::create([
+  /*      $user = User::create([
             'name' => $request->get('name'),
             'last_name' => $request->get('last_name'),
             'email' => $request->get('email'),
@@ -98,6 +111,7 @@ class UserController extends Controller{
             'identity' => $request->get('identity'),
             'birthday' => $request->get('birthday'),
             'phone' => $request->get('phone'),
+            'profile_picture' => $request->get('profile_picture'),
             'location' => $request->get('location'),
            /* 'culture' => $request->get('culture'),
             'disability' => $request->get('disability'),
@@ -112,6 +126,14 @@ class UserController extends Controller{
         ]);
 
 
+       // $token = JWTAuth::fromUser($user);  */
+
+        $user = new User($request->all());
+        $pass = $request->password;
+        $user->password = Hash::make($pass);
+        $path = $request->profile_picture->store('public/user');
+        $user->profile_picture = $path;
+        $user->save();
         $token = JWTAuth::fromUser($user);
         return response()->json(compact('user','token'),201);
 
@@ -137,15 +159,15 @@ class UserController extends Controller{
         return response()->json(new UserResource($user));
 
     }
-    public function update(Request $request, $id)
+    public function update(Request $request, $user)
     {
-        $user = User::findOrFail($id);
+        $user = User::findOrFail($user);
         $user->update($request->all());
         return$user;
     }
-    public function delete(Request $request, $id)
+    public function delete(Request $request, $user)
     {
-        $user = User::findOrFail($id);
+        $user = User::findOrFail($user);
         $user->delete();
         return 204;
 

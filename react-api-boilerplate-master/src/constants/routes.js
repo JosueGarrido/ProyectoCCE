@@ -21,7 +21,8 @@ const publicRoutes = {
   USERS_ID: `/usuario/:id`,
   HOME: '/',
   ABOUT: '/acerca-de',
-  ANTD: '/antd'
+  ANTD: '/antd',
+  HOW_TO_BUY: '/como-comprar'
 };
 
 const privateRoutes = {
