@@ -7,6 +7,7 @@ import { LogoutOutlined, LoginOutlined, LoadingOutlined, UserOutlined } from '@a
 import { Link, useLocation } from 'react-router-dom';
 import '../styles/navigation.css';
 
+
 const linkStyle = {
     color: 'white',
 };
@@ -36,6 +37,7 @@ const Navigation = ( props ) => {
         } );
     };
 
+
     return (
         <>
             <Menu
@@ -49,13 +51,49 @@ const Navigation = ( props ) => {
                     width: 'fit-content'
                 } }
             >
-                <Menu.Item key={ Routes.ABOUT } className='scale-up-bottom'>
-                    <Link to={ Routes.ABOUT } style={ linkStyle }>Comprar</Link>
-                </Menu.Item>
+                {
+                    isAuthenticated
+                    ?<Menu.SubMenu icon={ <UserOutlined /> } title={ currentUser && currentUser.name } style={linkStyle} className='scale-up-bottom'>
+                        <Menu.ItemGroup className='sub-menu' style={linkStyle}>
+                            <Menu.Item key={ Routes.LOGIN } className='scale-up-bottom'>
+                                <Link to={ Routes.ARTIST_DASHBOARD } style={linkStyle}>
+                                    {
+                                        isCheckingAuth
+                                            ? <LoadingOutlined />
+                                            : <><LogoutOutlined /> Dashboard</>
+                                    }
+                                </Link>
+                            </Menu.Item>
+                            <Menu.Item key={ Routes.LOGIN } className='scale-up-bottom'>
+                                <Link to={ Routes.LOGOUT } className='logout-link'>
+                                    {
+                                        isCheckingAuth
+                                            ? <LoadingOutlined />
+                                            : <><LogoutOutlined /> Salir</>
+                                    }
+                                </Link>
+                            </Menu.Item>
+                        </Menu.ItemGroup>
 
-                <Menu.Item key={ Routes.ARTICLES } className='scale-up-bottom'>
-                    <Link to={ Routes.ARTICLES } style={ linkStyle }>Vender</Link>
-                </Menu.Item>
+                    </Menu.SubMenu>
+                    :<>
+                    <Menu.Item key={ Routes.LOGIN } className='scale-up-bottom'>
+                        <Link to={ Routes.LOGIN } style={linkStyle}>
+                            Comprar
+                        </Link>
+                    </Menu.Item>
+                        <Menu.Item key={ Routes.LOGIN } className='scale-up-bottom'>
+                            <Link to={ Routes.LOGIN } style={linkStyle}>
+                                Vender
+                            </Link>
+                        </Menu.Item>
+                    </>
+                }
+
+
+
+
+
 
                 {/*
                     isAuthenticated
