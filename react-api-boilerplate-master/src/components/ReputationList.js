@@ -51,6 +51,7 @@ const ReputationList = ( props ) => {
         //   setArticles( props.articles );
         // }, [ props.articles ] );
 
+
         if( isLoading ) {
             return <Row justify='center' gutter={ 30 }>
                 {
