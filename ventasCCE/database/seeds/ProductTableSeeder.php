@@ -34,7 +34,8 @@ class ProductTableSeeder extends Seeder
                     'stock' => $faker->numberBetween(5,25),
                     'sales' => $faker->numberBetween(1,5),
                     'image' => $faker->word,
-                    'location' => $faker->city,
+                    'location' => $faker->country,
+
                     'category_id' => $faker->numberBetween(1,6),
                 ]);
             }

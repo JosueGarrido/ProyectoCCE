@@ -7,7 +7,9 @@ use Illuminate\Support\Facades\Auth;
 
 class Product extends Model
 {
-    protected $fillable=['name','description','price','stock','sales','image','location'];
+
+    protected $fillable=['name','description','price','stock','image','location', 'category_id'];
+
 
     public static function boot()
     {
@@ -27,7 +29,7 @@ class Product extends Model
     }
     public function question()
     {
-        return $this->hasMany('App\Question');
+        return $this->hasMany('App\Questions');
     }
     public function reputation()
     {

@@ -87,6 +87,8 @@ class UserController extends Controller{
            'identity' => 'required',
            'birthday' => 'required',
            'phone' => 'required|integer|unique:users',
+           'location' => 'required',
+          /* 'culture' => 'required',
            'profile_picture' => 'image|dimensions:min_width=200,min_height=200',
            'country' => 'required',
            'culture' => 'required',
@@ -97,7 +99,7 @@ class UserController extends Controller{
            'education_level' => 'required',
            'career_name' => 'required',
            'studies_institution' => 'required',
-           'social_networks' => 'required',
+           'social_networks' => 'required',*/
         ],self::$messages);
 
   /*      $user = User::create([
@@ -111,7 +113,7 @@ class UserController extends Controller{
             'phone' => $request->get('phone'),
             'profile_picture' => $request->get('profile_picture'),
             'location' => $request->get('location'),
-            'culture' => $request->get('culture'),
+           /* 'culture' => $request->get('culture'),
             'disability' => $request->get('disability'),
             'stage_name' => $request->get('stage_name'),
             'field_cultural' => $request->get('field_cultural'),
@@ -121,7 +123,7 @@ class UserController extends Controller{
             'career_name' => $request->get('career_name'),
             'studies_institution' => $request->get('studies_institution'),
             'social_networks' => $request->get('social_networks'),
-        ]);
+        ]); */
 
 
        // $token = JWTAuth::fromUser($user);  */

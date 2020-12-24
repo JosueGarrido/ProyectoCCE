@@ -24,8 +24,11 @@ import Cookies from 'js-cookie';
 import { useAuth } from '../providers/Auth';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons/lib';
 import 'moment/locale/zh-cn';
-import ImgCrop from 'antd-img-crop';
+
+//import ImgCrop from 'antd-img-crop';
+
 import ProfilePictureUpload from "../components/ProfilePictureUpload";
+
 
 const { Text, Title } = Typography;
 const { Option } = Select;
