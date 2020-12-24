@@ -6,6 +6,7 @@ import { Menu,Button } from 'antd';
 import { LogoutOutlined, LoginOutlined, LoadingOutlined, UserOutlined } from '@ant-design/icons';
 import { Link, useLocation } from 'react-router-dom';
 import '../styles/navigation.css';
+import {useCategories} from "../data/useCategories";
 const { SubMenu } = Menu;
 const linkStyle = {
     color: 'white',
@@ -20,6 +21,7 @@ const Navigation = ( props ) => {
     openKeys: []
   } );
   const { isAuthenticated, isCheckingAuth, currentUser } = useAuth();
+  const { categories, isLoading, isError } = useCategories();
 
   React.useEffect( () => {
     setMenuState( {
@@ -55,30 +57,26 @@ const Navigation = ( props ) => {
 
             <SubMenu  key={ Routes.ABOUT } className='scale-up-bottom' style={ linkStyle } title="Categorías">
                 <Menu.ItemGroup className='sub-menu' >
-                    <Menu.Item key="1">Artes Musicales</Menu.Item>
-                    <Menu.Item key="2">Artes Literarias</Menu.Item>
-                    <Menu.Item key="3">Artes Escénicas</Menu.Item>
-                    <Menu.Item key="4">Artes Plásticas</Menu.Item>
-                    <Menu.Item key="5">Artes Visuales</Menu.Item>
-                    <Menu.Item key="6">Artesanías</Menu.Item>
+                        {
+                        categories && categories.map( ( category, index ) =>
+                            <Menu.Item className='scale-up-bottom' value={ category.id } key={ index }>{` ${ category.name } `}</Menu.Item>
+                        )
+                    }
                 </Menu.ItemGroup>
             </SubMenu>
 
 
 
-          <Menu.Item key={ Routes.ARTICLES } className='scale-up-bottom'>
-              <Link to={ Routes.ARTICLES } style={ linkStyle }>Artistas</Link>
+          <Menu.Item key={ Routes.ABOUT } className='scale-up-bottom'>
+              <Link to={ Routes.ABOUT } style={ linkStyle }>Artistas</Link>
           </Menu.Item>
         </Menu >
 
-        <Menu.Item key={ Routes.HOW_TO_BUY}>
-          <Link to={ Routes.HOW_TO_BUY } style={ linkStyle }>¿Cómo Comprar?</Link>
-        </Menu.Item>
 
-        {
+        {/*
           isAuthenticated
             ? <Menu.SubMenu icon={ <UserOutlined /> } title={ currentUser && currentUser.name }>
-
+*/}
 
       </>
   );
