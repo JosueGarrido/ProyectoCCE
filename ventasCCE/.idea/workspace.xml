@@ -20,25 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33b01b25-7452-4012-b36b-7f16a70ad837" name="Default Changelist" comment="">
-
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/ArtistMenuDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/ArtistMenuDashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/ArtistResumeDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/ArtistResumeDashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/styles/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/ReputationList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/ReputationList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/ArtistQuestionsDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/ArtistQuestionsDashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RecognitionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RecognitionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReputationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReputationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TrajectoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TrajectoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/Answers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/Answers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/Product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Resources/Questions.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/Questions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/Reputation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/Reputation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/Trajectory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/Trajectory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Reputation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Reputation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_26_175207_create_web__links_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_26_175207_create_web__links_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +150,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../react-api-boilerplate-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -230,7 +217,8 @@
       <workItem from="1607720923593" duration="13670000" />
       <workItem from="1607913623193" duration="2494000" />
       <workItem from="1607985102938" duration="1937000" />
-
+      <workItem from="1608084775673" duration="2936000" />
+      <workItem from="1608513035602" duration="6784000" />
     </task>
     <servers />
   </component>

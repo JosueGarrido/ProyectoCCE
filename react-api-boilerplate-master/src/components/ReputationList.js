@@ -8,17 +8,7 @@ const {Meta} = Card;
 const ReputationList = ( props ) => {
 
         const { reputations, isLoading, isError, mutate } = useReputationList();
-        // const [ articles, setArticles ] = useState( props.articles );
 
-        // useEffect( () => {
-        //   console.log( 'props.articles', props.articles );
-        //   setArticles( props.articles );
-        // }, [ props.articles ] );
-
-        const handleChangeCategory = ( e ) => {
-            // setArticles( props.articles.filter( ( article ) => e.target.value === 'all' || article.category_data.id ===
-            // e.target.value ) );
-        };
 
         if( isLoading ) {
             return <Row justify='center' gutter={ 30 }>
