@@ -34,6 +34,7 @@ class User extends JsonResource
             'field_cultural' => $this ->field_cultural,
             'secondary_activity' => $this ->secondary_activity,
             'education_level' => $this ->education_level,
+
             'career_name' => $this ->career_name,
             'studies_institution' => $this ->studies_institution,
             'social_networks' => $this ->social_networks,
