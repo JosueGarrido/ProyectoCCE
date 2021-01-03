@@ -20,7 +20,113 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33b01b25-7452-4012-b36b-7f16a70ad837" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/ArtistMenuDashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/Carousel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/Navigation2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/ProfilePictureUpload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/QuestionsList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/ReputationList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/data/UseQuestion.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/data/useProductsList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/data/useUserList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/images/Categories_logos/artesanias.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/images/Categories_logos/escénicas.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/images/Categories_logos/icono-artes-escénicas1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/images/Categories_logos/icono-artes-escénicas2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/images/Categories_logos/literarias.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/images/Categories_logos/musicales.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/images/Categories_logos/plasticas.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/images/Categories_logos/visuales.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/images/cce-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/images/footer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/images/home_gifs/artes-escenicas.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/images/home_gifs/artes-literarias.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/images/home_gifs/artes-musicales.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/images/home_gifs/artes-plasticas.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/images/home_gifs/artes-visuales.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/images/home_gifs/artesanias.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/images/home_images/como-comprar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/images/home_images/explicacion.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/images/logoW.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/images/others/search.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/ArtistMetricsDashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/ArtistPublicationsDashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/ArtistQuestionsDashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/ArtistReputationDashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/ArtistResumeDashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/ArtistSellDashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/DashboardAlerts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/DashboardEmail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/DashboardMyData.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/DashboardPrivacy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/DashboardSecurity.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/HowToBuy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Metrics.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/styles/carousel.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/styles/fonts/Geometos.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/styles/fonts/GeosansLight.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/styles/fonts/Kiona-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Answers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AnswersController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/QuestionsController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ReputationController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/Answers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/AnswersCollection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/Questions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/QuestionsCollection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/Reputation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/ReputationCollection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/Trajectory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Questions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Reputation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_11_194547_add_user_id_column_trajectories.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_11_201554_create_questions_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_12_011748_create_answers_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_12_011833_create_reputations_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/AnswersTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/QuestionsTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/ReputationTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/TrayectoryTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/CommentsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/CommentsList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/Layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/Navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/Questions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/constants/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/constants/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/data/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/data/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/data/useArticleComments.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/data/useArticleComments.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/ArtistDashboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/routers/AppRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/routers/AppRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/styles/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/styles/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/styles/navigation.css" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/styles/navigation.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RecognitionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RecognitionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TrajectoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TrajectoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/TrajectoryCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/TrajectoryCollection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Trajectory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Trajectory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_26_175207_create_web__links_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_26_175207_create_web__links_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_26_221353_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_26_221353_create_products_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_18_210347_create_trajectories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_18_210347_create_trajectories_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/RecognitionsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/RecognitionsTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/SalesTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/SalesTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/WebLinksTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/WebLinksTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +276,7 @@
       <method v="2" />
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
