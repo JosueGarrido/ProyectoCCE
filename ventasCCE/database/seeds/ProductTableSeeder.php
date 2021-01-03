@@ -27,13 +27,14 @@ class ProductTableSeeder extends Seeder
             // Y ahora con este usuario creamos algunos productos
             $num_articles = 5;
             for ($j = 0; $j < $num_articles; $j++) {
+                $image_name = $faker->image('public/storage/products', 400, 300, null, false);
                 Product::create([
                     'name' => $faker->domainWord,
                     'description' => $faker->sentence,
                     'price' => $faker->randomFloat(2,1,10000),
                     'stock' => $faker->numberBetween(5,25),
                     'sales' => $faker->numberBetween(1,5),
-                    'image' => $faker->word,
+                    'image' => 'products/' . $image_name,
                     'location' => $faker->country,
 
                     'category_id' => $faker->numberBetween(1,6),
