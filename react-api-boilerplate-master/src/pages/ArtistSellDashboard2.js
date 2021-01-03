@@ -8,7 +8,7 @@ const { Title } = Typography;
 const {  Content, Sider } = Layout;
 
 
-const ArtistSellDashboard = () => (
+const ArtistSellDashboard2 = () => (
     <>
         <Row>
             <ArtistMenuDashboard/>
@@ -36,4 +36,4 @@ const ArtistSellDashboard = () => (
     </>
 );
 
-export default ArtistSellDashboard;
+export default ArtistSellDashboard2;

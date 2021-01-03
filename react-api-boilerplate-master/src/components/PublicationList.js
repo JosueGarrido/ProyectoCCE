@@ -120,26 +120,27 @@ const AppointmentList = (props ) => {
 
 
                                     >
-
-
+                                    <Row>
+                                        <Col span={8} >
                                         <Meta
-                                            avatar={<Avatar size={200} src="https://www.elcomercio.com/files/article_main/uploads/2017/08/06/5987d8614c821.jpeg" />}
+                                            avatar={<Avatar size={120} src="https://www.elcomercio.com/files/article_main/uploads/2017/08/06/5987d8614c821.jpeg" />}
                                             title={`Nombre: ${product.name}`}
                                             description={`Descripción: ${product.description}
                                             `}
-
-
                                         />
+                                        </Col>
 
-                                        <div style={{display: 'inline-block', padding: 'auto'}}>
-                                            <p>Precio: ${product.price} </p>
-                                            <p>Stock: {product.stock} </p>
-                                            <p>Ubicación: {product.location} </p>
-                                            <p>Score: {product.score} </p>
+                                            <Col span={8} align='end'>
+                                                <p>Precio: ${product.price} </p>
+                                                <p>Stock: {product.stock} </p>
+                                                <p>Ubicación: {product.location} </p>
+                                                <p>Score: {product.score} </p>
 
+                                            </Col>
+                                    </Row>
                                             <Button icon ={<EditOutlined />} type="primary"> Editar</Button>
                                             <Button icon={<DeleteOutlined />} type="primary" danger>Eliminar</Button>
-                                        </div>
+
 
 
                                     </Card>

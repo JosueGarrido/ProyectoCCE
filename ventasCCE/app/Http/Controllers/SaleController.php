@@ -12,11 +12,7 @@ use Illuminate\Http\Request;
 class SaleController extends Controller
 {
     private static $rules =[
-        'date_buy_sale' => 'required',
-        'total_buy_sale' => 'required',
-        'quantity_buy_sale' => 'required',
-
-
+        'user_id' => 'required',
 
     ];
     private static $messages =[

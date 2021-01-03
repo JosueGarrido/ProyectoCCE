@@ -28,10 +28,7 @@ class SalesTableSeeder extends Seeder
             $num_sales = 5;
             for ($j = 0; $j < $num_sales; $j++) {
                 Sale::create([
-                    'date_buy_sale' => $faker->date("Y-m-d"),
-                    'description_buy_sale' => $faker->sentence,
-                    'total_buy_sale' => $faker->numberBetween(2,999),
-                    'quantity_buy_sale' => $faker->numberBetween(0,5),
+                    'product_id' => $faker->numberBetween(1,55),
                 ]);
             }
         }

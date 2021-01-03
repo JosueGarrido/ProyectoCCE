@@ -20,7 +20,6 @@ const ReputationList = ( props ) => {
     //console.log('productos', products);
     const commentsconcat = [];
     const comments = [];
-    const user = [];
 
 
 
@@ -79,27 +78,33 @@ const ReputationList = ( props ) => {
                             <Col xs={ 24 } sm={ 18 } md={ 24 } style={ { marginBottom: 20 } } key={ i }>
                                 { reputations.comment
                                     ? <Card>
+                                        <Row>
+                                            <Col span={14} >
                                         {
                                             users === undefined
                                                 ? <Text>No cargan los datos</Text>
                                                 :
                                                 <Meta
                                                       avatar={<Avatar
-                                                        size={90}
+                                                        size={100}
                                                         alt={ users[reputations.user_id-1].name }
                                                         src={ `http://localhost:8000/storage/${ users[reputations.user_id-1].profile_picture }` }
                                                       />}
 
 
                                                     title={`Nombre del Comprador: ${users[reputations.user_id-1].name} ${users[reputations.user_id-1].last_name}`}
-                                                    description={`Descripción: ${reputations.comment}`}
+                                                    description={`Comentario: ${reputations.comment}`}
                                                 />
                                         }
+                                            </Col>
+                                            <Col span={8} align='end'>
 
                                         <Text type='secondary'><Text strong>Valoración: </Text>
                                             <Rate disabled defaultValue={ reputations.score } />
 
                                         </Text>
+                                            </Col>
+                                        </Row>
 
                                     </Card>
                                     : <div style={ { textAlign: 'center' } }>
