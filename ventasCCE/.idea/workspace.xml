@@ -20,9 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33b01b25-7452-4012-b36b-7f16a70ad837" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/PublicationList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/PublicationList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/ReputationList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/ReputationList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/ArtistSellDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/ArtistSellDashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Publications.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Publications.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/ProductTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ProductTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SaleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SaleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/Sale.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/Sale.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Sale.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Sale.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_26_181752_create_sales_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_26_181752_create_sales_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_09_162239_add_user_id_column_sale.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_09_162239_add_user_id_column_sale.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/SalesTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/SalesTableSeeder.php" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +230,12 @@
       <workItem from="1608607235959" duration="1737000" />
       <workItem from="1608668415540" duration="863000" />
       <workItem from="1608766249455" duration="857000" />
-      <workItem from="1609095930462" duration="1980000" />
+      <workItem from="1609095930462" duration="2989000" />
+      <workItem from="1609192951408" duration="249000" />
+      <workItem from="1609204184695" duration="821000" />
+      <workItem from="1609374738392" duration="776000" />
+      <workItem from="1609642838567" duration="2965000" />
+      <workItem from="1609708608451" duration="727000" />
     </task>
     <servers />
   </component>

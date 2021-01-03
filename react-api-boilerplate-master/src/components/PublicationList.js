@@ -118,6 +118,7 @@ const AppointmentList = (props ) => {
 
 
                                     >
+
                                         <Row gutter={16}>
                                             <Col span={8}>
                                                 <Meta
@@ -150,11 +151,6 @@ const AppointmentList = (props ) => {
                                                 </div>
                                             </Col>
                                         </Row>
-
-
-
-
-
 
 
                                     </Card>
