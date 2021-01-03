@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Product;
+use App\User;
 use App\Http\Resources\Product as ProductResource;
 use App\Http\Resources\ProductCollection;
 use Illuminate\Http\Request;
@@ -13,9 +14,24 @@ use Illuminate\Support\Facades\Auth;
 class ProductController extends Controller
 {
 
+    private static $rules =[
+        'name' => 'required|string|max:30',
+        'description' => 'required|string|max:150',
+        'price' => 'required|float',
+        'stock' => 'required|int',
+        'image' => 'required',
+        'location' => 'required',
 
+    ];
 
-    public function index()
+    public function index(User $user)
+    {
+        // $this->authorize('viewAny', Product::class);
+
+        return response()->json(ProductResource::collection($user->products->sortByDesc('created_at')), 200);
+    }
+
+    public function indexall()
     {
        // $this->authorize('viewAny', Product::class);
         return new ProductCollection(Product::paginate (25));

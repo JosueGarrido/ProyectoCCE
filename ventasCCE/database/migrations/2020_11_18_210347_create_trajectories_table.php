@@ -15,10 +15,8 @@ class CreateTrajectoriesTable extends Migration
     {
         Schema::create('trajectories', function (Blueprint $table) {
             $table->bigIncrements('id');
-
             $table->dateTime('start_date');
             $table->string('trajectory_description');
-
             $table->timestamps();
         });
     }

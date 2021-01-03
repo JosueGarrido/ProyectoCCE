@@ -15,7 +15,6 @@ class CreateWebLinksTable extends Migration
     {
         Schema::create('web__links', function (Blueprint $table) {
             $table->bigIncrements('id');
-
             $table->char('link_type');
             $table->char('link_description');
             $table->timestamps();
