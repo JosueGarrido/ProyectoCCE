@@ -75,9 +75,7 @@ const AppointmentList = (props ) => {
         const handleViewLocation = (location) => {
             setCurrentPublicationLocation(location)
         }
-        const handleViewScore = (score) => {
-            setCurrentPublicationScore(score)
-        }
+
 
         const handleCancel = () => {
             setShowModal(false);
@@ -105,7 +103,7 @@ const AppointmentList = (props ) => {
                                             handleViewPrice(product.price)
                                             handleViewStock(product.stock)
                                             handleViewLocation(product.location)
-                                            handleViewScore(product.score)
+
 
 
                                         }}
@@ -120,27 +118,39 @@ const AppointmentList = (props ) => {
 
 
                                     >
-                                    <Row>
-                                        <Col span={8} >
-                                        <Meta
-                                            avatar={<Avatar size={120} src="https://www.elcomercio.com/files/article_main/uploads/2017/08/06/5987d8614c821.jpeg" />}
-                                            title={`Nombre: ${product.name}`}
-                                            description={`Descripción: ${product.description}
-                                            `}
-                                        />
-                                        </Col>
 
-                                            <Col span={8} align='end'>
-                                                <p>Precio: ${product.price} </p>
-                                                <p>Stock: {product.stock} </p>
-                                                <p>Ubicación: {product.location} </p>
-                                                <p>Score: {product.score} </p>
+                                        <Row gutter={16}>
+                                            <Col span={8}>
+                                                <Meta
+                                                    avatar={<Avatar size={200} src=""/>}
+                                                    title={`Autor: ${product.name}`}
+                                                    description={`Descripción: ${product.description}
+                                            `}
+
+
+                                                />
+                                            </Col>
+
+                                            <Col span={8}>
+
+                                                    <p>Precio: ${product.price} </p>
+                                                    <p>Stock: {product.stock} </p>
+                                                    <p>Ubicación: {product.location} </p>
+
+
+
 
                                             </Col>
-                                    </Row>
-                                            <Button icon ={<EditOutlined />} type="primary"> Editar</Button>
-                                            <Button icon={<DeleteOutlined />} type="primary" danger>Eliminar</Button>
 
+                                            <Col span={8}>
+                                                <div>
+                                                <Button icon ={<EditOutlined />} type="primary" size={100}> Editar</Button>
+                                                </div>
+                                                <div>
+                                                <Button icon={<DeleteOutlined />} type="primary" danger>Eliminar</Button>
+                                                </div>
+                                            </Col>
+                                        </Row>
 
 
                                     </Card>
