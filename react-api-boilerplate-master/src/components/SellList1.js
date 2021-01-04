@@ -5,6 +5,7 @@ import { useUserList } from '../data/useUserList';
 import ShowError from './ShowError';
 import {LoadingOutlined, LogoutOutlined} from "@ant-design/icons";
 import {useAuth} from "../providers/Auth";
+import Routes from "../constants/routes";
 
 const { Text, Title } = Typography;
 const {Meta} = Card;
@@ -77,7 +78,9 @@ const SellList1 = ( props ) => {
                         products.map( ( products, i ) => (
                             <Col xs={ 24 } sm={ 18 } md={ 24 } style={ { marginBottom: 10 } } key={ i }>
                                 { products.name
-                                    ? <Card>
+                                    ? <Card
+                                        hoverable
+                                        style={{borderRadius: 10}}>
                                         <Row>
                                             <Col span={9}  style={ { marginRight: 20 } }>
                                                         <Meta
@@ -96,7 +99,7 @@ const SellList1 = ( props ) => {
                                             </Col>
                                             <Col span={3} style={ { marginRight: 15 } }>
                                                 <Text strong type="secondary">Precio: </Text>
-                                                <Text type="secondary">{products.price} </Text>
+                                                <Text type="secondary">${products.price} </Text>
                                                 <br/>
                                                 <Text strong type="secondary">Stock: </Text>
                                                 <Text type="secondary">{products.stock} </Text>
@@ -113,7 +116,7 @@ const SellList1 = ( props ) => {
                                                 <Text type="secondary">{products.sales}</Text>
                                             </Col>
                                             <Col span={5}>
-                                                <Button type="primary" size="large" style={ { marginTop: 25 } }>
+                                                <Button type="primary" size="large" style={ { marginTop: 25 } } href={Routes.ARTIST_SELL_DASHBOARD_ID.replace( ':id', products.id )}>
                                                     Contacta con tus compradores</Button>
                                             </Col>
                                         </Row>
