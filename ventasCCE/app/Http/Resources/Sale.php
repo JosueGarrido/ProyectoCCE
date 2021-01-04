@@ -20,7 +20,10 @@ class Sale extends JsonResource
         return [
             'id' => $this ->id,
             'user_id' => $this ->user_id,
+            'user_data' => "/api/users/" . $this->user_id,
+            'user' => $this->user,
             'product_id' => $this ->product_id,
+            'created_at' => $this->created_at,
 
         ];
     }

@@ -1,39 +1,70 @@
 import React from 'react';
+import {useProduct} from "../data/useProduct";
 import ArtistMenuDashboard from "../components/ArtistMenuDashboard";
-import { Divider, Row, Col, Layout, Typography } from 'antd';
+import { Divider, Row, Col, Layout, Typography, Skeleton } from 'antd';
 import {SettingOutlined, ShoppingOutlined} from '@ant-design/icons';
-import SellList1 from "../components/SellList1";
+import SellList2 from "../components/SellList2";
+import ShowError from "../components/ShowError";
+import withAuth from '../hocs/withAuth';
+import {useParams} from "react-router-dom";
+import {useProductSell} from "../data/useProductSell";
+
 
 const { Title } = Typography;
 const {  Content, Sider } = Layout;
 
 
-const ArtistSellDashboard2 = () => (
-    <>
-        <Row>
-            <ArtistMenuDashboard/>
+const ArtistSellDashboard2 = () => {
+    let {id} = useParams();
+    const product = useProduct(id);
+    const sales = useProductSell(id);
 
-            <Col span={ 18 } >
+    return (
+        <>
+            <Row>
+                <ArtistMenuDashboard/>
 
-                <Content style={{ margin: '2px 18px 0' }}>
-                    <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
+                <Col span={18}>
 
-                        <Col>
-                            <Title style={ { marginTop:15, textAlign: 'center' } }>Ventas</Title>
+                    <Content style={{margin: '2px 18px 0'}}>
+                        <div className="site-layout-background" style={{padding: 24, minHeight: 360}}>
 
                             <Col>
-                                <SellList1/>
+                                <Title style={{marginTop: 15, textAlign: 'center'}}>Ventas</Title>
+
+                                <Col>
+                                    {
+                                        product.isLoading
+                                            ? <div>Cargando...</div>
+                                            : product.isError
+                                            ? <ShowError error={product.isError}/>
+                                            : <>
+                                                <h1 className='title'>
+                                                    Producto: {product.product.name}
+                                                </h1>
+                                                <p>{product.product.description}</p>
+                                            </>
+                                    }
+
+                                    {
+                                        sales.isLoading
+                                            ? <Skeleton loading={sales.isLoading} active avatar/>
+                                            : sales.isError
+                                            ? <ShowError error={sales.isError}/>
+                                            : product.product && <SellList2 ProductId={id} sales={sales}/>
+                                    }
+                                </Col>
                             </Col>
-                        </Col>
 
-                    </div>
-                </Content>
-            </Col>
+                        </div>
+                    </Content>
+                </Col>
 
 
-        </Row>
+            </Row>
 
-    </>
-);
+        </>
+    );
+}
 
-export default ArtistSellDashboard2;
+export default withAuth( ArtistSellDashboard2 );
