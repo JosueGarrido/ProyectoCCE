@@ -35,7 +35,7 @@ function carousel()  {
             <Col span={24}>
                 <div>
                     <div >
-                        <Carousel className="images">
+                        <Carousel className="images" >
                             {images.map((image,index) => {
                                 return (
                                     <div key={index}>
