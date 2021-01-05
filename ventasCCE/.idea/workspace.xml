@@ -20,22 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33b01b25-7452-4012-b36b-7f16a70ad837" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/PublicationList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/PublicationList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/ReputationList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/ReputationList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/ArtistSellDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/ArtistSellDashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Publications.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Publications.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/DashboardEmail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/DashboardEmail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/ProductTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ProductTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SaleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SaleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/Sale.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/Sale.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Sale.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Sale.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_26_181752_create_sales_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_26_181752_create_sales_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_09_162239_add_user_id_column_sale.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_09_162239_add_user_id_column_sale.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_26_221353_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_26_221353_create_products_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/SalesTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/SalesTableSeeder.php" afterDir="false" />
-
+      <change beforePath="$PROJECT_DIR$/database/seeds/ProductTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ProductTableSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +155,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../xampp/htdocs/proyecto base/blog" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../xampp/htdocs/CitasMedicas" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -236,11 +231,12 @@
       <workItem from="1609374738392" duration="776000" />
       <workItem from="1609642838567" duration="2965000" />
       <workItem from="1609708608451" duration="727000" />
+      <workItem from="1609774263473" duration="13421000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -265,12 +261,12 @@
     <state x="444" y="166" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.768@0.0.1366.768" timestamp="1607987596775" />
     <state x="468" y="195" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1608072505096" />
     <state x="499" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.864@0.0.1536.864" timestamp="1603385662338" />
-    <state x="488" y="166" key="FileChooserDialogImpl" timestamp="1609701890260">
+    <state x="488" y="166" key="FileChooserDialogImpl" timestamp="1609792768182">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="1916" y="70" key="FileChooserDialogImpl/0.0.1366.728/1366.-125.1538.900@1366.-125.1538.900" timestamp="1601176576022" />
     <state x="488" y="158" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1601931202791" />
-    <state x="488" y="166" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1609701890260" />
+    <state x="488" y="166" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1609792768182" />
     <state x="549" y="178" key="FileChooserDialogImpl/0.0.1536.824/1920.70.1440.860@0.0.1536.824" timestamp="1607985110306" />
     <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1603759111344" />
     <state width="1358" height="199" key="GridCell.Tab.0.bottom" timestamp="1605140896851">
@@ -297,14 +293,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="318" y="87" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1601943473557" />
+    <state x="517" y="307" key="NewPhpFileDialog" timestamp="1609790518064">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="517" y="307" key="NewPhpFileDialog/0.0.1366.768@0.0.1366.768" timestamp="1609790518064" />
     <state x="440" y="160" key="RollbackChangesDialog" timestamp="1605204172124">
       <screen x="0" y="23" width="1440" height="816" />
     </state>
     <state x="440" y="160" key="RollbackChangesDialog/0.23.1440.816@0.23.1440.816" timestamp="1605204172124" />
-    <state x="25" y="110" key="SettingsEditor" timestamp="1601085018661">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="25" y="110" key="SettingsEditor/0.0.1536.824/1920.70.1440.860@0.0.1536.824" timestamp="1601085018661" />
     <state x="346" y="49" key="search.everywhere.popup" timestamp="1601945988778">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
