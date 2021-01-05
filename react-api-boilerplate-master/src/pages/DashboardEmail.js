@@ -2,6 +2,7 @@ import React from 'react';
 import ArtistMenuDashboard from "../components/ArtistMenuDashboard";
 import { Divider, Row, Col, Layout, Typography } from 'antd';
 import {SettingOutlined, ShoppingOutlined} from '@ant-design/icons';
+import Email from "./Email"
 
 const { Title } = Typography;
 const {  Content, Sider } = Layout;
@@ -19,6 +20,10 @@ const DashboardEmail = () => (
 
                         <Title style={ { marginTop:15, textAlign: 'center' } }>E-mails</Title>
 
+
+                        <Col>
+                            <Email/>
+                        </Col>
                     </div>
                 </Content>
             </Col>

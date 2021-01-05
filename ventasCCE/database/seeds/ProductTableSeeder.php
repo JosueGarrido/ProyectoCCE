@@ -13,6 +13,7 @@ class ProductTableSeeder extends Seeder
      */
     public function run()
     {
+        $sales = 0;
         //Vaciar la tabla.
         Product::truncate();
 

@@ -8,14 +8,14 @@ use Illuminate\Support\Facades\Auth;
 class Product extends Model
 {
 
-    protected $fillable=['name','description','price','stock','image','location', 'category_id'];
+    protected $fillable=['name','description','price','stock','sales', 'image','location', 'category_id'];
 
 
     public static function boot()
     {
         parent::boot();
-        static::creating(function ($product) {
-            $product->user_id = Auth::id();
+        static::creating(function ($products) {
+            $products->user_id = Auth::id();
         });
     }
 

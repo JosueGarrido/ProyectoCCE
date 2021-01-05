@@ -35,7 +35,8 @@ class ProductController extends Controller
     {
        // $this->authorize('viewAny', Product::class);
         return new ProductCollection(Product::paginate (25));
-
+        //$user = Auth::user();
+        //return new ProductCollection($user->products);
     }
     public function show(Product $id)
     {
