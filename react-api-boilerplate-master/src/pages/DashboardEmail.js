@@ -2,13 +2,13 @@ import React from 'react';
 import ArtistMenuDashboard from "../components/ArtistMenuDashboard";
 import { Divider, Row, Col, Layout, Typography } from 'antd';
 import {SettingOutlined, ShoppingOutlined} from '@ant-design/icons';
-import SellList1 from "../components/SellList1";
+import Email from "./Email"
 
 const { Title } = Typography;
 const {  Content, Sider } = Layout;
 
 
-const ArtistSellDashboard = () => (
+const DashboardEmail = () => (
     <>
         <Row>
             <ArtistMenuDashboard/>
@@ -18,14 +18,12 @@ const ArtistSellDashboard = () => (
                 <Content style={{ margin: '2px 18px 0' }}>
                     <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
 
+                        <Title style={ { marginTop:15, textAlign: 'center' } }>E-mails</Title>
+
+
                         <Col>
-                            <Title style={ { marginTop:15, textAlign: 'center' } }>Ventas</Title>
-
-                            <Col>
-                                <SellList1/>
-                            </Col>
+                            <Email/>
                         </Col>
-
                     </div>
                 </Content>
             </Col>
@@ -36,4 +34,4 @@ const ArtistSellDashboard = () => (
     </>
 );
 
-export default ArtistSellDashboard;
+export default DashboardEmail;

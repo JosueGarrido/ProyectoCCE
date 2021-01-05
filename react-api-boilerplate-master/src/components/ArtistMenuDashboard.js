@@ -57,15 +57,23 @@ const ArtistMenuDashboard = () => (
             </span>
                         }
                     >
-                        <Menu.Item key="Mis Datos">Mis Datos</Menu.Item>
-                        <Menu.Item key="Seguridad">Seguridad</Menu.Item>
-                        <Menu.Item key="Privacidad">Privacidad</Menu.Item>
-                        <Menu.Item key="E-mails">E-mails</Menu.Item>
-                        <Menu.Item key="Alertas de Búsqueda">Alertas de Búsqueda</Menu.Item>
+                        <Menu.Item key="Mis Datos">Mis Datos
+                            <Link to={ Routes.DASHBOARD_MY_DATA } />
+                        </Menu.Item>
+                        <Menu.Item key="Seguridad">Seguridad
+                            <Link to={ Routes.DASHBOARD_SECURITY } />
+                        </Menu.Item>
+                        <Menu.Item key="Privacidad">Privacidad
+                            <Link to={ Routes.DASHBOARD_PRIVACY } />
+                        </Menu.Item>
+                        <Menu.Item key="E-mails">E-mails
+                            <Link to={ Routes.DASHBOARD_EMAILS } />
+                        </Menu.Item>
+                        <Menu.Item key="Alertas de Búsqueda">Alertas de Búsqueda
+                            <Link to={ Routes.DASHBOARD_ALERTS } />
+                        </Menu.Item>
                     </SubMenu>
                 </Menu>
-
-
 
     </>
 );

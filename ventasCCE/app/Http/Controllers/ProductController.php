@@ -35,7 +35,8 @@ class ProductController extends Controller
     {
        // $this->authorize('viewAny', Product::class);
         return new ProductCollection(Product::paginate (25));
-
+        //$user = Auth::user();
+        //return new ProductCollection($user->products);
     }
     public function show(Product $id)
     {
@@ -57,8 +58,8 @@ class ProductController extends Controller
             'name' => 'required|string|max:30',
             'description' => 'required|string|max:150',
             'price' => 'required',
-            'stock' => 'required|int',
-            'image' => 'required',
+            'stock' => 'required',
+            'image' => 'required|image|dimensions:min_width=200,min_height=200',
             'location' => 'required',
             'category_id' => 'required'
         ],$messages);

@@ -6,6 +6,7 @@ const publicRoutes = {
   LOGIN: '/ingreso',
   REGISTER: '/registro',
  // ARTIST_DASHBOARD: '/dashboard_artista',
+  //Dashboard artista Ventas
   PUBLICATIONS: '/publicaciones',
   ARTIST_DASHBOARD: '/dashboard-artista',
   ARTIST_PUBLICATIONS_DASHBOARD: '/dashboard-publicaciones-artista',
@@ -19,13 +20,21 @@ const publicRoutes = {
   HOME: '/',
   ABOUT: '/acerca-de',
   ANTD: '/antd',
-  HOW_TO_BUY: '/como-comprar'
+  HOW_TO_BUY: '/como-comprar',
+
+  //Dashboard Configuración
+  DASHBOARD_MY_DATA: '/dashboard-mis-datos',
+  DASHBOARD_SECURITY: '/dashboard-seguridad',
+  DASHBOARD_PRIVACY: '/dashboard-privacidad',
+  DASHBOARD_EMAILS: '/dashboard-emails',
+  DASHBOARD_ALERTS: '/dashboard-alerts',
 };
 
 const privateRoutes = {
   LOGOUT: '/logout',
   PRIVATE: '/privada',
-  ARTICLE_ID: '/articulo/:id'
+  ARTICLE_ID: '/articulo/:id',
+  ARTIST_SELL_DASHBOARD_ID: '/dashboard-ventas-artista/:id',
 };
 
 const Routes = {

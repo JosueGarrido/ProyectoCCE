@@ -2,13 +2,12 @@ import React from 'react';
 import ArtistMenuDashboard from "../components/ArtistMenuDashboard";
 import { Divider, Row, Col, Layout, Typography } from 'antd';
 import {SettingOutlined, ShoppingOutlined} from '@ant-design/icons';
-import SellList1 from "../components/SellList1";
 
 const { Title } = Typography;
 const {  Content, Sider } = Layout;
 
 
-const ArtistSellDashboard = () => (
+const DashboardAlerts = () => (
     <>
         <Row>
             <ArtistMenuDashboard/>
@@ -18,13 +17,7 @@ const ArtistSellDashboard = () => (
                 <Content style={{ margin: '2px 18px 0' }}>
                     <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
 
-                        <Col>
-                            <Title style={ { marginTop:15, textAlign: 'center' } }>Ventas</Title>
-
-                            <Col>
-                                <SellList1/>
-                            </Col>
-                        </Col>
+                        <Title style={ { marginTop:15, textAlign: 'center' } }>Alertas de Búsqueda</Title>
 
                     </div>
                 </Content>
@@ -36,4 +29,4 @@ const ArtistSellDashboard = () => (
     </>
 );
 
-export default ArtistSellDashboard;
+export default DashboardAlerts;

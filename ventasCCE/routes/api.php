@@ -104,6 +104,9 @@ Route::group(['middleware' => ['cors']], function () {
         Route::put('sales/{id}', 'SaleController@update');
         Route::delete('sales/{id}', 'SaleController@delete');
 
+        //Ventas de un producto
+        Route::get('products/{product}/sales/', 'SaleController@indexsales');
+
         //links
         Route::get('weblinks', 'Web_LinksController@index');
         Route::get('weblinks/{id}', 'Web_LinksController@show');

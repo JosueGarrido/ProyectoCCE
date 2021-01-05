@@ -3,26 +3,29 @@
 namespace App\Http\Controllers;
 
 
+use App\Product;
 use App\Sale;
 use App\Http\Resources\Sale as SaleResource;
 use App\Http\Resources\SaleCollection;
-use http\Env\Response;
 use Illuminate\Http\Request;
+
 
 class SaleController extends Controller
 {
     private static $rules =[
-        'date_buy_sale' => 'required',
-        'total_buy_sale' => 'required',
-        'quantity_buy_sale' => 'required',
-
-
+        'user_id' => 'required',
 
     ];
     private static $messages =[
         'required' => 'El campo :attribute es obligatorio.',
 
     ];
+    public function indexsales(Product $product)
+    {
+
+        return response()->json(SaleResource::collection($product->sale->sortByDesc('created_at')), 200);
+
+    }
     public function index()
     {
        // $this->authorize('viewAny', Sale::class);

@@ -15,11 +15,6 @@ class CreateSalesTable extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->bigIncrements('id');
-
-            $table->date('date_buy_sale');
-            $table->char('description_buy_sale');
-            $table->double('total_buy_sale');
-            $table->integer('quantity_buy_sale');
             $table->timestamps();
         });
     }

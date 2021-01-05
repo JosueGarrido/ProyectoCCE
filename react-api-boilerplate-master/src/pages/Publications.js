@@ -316,7 +316,7 @@ const Publications = ( {
                         <Select style={ { width: 315 } } onChange={ handleChangeCategory } loading={ !categories }>
                             {
                                 categories && categories.map( ( category, index ) =>
-                                    <Option value={ category.id } key={ index }>{` ${ category.name } `}</Option>
+                                    <Option value={ category.id } key={ index } >{` ${ category.name } `}</Option>
                                 )
                             }
                         </Select>

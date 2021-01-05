@@ -12,12 +12,19 @@ class AddUserIdColumnSale extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('restrict');
         });
+        Schema::table('sales', function (Blueprint $table) {
+            $table->unsignedBigInteger('product_id');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('restrict');
+        });
     }
 
     public function down()
     {
         Schema::table('sales', function (Blueprint $table) {
             $table->dropForeign(['user_id']);
+        });
+        Schema::table('sales', function (Blueprint $table) {
+            $table->dropForeign(['product_id']);
         });
     }
 }

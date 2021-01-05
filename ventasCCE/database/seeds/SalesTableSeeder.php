@@ -25,13 +25,10 @@ class SalesTableSeeder extends Seeder
             // iniciamos sesión con este usuario
             JWTAuth::attempt(['email' => $user->email, 'password' => '123456']);
             // Y ahora con este usuario creamos algunos productos
-            $num_sales = 5;
+            $num_sales = 25;
             for ($j = 0; $j < $num_sales; $j++) {
                 Sale::create([
-                    'date_buy_sale' => $faker->date("Y-m-d"),
-                    'description_buy_sale' => $faker->sentence,
-                    'total_buy_sale' => $faker->numberBetween(2,999),
-                    'quantity_buy_sale' => $faker->numberBetween(0,5),
+                    'product_id' => $faker->numberBetween(1,55),
                 ]);
             }
         }
