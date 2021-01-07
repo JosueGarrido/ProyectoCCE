@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ArtistMenuDashboard from "../components/ArtistMenuDashboard";
-import { Divider, Row, Col, Layout, Typography, Card } from 'antd';
+import { Drawer, Divider, Row, Col, Layout, Typography, Card } from 'antd';
 import {SettingOutlined, ShoppingOutlined} from '@ant-design/icons';
 import {useAuth} from "../providers/Auth";
 
@@ -21,6 +21,14 @@ const gridStyleBot = {
 
 
 const DashboardMyData = () => {
+    const [visible, setVisible] = useState(false);
+
+    const showDrawer = () => {
+        setVisible(true);
+    };
+    const onClose = () => {
+        setVisible(false);
+    };
 
     const {currentUser} = useAuth();
 
@@ -52,11 +60,11 @@ const DashboardMyData = () => {
                             <br/>
                             <Title level={3} style={{marginTop: 20}}>Datos personales</Title>
                             <Card style={{borderRadius: 10, marginTop: 20}}>
-                                <Card.Grid hoverable={false} style={gridStyleTop} >
+                                <Card.Grid hoverable={false} style={gridStyleTop} onClick={showDrawer}>
                                     <strong>Nombre y Apellido: </strong>
                                     {currentUser && currentUser.name} {currentUser && currentUser.last_name}
                                 </Card.Grid>
-                                <Card.Grid hoverable={false} style={{width: '100%'}}>
+                                <Card.Grid hoverable={false} style={{width: '100%'}} onClick={showDrawer}>
                                     <strong>Documento de Identificación: </strong>
                                     {currentUser && currentUser.identity}
                                 </Card.Grid>
@@ -73,6 +81,18 @@ const DashboardMyData = () => {
                                 </Card.Grid>
                             </Card>
                             </Col>
+
+                            <Drawer
+                                title="Basic Drawer"
+                                placement="right"
+                                closable={false}
+                                onClose={onClose}
+                                visible={visible}
+                            >
+                                <p>Some contents...</p>
+                                <p>Some contents...</p>
+                                <p>Some contents...</p>
+                            </Drawer>
                         </div>
                     </Content>
                 </Col>

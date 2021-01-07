@@ -34,7 +34,7 @@ const privateRoutes = {
   LOGOUT: '/logout',
   PRIVATE: '/privada',
   ARTICLE_ID: '/articulo/:id',
-  ARTIST_SELL_DASHBOARD_ID: '/dashboard-ventas-artista/:id',
+  ARTIST_SELL_DASHBOARD_ID: '/ventas/:id',
 };
 
 const Routes = {
