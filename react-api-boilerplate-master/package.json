@@ -1,7 +1,6 @@
 {
-  "name": "react-api-boilerplate",
-  "version": "0.1.0",
-  "private": true,
+  "name": "react-api-boilerplate-master",
+  "version": "1.0.0",
   "dependencies": {
     "@ant-design/charts": "^1.0.13",
     "@ant-design/icons": "^4.3.0",
