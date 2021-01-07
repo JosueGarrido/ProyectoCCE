@@ -10,7 +10,7 @@ import {useParams} from "react-router-dom";
 import {useProductSell} from "../data/useProductSell";
 
 
-const { Title } = Typography;
+const { Title, Text } = Typography;
 const {  Content, Sider } = Layout;
 
 
@@ -18,6 +18,7 @@ const ArtistSellDashboard2 = () => {
     let {id} = useParams();
     const product = useProduct(id);
     const sales = useProductSell(id);
+    console.log( 'product2', product );
 
     return (
         <>
@@ -39,7 +40,7 @@ const ArtistSellDashboard2 = () => {
                                             : product.isError
                                             ? <ShowError error={product.isError}/>
                                             : <>
-                                                <h1 className='title'>
+                                                <h1>
                                                     Producto: {product.product.name}
                                                 </h1>
                                                 <p>{product.product.description}</p>
@@ -51,7 +52,8 @@ const ArtistSellDashboard2 = () => {
                                             ? <Skeleton loading={sales.isLoading} active avatar/>
                                             : sales.isError
                                             ? <ShowError error={sales.isError}/>
-                                            : product.product && <SellList2 ProductId={id} sales={sales}/>
+                                            :
+                                            product.product && <SellList2 ProductId={id} sales={sales}/>
                                     }
                                 </Col>
                             </Col>
