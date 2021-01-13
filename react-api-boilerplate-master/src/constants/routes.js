@@ -17,6 +17,8 @@ const publicRoutes = {
   ARTICLES: '/articulos',
   USERS: '/usuarios',
   USERS_ID: `/usuario/:id`,
+  ARTISTS: '/artistas',
+  ARTIST: '/artista/:id',
   HOME: '/',
   ABOUT: '/acerca-de',
   ANTD: '/antd',

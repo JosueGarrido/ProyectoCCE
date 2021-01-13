@@ -39,6 +39,9 @@ const AsyncDashboardSecurity = loadable( () => import( '../pages/DashboardSecuri
 const AsyncDashboardPrivacy = loadable( () => import( '../pages/DashboardPrivacy' ), loadableOptions );
 const AsyncDashboardEmails = loadable( () => import( '../pages/DashboardEmail' ), loadableOptions );
 const AsyncDashboardAlerts = loadable( () => import( '../pages/DashboardAlerts' ), loadableOptions );
+//Paginas Artistas
+const AsyncArtists = loadable( () => import( '../pages/Artists' ), loadableOptions );
+const AsyncArtist = loadable( () => import( '../pages/Artist' ), loadableOptions );
 
 
 const AsyncRegister = loadable( () => import( '../pages/Register' ), loadableOptions );
@@ -72,6 +75,9 @@ const AppRouter = () => (
     <PublicRoute path={ Routes.ARTICLES } component={ AsyncArticles } />
     <PublicRoute path={ Routes.ABOUT } component={ AsyncAbout } />
     <PublicRoute path={ Routes.HOW_TO_BUY } component={ AsyncHowToBuy } />
+    <PublicRoute path={ Routes.ARTISTS } component={ AsyncArtists } />
+    <PublicRoute path={ Routes.ARTIST } component={ AsyncArtist } />
+
 
     <PrivateRoute path={ Routes.PRIVATE } component={ AsyncPrivate } />
     <PrivateRoute path={ Routes.ARTICLE_ID } component={ AsyncArticle } />
