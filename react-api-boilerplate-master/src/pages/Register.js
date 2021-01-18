@@ -370,7 +370,7 @@ const Register = () => {
         data.append( 'birthday', userData.birthday );
         data.append( 'phone', userData.phone );
         data.append( 'profile_picture', userData.profile_picture[0] );
-        data.append( 'country', userData.country );
+        data.append( 'location', userData.location );
         data.append( 'province', userData.province );
         data.append( 'city', userData.city );
         data.append( 'town', userData.town );
@@ -613,7 +613,7 @@ const Register = () => {
             </Card>
 
               <Card style={{ margin: 10 }} type="inner" title="INFORMACIÓN DOMICILIARIA"  >
-                      <Form.Item name='country'
+                      <Form.Item name='location'
                                  label="País de domicilio"
                                  rules={ [
                                      {
@@ -638,7 +638,7 @@ const Register = () => {
                           shouldUpdate={(prevValues, currentValues) => prevValues.country !== currentValues.country}
                       >
                           {({ getFieldValue }) => {
-                              return getFieldValue('country') === 'Ecuador' ? (
+                              return getFieldValue('location') === 'Ecuador' ? (
                                   <Form.Item name='province'
                                              label="Provincia de domicilio"
                                              initialValue={null}

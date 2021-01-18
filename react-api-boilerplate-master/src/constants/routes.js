@@ -5,7 +5,7 @@
 const publicRoutes = {
   LOGIN: '/ingreso',
   REGISTER: '/registro',
- // ARTIST_DASHBOARD: '/dashboard_artista',
+
   //Dashboard artista Ventas
   PUBLICATIONS: '/publicaciones',
   ARTIST_DASHBOARD: '/dashboard-artista',

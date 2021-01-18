@@ -1,6 +1,5 @@
 import React from 'react';
 import { Row, Col, Card } from 'antd';
-import withAuth from '../hocs/withAuth';
 
 const Metrics = () => {
     return <>

@@ -20,9 +20,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33b01b25-7452-4012-b36b-7f16a70ad837" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/ArtistsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/ArtistsList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/Navigation2.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/Navigation2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/constants/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/constants/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/data/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/data/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/hocs/withAuthRedirect.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/hocs/withAuthRedirect.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/hocs/withoutAuth.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/hocs/withoutAuth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Artist.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Artist.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Metrics.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Metrics.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Private.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Private.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/providers/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/providers/Auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/routers/AppRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/routers/AppRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/routers/PrivateRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/routers/PrivateRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/serviceWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/serviceWorker.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/jwt.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/jwt.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,7 +246,10 @@
       <workItem from="1610331117540" duration="528000" />
       <workItem from="1610486795803" duration="793000" />
       <workItem from="1610488943815" duration="207000" />
-      <workItem from="1610503446964" duration="1528000" />
+      <workItem from="1610503446964" duration="1690000" />
+      <workItem from="1610679469480" duration="324000" />
+      <workItem from="1610931175010" duration="2045000" />
+      <workItem from="1610951780099" duration="3339000" />
     </task>
     <servers />
   </component>

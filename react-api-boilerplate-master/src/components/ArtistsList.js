@@ -47,11 +47,12 @@ const ArtistsList = ( props ) => {
                                                 src={ `http://localhost:8000/storage/${ users.profile_picture }` }
                                             /> }
                                     >
-                                        <Text type='secondary'>{ users.created_at }</Text>
-                                        <p> { users.name }</p>
-                                        <Text type='secondary'>Escrito por: <Button type='link'>
-                                            { users.name }
-                                        </Button></Text>
+                                        <Text type='secondary'>Creado desde: { users.created_at }</Text>
+                                        <br/>
+                                        <Text type='secondary'>
+                                            <Link to={ Routes.ARTIST.replace( ':id', users.id ) }>
+                                                { users.name }</Link>
+                                            </Text>
                                     </Card>
                                     : <div style={ { textAlign: 'center' } }>
                                         <Skeleton.Image style={ { width: 200 } } />

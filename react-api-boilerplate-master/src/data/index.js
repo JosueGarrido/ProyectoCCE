@@ -1,3 +1,6 @@
+/**
+ * Created by chalosalvador on 3/1/20
+ */
 import Cookies from 'js-cookie';
 import Routes from '../constants/routes';
 import history from '../utils/history';
@@ -113,10 +116,10 @@ const create = ( config ) => {
 };
 
 const API = create(
-  {
-    baseURL,
-    headers
-  }
+    {
+      baseURL,
+      headers
+    }
 );
 
 export default API;

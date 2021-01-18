@@ -82,20 +82,20 @@ const AppRouter = () => (
     <PrivateRoute path={ Routes.PRIVATE } component={ AsyncPrivate } />
     <PrivateRoute path={ Routes.ARTICLE_ID } component={ AsyncArticle } />
     <PrivateRoute path={ Routes.LOGOUT } component={ AsyncLogout } />
-      <PrivateRoute path={ Routes.ARTIST_DASHBOARD } component={ AsyncDashboardArtist } />
-      <PrivateRoute path={ Routes.ARTIST_PUBLICATIONS_DASHBOARD } component={ AsyncDashboardPublicationsArtist } />
-      <PrivateRoute path={ Routes.ARTIST_QUESTIONS_DASHBOARD } component={ AsyncDashboardQuestionsArtist } />
-      <PrivateRoute path={ Routes.ARTIST_SELL_DASHBOARD } component={ AsyncDashboardSellArtist } />
-      <PrivateRoute path={ Routes.ARTIST_SELL_DASHBOARD_ID } component={ AsyncDashboardSell2Artist } />
-      <PrivateRoute path={ Routes.ARTIST_METRICS_DASHBOARD } component={ AsyncDashboardMetricsArtist } />
-      <PrivateRoute path={ Routes.ARTIST_REPUTATION_DASHBOARD } component={ AsyncDashboardReputationArtist } />
-      <PrivateRoute path={ Routes.DASHBOARD_MY_DATA } component={ AsyncDashboardMyData } />
-      <PrivateRoute path={ Routes.DASHBOARD_SECURITY } component={ AsyncDashboardSecurity } />
-      <PrivateRoute path={ Routes.DASHBOARD_PRIVACY } component={ AsyncDashboardPrivacy } />
-      <PrivateRoute path={ Routes.DASHBOARD_EMAILS } component={ AsyncDashboardEmails } />
-      <PrivateRoute path={ Routes.DASHBOARD_ALERTS } component={ AsyncDashboardAlerts } />
+    <PrivateRoute path={ Routes.ARTIST_DASHBOARD } component={ AsyncDashboardArtist } />
+    <PrivateRoute path={ Routes.ARTIST_PUBLICATIONS_DASHBOARD } component={ AsyncDashboardPublicationsArtist } />
+    <PrivateRoute path={ Routes.ARTIST_QUESTIONS_DASHBOARD } component={ AsyncDashboardQuestionsArtist } />
+    <PrivateRoute path={ Routes.ARTIST_SELL_DASHBOARD } component={ AsyncDashboardSellArtist } />
+    <PrivateRoute path={ Routes.ARTIST_SELL_DASHBOARD_ID } component={ AsyncDashboardSell2Artist } />
+    <PrivateRoute path={ Routes.ARTIST_METRICS_DASHBOARD } component={ AsyncDashboardMetricsArtist } />
+    <PrivateRoute path={ Routes.ARTIST_REPUTATION_DASHBOARD } component={ AsyncDashboardReputationArtist } />
+    <PrivateRoute path={ Routes.DASHBOARD_MY_DATA } component={ AsyncDashboardMyData } />
+    <PrivateRoute path={ Routes.DASHBOARD_SECURITY } component={ AsyncDashboardSecurity } />
+    <PrivateRoute path={ Routes.DASHBOARD_PRIVACY } component={ AsyncDashboardPrivacy } />
+    <PrivateRoute path={ Routes.DASHBOARD_EMAILS } component={ AsyncDashboardEmails } />
+    <PrivateRoute path={ Routes.DASHBOARD_ALERTS } component={ AsyncDashboardAlerts } />
 
-    <Route component={ NotFoundPage } />
+      <Route component={ NotFoundPage } />
   </Switch>
 );
 
