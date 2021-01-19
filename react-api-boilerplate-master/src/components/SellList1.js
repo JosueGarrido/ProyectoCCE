@@ -72,28 +72,28 @@ const SellList1 = ( props ) => {
         return (
             <>
 
-                <Row justify='center' gutter={ 30 }>
-                    {
-                        products.map( ( products, i ) => (
-                            <Col xs={ 24 } sm={ 18 } md={ 24 } style={ { marginBottom: 10 } } key={ i }>
-                                { products.name
-                                    ? <Card>
-                                        <Row>
-                                            <Col span={9}  style={ { marginRight: 20 } }>
-                                                        <Meta
-                                                            avatar={<Avatar
-                                                                shape="square"
-                                                                size={100}
-                                                                alt={ products.name }
-                                                                src="https://www.elcomercio.com/files/article_main/uploads/2017/08/06/5987d8614c821.jpeg"
-                                                            />}
+                    <Row justify='center' gutter={ 30 }>
+                        {
+                            products.map( ( products, i ) => (
+                                <Col xs={ 24 } sm={ 18 } md={ 24 } style={ { marginBottom: 10 } } key={ i }>
+                                    { products.name
+                                        ? <Card>
+                                            <Row>
+                                                <Col span={9}  style={ { marginRight: 20 } }>
+                                                            <Meta
+                                                                avatar={<Avatar
+                                                                    shape="square"
+                                                                    size={100}
+                                                                    alt={ products.name }
+                                                                    src="https://www.elcomercio.com/files/article_main/uploads/2017/08/06/5987d8614c821.jpeg"
+                                                                />}
 
 
-                                                            title={`Nombre del Producto: ${products.name}`}
-                                                            description={`Descripción: ${products.description}`}
+                                                                title={`Nombre del Producto: ${products.name}`}
+                                                                description={`Descripción: ${products.description}`}
 
-                                                        />
-                                            </Col>
+                                                            />
+                                                </Col>
                                             <Col span={3} style={ { marginRight: 15 } }>
                                                 <Text strong type="secondary">Precio: </Text>
                                                 <Text type="secondary">{products.price} </Text>
