@@ -31,6 +31,7 @@
       <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Artist.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Artist.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Metrics.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Metrics.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Private.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Private.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Register.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/providers/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/providers/Auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/routers/AppRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/routers/AppRouter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/routers/PrivateRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/routers/PrivateRoute.js" afterDir="false" />
@@ -250,6 +251,7 @@
       <workItem from="1610679469480" duration="324000" />
       <workItem from="1610931175010" duration="2045000" />
       <workItem from="1610951780099" duration="3339000" />
+      <workItem from="1610994326237" duration="180000" />
     </task>
     <servers />
   </component>
