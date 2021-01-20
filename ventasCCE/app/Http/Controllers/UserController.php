@@ -7,6 +7,7 @@ use App\User;
 use App\Http\Resources\User as UserResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Validator;
@@ -166,6 +167,7 @@ class UserController extends Controller{
         $user->update($request->all());
         return$user;
     }
+
     public function delete(Request $request, $user)
     {
         Schema::disableForeignKeyConstraints();
@@ -175,6 +177,7 @@ class UserController extends Controller{
         Schema::enableForeignKeyConstraints();
 
     }
+
     public function logout()
     {
         try {
