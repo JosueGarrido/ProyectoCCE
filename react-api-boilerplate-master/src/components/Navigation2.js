@@ -55,7 +55,7 @@ const Navigation = ( props ) => {
                     isAuthenticated
                     ?<Menu.SubMenu icon={ <UserOutlined /> } title={ currentUser && currentUser.name } style={linkStyle} className='scale-up-bottom'>
                         <Menu.ItemGroup className='sub-menu' style={linkStyle}>
-                            <Menu.Item key={ Routes.LOGIN } className='scale-up-bottom'>
+                            <Menu.Item key={ Routes.ARTIST_DASHBOARD } className='scale-up-bottom'>
                                 <Link to={ Routes.ARTIST_DASHBOARD } style={linkStyle}>
                                     {
                                         isCheckingAuth
@@ -64,7 +64,7 @@ const Navigation = ( props ) => {
                                     }
                                 </Link>
                             </Menu.Item>
-                            <Menu.Item key={ Routes.LOGIN } className='scale-up-bottom'>
+                            <Menu.Item key={ Routes.LOGOUT } className='scale-up-bottom'>
                                 <Link to={ Routes.LOGOUT } className='logout-link'>
                                     {
                                         isCheckingAuth
@@ -77,12 +77,12 @@ const Navigation = ( props ) => {
 
                     </Menu.SubMenu>
                     :<>
-                    <Menu.Item key={ Routes.LOGIN } className='scale-up-bottom'>
+                    <Menu.Item key={ Routes.ABOUT } className='scale-up-bottom'>
                         <Link to={ Routes.LOGIN } style={linkStyle}>
                             Comprar
                         </Link>
                     </Menu.Item>
-                        <Menu.Item key={ Routes.LOGIN } className='scale-up-bottom'>
+                        <Menu.Item key={ Routes.ABOUT } className='scale-up-bottom'>
                             <Link to={ Routes.LOGIN } style={linkStyle}>
                                 Vender
                             </Link>

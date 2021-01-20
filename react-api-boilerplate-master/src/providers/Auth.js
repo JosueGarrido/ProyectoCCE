@@ -89,31 +89,31 @@ export const AuthProvider = ( { children } ) => {
 
     if( event.key === 'login' ) {
       // if( event.newValue === 'true' ) {
-        console.log( 'login from storage!' );
-        // const token = Cookies.get( 'token' ); // check if the token exists
-        // setAuthenticated( true );
-        window.location.reload();
+      console.log( 'login from storage!' );
+      // const token = Cookies.get( 'token' ); // check if the token exists
+      // setAuthenticated( true );
+      window.location.reload();
       // } else {
-        // console.log( 'logged out from storage!' );
-        // Cookies.remove( 'token' );
-        // setCurrentUser( null );
-        // setAuthenticated( false );
+      // console.log( 'logged out from storage!' );
+      // Cookies.remove( 'token' );
+      // setCurrentUser( null );
+      // setAuthenticated( false );
       // }
     }
   };
 
   return (
-    <AuthContext.Provider
-      value={ {
-        isAuthenticated,
-        isCheckingAuth,
-        setAuthenticated,
-        currentUser,
-        setCurrentUser
-      } }
-    >
-      { children }
-    </AuthContext.Provider>
+      <AuthContext.Provider
+          value={ {
+            isAuthenticated,
+            isCheckingAuth,
+            setAuthenticated,
+            currentUser,
+            setCurrentUser
+          } }
+      >
+        { children }
+      </AuthContext.Provider>
   );
 };
 

@@ -5,7 +5,7 @@
 const publicRoutes = {
   LOGIN: '/ingreso',
   REGISTER: '/registro',
- // ARTIST_DASHBOARD: '/dashboard_artista',
+
   //Dashboard artista Ventas
   PUBLICATIONS: '/publicaciones',
   ARTIST_DASHBOARD: '/dashboard-artista',
@@ -17,6 +17,8 @@ const publicRoutes = {
   ARTICLES: '/articulos',
   USERS: '/usuarios',
   USERS_ID: `/usuario/:id`,
+  ARTISTS: '/artistas',
+  ARTIST: '/artista/:id',
   HOME: '/',
   ABOUT: '/acerca-de',
   ANTD: '/antd',
@@ -33,7 +35,8 @@ const publicRoutes = {
 const privateRoutes = {
   LOGOUT: '/logout',
   PRIVATE: '/privada',
-  ARTICLE_ID: '/articulo/:id'
+  ARTICLE_ID: '/articulo/:id',
+  ARTIST_SELL_DASHBOARD_ID: '/ventas/:id',
 };
 
 const Routes = {

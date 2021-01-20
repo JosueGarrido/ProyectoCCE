@@ -11,15 +11,15 @@ import withAuth from '../hocs/withAuth';
  * @constructor
  */
 const PrivateRoute = ( {
-  component: Component,
-  ...rest
+    component: Component,
+    ...rest
 } ) => {
 
-  const getComponent = ( props ) => {
-    return <Component { ...props } />;
-  };
+    const getComponent = ( props ) => {
+        return <Component { ...props } />;
+    };
 
-  return <Route { ...rest } component={ getComponent } />;
+    return <Route { ...rest } component={ getComponent } />;
 };
 
 export default withAuth( PrivateRoute );

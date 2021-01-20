@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Validator;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use JWTAuth;
@@ -157,7 +158,7 @@ class UserController extends Controller{
         } catch (Tymon\JWTAuth\Exceptions\JWTException $e) {
             return response()->json(['message' => 'token_absent'], $e->getStatusCode());
         }
-        return response()->json(new UserResource($user));
+        return response()->json(new UserResource($user), 200);
 
     }
     public function update(Request $request, $user)

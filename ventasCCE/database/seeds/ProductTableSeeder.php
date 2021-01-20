@@ -13,6 +13,7 @@ class ProductTableSeeder extends Seeder
      */
     public function run()
     {
+        $sales = 0;
         //Vaciar la tabla.
         Product::truncate();
 
@@ -25,7 +26,7 @@ class ProductTableSeeder extends Seeder
             // iniciamos sesión con este usuario
             JWTAuth::attempt(['email' => $user->email, 'password' => '123456']);
             // Y ahora con este usuario creamos algunos productos
-            $num_articles = 5;
+            $num_articles = 8;
             for ($j = 0; $j < $num_articles; $j++) {
                 $image_name = $faker->image('public/storage/products', 400, 300, null, false);
                 Product::create([
@@ -36,7 +37,6 @@ class ProductTableSeeder extends Seeder
                     'sales' => $faker->numberBetween(1,5),
                     'image' => 'products/' . $image_name,
                     'location' => $faker->country,
-
                     'category_id' => $faker->numberBetween(1,6),
                 ]);
             }

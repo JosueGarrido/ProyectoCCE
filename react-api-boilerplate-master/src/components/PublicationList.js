@@ -89,24 +89,13 @@ const AppointmentList = (props ) => {
         return (
             <>
 
-                <Row>
+                <Row justify='center' gutter={ 30 }>
                     {
                         products.map((product, index)=>{
                             return (
-                                <Col >
+                                <Col xs={ 24 } sm={ 18 } md={ 24 } style={ { marginBottom: 20 } } >
                                     <Card
 
-                                        onClick={ () => {
-                                            handleViewDetails(product.id)
-                                            handleViewName(product.name)
-                                            handleViewDescription(product.description)
-                                            handleViewPrice(product.price)
-                                            handleViewStock(product.stock)
-                                            handleViewLocation(product.location)
-
-
-
-                                        }}
                                         style={{
                                             width: 1000,
                                             marginRight: 20,
@@ -119,10 +108,10 @@ const AppointmentList = (props ) => {
 
                                     >
 
-                                        <Row gutter={16}>
-                                            <Col span={8}>
+                                        <Row >
+                                            <Col span={14}>
                                                 <Meta
-                                                    avatar={<Avatar size={200} src=""/>}
+                                                    avatar={<Avatar size={150} src={ `http://localhost:8000/storage/${ product.image }` }/>}
                                                     title={`Autor: ${product.name}`}
                                                     description={`Descripción: ${product.description}
                                             `}
@@ -131,25 +120,25 @@ const AppointmentList = (props ) => {
                                                 />
                                             </Col>
 
-                                            <Col span={8}>
+                                            <Col span={8} align='center'>
 
                                                     <p>Precio: ${product.price} </p>
                                                     <p>Stock: {product.stock} </p>
+                                                <p>Venta: {product.sales} </p>
                                                     <p>Ubicación: {product.location} </p>
 
+                                                <div>
+                                                    <Button icon ={<EditOutlined />} type="primary" size={100}> Editar</Button>
+
+                                                    <Button icon={<DeleteOutlined />} type="primary" danger>Eliminar</Button>
+                                                </div>
+
 
 
 
                                             </Col>
 
-                                            <Col span={8}>
-                                                <div>
-                                                <Button icon ={<EditOutlined />} type="primary" size={100}> Editar</Button>
-                                                </div>
-                                                <div>
-                                                <Button icon={<DeleteOutlined />} type="primary" danger>Eliminar</Button>
-                                                </div>
-                                            </Col>
+
                                         </Row>
 
 

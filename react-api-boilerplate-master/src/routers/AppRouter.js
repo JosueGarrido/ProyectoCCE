@@ -30,6 +30,7 @@ const AsyncDashboardArtist = loadable( () => import( '../pages/ArtistResumeDashb
 const AsyncDashboardPublicationsArtist = loadable( () => import( '../pages/ArtistPublicationsDashboard' ), loadableOptions );
 const AsyncDashboardQuestionsArtist = loadable( () => import( '../pages/ArtistQuestionsDashboard' ), loadableOptions );
 const AsyncDashboardSellArtist = loadable( () => import( '../pages/ArtistSellDashboard' ), loadableOptions );
+const AsyncDashboardSell2Artist = loadable( () => import( '../pages/ArtistSellDashboard2' ), loadableOptions );
 const AsyncDashboardMetricsArtist = loadable( () => import( '../pages/ArtistMetricsDashboard' ), loadableOptions );
 const AsyncDashboardReputationArtist = loadable( () => import( '../pages/ArtistReputationDashboard' ), loadableOptions );
 //Dashboard Configuración
@@ -38,6 +39,9 @@ const AsyncDashboardSecurity = loadable( () => import( '../pages/DashboardSecuri
 const AsyncDashboardPrivacy = loadable( () => import( '../pages/DashboardPrivacy' ), loadableOptions );
 const AsyncDashboardEmails = loadable( () => import( '../pages/DashboardEmail' ), loadableOptions );
 const AsyncDashboardAlerts = loadable( () => import( '../pages/DashboardAlerts' ), loadableOptions );
+//Paginas Artistas
+const AsyncArtists = loadable( () => import( '../pages/Artists' ), loadableOptions );
+const AsyncArtist = loadable( () => import( '../pages/Artist' ), loadableOptions );
 
 
 const AsyncRegister = loadable( () => import( '../pages/Register' ), loadableOptions );
@@ -71,23 +75,27 @@ const AppRouter = () => (
     <PublicRoute path={ Routes.ARTICLES } component={ AsyncArticles } />
     <PublicRoute path={ Routes.ABOUT } component={ AsyncAbout } />
     <PublicRoute path={ Routes.HOW_TO_BUY } component={ AsyncHowToBuy } />
+    <PublicRoute path={ Routes.ARTISTS } component={ AsyncArtists } />
+    <PublicRoute path={ Routes.ARTIST } component={ AsyncArtist } />
+
 
     <PrivateRoute path={ Routes.PRIVATE } component={ AsyncPrivate } />
     <PrivateRoute path={ Routes.ARTICLE_ID } component={ AsyncArticle } />
     <PrivateRoute path={ Routes.LOGOUT } component={ AsyncLogout } />
-      <PrivateRoute path={ Routes.ARTIST_DASHBOARD } component={ AsyncDashboardArtist } />
-      <PrivateRoute path={ Routes.ARTIST_PUBLICATIONS_DASHBOARD } component={ AsyncDashboardPublicationsArtist } />
-      <PrivateRoute path={ Routes.ARTIST_QUESTIONS_DASHBOARD } component={ AsyncDashboardQuestionsArtist } />
-      <PrivateRoute path={ Routes.ARTIST_SELL_DASHBOARD } component={ AsyncDashboardSellArtist } />
-      <PrivateRoute path={ Routes.ARTIST_METRICS_DASHBOARD } component={ AsyncDashboardMetricsArtist } />
-      <PrivateRoute path={ Routes.ARTIST_REPUTATION_DASHBOARD } component={ AsyncDashboardReputationArtist } />
-      <PrivateRoute path={ Routes.DASHBOARD_MY_DATA } component={ AsyncDashboardMyData } />
-      <PrivateRoute path={ Routes.DASHBOARD_SECURITY } component={ AsyncDashboardSecurity } />
-      <PrivateRoute path={ Routes.DASHBOARD_PRIVACY } component={ AsyncDashboardPrivacy } />
-      <PrivateRoute path={ Routes.DASHBOARD_EMAILS } component={ AsyncDashboardEmails } />
-      <PrivateRoute path={ Routes.DASHBOARD_ALERTS } component={ AsyncDashboardAlerts } />
+    <PrivateRoute path={ Routes.ARTIST_DASHBOARD } component={ AsyncDashboardArtist } />
+    <PrivateRoute path={ Routes.ARTIST_PUBLICATIONS_DASHBOARD } component={ AsyncDashboardPublicationsArtist } />
+    <PrivateRoute path={ Routes.ARTIST_QUESTIONS_DASHBOARD } component={ AsyncDashboardQuestionsArtist } />
+    <PrivateRoute path={ Routes.ARTIST_SELL_DASHBOARD } component={ AsyncDashboardSellArtist } />
+    <PrivateRoute path={ Routes.ARTIST_SELL_DASHBOARD_ID } component={ AsyncDashboardSell2Artist } />
+    <PrivateRoute path={ Routes.ARTIST_METRICS_DASHBOARD } component={ AsyncDashboardMetricsArtist } />
+    <PrivateRoute path={ Routes.ARTIST_REPUTATION_DASHBOARD } component={ AsyncDashboardReputationArtist } />
+    <PrivateRoute path={ Routes.DASHBOARD_MY_DATA } component={ AsyncDashboardMyData } />
+    <PrivateRoute path={ Routes.DASHBOARD_SECURITY } component={ AsyncDashboardSecurity } />
+    <PrivateRoute path={ Routes.DASHBOARD_PRIVACY } component={ AsyncDashboardPrivacy } />
+    <PrivateRoute path={ Routes.DASHBOARD_EMAILS } component={ AsyncDashboardEmails } />
+    <PrivateRoute path={ Routes.DASHBOARD_ALERTS } component={ AsyncDashboardAlerts } />
 
-    <Route component={ NotFoundPage } />
+      <Route component={ NotFoundPage } />
   </Switch>
 );
 
