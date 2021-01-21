@@ -33,34 +33,34 @@ const MainLayout = props => {
 
           <Row type='flex' justify='center' className='header-wrapper'>
             <Col span={ 20 }>
-              <Header className='header'>
+              {/*<Header className='header'>
                 <Row type='flex' justify='space-between' align='bottom'>
 
 
                   <Col span={6} align='left' className='main-menu'>
-                    <Navigation mode='horizontal' />
+                    <Navigation mode='horizontal'/>
 
-                  </Col >
+                  </Col>
                   <Col span={10} align='center'>
-                    <a href={Routes.HOME} >
-                      <img className='logoW' src={ logoW }  />
+                    <a href={Routes.HOME}>
+                      <img className='logoW' src={logoW}/>
                     </a>
                   </Col>
                   <Col span={8} align='right'>
-                    <Navigation2 mode='horizontal' />
+                    <Navigation2 mode='horizontal'/>
                   </Col>
-                 </Row>
+                </Row>
                 <Row>
                   <Col span={6}></Col>
 
-                  <Col span={12} align='center' className="search__container" >
-                      <input className="search__input" type="text" placeholder="¿Qué desea buscar?"/>
+                  <Col span={12} align='center' className="search__container">
+                    <input className="search__input" type="text" placeholder="¿Qué desea buscar?"/>
                   </Col>
 
                   <Col span={6}></Col>
 
                 </Row>
-              </Header>
+              </Header>*/}
 
             </Col>
 
@@ -126,13 +126,13 @@ const MainLayout = props => {
                   textDecoration: 'none',
                   textAlign:'right',
                 } }  className='questions'>Términos y Condiciones </Link>
-                <Link to={ Routes.ABOUT }  style={ {
+                <Link to={ Routes.QUESTIONPAGE }  style={ {
                   marginLeft: 70,
                   marginRight: 10,
                   textDecoration: 'none',
                   textAlign:'right',
                 } }  className='questions'>Preguntas Frecuentes </Link>
-                <Link to={ Routes.ABOUT }  style={ {
+                <Link to={ Routes.QUESTIONPAGE }  style={ {
                   marginLeft: 70,
                   marginRight: 10,
                   textDecoration: 'none',
