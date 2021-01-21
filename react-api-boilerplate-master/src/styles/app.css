@@ -80,6 +80,15 @@ body {
     /*position: fixed;*/
     z-index: 1;
     width: 100%;
+
+}
+.headerPage{
+    background: transparent;
+    padding: 0;
+    /*position: fixed;*/
+    z-index: 1;
+    width: 100%;
+    margin-top: 1em;
 }
 
 .header__trigger {
@@ -264,6 +273,8 @@ code {
     }
     .logo-w{
         text-align: left;
+        width: auto;
+        height: auto;
     }
 
     .logo-menta {
@@ -326,6 +337,12 @@ code {
     -webkit-animation:swing-in-top-fwd 3s cubic-bezier(.175,.885,.32,1.275) both;animation:swing-in-top-fwd 3s cubic-bezier(.175,.885,.32,1.275) both;
 }
 
+.logoPages{
+    width: 80%;
+    height: 80%;
+    -webkit-animation:swing-in-top-fwd 3s cubic-bezier(.175,.885,.32,1.275) both;animation:swing-in-top-fwd 3s cubic-bezier(.175,.885,.32,1.275) both;
+}
+
 /* seccion que es wasywallpay*/
 .imgExplanation{
     background-image: url("../images/home_images/explicacion.png");
@@ -348,6 +365,18 @@ code {
     height: 100%;
     width: 100% ;
     text-align: center;
+}
+
+/* seccion paginas secundarias*/
+.imgPage{
+    background-image: url("../images/ImgPages/fondo-paginas.png");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: auto;
+    width: auto ;
+
 }
 
 @font-face {
@@ -380,6 +409,9 @@ code {
     font-size: 15pt;
     text-align: justify;
     color: white;
+    width: auto;
+    height: auto;
+
 }
 
 .title1{
@@ -387,6 +419,7 @@ code {
     font-size: 50pt;
     text-align: right;
     color: white;
+    line-height: 50pt;
 }
 .subtitle{
     font-family: Kiona;
@@ -430,104 +463,20 @@ code {
 }
 
 /*boton VER MAS*/
-
-.button-container-2 {
-    position: relative;
-    width: 100px;
-    height: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 7vh;
-    overflow: hidden;
-    border: 1px solid #000;
-    font-family: 'Lato', sans-serif;
-    font-weight: 300;
-    transition: 0.5s;
-    letter-spacing: 1px;
-    border-radius: 8px;
-}
-.button-container-2 button {
-    width: 101%;
-    height: 100%;
-    font-family: 'Lato', sans-serif;
-    font-weight: 300;
-    font-size: 11px;
-    letter-spacing: 1px;
-    font-weight: bold;
-    background: #000;
-    -webkit-mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png");
-    mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png");
-    -webkit-mask-size: 3000% 100%;
-    mask-size: 3000% 100%;
+.btn-verMas{
+    background-color: #650f2f;
     border: none;
-    color: #fff;
+    color: white;
+    padding: 15px 32px;
+    text-align: right;
+    align-content: end;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
     cursor: pointer;
-    -webkit-animation: ani2 0.7s steps(29) forwards;
-    animation: ani2 0.7s steps(29) forwards;
+    font-size: 12px;
+    font-family: Geometos;
 }
-.button-container-2 button:hover {
-    -webkit-animation: ani 0.7s steps(29) forwards;
-    animation: ani 0.7s steps(29) forwards;
-}
-
-.mas {
-    position: absolute;
-    color: #000;
-    text-align: center;
-    width: 101%;
-    font-family: 'Lato', sans-serif;
-    font-weight: 300;
-    position: absolute;
-    font-size: 11px;
-    margin-top: 17px;
-    overflow: hidden;
-    font-weight: bold;
-}
-
-@-webkit-keyframes ani {
-    from {
-        -webkit-mask-position: 0 0;
-        mask-position: 0 0;
-    }
-    to {
-        -webkit-mask-position: 100% 0;
-        mask-position: 100% 0;
-    }
-}
-@keyframes ani {
-    from {
-        -webkit-mask-position: 0 0;
-        mask-position: 0 0;
-    }
-    to {
-        -webkit-mask-position: 100% 0;
-        mask-position: 100% 0;
-    }
-}
-@-webkit-keyframes ani2 {
-    from {
-        -webkit-mask-position: 100% 0;
-        mask-position: 100% 0;
-    }
-    to {
-        -webkit-mask-position: 0 0;
-        mask-position: 0 0;
-    }
-}
-@keyframes ani2 {
-    from {
-        -webkit-mask-position: 100% 0;
-        mask-position: 100% 0;
-    }
-    to {
-        -webkit-mask-position: 0 0;
-        mask-position: 0 0;
-    }
-}
-a {
-    color: #00ff95;
-}
-
 
 /*CATEGORIAS*/
 

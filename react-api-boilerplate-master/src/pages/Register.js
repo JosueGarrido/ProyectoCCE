@@ -407,6 +407,7 @@ const Register = () => {
 
     <>
 
+
             <Title style={ {marginTop:15, textAlign: 'center' } }>REGISTRO DE ARTISTAS</Title>
 
 

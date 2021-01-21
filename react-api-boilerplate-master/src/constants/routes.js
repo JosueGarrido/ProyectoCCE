@@ -23,6 +23,8 @@ const publicRoutes = {
   ABOUT: '/acerca-de',
   ANTD: '/antd',
   HOW_TO_BUY: '/como-comprar',
+  SALEPAGE:'/como-vender',
+  QUESTIONPAGE:'/preguntas-frecuentes',
 
   //Dashboard Configuración
   DASHBOARD_MY_DATA: '/dashboard-mis-datos',
@@ -30,6 +32,11 @@ const publicRoutes = {
   DASHBOARD_PRIVACY: '/dashboard-privacidad',
   DASHBOARD_EMAILS: '/dashboard-emails',
   DASHBOARD_ALERTS: '/dashboard-alerts',
+
+  //Pages Information
+  //esta no va, va how to buy
+
+
 };
 
 const privateRoutes = {
