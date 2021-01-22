@@ -6,6 +6,7 @@ import { useProductsList } from '../data/useProductsList';
 import {Avatar, Card, Col, Rate, Row, Skeleton, Typography, Image} from 'antd';
 import {useUser} from "../data/useUser";
 import {useUserList} from "../data/useUserList";
+import NewComment from "../components/NewComment";
 
 const { Text, Title } = Typography;
 const {Meta} = Card;
@@ -24,6 +25,7 @@ const Artist = () => {
 
 
 
+
     if (products.products !== undefined) {
         for (let i=0; i< (products.products.length); i++ ){
             commentsconcat.push(products.products[i].comment);
@@ -34,6 +36,7 @@ const Artist = () => {
         Array.prototype.push.apply(comments, commentsconcat[n]);
     }
 
+
     console.log('comentarios', comments);
     return (
         <>
@@ -42,6 +45,8 @@ const Artist = () => {
                 width={1450}
                 src='https://sergimateo.com/wp-content/2012/11/portadas-twitter-1.jpg'
             />
+
+
             {
                 user.isLoading
                     ? <div>Cargando...</div>
@@ -52,20 +57,32 @@ const Artist = () => {
                             Usuario: { user.user.name }
                         </h1>
                         <p>{ user.last_name }</p>
+                        <br/>
+                        <Col span={24}>
+                            Información de usuario
+                        </Col>
+                        <br/>
+                        <Col span={24}>
+                            Promociones
+                        </Col>
+                        <br/>
+                        <Col span={24}>
+                            Productos
+                        </Col>
+                        <br/>
                     </>
             }
-            <br/>
-            <Col span={24}>Información de usuario</Col>
-            <br/>
-            <Col span={24}>Promociones</Col>
-            <br/>
-            <Col span={24}>Productos</Col>
-            <br/>
+
+
+
             <Row gutter={ 30 }>
                 <Col align='center' md={6}>
                 <Title level={3}>Reputación: </Title>
                 </Col>
                 <Col md={18}>
+                    <Col md={22}>
+                    <NewComment/>
+                    </Col>
                 {
                     comments.map( ( reputations, i ) => (
                         <Col xs={ 24 } sm={ 18 } md={ 22 } style={ { marginBottom: 20 } } key={ i }>
