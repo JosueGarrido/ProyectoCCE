@@ -20,10 +20,8 @@ const DashboardEmail = () => (
 
                         <Title style={ { marginTop:15, textAlign: 'center' } }>E-mails</Title>
 
+        <Email/>
 
-                        <Col>
-                            <Email/>
-                        </Col>
                     </div>
                 </Content>
             </Col>
