@@ -22,6 +22,9 @@ const Artist = () => {
     console.log('user', user);
     const commentsconcat = [];
     const comments = [];
+    const sales =[];
+    let totalsales =0;
+    let totalproducts;
 
 
 
@@ -29,14 +32,23 @@ const Artist = () => {
     if (products.products !== undefined) {
         for (let i=0; i< (products.products.length); i++ ){
             commentsconcat.push(products.products[i].comment);
+            sales.push(products.products[i].sales);
         }
+        totalproducts = products.products.length;
     }
+
+    console.log('ventas', sales);
+
+    console.log('total products', totalproducts);
 
     for (let n = 0; n < commentsconcat.length; n++ ){
         Array.prototype.push.apply(comments, commentsconcat[n]);
     }
+    for (let n = 0; n < sales.length; n++ ){
+        totalsales +=  sales[n].length
+    }
 
-
+    console.log('ventas totales', totalsales);
     console.log('comentarios', comments);
     return (
         <>

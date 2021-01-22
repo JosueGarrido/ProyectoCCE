@@ -11,6 +11,21 @@ const ArtistsList = ( props ) => {
 
     const { users, isLoading, isError, mutate } = useUserList();
 
+
+    const artist = [];
+
+if(users !== undefined) {
+    console.log('usuarios',users);
+    if (users.userable_type !== "null") {
+        for (var i = 0; i < (users.length); i++) {
+            artist.push(users[i]);
+
+        }
+    }
+}
+
+    console.log('artistas', artist);
+
         if( isLoading ) {
             return <Row justify='center' gutter={ 30 }>
                 {

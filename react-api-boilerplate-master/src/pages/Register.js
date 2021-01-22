@@ -614,7 +614,7 @@ const Register = () => {
             </Card>
 
               <Card style={{ margin: 10 }} type="inner" title="INFORMACIÓN DOMICILIARIA"  >
-                      <Form.Item name='location'
+                      <Form.Item name='country'
                                  label="País de domicilio"
                                  rules={ [
                                      {
@@ -639,7 +639,7 @@ const Register = () => {
                           shouldUpdate={(prevValues, currentValues) => prevValues.country !== currentValues.country}
                       >
                           {({ getFieldValue }) => {
-                              return getFieldValue('location') === 'Ecuador' ? (
+                              return getFieldValue('country') === 'Ecuador' ? (
                                   <Form.Item name='province'
                                              label="Provincia de domicilio"
                                              initialValue={null}
