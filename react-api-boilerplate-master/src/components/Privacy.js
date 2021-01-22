@@ -45,12 +45,16 @@ const Privacy = ( props ) => {
         setModalText('Eliminando cuenta');
         setConfirmLoading(true);
         setTimeout(() => {
+
             setVisible(false);
             setConfirmLoading(false);
+            window.location.reload(true);
+
         }, 2000);
 
         try {
             API.delete(`/users/${currentUser && currentUser.id}`);
+
 
         } catch (e) {
             console.error('No se pudo eliminar la cuenta', e);
