@@ -77,7 +77,8 @@ const ReputationList = ( props ) => {
                         comments.map( ( reputations, i ) => (
                             <Col xs={ 24 } sm={ 18 } md={ 24 } style={ { marginBottom: 20 } } key={ i }>
                                 { reputations.comment
-                                    ? <Card>
+                                    ? <Card hoverable
+                                    style={{borderRadius: 10}}>
                                         <Row>
                                             <Col span={14} >
                                         {
