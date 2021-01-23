@@ -26,7 +26,7 @@ class CreateQuestionsTable extends Migration
 
         Schema::table('questions', function (Blueprint $table) {
             $table->unsignedBigInteger('product_id')->nullable();
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('restrict');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });
     }
     public function down(){

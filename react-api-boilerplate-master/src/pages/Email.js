@@ -59,9 +59,9 @@ const Email = ( { } ) => {
     return (
         <>
             <Layout>
-                <Header>Header</Header>
+
                 <Layout>
-                    <Sider>Sider</Sider>
+
                     <Content>
                         {
                             <center>

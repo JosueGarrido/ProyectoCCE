@@ -84,6 +84,7 @@ const Publications = ( {
                 data.append( 'description', values.description );
                 data.append( 'price', values.price );
                 data.append( 'stock', values.stock );
+                data.append( 'sales', values.sales );
                 data.append( 'image', values.image[ 0 ] );
                 data.append( 'location', values.location );
                 data.append('category_id', values.category_id)
@@ -185,14 +186,14 @@ const Publications = ( {
     const handleViewDetails = () => {
         setShowModal(true);
     }
+    const handleCancel = () => {
+        setShowModal(false);
+    }
 
     // const handleOk = () => {
     //     htmlType='submit' loading={ submitting }
     // }
 
-    const handleCancel = () => {
-        setShowModal(false);
-    }
 
     const layout = {
         labelCol: { span: 8 },
@@ -258,6 +259,18 @@ const Publications = ( {
                                    {
                                        required: true,
                                        message: 'Ingrese la cantidad de productos '
+                                   }
+                               ] }
+                               hasFeedback>
+                        <Input />
+                    </Form.Item>
+
+                    <Form.Item name='sales'
+                               label="Sales"
+                               rules={ [
+                                   {
+                                       required: true,
+                                       message: 'Ingrese la venta '
                                    }
                                ] }
                                hasFeedback>

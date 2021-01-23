@@ -10,7 +10,7 @@ class AddCategoryIdColumnPhotoformat extends Migration
     {
         Schema::table('photo_formats', function (Blueprint $table) {
             $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('category_level1s')->onDelete('restrict');
+            $table->foreign('category_id')->references('id')->on('category_level1s')->onDelete('cascade');
         });
     }
 
