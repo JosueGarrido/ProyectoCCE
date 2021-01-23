@@ -28,7 +28,7 @@ class UsersTableSeeder extends Seeder
             'identity' => '1754488524',
             'birthday' => '1996-10-10',
             'phone' => '993731322',
-            'profile_picture' => 'user/' . $image_name,
+            'profile_picture' => 'public/user/' . $image_name,
             'location' => 'Quito-Ecuador',
             'password'=> $password,
             ]);
@@ -55,7 +55,7 @@ class UsersTableSeeder extends Seeder
                 'identity' => $faker->numberBetween(1712654897, 1794879546),
                 'birthday' => $faker->date("Y-m-d"),
                 'phone' => $faker->numberBetween(911111111, 999999999),
-                'profile_picture' => 'user/' . $image_name,
+                'profile_picture' => 'public/user/' . $image_name,
                 'location' => $faker->country,
 
 
@@ -75,7 +75,7 @@ class UsersTableSeeder extends Seeder
                 'identity' => $faker->numberBetween(1712654897, 1794879546),
                 'birthday' => $faker->date("Y-m-d"),
                 'phone' => $faker->numberBetween(911111111, 999999999),
-                'profile_picture' => 'user/' . $image_name,
+                'profile_picture' => 'public/user/' . $image_name,
                 'location' => $faker->country,
 
 

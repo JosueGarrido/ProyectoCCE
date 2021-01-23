@@ -370,7 +370,7 @@ const Register = () => {
         data.append( 'birthday', userData.birthday );
         data.append( 'phone', userData.phone );
         data.append( 'profile_picture', userData.profile_picture[0] );
-        data.append( 'country', userData.country );
+        data.append( 'location', userData.location );
         data.append( 'province', userData.province );
         data.append( 'city', userData.city );
         data.append( 'town', userData.town );
@@ -406,6 +406,7 @@ const Register = () => {
   return (
 
     <>
+
 
             <Title style={ {marginTop:15, textAlign: 'center' } }>REGISTRO DE ARTISTAS</Title>
 

@@ -37,23 +37,23 @@ const ArtistResumeDashboard = () => {
                                 <Row>
                                     <Col span={ 8 }>
                                     <Title style={{marginTop: 15, textAlign: 'center'}}  level={4}>Responde a tus compradores</Title>
-                                            <Link to={ Routes.ARTIST_QUESTIONS_DASHBOARD } className='artist-questions-dashboard'>
-                                                xddd
+                                            <Link href={ Routes.ARTIST_QUESTIONS_DASHBOARD } className='artist-questions-dashboard'>
+                                                Ver Preguntas
                                             </Link>
                                     <Title style={{marginTop: 15, textAlign: 'center'}}  level={4}>Publicaciones</Title>
-                                        <Link to={ Routes.ARTIST_PUBLICATIONS_DASHBOARD } className='artist-publications-dashboard'>
+                                        <Link href={ Routes.ARTIST_PUBLICATIONS_DASHBOARD } className='artist-publications-dashboard'>
                                             Ver todos los productos
                                         </Link>
                                     </Col>
                                     <Col span={ 8 } >
                                         <Title style={{marginTop: 15, textAlign: 'center'}}  level={4}>Ventas</Title>
-                                        <Link to={ Routes.ARTIST_SELL_DASHBOARD } className='artist-sell-dashboard'>
+                                        <Link href={ Routes.ARTIST_SELL_DASHBOARD } className='artist-sell-dashboard'>
                                             Ver ventas
                                         </Link>
                                     </Col>
                                     <Col span={ 8 } >
                                         <Title style={{marginTop: 15, textAlign: 'center'}}  level={4}>Métricas de ventas</Title>
-                                        <Link to={ Routes.ARTIST_METRICS_DASHBOARD } className='artist-metrics-dashboard'>
+                                        <Link href={ Routes.ARTIST_METRICS_DASHBOARD } className='artist-metrics-dashboard'>
                                             Ver más métricas
                                         </Link>
                                     </Col>

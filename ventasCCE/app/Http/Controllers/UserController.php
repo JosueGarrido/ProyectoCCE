@@ -7,6 +7,7 @@ use App\User;
 use App\Http\Resources\User as UserResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Tymon\JWTAuth\Exceptions\JWTException;
@@ -156,7 +157,7 @@ class UserController extends Controller{
         } catch (Tymon\JWTAuth\Exceptions\JWTException $e) {
             return response()->json(['message' => 'token_absent'], $e->getStatusCode());
         }
-        return response()->json(new UserResource($user));
+        return response()->json(new UserResource($user), 200);
 
     }
     public function update(Request $request, $user)
@@ -165,13 +166,17 @@ class UserController extends Controller{
         $user->update($request->all());
         return$user;
     }
+
     public function delete(Request $request, $user)
     {
+        Schema::disableForeignKeyConstraints();
         $user = User::findOrFail($user);
         $user->delete();
         return 204;
+        Schema::enableForeignKeyConstraints();
 
     }
+
     public function logout()
     {
         try {

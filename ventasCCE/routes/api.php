@@ -17,18 +17,26 @@ use Illuminate\Http\Request;
 Route::group(['middleware' => ['cors']], function () {
 
     Route::post('login', 'UserController@authenticate');
+    Route::post('logout', 'UserController@logout');
     Route::post('register', 'UserController@register');
     Route::get('users', 'UserController@index');
     Route::delete('users/{user}', 'UserController@delete');
     Route::get('users/{user}/profile_picture', 'UserController@image');
     Route::get('products', 'ProductController@indexall');
+    Route::get('category1', 'CategoryLevel1Controller@index');
+    Route::get('user', 'UserController@getAuthenticatedUser');
+
+
+    //Productos de un usuario
+    Route::get('users/{user}/products/', 'ProductController@index');
 
     Route::group(['middleware' => ['jwt.verify']], function() {
 
-        Route::get('user', 'UserController@getAuthenticatedUser');
-        Route::get('users/{user}', 'UserController@show');
+
+
         Route::post('users', 'UserController@store');
         Route::put('users/{user}', 'UserController@update');
+        Route::get('users/{user}', 'UserController@show');
 
 
         //Rutas audio/video formats
@@ -39,7 +47,7 @@ Route::group(['middleware' => ['cors']], function () {
         Route::delete('audioformats/{id}', 'AudioVideoFormatController@delete');
 
         //Rutas categorias nivel 1
-        Route::get('category1', 'CategoryLevel1Controller@index');
+
         Route::get('category1/{id}', 'CategoryLevel1Controller@show');
         Route::post('category1', 'CategoryLevel1Controller@store');
         Route::put('category1/{id}', 'CategoryLevel1Controller@update');
@@ -87,8 +95,7 @@ Route::group(['middleware' => ['cors']], function () {
         Route::put('products/{id}', 'ProductController@update');
         Route::delete('products/{id}', 'ProductController@delete');
 
-        //Productos de un usuario
-        Route::get('users/{user}/products/', 'ProductController@index');
+
 
         //Reconocimientos
         Route::get('recognitions', 'RecognitionController@index');

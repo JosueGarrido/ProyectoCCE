@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import Carousel2 from '../components/Carousel2';
 import Carousel from '../components/Carousel';
 
 import '../styles/app.css';
-import {Row, Col} from "antd";
+import {Row, Col, Button} from "antd";
 import Routes from "../constants/routes";
 import logoW from "../images/logoW.png";
 import artesanias from '../images/Categories_logos/artesanias.png';
@@ -50,7 +51,7 @@ const HomePage = () => {
 
           </section>
 
-          <section ><br></br><br></br>
+          <section ><br></br><br></br><br></br>
               <h1 className="subtitle2">CATEGORÍAS</h1>
               <div>
                   <Row>
@@ -97,27 +98,29 @@ const HomePage = () => {
           </section>
 
 
-
-          <section ><br/><br/>
-              <div className="imgHowBuy" >
+          {/*<section><br/><br/><br/><br/>
+              <div className="imgHowBuy">
 
                   <Row>
                       <Col span={13}>
                       </Col>
                       <Col span={10}>
-                          <div>
+                          <div><br/><br/><br/><br/>
                               <h1 className="title1">
                                   ¿CÓMO COMPRAR?
                               </h1>
 
                           </div>
                           <p className="text">
-                              Det är ett välkänt faktum att läsare distraheras av läsbar text på en sida när man skall studera layouten. Poängen med Lorem Ipsum är att det ger ett normalt ordflöde.
+                              Det är ett välkänt faktum att läsare distraheras av läsbar text på en sida när man skall
+                              studera layouten. Poängen med Lorem Ipsum är att det ger ett normalt ordflöde.
                           </p>
                           <div className="button-container-2">
-                              <span className="mas">VER MÁS</span>
-                              <button id='work' type="button" name="Hover">VER MÁS</button>
-                          </div><br></br>
+
+                              <button type="button" className="btn-verMas">VER MÁS</button>
+
+                          </div>
+                          <br/><br/><br/>
                       </Col>
                       <Col span={1}>
 
@@ -125,10 +128,10 @@ const HomePage = () => {
                   </Row>
 
               </div>
-          </section>
+          </section>*/}
 
-
-
+            <br/><br/><br/>
+            <Carousel2/>
 
 
         </div>

@@ -72,7 +72,6 @@ const SellList1 = ( props ) => {
 
         return (
             <>
-
                 <Row justify='center' gutter={ 30 }>
                     {
                         products.map( ( products, i ) => (
