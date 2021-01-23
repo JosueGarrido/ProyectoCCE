@@ -25,6 +25,7 @@ const publicRoutes = {
   HOW_TO_BUY: '/como-comprar',
   SALEPAGE:'/como-vender',
   QUESTIONPAGE:'/preguntas-frecuentes',
+  PRODUCT:'/producto/:id',
 
   //Dashboard Configuración
   DASHBOARD_MY_DATA: '/dashboard-mis-datos',

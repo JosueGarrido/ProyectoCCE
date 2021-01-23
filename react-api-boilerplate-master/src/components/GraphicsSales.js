@@ -88,3 +88,4 @@ const GraphicsSales = () => (
 );
 
 export default  GraphicsSales;
+
