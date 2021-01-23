@@ -6,7 +6,7 @@ import { useProductsList } from '../data/useProductsList';
 import {Avatar, Card, Col, Rate, Row, Skeleton, Typography, Image} from 'antd';
 import {useUser} from "../data/useUser";
 import {useUserList} from "../data/useUserList";
-
+import  ProductsList from '../components/ProductsList';
 const { Text, Title } = Typography;
 const {Meta} = Card;
 
@@ -51,7 +51,8 @@ const Artist = () => {
                         <h1 >
                             Usuario: { user.user.name }
                         </h1>
-                        <p>{ user.last_name }</p>
+                        <p>{ user.user.last_name }</p>
+                        <p>{ user.user.id }</p>
                     </>
             }
             <br/>
@@ -60,6 +61,7 @@ const Artist = () => {
             <Col span={24}>Promociones</Col>
             <br/>
             <Col span={24}>Productos</Col>
+            <ProductsList></ProductsList>
             <br/>
             <Row gutter={ 30 }>
                 <Col align='center' md={6}>

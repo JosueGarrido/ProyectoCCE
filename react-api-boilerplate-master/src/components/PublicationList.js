@@ -85,7 +85,6 @@ const AppointmentList = (props ) => {
             setShowModal(false);
         }
 
-
         return (
             <>
 
