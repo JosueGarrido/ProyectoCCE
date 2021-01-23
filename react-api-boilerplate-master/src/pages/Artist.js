@@ -6,6 +6,7 @@ import { useProductsList } from '../data/useProductsList';
 import {Avatar, Card, Col, Rate, Row, Skeleton, Typography, Image} from 'antd';
 import {useUser} from "../data/useUser";
 import {useUserList} from "../data/useUserList";
+import  ProductsList from '../components/ProductsList';
 import NewComment from "../components/NewComment";
 import moment from "moment";
 import {FacebookOutlined, InstagramFilled,TwitterOutlined } from "@ant-design/icons";
@@ -69,6 +70,18 @@ const Artist = () => {
                         <h1 >
                             Usuario: { user.user.name }
                         </h1>
+                        <p>{ user.user.last_name }</p>
+                        <p>{ user.user.id }</p>
+                    </>
+            }
+            <br/>
+            <Col span={24}>Información de usuario</Col>
+            <br/>
+            <Col span={24}>Promociones</Col>
+            <br/>
+            <Col span={24}>Productos</Col>
+            <ProductsList></ProductsList>
+            <br/>
                         <p>{ user.last_name }</p>
                         <br/>
 
@@ -149,8 +162,6 @@ const Artist = () => {
                         <br/>
                     </>
             }
-
-
 
             <Row gutter={ 30 }>
                 <Col align='center' md={6}>
