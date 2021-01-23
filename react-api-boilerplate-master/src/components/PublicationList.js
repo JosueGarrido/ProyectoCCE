@@ -34,7 +34,7 @@ import {useCategories4} from "../data/useCategories4";
 
 const { Text } = Typography;
 const {Meta} = Card;
-const AppointmentList = (props ) => {
+const PublicationList = (props ) => {
         const [ showModal, setShowModal ] = useState( false );
         const [ currentPublicationId, setCurrentPublicationId ] = useState( null );
         const [ currentPublicationName, setCurrentPublicationName ] = useState(null);
@@ -72,6 +72,7 @@ const AppointmentList = (props ) => {
             .then( async( values ) => {
                 setIsSaving( true );
                 const data = new FormData();
+
                 data.append( 'name', values.name );
                 data.append( 'description', values.description );
                 data.append( 'price', values.price );
@@ -82,7 +83,9 @@ const AppointmentList = (props ) => {
                 data.append('category_id', values.category_id)
 
                 try {
-                    await API.put( '/articles', values ); // post data to server
+                    await API.put( `/products/${ values }`,{
+
+                    }); // post data to server
                     form.resetFields();
                     setFileList( [] );
                     setImageUrl( null );
@@ -158,7 +161,7 @@ const AppointmentList = (props ) => {
         }
 
 
-    const handleViewDetails = (data) => {
+    const handleViewDetails = () => {
         setShowModal(true);
 
     }
@@ -217,152 +220,6 @@ const AppointmentList = (props ) => {
                                                     <Button icon={<DeleteOutlined />} type="primary" danger>Eliminar</Button>
                                                 </div>
 
-                                                <Modal
-                                                    title="Editar Publicación"
-                                                    visible={showModal}
-                                                    confirmLoading={ isSaving }
-                                                     onOk={ () => onUpdate()}
-                                                    onCancel={ () => handleCancel()}
-                                                >
-                                                    <Form {...layout} name="nest-messages" form={ form }>
-                                                        <Form.Item name='name'
-                                                                   label="Nombre"
-                                                                   rules={ [
-                                                                       {
-                                                                           required: true,
-                                                                           message: 'Ingrese el nombre del producto'
-                                                                       }
-                                                                   ] }
-                                                                   hasFeedback>
-                                                            <Input />
-                                                        </Form.Item>
-                                                        <Form.Item name='description'
-                                                                   label="Descripción"
-                                                                   rules={ [
-                                                                       {
-                                                                           required: true,
-                                                                           message: 'Describa su producto'
-                                                                       }
-                                                                   ] }
-                                                                   hasFeedback>
-                                                            <Input />
-                                                        </Form.Item>
-                                                        <Form.Item name='price'
-                                                                   label="Precio"
-                                                                   rules={ [
-                                                                       {
-                                                                           required: true,
-                                                                           message: 'Ingrese el precio del producto'
-                                                                       }
-                                                                   ] }
-                                                                   hasFeedback>
-                                                            <Input />
-                                                        </Form.Item>
-
-                                                        <Form.Item name='stock'
-                                                                   label="Stock"
-                                                                   rules={ [
-                                                                       {
-                                                                           required: true,
-                                                                           message: 'Ingrese la cantidad de productos '
-                                                                       }
-                                                                   ] }
-                                                                   hasFeedback>
-                                                            <Input />
-                                                        </Form.Item>
-
-                                                        <Form.Item name='image'
-                                                                   label='Upload'
-                                                                   valuePropName='fileList'
-                                                            // getValueFromEvent={ normPhotoFile }
-                                                                   rules={ [
-                                                                       {
-                                                                           required: true,
-                                                                           message: 'Sube tu foto'
-                                                                       }
-                                                                   ] }
-                                                        >
-                                                            <Upload name='files'
-                                                                    accept='image/jpeg,image/png'
-                                                                    listType='picture-card'
-                                                                    multiple={ false }
-                                                                    showUploadList={ false }
-                                                                    beforeUpload={ () => false }
-                                                                // onChange={ handleChangePhoto }
-                                                                    fileList={ fileList }
-                                                            >
-                                                                { imageUrl
-                                                                    ? <img src={ imageUrl } alt='Foto' style={ { width: '80px' } } />
-                                                                    : <div>
-                                                                        <PlusOutlined />
-                                                                        <div className='ant-upload-text'>Upload</div>
-                                                                    </div> }
-                                                            </Upload>
-                                                        </Form.Item>
-                                                        <Form.Item name='location'
-                                                                   label="Ubicación"
-                                                                   rules={ [
-                                                                       {
-                                                                           required: true,
-                                                                           message: 'Ingrese la ciudad'
-                                                                       }
-                                                                   ] }
-                                                                   hasFeedback>
-                                                            <Input />
-                                                        </Form.Item>
-
-                                                        <Form.Item name='category_id'
-                                                                   label='Categoria'
-                                                                   rules={ [
-                                                                       {
-                                                                           required: true,
-                                                                           message: 'Selecciona una categoria'
-                                                                       }
-                                                                   ] }
-                                                        >
-                                                            <Select style={ { width: 315 } } onChange={ handleChangeCategory } loading={ !categories }>
-                                                                {
-                                                                    categories && categories.map( ( category, index ) =>
-                                                                        <Option value={ category.id } key={ index } >{` ${ category.name } `}</Option>
-                                                                    )
-                                                                }
-                                                            </Select>
-                                                        </Form.Item>
-
-
-                                                        <Form.Item
-                                                            noStyle
-                                                            shouldUpdate={(prevValues, currentValues) => prevValues.category_id !== currentValues.category_id}
-                                                        >
-                                                            {({ getFieldValue }) => {
-                                                                return getFieldValue('category_id') === 'Artes plasticas' ? (
-                                                                    <Form.Item name='category_id'
-                                                                               label="Categoria 2"
-                                                                               rules={ [
-                                                                                   {
-                                                                                       required: true,
-                                                                                       message: 'Seleccione'
-                                                                                   }
-                                                                               ] }
-                                                                               hasFeedback
-                                                                    >
-                                                                        <Select
-                                                                            placeholder="Selecciona "
-                                                                        >
-                                                                            {
-                                                                                categories2 && categories2.map( ( category2, index ) =>
-                                                                                    <Option value={ category2.id } key={ index }>{` ${ category2.name } `}</Option>
-                                                                                )
-                                                                            }
-
-                                                                        </Select>
-                                                                    </Form.Item>
-                                                                ) : null;
-                                                            }}
-                                                        </Form.Item>
-
-                                                    </Form>
-                                                </Modal>
 
 
 
@@ -378,15 +235,175 @@ const AppointmentList = (props ) => {
 
                                 </Col>
 
+
                             )
                         })
                     }
 
                 </Row>
 
+                <Modal
+                    title="Editar Publicación"
+                    visible={showModal}
+                    confirmLoading={ isSaving }
+                    onOk={ () => onUpdate()}
+                    onCancel={ () => handleCancel()}
+                >
+                    <Form {...layout} name="nest-messages" form={ form }>
+                        <Form.Item name='name'
+                                   label="Nombre"
+                                   rules={ [
+                                       {
+                                           required: true,
+                                           message: 'Ingrese el nombre del producto'
+                                       }
+                                   ] }
+                                   hasFeedback>
+                            <Input />
+                        </Form.Item>
+                        <Form.Item name='description'
+                                   label="Descripción"
+                                   rules={ [
+                                       {
+                                           required: true,
+                                           message: 'Describa su producto'
+                                       }
+                                   ] }
+                                   hasFeedback>
+                            <Input />
+                        </Form.Item>
+                        <Form.Item name='price'
+                                   label="Precio"
+                                   rules={ [
+                                       {
+                                           required: true,
+                                           message: 'Ingrese el precio del producto'
+                                       }
+                                   ] }
+                                   hasFeedback>
+                            <Input />
+                        </Form.Item>
+
+                        <Form.Item name='stock'
+                                   label="Stock"
+                                   rules={ [
+                                       {
+                                           required: true,
+                                           message: 'Ingrese la cantidad de productos '
+                                       }
+                                   ] }
+                                   hasFeedback>
+                            <Input />
+                        </Form.Item>
+
+                        <Form.Item name='sales'
+                                   label="Sales"
+                                   rules={ [
+                                       {
+                                           required: true,
+                                           message: 'Ingrese la venta '
+                                       }
+                                   ] }
+                                   hasFeedback>
+                            <Input />
+                        </Form.Item>
+
+                        <Form.Item name='image'
+                                   label='Upload'
+                                   valuePropName='fileList'
+                                   //getValueFromEvent={ normPhotoFile }
+                                   rules={ [
+                                       {
+                                           required: true,
+                                           message: 'Sube tu foto'
+                                       }
+                                   ] }
+                        >
+                            <Upload name='files'
+                                    accept='image/jpeg,image/png'
+                                    listType='picture-card'
+                                    multiple={ false }
+                                    showUploadList={ false }
+                                    beforeUpload={ () => false }
+                                // onChange={ handleChangePhoto }
+                                    fileList={ fileList }
+                            >
+                                { imageUrl
+                                    ? <img src={ imageUrl } alt='Foto' style={ { width: '80px' } } />
+                                    : <div>
+                                        <PlusOutlined />
+                                        <div className='ant-upload-text'>Upload</div>
+                                    </div> }
+                            </Upload>
+                        </Form.Item>
+                        <Form.Item name='location'
+                                   label="Ubicación"
+                                   rules={ [
+                                       {
+                                           required: true,
+                                           message: 'Ingrese la ciudad'
+                                       }
+                                   ] }
+                                   hasFeedback>
+                            <Input />
+                        </Form.Item>
+
+                        <Form.Item name='category_id'
+                                   label='Categoria'
+                                   rules={ [
+                                       {
+                                           required: true,
+                                           message: 'Selecciona una categoria'
+                                       }
+                                   ] }
+                        >
+                            <Select style={ { width: 315 } } onChange={ handleChangeCategory } loading={ !categories }>
+                                {
+                                    categories && categories.map( ( category, index ) =>
+                                        <Option value={ category.id } key={ index } >{` ${ category.name } `}</Option>
+                                    )
+                                }
+                            </Select>
+                        </Form.Item>
+
+
+                        <Form.Item
+                            noStyle
+                            shouldUpdate={(prevValues, currentValues) => prevValues.category_id !== currentValues.category_id}
+                        >
+                            {({ getFieldValue }) => {
+                                return getFieldValue('category_id') === 'Artes plasticas' ? (
+                                    <Form.Item name='category_id'
+                                               label="Categoria 2"
+                                               rules={ [
+                                                   {
+                                                       required: true,
+                                                       message: 'Seleccione'
+                                                   }
+                                               ] }
+                                               hasFeedback
+                                    >
+                                        <Select
+                                            placeholder="Selecciona "
+                                        >
+                                            {
+                                                categories2 && categories2.map( ( category2, index ) =>
+                                                    <Option value={ category2.id } key={ index }>{` ${ category2.name } `}</Option>
+                                                )
+                                            }
+
+                                        </Select>
+                                    </Form.Item>
+                                ) : null;
+                            }}
+                        </Form.Item>
+                    </Form>
+                </Modal>
+
+
             </>
         );
     }
 ;
 
-export default AppointmentList;
+export default PublicationList;
