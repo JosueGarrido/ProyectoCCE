@@ -39,10 +39,10 @@ const NewComment = ( {
 
                 // use form data to be able to send a file to the server
                 const data = new FormData();
-                data.append( 'image', values.image[ 0 ] );
-                data.append( 'title', values.title );
-                data.append( 'body', values.body );
-                data.append( 'category_id', values.category_id );
+                data.append( 'comment', values.comment );
+                data.append( 'score', values.score );
+                data.append( 'product_id', values.body );
+                data.append( 'user_id', values.category_id );
 
                 try {
                     await API.post( '/articles', data ); // post data to server
@@ -74,7 +74,7 @@ const NewComment = ( {
                 name='form_in_modal'
             >
                 <Form.Item
-                    name='title'
+                    name='comment'
                     label='Comentario'
                     rules={ [
                         {
@@ -86,7 +86,7 @@ const NewComment = ( {
                     <Input />
                 </Form.Item>
                 <Form.Item
-                    name='body'
+                    name='score'
                     label='Valoración'
                     rules={ [
                         {
@@ -97,7 +97,7 @@ const NewComment = ( {
                     <Rate />
                 </Form.Item>
 
-                <Button type={"primary"}>
+                <Button type={"primary"} onClick={onCreate}>
                     Agregar Reseña
                 </Button>
 

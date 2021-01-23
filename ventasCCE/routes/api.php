@@ -22,6 +22,7 @@ Route::group(['middleware' => ['cors']], function () {
     Route::get('users', 'UserController@index');
     Route::delete('users/{user}', 'UserController@delete');
     Route::get('users/{user}/profile_picture', 'UserController@image');
+    Route::get('products/{product}/image', 'ProductController@image');
     Route::get('products', 'ProductController@indexall');
     Route::get('category1', 'CategoryLevel1Controller@index');
     Route::get('user', 'UserController@getAuthenticatedUser');
