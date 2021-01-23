@@ -7,7 +7,8 @@ import {Avatar, Card, Col, Rate, Row, Skeleton, Typography, Image} from 'antd';
 import {useUser} from "../data/useUser";
 import {useUserList} from "../data/useUserList";
 import NewComment from "../components/NewComment";
-
+import moment from "moment";
+import {FacebookOutlined, InstagramFilled,TwitterOutlined } from "@ant-design/icons";
 const { Text, Title } = Typography;
 const {Meta} = Card;
 
@@ -70,6 +71,70 @@ const Artist = () => {
                         </h1>
                         <p>{ user.last_name }</p>
                         <br/>
+
+                        <Row >
+
+                            <Col span={4}>
+
+                                {<Avatar
+                                    size={100}
+                                    alt={ user.user.name }
+                                    src={ `http://localhost:8000/storage/${ user.user.profile_picture }` }
+
+
+                                />}
+
+                            </Col>
+                            <Col span={10}>
+                                <p>{ user.user.name} { user.user.last_name } </p>
+                                <p>{ user.user.email }</p>
+
+                                <p> SEGUIDORES: {totalproducts} </p>
+                                <p> VENTAS: {totalsales} </p>
+                                <p> PRODUCTOS: {totalproducts} </p>
+
+
+                                <br/>
+                            </Col>
+
+                            <Col align={'center' } span={10}>
+                                <p>Compartir</p>
+                                <p>PROPIETARIO DE LA TIENDA</p>
+                                {<Avatar
+                                    size={50}
+                                    alt={ user.user.name }
+                                    src={ `http://localhost:8000/storage/${ user.user.profile_picture }` }
+                                />}
+                                <p>{ user.user.name }</p>
+                                <p>Desde { moment( user.user.created_at ).format( 'YYYY' ) }-{ user.user.location } </p>
+                                <p>Contacto:</p>
+                                <Col >
+                                    <a href='https://www.facebook.com' target='_blank'>
+                                        <FacebookOutlined twoToneColor="red" />
+                                    </a>
+                                </Col>
+                                <Col >
+                                    <a href='https://www.instagram.com' target='_blank'>
+                                        <InstagramFilled />
+                                    </a>
+
+                                </Col>
+                                <Col twoToneColor="red">
+                                    < a href='https://www.twitter.com' target='_blank' >
+                                        <TwitterOutlined  />
+                                    </a>
+                                </Col>
+
+                            </Col>
+
+                        </Row>
+
+
+
+
+
+
+
                         <Col span={24}>
                             Información de usuario
                         </Col>
