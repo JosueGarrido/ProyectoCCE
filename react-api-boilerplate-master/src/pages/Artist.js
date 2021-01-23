@@ -142,12 +142,6 @@ const Artist = () => {
 
                         </Row>
 
-
-
-
-
-
-
                         <Col span={24}>
                             Información de usuario
                         </Col>
@@ -160,8 +154,6 @@ const Artist = () => {
                             Productos
                         </Col>
                         <br/>
-                    </>
-            }
 
             <Row gutter={ 30 }>
                 <Col align='center' md={6}>

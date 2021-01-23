@@ -19,12 +19,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="dee636f5-9ae4-40ae-8a91-f469f5577560" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/PublicationList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/PublicationList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
 
+=======
+    <list default="true" id="7a3c44ad-7aa3-48aa-a767-fbb05d532538" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> 4c15e2f (xdd)
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,9 +255,13 @@
       <workItem from="1610931175010" duration="2045000" />
       <workItem from="1610951780099" duration="3339000" />
       <workItem from="1610994326237" duration="180000" />
+<<<<<<< HEAD
 
       <workItem from="1611432254966" duration="1182000" />
 
+=======
+      <workItem from="1611418554034" duration="1578000" />
+>>>>>>> 4c15e2f (xdd)
     </task>
     <servers />
   </component>
