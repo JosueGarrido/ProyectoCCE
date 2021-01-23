@@ -21,12 +21,12 @@ class CreateAnswersTable extends Migration
 
         Schema::table('answers', function (Blueprint $table) {
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('restrict');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
 
         Schema::table('answers', function (Blueprint $table) {
             $table->unsignedBigInteger('question_id')->nullable();
-            $table->foreign('question_id')->references('id')->on('questions')->onDelete('restrict');
+            $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
         });
     }
     public function down(){

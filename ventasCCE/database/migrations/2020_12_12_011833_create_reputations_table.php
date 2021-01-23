@@ -27,7 +27,7 @@ class CreateReputationsTable extends Migration
 
         Schema::table('reputations', function (Blueprint $table) {
             $table->unsignedBigInteger('product_id')->nullable();
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('restrict');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });
     }
     public function down(){

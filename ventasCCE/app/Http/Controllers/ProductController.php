@@ -76,10 +76,11 @@ class ProductController extends Controller
     }
     public function update(Request $request, $id)
     {
-        $this->authorize('update',$id);
+        //$this->authorize('update',$id);
         $products = Product::findOrFail($id);
         $products->update($request->all());
         return $products;
+
     }
     public function delete(Request $request, $id)
     {

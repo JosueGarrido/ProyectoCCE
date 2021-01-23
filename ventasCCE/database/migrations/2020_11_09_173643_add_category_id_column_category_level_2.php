@@ -10,7 +10,7 @@ class AddCategoryIdColumnCategoryLevel2 extends Migration
     {
         Schema::table('category_level2s', function (Blueprint $table) {
             $table->unsignedBigInteger('category1_id');
-            $table->foreign('category1_id')->references('id')->on('category_level1s')->onDelete('restrict');
+            $table->foreign('category1_id')->references('id')->on('category_level1s')->onDelete('cascade');
         });
     }
 
