@@ -80,8 +80,6 @@ const Artist = () => {
                                     size={100}
                                     alt={ user.user.name }
                                     src={ `http://localhost:8000/storage/${ user.user.profile_picture }` }
-
-
                                 />}
 
                             </Col>
@@ -92,7 +90,7 @@ const Artist = () => {
                                 <p> SEGUIDORES: {totalproducts} </p>
                                 <p> VENTAS: {totalsales} </p>
                                 <p> PRODUCTOS: {totalproducts} </p>
-
+                                <p> Borrar</p>
 
                                 <br/>
                             </Col>
