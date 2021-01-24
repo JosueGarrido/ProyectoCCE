@@ -20,8 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dee636f5-9ae4-40ae-8a91-f469f5577560" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/PublicationList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/PublicationList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/Product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
