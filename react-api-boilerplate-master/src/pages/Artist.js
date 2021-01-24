@@ -1,12 +1,12 @@
 import React from 'react';
-import CommentsList from '../components/CommentsList';
+
 import ShowError from '../components/ShowError';
 import { useParams } from 'react-router-dom';
 import { useProductsList } from '../data/useProductsList';
 import {Avatar, Card, Col, Rate, Row, Skeleton, Typography, Image} from 'antd';
 import {useUser} from "../data/useUser";
 import {useUserList} from "../data/useUserList";
-import  ProductsList from '../components/ProductsList';
+import ProductsList from '../components/ProductsList';
 import NewComment from "../components/NewComment";
 import moment from "moment";
 import {FacebookOutlined, InstagramFilled,TwitterOutlined } from "@ant-design/icons";
@@ -22,13 +22,13 @@ const Artist = () => {
 
     console.log('productos', products);
     console.log('user', user);
+    console.log('users', users);
+
     const commentsconcat = [];
     const comments = [];
     const sales =[];
     let totalsales =0;
     let totalproducts;
-
-
 
 
     if (products.products !== undefined) {
@@ -80,7 +80,7 @@ const Artist = () => {
             <Col span={24}>Promociones</Col>
             <br/>
             <Col span={24}>Productos</Col>
-            <ProductsList></ProductsList>
+            <ProductsList/>
             <br/>
                         <p>{ user.last_name }</p>
                         <br/>

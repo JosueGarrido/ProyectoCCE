@@ -132,7 +132,7 @@ class UserController extends Controller{
         $user = new User($request->all());
         $pass = $request->password;
         $user->password = Hash::make($pass);
-        $path = $request->profile_picture->store('public/user');
+        $path = $request->profile_picture->store('user');
         $user->profile_picture = $path;
         $user->save();
         $token = JWTAuth::fromUser($user);
