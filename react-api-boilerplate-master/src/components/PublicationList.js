@@ -130,6 +130,7 @@ const PublicationList = ( props ) => {
                                                 <p>Precio: ${product.price} </p>
                                                 <p>Stock: {product.stock} </p>
                                                 <p>Ubicación: {product.location} </p>
+                                                <p>Ventas: {product.sales} </p>
 
 
                                                 <div>
