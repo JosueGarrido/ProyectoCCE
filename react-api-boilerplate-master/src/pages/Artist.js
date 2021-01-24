@@ -34,7 +34,7 @@ const Artist = () => {
     if (products.products !== undefined) {
         for (let i=0; i< (products.products.length); i++ ){
             commentsconcat.push(products.products[i].comment);
-            sales.push(products.products[i].sales);
+            sales.push(products.products[i].sale);
         }
         totalproducts = products.products.length;
     }

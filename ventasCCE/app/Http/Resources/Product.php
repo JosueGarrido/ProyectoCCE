@@ -27,6 +27,7 @@ class Product extends JsonResource
             'questions_data' => "/api/questions/",
             'questions' => $this->question,
             'sales' => $this->sales,
+            'sale' => $this->sale,
             'sales_data' => "/api/sales/",
             'location' => $this ->location,
             'user_id' => $this ->user_id,
