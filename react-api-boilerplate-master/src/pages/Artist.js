@@ -67,32 +67,15 @@ const Artist = () => {
                     : user.isError
                     ? <ShowError error={ user.isError } />
                     : <>
-                        <h1 >
-                            Usuario: { user.user.name }
-                        </h1>
-                        <p>{ user.user.last_name }</p>
-                        <p>{ user.user.id }</p>
-                    </>
-            }
-            <br/>
-            <Col span={24}>Información de usuario</Col>
-            <br/>
-            <Col span={24}>Promociones</Col>
-            <br/>
-            <Col span={24}>Productos</Col>
-            <ProductsList/>
-            <br/>
-                        <p>{ user.last_name }</p>
                         <br/>
-
                         <Row >
-
                             <Col span={4}>
 
                                 {<Avatar
                                     size={100}
                                     alt={ user.user.name }
                                     src={ `http://localhost:8000/storage/${ user.user.profile_picture }` }
+
                                 />}
 
                             </Col>
@@ -103,7 +86,7 @@ const Artist = () => {
                                 <p> SEGUIDORES: {totalproducts} </p>
                                 <p> VENTAS: {totalsales} </p>
                                 <p> PRODUCTOS: {totalproducts} </p>
-                                <p> Borrar</p>
+
 
                                 <br/>
                             </Col>
@@ -140,69 +123,67 @@ const Artist = () => {
 
                         </Row>
 
-                        <Col span={24}>
-                            Información de usuario
-                        </Col>
+                        <Col span={24}>Promociones</Col>
                         <br/>
-                        <Col span={24}>
-                            Promociones
-                        </Col>
+                        <Col span={24}>Productos</Col>
+                        <ProductsList/>
                         <br/>
-                        <Col span={24}>
-                            Productos
-                        </Col>
+                        <p>{ user.last_name }</p>
                         <br/>
+
+                    </>
+            }
 
             <Row gutter={ 30 }>
                 <Col align='center' md={6}>
-                <Title level={3}>Reputación: </Title>
+                    <Title level={3}>Reputación: </Title>
                 </Col>
                 <Col md={18}>
                     <Col md={22}>
-                    <NewComment/>
+
                     </Col>
-                {
-                    comments.map( ( reputations, i ) => (
-                        <Col xs={ 24 } sm={ 18 } md={ 22 } style={ { marginBottom: 20 } } key={ i }>
-                            { reputations.comment
-                                ? <Card hoverable
-                                        style={{borderRadius: 10}}>
-                                    <Row>
-                                        <Col span={14} >
-                                            {
-                                                users === undefined
-                                                    ? <Text>No cargan los datos</Text>
-                                                    :
-                                                    <Meta
-                                                        avatar={<Avatar
-                                                            size={100}
-                                                            alt={ users[reputations.user_id-1].name }
-                                                            src={ `http://localhost:8000/storage/${ users[reputations.user_id-1].profile_picture }` }
-                                                        />}
+                    {
+                        comments.map( ( reputations, i ) => (
+                            <Col xs={ 24 } sm={ 18 } md={ 22 } style={ { marginBottom: 20 } } key={ i }>
+                                { reputations.comment
+                                    ? <Card hoverable
+                                            style={{borderRadius: 10}}>
+                                        <Row>
+                                            <Col span={14} >
+                                                {
+                                                    users === undefined
+                                                        ? <Text>No cargan los datos</Text>
+                                                        :
+                                                        <Meta
+                                                            avatar={<Avatar
+                                                                size={100}
+                                                                alt={ users[reputations.user_id-1].name }
+                                                                src={ `http://localhost:8000/storage/${ users[reputations.user_id-1].profile_picture }` }
+                                                            />}
 
 
-                                                        title={`Nombre del Comprador: ${users[reputations.user_id-1].name} ${users[reputations.user_id-1].last_name}`}
-                                                        description={`Comentario: ${reputations.comment}`}
-                                                    />
-                                            }
-                                        </Col>
-                                        <Col span={8} align='end'>
+                                                            title={`Nombre del Comprador: ${users[reputations.user_id-1].name} ${users[reputations.user_id-1].last_name}`}
+                                                            description={`Comentario: ${reputations.comment}`}
+                                                        />
+                                                }
+                                            </Col>
+                                            <Col span={8} align='end'>
 
-                                            <Text type='secondary'><Text strong>Valoración: </Text>
-                                                <Rate disabled defaultValue={ reputations.score } />
+                                                <Text type='secondary'><Text strong>Valoración: </Text>
+                                                    <Rate disabled defaultValue={ reputations.score } />
 
-                                            </Text>
-                                        </Col>
-                                    </Row>
+                                                </Text>
+                                            </Col>
+                                        </Row>
 
-                                </Card>
-                                : <div style={ { textAlign: 'center' } }>
-                                    <Card title='' extra='' cover='' loading />
-                                </div>
-                            }
-                        </Col>
-                    ) )
-                }
+                                    </Card>
+                                    : <div style={ { textAlign: 'center' } }>
+                                        <Card title='' extra='' cover='' loading />
+                                    </div>
+                                }
+                            </Col>
+                        ) )
+                    }
                 </Col>
 
             </Row>
