@@ -23,41 +23,26 @@ import { Link } from 'react-router-dom';
 import { usePublicationList } from '../data/usePublicationList';
 import ShowError from './ShowError';
 import {DeleteOutlined, EditOutlined, PlusOutlined} from '@ant-design/icons';
-import Publications from "../pages/Publications";
-import API from "../data";
-import { translateMessage } from '../utils/translateMessage';
 import {useCategories} from "../data/useCategories";
 import {useCategories2} from "../data/useCategories2";
 import {useCategories3} from "../data/useCategories3";
 import {useCategories4} from "../data/useCategories4";
 
-
 const { Text } = Typography;
 const {Meta} = Card;
-const PublicationList = (props ) => {
+const {Option} = Select;
+const PublicationList = ( props ) => {
+
         const [ showModal, setShowModal ] = useState( false );
-        const [ currentPublicationId, setCurrentPublicationId ] = useState( null );
-        const [ currentPublicationName, setCurrentPublicationName ] = useState(null);
-        const [ currentPublicationDescription, setCurrentPublicationDescription ] = useState( null );
-        const [ currentPublicationPrice, setCurrentPublicationPrice ] = useState( null );
-        const [ currentPublicationStock, setCurrentPublicationStock ] = useState( null );
-        const [ currentPublicationLocation, setCurrentPublicationLocation ] = useState( null );
-        const [ currentPublicationScore, setCurrentPublicationScore ] = useState( null );
         const { products, isLoading, isError, mutate } = usePublicationList();
-        const [ isSaving, setIsSaving ] = useState( false );
-        const [ form ] = Form.useForm();
-        const [ imageUrl, setImageUrl ] = useState( null );
-        const [ fileList, setFileList ] = useState( [] );
-        const { categories } = useCategories();
-        const { categories2, isLoading2, isError2 } = useCategories2();
-        const { categories3, isLoading3, isError3 } = useCategories3();
-        const { categories4, isLoading4, isError4 } = useCategories4();
-        const [idproduct, setIdProduct] = useState([]);
-        const [edit, setEdit]= useState(false);
-
-
-    const {Option} = Select;
-
+    const [ isSaving, setIsSaving ] = useState( false );
+    const [ form ] = Form.useForm();
+    const [ imageUrl, setImageUrl ] = useState( null );
+    const [ fileList, setFileList ] = useState( [] );
+    const { categories } = useCategories();
+    const { categories2, isLoading2, isError2 } = useCategories2();
+    const { categories3, isLoading3, isError3 } = useCategories3();
+    const { categories4, isLoading4, isError4 } = useCategories4();
         // const [ articles, setArticles ] = useState( props.articles );
 
         // useEffect( () => {
@@ -65,58 +50,11 @@ const PublicationList = (props ) => {
         //   setArticles( props.articles );
         // }, [ props.articles ] );
 
-    const onUpdate = async values => {
-        console.log( 'Received values of form: ', values );
-
-        form.validateFields()
-            .then( async( values ) => {
-                setIsSaving( true );
-                const data = new FormData();
-
-                data.append( 'name', values.name );
-                data.append( 'description', values.description );
-                data.append( 'price', values.price );
-                data.append( 'stock', values.stock );
-                data.append( 'sales', values.sales );
-                data.append( 'image', values.image[ 0 ] );
-                data.append( 'location', values.location );
-                data.append('category_id', values.category_id)
-
-
-                try {
-                    await API.put( `/products/${ values }`,{
-
-                    }); // post data to server
-                    form.resetFields();
-                    setFileList( [] );
-                    setImageUrl( null );
-                    setIsSaving( false );
-                    await mutate('/products');
-                    //onSubmit();
-                } catch( error ) {
-                    setIsSaving( false );
-                    console.error(
-                        'You have an error in your code or there are Network issues.',
-                        error
-                    );
-
-                    message.error( translateMessage( error.message ) );
-                }
-            } )
-            .catch( info => {
-                console.log( 'Validate Failed:', info );
-                console.log('values', values);
-            } );
-
-    };
-
-
         const handleChangeCategory = ( e ) => {
             // setArticles( props.articles.filter( ( article ) => e.target.value === 'all' || article.category_data.id ===
             // e.target.value ) );
         };
 
-        const [loading, setLoading] = useState(true);
         if( isLoading ) {
             return <Row justify='center' gutter={ 30 }>
                 {
@@ -124,7 +62,7 @@ const PublicationList = (props ) => {
                         <Col xs={ 24 } sm={ 12 } md={ 8 } style={ { marginBottom: 30 } } key={ i }>
                             <div style={ { textAlign: 'center' } }>
                                 <Skeleton.Image style={ { width: 200 } } />
-
+                                <Card title='' extra='' cover='' loading />
                             </div>
                         </Col>
                     )
@@ -136,37 +74,14 @@ const PublicationList = (props ) => {
             return <ShowError error={ isError } />;
         }
 
-
-        const handleViewName = (name) => {
-            setCurrentPublicationName(name)
-        }
-        const handleViewDescription = (description) => {
-            setCurrentPublicationDescription(description)
-        }
-        const handleViewPrice = (price) => {
-            setCurrentPublicationPrice(price)
-        }
-        const handleViewStock = (stock) => {
-            setCurrentPublicationStock(stock)
-        }
-        const handleViewLocation = (location) => {
-            setCurrentPublicationLocation(location)
-        }
-
-
-        const handleCancel = () => {
-            setShowModal(false);
-        }
-
-        const handleOk = () => {
-            setShowModal(false);
-        }
-
-
     const handleViewDetails = () => {
         setShowModal(true);
 
 
+    }
+
+    const handleCancel = () => {
+        setShowModal(false);
     }
 
     const layout = {
@@ -175,12 +90,13 @@ const PublicationList = (props ) => {
     };
 
 
-        return (
+    return (
             <>
 
                 <Row justify='center' gutter={ 30 }>
                     {
                         products.map((product, index)=>{
+                            console.log(products)
                             return (
                                 <Col xs={ 24 } sm={ 18 } md={ 24 } style={ { marginBottom: 20 } } >
                                     <Card
@@ -213,8 +129,8 @@ const PublicationList = (props ) => {
 
                                                 <p>Precio: ${product.price} </p>
                                                 <p>Stock: {product.stock} </p>
-                                                <p>Venta: {product.sales} </p>
                                                 <p>Ubicación: {product.location} </p>
+
 
                                                 <div>
                                                     <Button icon ={<EditOutlined />}  onClick={ () => handleViewDetails()}type="primary" size={100}> Editar</Button>
@@ -244,12 +160,11 @@ const PublicationList = (props ) => {
                     }
 
                 </Row>
-
                 <Modal
                     title="Editar Publicación"
                     visible={showModal}
                     confirmLoading={ isSaving }
-                    onOk={ () => onUpdate()}
+                    //onOk={ () =>}
                     onCancel={ () => handleCancel()}
                 >
                     <Form {...layout} name="nest-messages" form={ form }>
@@ -314,7 +229,7 @@ const PublicationList = (props ) => {
                         <Form.Item name='image'
                                    label='Upload'
                                    valuePropName='fileList'
-                                   //getValueFromEvent={ normPhotoFile }
+                            //getValueFromEvent={ normPhotoFile }
                                    rules={ [
                                        {
                                            required: true,
@@ -402,7 +317,6 @@ const PublicationList = (props ) => {
                         </Form.Item>
                     </Form>
                 </Modal>
-
 
             </>
         );

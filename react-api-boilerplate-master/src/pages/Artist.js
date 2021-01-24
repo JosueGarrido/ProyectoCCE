@@ -82,137 +82,129 @@ const Artist = () => {
             <Col span={24}>Productos</Col>
             <ProductsList></ProductsList>
             <br/>
-                        <p>{ user.last_name }</p>
-                        <br/>
+            <p>{ user.last_name }</p>
+            <br/>
 
-                        <Row >
+            <Row >
 
-                            <Col span={4}>
+                <Col span={4}>
 
-                                {<Avatar
-                                    size={100}
-                                    alt={ user.user.name }
-                                    src={ `http://localhost:8000/storage/${ user.user.profile_picture }` }
-
-
-                                />}
-
-                            </Col>
-                            <Col span={10}>
-                                <p>{ user.user.name} { user.user.last_name } </p>
-                                <p>{ user.user.email }</p>
-
-                                <p> SEGUIDORES: {totalproducts} </p>
-                                <p> VENTAS: {totalsales} </p>
-                                <p> PRODUCTOS: {totalproducts} </p>
+                    {<Avatar
+                        size={100}
+                        alt={ user.user.name }
+                        src={ `http://localhost:8000/storage/${ user.user.profile_picture }` }
 
 
-                                <br/>
-                            </Col>
+                    />}
 
-                            <Col align={'center' } span={10}>
-                                <p>Compartir</p>
-                                <p>PROPIETARIO DE LA TIENDA</p>
-                                {<Avatar
-                                    size={50}
-                                    alt={ user.user.name }
-                                    src={ `http://localhost:8000/storage/${ user.user.profile_picture }` }
-                                />}
-                                <p>{ user.user.name }</p>
-                                <p>Desde { moment( user.user.created_at ).format( 'YYYY' ) }-{ user.user.location } </p>
-                                <p>Contacto:</p>
-                                <Col >
-                                    <a href='https://www.facebook.com' target='_blank'>
-                                        <FacebookOutlined twoToneColor="red" />
-                                    </a>
-                                </Col>
-                                <Col >
-                                    <a href='https://www.instagram.com' target='_blank'>
-                                        <InstagramFilled />
-                                    </a>
+                </Col>
+                <Col span={10}>
+                    <p>{ user.user.name} { user.user.last_name } </p>
+                    <p>{ user.user.email }</p>
 
-                                </Col>
-                                <Col twoToneColor="red">
-                                    < a href='https://www.twitter.com' target='_blank' >
-                                        <TwitterOutlined  />
-                                    </a>
-                                </Col>
-
-                            </Col>
-
-                        </Row>
+                    <p> SEGUIDORES: {totalproducts} </p>
+                    <p> VENTAS: {totalsales} </p>
+                    <p> PRODUCTOS: {totalproducts} </p>
 
 
+                    <br/>
+                </Col>
 
+                <Col align={'center' } span={10}>
+                    <p>Compartir</p>
+                    <p>PROPIETARIO DE LA TIENDA</p>
+                    {<Avatar
+                        size={50}
+                        alt={ user.user.name }
+                        src={ `http://localhost:8000/storage/${ user.user.profile_picture }` }
+                    />}
+                    <p>{ user.user.name }</p>
+                    <p>Desde { moment( user.user.created_at ).format( 'YYYY' ) }-{ user.user.location } </p>
+                    <p>Contacto:</p>
+                    <Col >
+                        <a href='https://www.facebook.com' target='_blank'>
+                            <FacebookOutlined twoToneColor="red" />
+                        </a>
+                    </Col>
+                    <Col >
+                        <a href='https://www.instagram.com' target='_blank'>
+                            <InstagramFilled />
+                        </a>
 
+                    </Col>
+                    <Col twoToneColor="red">
+                        < a href='https://www.twitter.com' target='_blank' >
+                            <TwitterOutlined  />
+                        </a>
+                    </Col>
 
+                </Col>
 
+            </Row>
 
-                        <Col span={24}>
-                            Información de usuario
-                        </Col>
-                        <br/>
-                        <Col span={24}>
-                            Promociones
-                        </Col>
-                        <br/>
-                        <Col span={24}>
-                            Productos
-                        </Col>
-                        <br/>
-                    </>
-            }
+            <Col span={24}>
+                Información de usuario
+            </Col>
+            <br/>
+            <Col span={24}>
+                Promociones
+            </Col>
+            <br/>
+            <Col span={24}>
+                Productos
+            </Col>
+            <br/>
 
             <Row gutter={ 30 }>
                 <Col align='center' md={6}>
-                <Title level={3}>Reputación: </Title>
+                    <Title level={3}>Reputación: </Title>
                 </Col>
                 <Col md={18}>
                     <Col md={22}>
-                    <NewComment/>
+                        <NewComment/>
                     </Col>
-                {
-                    comments.map( ( reputations, i ) => (
-                        <Col xs={ 24 } sm={ 18 } md={ 22 } style={ { marginBottom: 20 } } key={ i }>
-                            { reputations.comment
-                                ? <Card hoverable
-                                        style={{borderRadius: 10}}>
-                                    <Row>
-                                        <Col span={14} >
-                                            {
-                                                users === undefined
-                                                    ? <Text>No cargan los datos</Text>
-                                                    :
-                                                    <Meta
-                                                        avatar={<Avatar
-                                                            size={100}
-                                                            alt={ users[reputations.user_id-1].name }
-                                                            src={ `http://localhost:8000/storage/${ users[reputations.user_id-1].profile_picture }` }
-                                                        />}
+                    {
+                        comments.map( ( reputations, i ) => (
+                            <Col xs={ 24 } sm={ 18 } md={ 22 } style={ { marginBottom: 20 } } key={ i }>
+                                { reputations.comment
+                                    ? <Card hoverable
+                                            style={{borderRadius: 10}}>
+                                        <Row>
+                                            <Col span={14} >
+                                                {
+                                                    users === undefined
+                                                        ? <Text>No cargan los datos</Text>
+                                                        :
+                                                        <Meta
+                                                            avatar={<Avatar
+                                                                size={100}
+                                                                alt={ users[reputations.user_id-1].name }
+                                                                src={ `http://localhost:8000/storage/${ users[reputations.user_id-1].profile_picture }` }
+                                                            />}
 
 
-                                                        title={`Nombre del Comprador: ${users[reputations.user_id-1].name} ${users[reputations.user_id-1].last_name}`}
-                                                        description={`Comentario: ${reputations.comment}`}
-                                                    />
-                                            }
-                                        </Col>
-                                        <Col span={8} align='end'>
+                                                            title={`Nombre del Comprador: ${users[reputations.user_id-1].name} ${users[reputations.user_id-1].last_name}`}
+                                                            description={`Comentario: ${reputations.comment}`}
+                                                        />
+                                                }
+                                            </Col>
+                                            <Col span={8} align='end'>
 
-                                            <Text type='secondary'><Text strong>Valoración: </Text>
-                                                <Rate disabled defaultValue={ reputations.score } />
+                                                <Text type='secondary'><Text strong>Valoración: </Text>
+                                                    <Rate disabled defaultValue={ reputations.score } />
 
-                                            </Text>
-                                        </Col>
-                                    </Row>
+                                                </Text>
+                                            </Col>
+                                        </Row>
 
-                                </Card>
-                                : <div style={ { textAlign: 'center' } }>
-                                    <Card title='' extra='' cover='' loading />
-                                </div>
-                            }
-                        </Col>
-                    ) )
-                }
+                                    </Card>
+                                    : <div style={ { textAlign: 'center' } }>
+                                        <Card title='' extra='' cover='' loading />
+                                    </div>
+                                }
+                            </Col>
+                        ) )
+                    }
                 </Col>
 
             </Row>
