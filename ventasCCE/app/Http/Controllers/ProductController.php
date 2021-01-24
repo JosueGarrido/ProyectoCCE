@@ -67,7 +67,7 @@ class ProductController extends Controller
         $product = Product::create($request->all());
         $path = $request->image->store('public/products');
 
-        $product->image = 'products/' . basename($path);
+        $product->image = $path;
         $product->save();
 
         return response()->json($product, 201);

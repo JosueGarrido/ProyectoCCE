@@ -20,11 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dee636f5-9ae4-40ae-8a91-f469f5577560" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/PublicationList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/PublicationList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,9 +178,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-
       <changelist id="dee636f5-9ae4-40ae-8a91-f469f5577560" name="Default Changelist" comment="" />
-
       <created>1599235334002</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -250,9 +246,7 @@
       <workItem from="1610931175010" duration="2045000" />
       <workItem from="1610951780099" duration="3339000" />
       <workItem from="1610994326237" duration="180000" />
-
       <workItem from="1611432254966" duration="1182000" />
-
     </task>
     <servers />
   </component>
@@ -272,6 +266,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="457" y="186" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1611504443490">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="457" y="186" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.768@0.0.1366.768" timestamp="1611504443490" />
     <state x="468" y="195" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608072505096">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
