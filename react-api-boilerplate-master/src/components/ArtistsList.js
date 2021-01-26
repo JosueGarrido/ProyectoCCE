@@ -16,12 +16,11 @@ const ArtistsList = ( props ) => {
 
         if(users !== undefined) {
             console.log('usuarios',users);
-            if (users.userable_type !== "null") {
                 for (var i = 0; i < (users.length); i++) {
-                    artist.push(users[i]);
-
+                    if (users[i].userable_type === 'App\\Artist') {
+                        artist.push(users[i]);
+                    }
                 }
-            }
         }
 
         console.log('artistas', artist);
@@ -49,7 +48,7 @@ const ArtistsList = ( props ) => {
             <>
                 <Row justify='center' gutter={ 30 }>
                     {
-                        users.map( ( users, i ) => (
+                        artist.map( ( users, i ) => (
                             <Col xs={ 24 } sm={ 12 } md={ 8 } style={ { marginBottom: 30 } } key={ i }>
                                 { users.name
                                     ? <Card

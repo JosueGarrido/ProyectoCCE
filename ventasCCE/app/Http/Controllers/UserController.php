@@ -132,13 +132,89 @@ class UserController extends Controller{
         $user = new User($request->all());
         $pass = $request->password;
         $user->password = Hash::make($pass);
-        $path = $request->profile_picture->store('user');
-        $user->profile_picture = $path;
+        $path = $request->profile_picture->store('public/user');
+        $user->profile_picture = 'user/' . basename($path);
         $user->save();
         $token = JWTAuth::fromUser($user);
         return response()->json(compact('user','token'),201);
 
     }
+
+
+
+    public function registerClient (Request $request)
+    {
+
+        //  $this->authorize('view', $id);
+        //  return response()->json( new UserResource($id), 200);
+
+        // $validator = Validator::make($request->all(), [
+
+        $request->validate([
+            'name' => 'required|string|max:30',
+            'last_name' => 'required|string|max:30',
+            'email' => 'required|string|unique:users|email|max:50',
+            'email_verified_at' => 'required|string|unique:users|email|max:50',
+            'password' => 'required|string|min:6|confirmed',
+            'identity' => 'required',
+            'birthday' => 'required',
+            'phone' => 'required|integer|unique:users',
+            'location' => 'required',
+            /* 'culture' => 'required',
+             'profile_picture' => 'image|dimensions:min_width=200,min_height=200',
+             'country' => 'required',
+             'culture' => 'required',
+             'disability' => 'required',
+             'shop_name' => 'required',
+             'field_cultural' => 'required',
+             'secondary_activity' => 'required',
+             'education_level' => 'required',
+             'career_name' => 'required',
+             'studies_institution' => 'required',
+             'social_networks' => 'required',*/
+        ],self::$messages);
+
+        /*      $user = User::create([
+                  'name' => $request->get('name'),
+                  'last_name' => $request->get('last_name'),
+                  'email' => $request->get('email'),
+                  'email_verified_at' => $request->get('email_verified_at'),
+                  'password' => Hash::make($request->get('password')),
+                  'identity' => $request->get('identity'),
+                  'birthday' => $request->get('birthday'),
+                  'phone' => $request->get('phone'),
+                  'profile_picture' => $request->get('profile_picture'),
+                  'location' => $request->get('location'),
+                 /* 'culture' => $request->get('culture'),
+                  'disability' => $request->get('disability'),
+                  'stage_name' => $request->get('stage_name'),
+                  'field_cultural' => $request->get('field_cultural'),
+                  'main_activity' => $request->get('main_activity'),
+                  'secondary_activity' => $request->get('secondary_activity'),
+                  'education_level' => $request->get('education_level'),
+                  'career_name' => $request->get('career_name'),
+                  'studies_institution' => $request->get('studies_institution'),
+                  'social_networks' => $request->get('social_networks'),
+              ]); */
+
+
+        // $token = JWTAuth::fromUser($user);  */
+
+        $user = new User($request->all());
+        $pass = $request->password;
+        $user->password = Hash::make($pass);
+        $path = $request->profile_picture->store('public/user');
+        $user->profile_picture = 'user/' . basename($path);
+        $user->save();
+        $token = JWTAuth::fromUser($user);
+        return response()->json(compact('user','token'),201);
+
+    }
+
+
+
+
+
     public function getAuthenticatedUser()
     {
 
@@ -164,7 +240,7 @@ class UserController extends Controller{
     {
         $user = User::findOrFail($user);
         $user->update($request->all());
-        return$user;
+        return $user;
     }
 
     public function delete(Request $request, $user)

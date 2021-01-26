@@ -31,10 +31,6 @@ class Product extends Model
     {
         return $this->hasMany('App\Questions');
     }
-    public function reputation()
-    {
-        return $this->hasMany('App\Reputation');
-    }
     public function sale()
     {
         return $this->hasMany('App\Sale');

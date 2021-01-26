@@ -26,19 +26,17 @@ class CreateReputationsTable extends Migration
         });
 
         Schema::table('reputations', function (Blueprint $table) {
-            $table->unsignedBigInteger('product_id')->nullable();
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id_2')->nullable();
+            $table->foreign('user_id_2')->references('id')->on('users')->onDelete('restrict');
         });
     }
     public function down(){
         Schema::disableForeignKeyConstraints();
+        Schema::table('reputations', function (Blueprint $table) {
+            $table->dropForeign(['user_id']);
+            $table->dropForeign(['user_id_2']);
+        });
         Schema::dropIfExists('reputations');
-        Schema::table('reputations', function (Blueprint $table) {
-            $table->dropForeign('user_id');
-        });
-        Schema::table('reputations', function (Blueprint $table) {
-            $table->dropForeign('product_id');
-        });
         Schema::enableForeignKeyConstraints();
     }
 }

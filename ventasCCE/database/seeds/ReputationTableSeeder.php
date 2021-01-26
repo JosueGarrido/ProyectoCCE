@@ -30,7 +30,7 @@ class ReputationTableSeeder extends Seeder
                 Reputation::create([
                     'score' => $faker->numberBetween(1,5),
                     'comment' => $faker->sentence,
-                    'product_id' => $faker->numberBetween(1,55),
+                    'user_id_2' => $faker->numberBetween(1,16),
                 ]);
             }
         }

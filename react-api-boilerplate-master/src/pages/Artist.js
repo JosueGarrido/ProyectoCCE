@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import ShowError from '../components/ShowError';
 import { useParams } from 'react-router-dom';
 import { useProductsList } from '../data/useProductsList';
-import {Avatar, Card, Col, Rate, Row, Skeleton, Typography, Image} from 'antd';
+import {Avatar, Card, Col, Rate, Row, Skeleton, Typography, Image, Button} from 'antd';
 import {useUser} from "../data/useUser";
 import {useUserList} from "../data/useUserList";
 import ProductsList from '../components/ProductsList';
@@ -19,6 +19,7 @@ const Artist = () => {
     const products = useProductsList( id );
 
     const { users } = useUserList();
+    const [ visible, setVisible ] = useState( 2 );
 
     console.log('productos', products);
     console.log('user', user);
@@ -52,6 +53,13 @@ const Artist = () => {
 
     console.log('ventas totales', totalsales);
     console.log('comentarios', comments);
+
+
+    const handleloadmore = () => {
+        setVisible(visible+3);
+    }
+
+
     return (
         <>
             <img
@@ -143,7 +151,7 @@ const Artist = () => {
 
                     </Col>
                     {
-                        comments.map( ( reputations, i ) => (
+                        comments.slice(0,visible).map( ( reputations, i ) => (
                             <Col xs={ 24 } sm={ 18 } md={ 22 } style={ { marginBottom: 20 } } key={ i }>
                                 { reputations.comment
                                     ? <Card hoverable
@@ -184,6 +192,23 @@ const Artist = () => {
                             </Col>
                         ) )
                     }
+
+                    {
+                        visible < comments.length
+                        ?
+                            <Col span={22}>
+                                <hr/>
+                            <div style={ { textAlign: 'center' } }>
+                                <Button
+                                     type={'primary'} onClick={handleloadmore}>
+                                Ver más
+                            </Button>
+                            </div>
+                            </Col>
+                        :<>
+                        </>
+                    }
+                    <br/>
                 </Col>
 
             </Row>
