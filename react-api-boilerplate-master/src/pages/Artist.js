@@ -59,6 +59,10 @@ const Artist = () => {
         setVisible(visible+3);
     }
 
+    const share = () => {
+
+    }
+
 
     return (
         <>
@@ -131,7 +135,9 @@ const Artist = () => {
 
                         </Row>
 
-                        <Col span={24}>Promociones</Col>
+                        <Col span={24}>Promociones
+
+                        </Col>
                         <br/>
                         <Col span={24}>Productos</Col>
                         <ProductsList/>

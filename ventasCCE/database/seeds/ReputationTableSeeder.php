@@ -21,16 +21,17 @@ class ReputationTableSeeder extends Seeder
         // iteramos sobre cada uno y simulamos un inicio de
         // sesión con cada uno para crear productos en su nombre
         $users = App\User::all();
+
         foreach ($users as $user) {
-            // iniciamos sesión con este usuario
+            // iniciamos sesión con cada uno
             JWTAuth::attempt(['email' => $user->email, 'password' => '123456']);
-            // Y ahora con este usuario creamos algunos productos
-            $num_reputations = 10;
-            for ($j = 0; $j < $num_reputations; $j++) {
+
+            // Creamos un comentario para cada artículo con este usuario
+            foreach ($users as $user) {
                 Reputation::create([
                     'score' => $faker->numberBetween(1,5),
                     'comment' => $faker->sentence,
-                    'user_id_2' => $faker->numberBetween(1,16),
+                    'user_id_2' => $user->id,
                 ]);
             }
         }
