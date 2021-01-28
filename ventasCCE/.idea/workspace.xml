@@ -20,8 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33b01b25-7452-4012-b36b-7f16a70ad837" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Artist.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Artist.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/routers/PublicRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/routers/PublicRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,7 +247,7 @@
       <workItem from="1611509208719" duration="420000" />
       <workItem from="1611614070075" duration="666000" />
       <workItem from="1611705013871" duration="2305000" />
-      <workItem from="1611803141045" duration="1571000" />
+      <workItem from="1611803141045" duration="2720000" />
     </task>
     <servers />
   </component>
