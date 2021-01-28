@@ -4,7 +4,7 @@ import ShowError from '../components/ShowError';
 import { useParams, Link } from 'react-router-dom';
 import { useProductsList } from '../data/useProductsList';
 import { useReputationList } from "../data/useReputationList";
-import {Avatar, Card, Col, Rate, Row, Skeleton, Typography, Image, Button,Button,Modal} from 'antd';
+import {Avatar, Card, Col, Rate, Row, Skeleton, Typography, Image,Button,Modal, Divider} from 'antd';
 import {useUser} from "../data/useUser";
 import {useUserList} from "../data/useUserList";
 import ProductsList from '../components/ProductsList';
@@ -127,8 +127,7 @@ const Artist = (props) => {
 
                             </Col>
 
-
-
+                            <Col span={10}>
                                 <h4>{ user.user.name} { user.user.last_name } </h4>
                                 <p>{ user.user.email } Artista escénico, actor que ha incursionado en la dramaturgia y
                                     la dirección. Amante del cine. Trabajó como periodista y fotógrafo por diez años en
@@ -166,7 +165,7 @@ const Artist = (props) => {
                                             <TwitterOutlined  />
                                         </Button></Col>
                                         <Col align={'center' }  span={4}><Button
-                                            type={'primary'} href={`https://api.whatsapp.com/send?text=https://wocking.com/${match.url}|`}>
+                                            type={'primary'} href={`https://api.whatsapp.com/send?text=https://wocking.com${match.url}`}>
                                             <WhatsAppOutlined />
                                         </Button></Col>
                                     </Row>
