@@ -14,6 +14,7 @@ const PublicRoute = ( {
   ...rest
 } ) => {
   return <Route { ...rest } component={ ( props ) => <Component { ...props } /> } />;
+
 };
 
 export default PublicRoute;
