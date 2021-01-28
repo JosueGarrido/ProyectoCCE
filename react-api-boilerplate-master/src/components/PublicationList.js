@@ -82,6 +82,7 @@ const PublicationList = (props ) => {
                 data.append( 'location', values.location );
                 data.append('category_id', values.category_id)
 
+
                 try {
                     await API.put( `/products/${ values }`,{
 
@@ -104,6 +105,7 @@ const PublicationList = (props ) => {
             } )
             .catch( info => {
                 console.log( 'Validate Failed:', info );
+                console.log('values', values);
             } );
 
     };
@@ -163,6 +165,7 @@ const PublicationList = (props ) => {
 
     const handleViewDetails = () => {
         setShowModal(true);
+
 
     }
 

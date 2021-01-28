@@ -22,17 +22,14 @@ class Product extends JsonResource
             'price' => $this ->price,
             'stock' => $this ->stock,
             'image' => $this ->image,
-            'reputations_data' => "/api/reputations/",
-            'comment' => $this->reputation,
             'questions_data' => "/api/questions/",
-            'sales' => $this->sale,
-            'sales_data' => "/api/sales/",
             'questions' => $this->question,
+            'sales' => $this->sales,
+            'sale' => $this->sale,
+            'sales_data' => "/api/sales/",
             'location' => $this ->location,
             'user_id' => $this ->user_id,
             'created_at' => $this->created_at,
-
-
         ];
     }
 }

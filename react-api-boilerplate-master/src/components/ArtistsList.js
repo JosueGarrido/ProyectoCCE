@@ -9,22 +9,21 @@ const { Text } = Typography;
 
 const ArtistsList = ( props ) => {
 
-    const { users, isLoading, isError, mutate } = useUserList();
+        const { users, isLoading, isError, mutate } = useUserList();
 
 
-    const artist = [];
+        const artist = [];
 
-if(users !== undefined) {
-    console.log('usuarios',users);
-    if (users.userable_type !== "null") {
-        for (var i = 0; i < (users.length); i++) {
-            artist.push(users[i]);
-
+        if(users !== undefined) {
+            console.log('usuarios',users);
+                for (var i = 0; i < (users.length); i++) {
+                    if (users[i].userable_type === 'App\\Artist') {
+                        artist.push(users[i]);
+                    }
+                }
         }
-    }
-}
 
-    console.log('artistas', artist);
+        console.log('artistas', artist);
 
         if( isLoading ) {
             return <Row justify='center' gutter={ 30 }>
@@ -49,7 +48,7 @@ if(users !== undefined) {
             <>
                 <Row justify='center' gutter={ 30 }>
                     {
-                        users.map( ( users, i ) => (
+                        artist.map( ( users, i ) => (
                             <Col xs={ 24 } sm={ 12 } md={ 8 } style={ { marginBottom: 30 } } key={ i }>
                                 { users.name
                                     ? <Card
@@ -67,7 +66,7 @@ if(users !== undefined) {
                                         <Text type='secondary'>
                                             <Link to={ Routes.ARTIST.replace( ':id', users.id ) }>
                                                 { users.name }</Link>
-                                            </Text>
+                                        </Text>
                                     </Card>
                                     : <div style={ { textAlign: 'center' } }>
                                         <Skeleton.Image style={ { width: 200 } } />

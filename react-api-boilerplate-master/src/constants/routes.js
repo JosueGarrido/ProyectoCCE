@@ -4,7 +4,9 @@
 
 const publicRoutes = {
   LOGIN: '/ingreso',
+  LOGIN_CLIENT: '/ingreso-cliente',
   REGISTER: '/registro',
+  REGISTER_CLIENT: '/registro-clientes',
 
   //Dashboard artista Ventas
   PUBLICATIONS: '/publicaciones',
@@ -14,6 +16,14 @@ const publicRoutes = {
   ARTIST_SELL_DASHBOARD: '/dashboard-ventas-artista',
   ARTIST_METRICS_DASHBOARD: '/dashboard-metricas-artista',
   ARTIST_REPUTATION_DASHBOARD: '/dashboard-reputación-artista',
+
+  //Dashboard Clientes Compras
+  CLIENT_DASHBOARD: '/dashboard-cliente',
+  CLIENT_QUESTIONS_DASHBOARD: '/dashboard-preguntas-cliente',
+  CLIENT_BUY_DASHBOARD: '/dashboard-ventas-cliente',
+  CLIENT_REPUTATION_DASHBOARD: '/dashboard-reputación-cliente',
+
+
   ARTICLES: '/articulos',
   USERS: '/usuarios',
   USERS_ID: `/usuario/:id`,
@@ -25,6 +35,7 @@ const publicRoutes = {
   HOW_TO_BUY: '/como-comprar',
   SALEPAGE:'/como-vender',
   QUESTIONPAGE:'/preguntas-frecuentes',
+  PRODUCT:'/producto/:id',
 
   //Dashboard Configuración
   DASHBOARD_MY_DATA: '/dashboard-mis-datos',
@@ -44,6 +55,7 @@ const privateRoutes = {
   PRIVATE: '/privada',
   ARTICLE_ID: '/articulo/:id',
   ARTIST_SELL_DASHBOARD_ID: '/ventas/:id',
+  CLIENT_BUY_DASHBOARD_ID: '/compras/:id',
 };
 
 const Routes = {

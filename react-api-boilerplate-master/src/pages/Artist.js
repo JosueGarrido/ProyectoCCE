@@ -1,15 +1,18 @@
 import React, {useState} from 'react';
-import CommentsList from '../components/CommentsList';
+
 import ShowError from '../components/ShowError';
 import { useParams, Link } from 'react-router-dom';
 import { useProductsList } from '../data/useProductsList';
-import {Avatar, Card, Col, Rate, Row, Skeleton, Typography, Image, Divider,Button,Modal} from 'antd';
+import { useReputationList } from "../data/useReputationList";
+import {Avatar, Card, Col, Rate, Row, Skeleton, Typography, Image, Button,Button,Modal} from 'antd';
 import {useUser} from "../data/useUser";
 import {useUserList} from "../data/useUserList";
+import ProductsList from '../components/ProductsList';
 import NewComment from "../components/NewComment";
 import moment from "moment"; 
 import {FacebookOutlined, InstagramFilled, TwitterOutlined, UserAddOutlined,ForkOutlined,WhatsAppOutlined} from "@ant-design/icons";
 
+import CommentsList from "../components/CommentsList";
 
 const { Text, Title } = Typography;
 const {Meta} = Card;
@@ -18,6 +21,7 @@ const Artist = (props) => {
     let { id } = useParams();
     const user = useUser( id );
     const products = useProductsList( id );
+
     const {location, match} = props;
     const [isModalVisible, setIsModalVisible] = useState(false);
 
@@ -29,25 +33,29 @@ const Artist = (props) => {
         setIsModalVisible(false);
     };
 
+    const { reputations } = useReputationList( id );
+
+
     const { users } = useUserList();
+    const [ visible, setVisible ] = useState( 2 );
 
     console.log('productos', products);
     console.log('user', user);
+
     console.log('location', location);
     console.log('match', match);
     const commentsconcat = [];
     const comments = [];
+    console.log('users', users);
+
     const sales =[];
     let totalsales =0;
     let totalproducts;
 
 
-
-
     if (products.products !== undefined) {
         for (let i=0; i< (products.products.length); i++ ){
-            commentsconcat.push(products.products[i].comment);
-            sales.push(products.products[i].sales);
+            sales.push(products.products[i].sale);
         }
         totalproducts = products.products.length;
     }
@@ -56,15 +64,20 @@ const Artist = (props) => {
 
     console.log('total products', totalproducts);
 
-    for (let n = 0; n < commentsconcat.length; n++ ){
-        Array.prototype.push.apply(comments, commentsconcat[n]);
-    }
+
     for (let n = 0; n < sales.length; n++ ){
         totalsales +=  sales[n].length
     }
 
     console.log('ventas totales', totalsales);
-    console.log('comentarios', comments);
+    console.log('comentarios', reputations);
+
+
+    const handleloadmore = () => {
+        setVisible(visible+3);
+    }
+
+
     return (
         <>
             <img
@@ -80,6 +93,7 @@ const Artist = (props) => {
                     : user.isError
                     ? <ShowError error={ user.isError } />
                     : <>
+
                         <Card hoverable>
 
                         <Divider orientation="center">
@@ -88,15 +102,17 @@ const Artist = (props) => {
                         </Divider>
 
                         <br/>
-
                         <Row >
 
+
                             <Col span={3}  align={'center' } md={6}>
+
 
                                 {<Avatar
                                     size={100}
                                     alt={ user.user.name }
                                     src={ `http://localhost:8000/storage/${ user.user.profile_picture }` }
+
                                 />}
 
                                 <Col   align={'center' }>
@@ -111,7 +127,7 @@ const Artist = (props) => {
 
                             </Col>
 
-                            <Col span={10}>
+
 
                                 <h4>{ user.user.name} { user.user.last_name } </h4>
                                 <p>{ user.user.email } Artista escénico, actor que ha incursionado en la dramaturgia y
@@ -191,80 +207,106 @@ const Artist = (props) => {
 
                         </Row>
 
+
                         <Divider orientation="center"></Divider>
 
                     </Card>
                 <Col span={24}>
                             Información de usuario
+
                         </Col>
                         <br/>
-                        <Col span={24}>
-                            Promociones
-                        </Col>
+                        <Col span={24}>Productos</Col>
+                        <ProductsList/>
                         <br/>
-                        <Col span={24}>
-                            Productos
-                        </Col>
+                        <p>{ user.last_name }</p>
                         <br/>
+
                     </>
             }
-
-
-
-            <Row gutter={ 30 }>
-                <Col align='center' md={6}>
-                <Title level={3}>Reputación: </Title>
-                </Col>
-                <Col md={18}>
-                    <Col md={22}>
-                    <NewComment/>
-                    </Col>
-                {
-                    comments.map( ( reputations, i ) => (
-                        <Col xs={ 24 } sm={ 18 } md={ 22 } style={ { marginBottom: 20 } } key={ i }>
-                            { reputations.comment
-                                ? <Card hoverable
-                                        style={{borderRadius: 10}}>
-                                    <Row>
-                                        <Col span={14} >
-                                            {
-                                                users === undefined
-                                                    ? <Text>No cargan los datos</Text>
-                                                    :
-                                                    <Meta
-                                                        avatar={<Avatar
-                                                            size={100}
-                                                            alt={ users[reputations.user_id-1].name }
-                                                            src={ `http://localhost:8000/storage/${ users[reputations.user_id-1].profile_picture }` }
-                                                        />}
-
-
-                                                        title={`Nombre del Comprador: ${users[reputations.user_id-1].name} ${users[reputations.user_id-1].last_name}`}
-                                                        description={`Comentario: ${reputations.comment}`}
-                                                    />
-                                            }
-                                        </Col>
-                                        <Col span={8} align='end'>
-
-                                            <Text type='secondary'><Text strong>Valoración: </Text>
-                                                <Rate disabled defaultValue={ reputations.score } />
-
-                                            </Text>
-                                        </Col>
-                                    </Row>
-
-                                </Card>
-                                : <div style={ { textAlign: 'center' } }>
-                                    <Card title='' extra='' cover='' loading />
-                                </div>
-                            }
+            {
+                reputations === undefined
+                    ? <Text>No cargan los datos</Text>
+                    :
+                    <Row gutter={30}>
+                        <Col align='center' md={6}>
+                            <Title level={3}>Reputación: </Title>
                         </Col>
-                    ) )
-                }
-                </Col>
+                        <Col md={18}>
+                            <Col md={24}>
+                                {
+                                    reputations.isLoading
+                                        ? <Skeleton loading={reputations.isLoading} active avatar/>
+                                        : reputations.isError
+                                        ? <ShowError error={reputations.isError}/>
+                                        : user.user && <NewComment userId={id} reputations={reputations}/>
+                                }
+                            </Col>
+                            <br/>
+                            {
+                                reputations.slice(0, visible).map((reputations, i) => (
+                                    <Col xs={24} sm={18} md={24} style={{marginBottom: 20}} key={i}>
+                                        {reputations.comment
+                                            ? <Card hoverable
+                                                    style={{borderRadius: 10}}>
+                                                <Row>
+                                                    <Col span={14}>
+                                                        {
+                                                            users === undefined
+                                                                ? <Text>No cargan los datos</Text>
+                                                                :
+                                                                <Meta
+                                                                    avatar={<Avatar
+                                                                        size={100}
+                                                                        alt={users[reputations.user_id - 1].name}
+                                                                        src={`http://localhost:8000/storage/${users[reputations.user_id - 1].profile_picture}`}
+                                                                    />}
 
-            </Row>
 
+                                                                    title={`Nombre del Comprador: ${users[reputations.user_id - 1].name} ${users[reputations.user_id - 1].last_name}`}
+                                                                    description={`Comentario: ${reputations.comment}`}
+                                                                />
+                                                        }
+                                                    </Col>
+                                                    <Col span={8} align='end'>
+
+                                                        <Text type='secondary'><Text strong>Valoración: </Text>
+                                                            <Rate disabled defaultValue={reputations.score}/>
+
+                                                        </Text>
+                                                    </Col>
+                                                </Row>
+
+                                            </Card>
+                                            : <div style={{textAlign: 'center'}}>
+                                                <Card title='' extra='' cover='' loading/>
+                                            </div>
+                                        }
+                                    </Col>
+                                ))
+                            }
+
+                            {
+
+                                visible < reputations.length
+                                    ?
+                                    <Col span={22}>
+                                        <hr/>
+                                        <div style={{textAlign: 'center'}}>
+                                            <Button
+                                                type={'primary'} onClick={handleloadmore}>
+                                                Ver más
+                                            </Button>
+                                        </div>
+                                    </Col>
+                                    : <>
+                                    </>
+                            }
+                            <br/>
+                        </Col>
+
+                    </Row>
+            }
 
         </>
     );

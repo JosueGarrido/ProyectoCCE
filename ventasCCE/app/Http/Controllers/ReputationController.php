@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Reputation;
+use App\User;
 use App\Http\Resources\Reputation as ReputationResource;
 use App\Http\Resources\ReputationCollection;
 use Illuminate\Http\Request;
@@ -18,22 +19,29 @@ class ReputationController extends Controller
         'required' => 'El campo :attribute es obligatorio.',
 
     ];
-    public function index()
+    public function index(User $user)
     {
-
-        return new ReputationCollection(Reputation::paginate (25));
+        return response()->json(ReputationResource::collection($user->reputation->sortByDesc('created_at')), 200);
     }
     public function show(Reputation $id)
     {
         $this->authorize('view', $id);
         return response()->json( new ReputationResource($id), 200);
     }
-    public function store(Request $request)
+
+    public function store(Request $request, User $user)
     {
-        $this->authorize('create', Reputation::class);
-        $request->validate(self::$rules,self::$messages);
-        return Reputation::create($request->all());
+        $request->validate([
+            'score' => 'required|int',
+            'comment' => 'required|string',
+        ]);
+
+        $reputation = $user->reputation()->save(new Reputation($request->all()));
+
+        return response()->json(new ReputationResource($reputation), 201);
+
     }
+
     public function update(Request $request, $id)
     {
         $this->authorize('update',$id);
