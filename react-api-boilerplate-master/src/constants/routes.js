@@ -5,6 +5,7 @@
 const publicRoutes = {
   LOGIN: '/ingreso',
   REGISTER: '/registro',
+  REGISTER_CLIENT: '/registro-clientes',
 
   //Dashboard artista Ventas
   PUBLICATIONS: '/publicaciones',
@@ -25,6 +26,7 @@ const publicRoutes = {
   HOW_TO_BUY: '/como-comprar',
   SALEPAGE:'/como-vender',
   QUESTIONPAGE:'/preguntas-frecuentes',
+  PRODUCT:'/producto/:id',
 
   //Dashboard Configuración
   DASHBOARD_MY_DATA: '/dashboard-mis-datos',

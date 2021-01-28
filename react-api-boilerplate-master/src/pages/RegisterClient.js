@@ -386,7 +386,7 @@ const Register = () => {
 
 
         try {
-            const user = await API.post( '/register', data );
+            const user = await API.post( '/register-client', data );
 
             console.log( 'User', user );
             localStorage.setItem( 'login', JSON.stringify( true ) ); // this is to sync auth state in local storage

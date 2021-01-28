@@ -33,3 +33,4 @@ const ArtistMetricsDashboard = () => (
 );
 
 export default ArtistMetricsDashboard;
+

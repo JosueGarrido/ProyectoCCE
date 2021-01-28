@@ -1,11 +1,12 @@
-import React from 'react';
-import CommentsList from '../components/CommentsList';
+import React, {useState} from 'react';
+
 import ShowError from '../components/ShowError';
 import { useParams } from 'react-router-dom';
 import { useProductsList } from '../data/useProductsList';
-import {Avatar, Card, Col, Rate, Row, Skeleton, Typography, Image} from 'antd';
+import {Avatar, Card, Col, Rate, Row, Skeleton, Typography, Image, Button} from 'antd';
 import {useUser} from "../data/useUser";
 import {useUserList} from "../data/useUserList";
+import ProductsList from '../components/ProductsList';
 import NewComment from "../components/NewComment";
 import moment from "moment";
 import {FacebookOutlined, InstagramFilled,TwitterOutlined } from "@ant-design/icons";
@@ -18,9 +19,12 @@ const Artist = () => {
     const products = useProductsList( id );
 
     const { users } = useUserList();
+    const [ visible, setVisible ] = useState( 2 );
 
     console.log('productos', products);
     console.log('user', user);
+    console.log('users', users);
+
     const commentsconcat = [];
     const comments = [];
     const sales =[];
@@ -28,12 +32,10 @@ const Artist = () => {
     let totalproducts;
 
 
-
-
     if (products.products !== undefined) {
         for (let i=0; i< (products.products.length); i++ ){
             commentsconcat.push(products.products[i].comment);
-            sales.push(products.products[i].sales);
+            sales.push(products.products[i].sale);
         }
         totalproducts = products.products.length;
     }
@@ -51,6 +53,17 @@ const Artist = () => {
 
     console.log('ventas totales', totalsales);
     console.log('comentarios', comments);
+
+
+    const handleloadmore = () => {
+        setVisible(visible+3);
+    }
+
+    const share = () => {
+
+    }
+
+
     return (
         <>
             <img
@@ -66,20 +79,15 @@ const Artist = () => {
                     : user.isError
                     ? <ShowError error={ user.isError } />
                     : <>
-                        <h1 >
-                            Usuario: { user.user.name }
-                        </h1>
-                        <p>{ user.last_name }</p>
                         <br/>
-
                         <Row >
-
                             <Col span={4}>
 
                                 {<Avatar
                                     size={100}
                                     alt={ user.user.name }
                                     src={ `http://localhost:8000/storage/${ user.user.profile_picture }` }
+
                                 />}
 
                             </Col>
@@ -90,7 +98,7 @@ const Artist = () => {
                                 <p> SEGUIDORES: {totalproducts} </p>
                                 <p> VENTAS: {totalsales} </p>
                                 <p> PRODUCTOS: {totalproducts} </p>
-                                <p> Borrar</p>
+
 
                                 <br/>
                             </Col>
@@ -127,79 +135,86 @@ const Artist = () => {
 
                         </Row>
 
+                        <Col span={24}>Promociones
 
-
-
-
-
-
-                        <Col span={24}>
-                            Información de usuario
                         </Col>
                         <br/>
-                        <Col span={24}>
-                            Promociones
-                        </Col>
+                        <Col span={24}>Productos</Col>
+                        <ProductsList/>
                         <br/>
-                        <Col span={24}>
-                            Productos
-                        </Col>
+                        <p>{ user.last_name }</p>
                         <br/>
+
                     </>
             }
 
-
-
             <Row gutter={ 30 }>
                 <Col align='center' md={6}>
-                <Title level={3}>Reputación: </Title>
+                    <Title level={3}>Reputación: </Title>
                 </Col>
                 <Col md={18}>
                     <Col md={22}>
-                    <NewComment/>
+
                     </Col>
-                {
-                    comments.map( ( reputations, i ) => (
-                        <Col xs={ 24 } sm={ 18 } md={ 22 } style={ { marginBottom: 20 } } key={ i }>
-                            { reputations.comment
-                                ? <Card hoverable
-                                        style={{borderRadius: 10}}>
-                                    <Row>
-                                        <Col span={14} >
-                                            {
-                                                users === undefined
-                                                    ? <Text>No cargan los datos</Text>
-                                                    :
-                                                    <Meta
-                                                        avatar={<Avatar
-                                                            size={100}
-                                                            alt={ users[reputations.user_id-1].name }
-                                                            src={ `http://localhost:8000/storage/${ users[reputations.user_id-1].profile_picture }` }
-                                                        />}
+                    {
+                        comments.slice(0,visible).map( ( reputations, i ) => (
+                            <Col xs={ 24 } sm={ 18 } md={ 22 } style={ { marginBottom: 20 } } key={ i }>
+                                { reputations.comment
+                                    ? <Card hoverable
+                                            style={{borderRadius: 10}}>
+                                        <Row>
+                                            <Col span={14} >
+                                                {
+                                                    users === undefined
+                                                        ? <Text>No cargan los datos</Text>
+                                                        :
+                                                        <Meta
+                                                            avatar={<Avatar
+                                                                size={100}
+                                                                alt={ users[reputations.user_id-1].name }
+                                                                src={ `http://localhost:8000/storage/${ users[reputations.user_id-1].profile_picture }` }
+                                                            />}
 
 
-                                                        title={`Nombre del Comprador: ${users[reputations.user_id-1].name} ${users[reputations.user_id-1].last_name}`}
-                                                        description={`Comentario: ${reputations.comment}`}
-                                                    />
-                                            }
-                                        </Col>
-                                        <Col span={8} align='end'>
+                                                            title={`Nombre del Comprador: ${users[reputations.user_id-1].name} ${users[reputations.user_id-1].last_name}`}
+                                                            description={`Comentario: ${reputations.comment}`}
+                                                        />
+                                                }
+                                            </Col>
+                                            <Col span={8} align='end'>
 
-                                            <Text type='secondary'><Text strong>Valoración: </Text>
-                                                <Rate disabled defaultValue={ reputations.score } />
+                                                <Text type='secondary'><Text strong>Valoración: </Text>
+                                                    <Rate disabled defaultValue={ reputations.score } />
 
-                                            </Text>
-                                        </Col>
-                                    </Row>
+                                                </Text>
+                                            </Col>
+                                        </Row>
 
-                                </Card>
-                                : <div style={ { textAlign: 'center' } }>
-                                    <Card title='' extra='' cover='' loading />
-                                </div>
-                            }
-                        </Col>
-                    ) )
-                }
+                                    </Card>
+                                    : <div style={ { textAlign: 'center' } }>
+                                        <Card title='' extra='' cover='' loading />
+                                    </div>
+                                }
+                            </Col>
+                        ) )
+                    }
+
+                    {
+                        visible < comments.length
+                        ?
+                            <Col span={22}>
+                                <hr/>
+                            <div style={ { textAlign: 'center' } }>
+                                <Button
+                                     type={'primary'} onClick={handleloadmore}>
+                                Ver más
+                            </Button>
+                            </div>
+                            </Col>
+                        :<>
+                        </>
+                    }
+                    <br/>
                 </Col>
 
             </Row>

@@ -1,110 +1,87 @@
+import { Form, Input, Button, message, Rate } from 'antd';
+import moment from 'moment';
 import React, { useState } from 'react';
-import {Modal, Form, Input, message, Upload, Select, Rate, Button, Card} from 'antd';
-import { translateMessage } from '../utils/translateMessage';
 import API from '../data/index';
+import { translateMessage } from '../utils/translateMessage';
 import ErrorList from './ErrorList';
-import { PlusOutlined } from '@ant-design/icons';
-import { mutate } from 'swr';
+import Routes from '../constants/routes';
+import { Link } from 'react-router-dom';
 
-const { Option } = Select;
+const { TextArea } = Input;
 
-function getBase64( file, callback ) {
-    console.log( 'file', file );
-    const reader = new FileReader();
-    reader.addEventListener( 'load', () => callback( reader.result ) );
-    reader.readAsDataURL( file );
-}
+const NewComment = ( { user, products} ) => {
 
-const NewComment = ( {
-                          onSubmit,
-                          onCancel,
-                          categories
-                      } ) => {
-    const [ form ] = Form.useForm();
-    const [ imageUrl, setImageUrl ] = useState( null );
-    const [ fileList, setFileList ] = useState( [] );
-    const [ isSaving, setIsSaving ] = useState( false );
-    /**
-     * onCreate article
-     * Called when the user clicks on button to create article
-     * @param values
-     */
-    const onCreate = async values => {
-        console.log( 'Received values of form: ', values );
+    console.log( 'props', user );
+    const [ submitting, setSubmitting ] = useState( false );
 
-        form.validateFields()
-            .then( async( values ) => {
-                console.log( 'values', values );
-                setIsSaving( true );
+    const handleSubmit = async( values ) => {
+        console.log( 'values', values );
+        setSubmitting( true );
 
-                // use form data to be able to send a file to the server
-                const data = new FormData();
-                data.append( 'image', values.image[ 0 ] );
-                data.append( 'title', values.title );
-                data.append( 'body', values.body );
-                data.append( 'category_id', values.category_id );
+        try {
 
-                try {
-                    await API.post( '/articles', data ); // post data to server
-                    form.resetFields();
-                    setFileList( [] );
-                    setImageUrl( null );
-                    setIsSaving( false );
-                    onSubmit();
-                } catch( e ) {
-                    setIsSaving( false );
-
-                    const errorList = e.error && <ErrorList errors={ e.error } />;
-                    message.error( <>{ translateMessage( e.message ) }{ errorList }</> );
-                }
-            } )
-            .catch( info => {
-                console.log( 'Validate Failed:', info );
+            // setValue( '' );
+            user.mutate( {
+                data: [
+                    {}, // to show the skeleton for new comment
+                    ...user.comments,
+                ]
+            }, false );
+            await API.post( `/reputations`, {
+                comment: values.comment,
+                score: values.score,
+                user_id: user,
+                product_id: products,
             } );
+            user.mutate(); // get updated data
+            setSubmitting( false );
+        } catch( error ) {
+            console.log( 'error', error );
+            setSubmitting( false );
+            const errorList = error.response.error_list && <ErrorList errors={ error.response.error_list } />;
 
+            message.error( <>
+                { translateMessage( error.message ) }
+                { errorList }
+            </> );
+        }
     };
 
+    const Editor = ( { onSubmit, submitting } ) => {
+        const [ form ] = Form.useForm();
 
-
-    return (
-        <Card style={{borderRadius: 10}}>
+        return (
             <Form
                 form={ form }
-                layout='vertical'
-                name='form_in_modal'
-            >
-                <Form.Item
-                    name='title'
-                    label='Comentario'
-                    rules={ [
-                        {
-                            required: true,
-                            message: 'Ingresa un comentario'
-                        }
-                    ] }
-                >
-                    <Input />
+                name='form_comment'
+                onFinish={ handleSubmit }>
+                <Form.Item name='comment'
+                           rules={ [
+                               {
+                                   required: true,
+                                   message: 'Ingresa el texto de tu comentario'
+                               }
+                           ] }>
+                    <TextArea rows={ 4 } />
                 </Form.Item>
-                <Form.Item
-                    name='body'
-                    label='Valoración'
-                    rules={ [
-                        {
-                            required: true,
-                            message: 'Ingresa el texto del artículo'
-                        }
-                    ] }>
+                <Form.Item name='score'
+                           rules={ [
+                               {
+                                   required: true,
+                                   message: 'Ingresa el texto de tu comentario'
+                               }
+                           ] }>
                     <Rate />
                 </Form.Item>
-
-                <Button type={"primary"}>
-                    Agregar Reseña
-                </Button>
-
+                <Form.Item>
+                    <Button htmlType='submit' loading={ submitting } type='primary'>
+                        Enviar comentario
+                    </Button>
+                </Form.Item>
             </Form>
-        </Card>
-
-    );
+        );
+    };
 };
 
 export default NewComment;
+

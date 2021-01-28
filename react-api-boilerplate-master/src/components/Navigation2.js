@@ -12,7 +12,7 @@ const linkStyle = {
     color: 'white',
 };
 
-const Navigation = ( props ) => {
+const Navigation2 = ( props ) => {
     let location = useLocation();
 
     const [ menuState, setMenuState ] = useState( {
@@ -140,4 +140,4 @@ const Navigation = ( props ) => {
     );
 };
 
-export default Navigation;
+export default Navigation2;

@@ -122,7 +122,7 @@ class User extends Authenticatable  implements JWTSubject
     }
     public function reputation()
     {
-        return $this->hasMany('App\Reputation');
+        return $this->hasMany('App\Reputation', 'user_id_2');
     }
 
     public function userable(){

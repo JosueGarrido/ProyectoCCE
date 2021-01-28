@@ -46,8 +46,11 @@ const AsyncDashboardAlerts = loadable( () => import( '../pages/DashboardAlerts' 
 const AsyncArtists = loadable( () => import( '../pages/Artists' ), loadableOptions );
 const AsyncArtist = loadable( () => import( '../pages/Artist' ), loadableOptions );
 
+//Pagina Productos
+const AsyncProduct = loadable( () => import( '../pages/Product' ), loadableOptions );
 
 const AsyncRegister = loadable( () => import( '../pages/Register' ), loadableOptions );
+const AsyncRegisterClient = loadable( () => import( '../pages/RegisterClient' ), loadableOptions );
 const AsyncPrivate = loadable( () => import( '../pages/Private' ), loadableOptions );
 const AsyncArticles = loadable( () => import( '../pages/Articles' ), loadableOptions );
 const AsyncArticle = loadable( () => import( '../pages/Article' ), loadableOptions );
@@ -72,6 +75,7 @@ const AppRouter = () => (
     <PublicRoute exact path={ Routes.HOME } component={ AsyncHome } />
     <PublicRoute path={ Routes.LOGIN } component={ AsyncLogin } />
     <PublicRoute path={ Routes.REGISTER } component={ AsyncRegister } />
+    <PublicRoute path={ Routes.REGISTER_CLIENT } component={ AsyncRegisterClient } />
     <PublicRoute path={ Routes.PUBLICATIONS } component={ AsyncPublications } />
     <PublicRoute path={ Routes.SALEPAGE } component={ AsyncSalePage } />
     <PublicRoute path={ Routes.QUESTIONPAGE } component={ AsyncFrequentQuestions } />
@@ -81,7 +85,7 @@ const AppRouter = () => (
     <PublicRoute path={ Routes.HOW_TO_BUY } component={ AsyncHowToBuy } />
     <PublicRoute path={ Routes.ARTISTS } component={ AsyncArtists } />
     <PublicRoute path={ Routes.ARTIST } component={ AsyncArtist } />
-
+    <PublicRoute path={ Routes.PRODUCT } component={ AsyncProduct } />
 
     <PrivateRoute path={ Routes.PRIVATE } component={ AsyncPrivate } />
     <PrivateRoute path={ Routes.ARTICLE_ID } component={ AsyncArticle } />

@@ -20,6 +20,7 @@ class AnswersTableSeeder extends Seeder
         // Obtenemos la lista de todos los usuarios creados e
         // iteramos sobre cada uno y simulamos un inicio de
         // sesión con cada uno para crear productos en su nombre
+
         $users = App\User::all();
         foreach ($users as $user) {
             // iniciamos sesión con este usuario
