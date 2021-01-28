@@ -51,6 +51,7 @@ const Artist = (props) => {
     const sales =[];
     let totalsales =0;
     let totalproducts;
+    let totalscore=0;
 
 
     if (products.products !== undefined) {
@@ -58,6 +59,13 @@ const Artist = (props) => {
             sales.push(products.products[i].sale);
         }
         totalproducts = products.products.length;
+    }
+
+    if (reputations !== undefined) {
+        for (let i=0; i< (reputations.length); i++ ){
+            totalscore += reputations[i].score;
+        }
+        totalscore = (totalscore/reputations.length)
     }
 
     console.log('ventas', sales);
@@ -70,6 +78,7 @@ const Artist = (props) => {
     }
 
     console.log('ventas totales', totalsales);
+    console.log('score total', totalscore);
     console.log('comentarios', reputations);
 
 
@@ -145,6 +154,7 @@ const Artist = (props) => {
                                     <Col align={'center' }  span={4}><Text type="secondary">VENTAS</Text></Col>
                                     <Col align={'center' }  span={4}><Text type="secondary">PRODUCTOS</Text></Col>
                                 </Row>
+                                <Rate disabled defaultValue={totalscore}/>
                                 <br/>
                             </Col>
 
