@@ -1,26 +1,40 @@
-import React from 'react';
+import React, {useState} from 'react';
 import CommentsList from '../components/CommentsList';
 import ShowError from '../components/ShowError';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useProductsList } from '../data/useProductsList';
-import {Avatar, Card, Col, Rate, Row, Skeleton, Typography, Image} from 'antd';
+import {Avatar, Card, Col, Rate, Row, Skeleton, Typography, Image, Divider,Button,Modal} from 'antd';
 import {useUser} from "../data/useUser";
 import {useUserList} from "../data/useUserList";
 import NewComment from "../components/NewComment";
-import moment from "moment";
-import {FacebookOutlined, InstagramFilled,TwitterOutlined } from "@ant-design/icons";
+import moment from "moment"; 
+import {FacebookOutlined, InstagramFilled, TwitterOutlined, UserAddOutlined,ForkOutlined,WhatsAppOutlined} from "@ant-design/icons";
+
+
 const { Text, Title } = Typography;
 const {Meta} = Card;
 
-const Artist = () => {
+const Artist = (props) => {
     let { id } = useParams();
     const user = useUser( id );
     const products = useProductsList( id );
+    const {location, match} = props;
+    const [isModalVisible, setIsModalVisible] = useState(false);
+
+    const showModal = () => {
+        setIsModalVisible(true);
+    };
+
+    const handleCancel = () => {
+        setIsModalVisible(false);
+    };
 
     const { users } = useUserList();
 
     console.log('productos', products);
     console.log('user', user);
+    console.log('location', location);
+    console.log('match', match);
     const commentsconcat = [];
     const comments = [];
     const sales =[];
@@ -66,15 +80,18 @@ const Artist = () => {
                     : user.isError
                     ? <ShowError error={ user.isError } />
                     : <>
-                        <h1 >
-                            Usuario: { user.user.name }
-                        </h1>
-                        <p>{ user.last_name }</p>
+                        <Card hoverable>
+
+                        <Divider orientation="center">
+                            <h1 >Usuario: { user.user.name }</h1>
+                            <p>{ user.last_name }</p>
+                        </Divider>
+
                         <br/>
 
                         <Row >
 
-                            <Col span={4}>
+                            <Col span={3}  align={'center' } md={6}>
 
                                 {<Avatar
                                     size={100}
@@ -82,33 +99,80 @@ const Artist = () => {
                                     src={ `http://localhost:8000/storage/${ user.user.profile_picture }` }
                                 />}
 
+                                <Col   align={'center' }>
+                                    <a href='https://www.instagram.com' target='_blank'>
+                                        <UserAddOutlined/>
+                                    </a>
+                                </Col>
+                                <Col align={'center' }  span={4}>
+                                    <Button  >Seguir </Button >
+
+                                </Col>
+
                             </Col>
+
                             <Col span={10}>
-                                <p>{ user.user.name} { user.user.last_name } </p>
-                                <p>{ user.user.email }</p>
 
-                                <p> SEGUIDORES: {totalproducts} </p>
-                                <p> VENTAS: {totalsales} </p>
-                                <p> PRODUCTOS: {totalproducts} </p>
-                                <p> Borrar</p>
+                                <h4>{ user.user.name} { user.user.last_name } </h4>
+                                <p>{ user.user.email } Artista escénico, actor que ha incursionado en la dramaturgia y
+                                    la dirección. Amante del cine. Trabajó como periodista y fotógrafo por diez años en
+                                    grupo El Comercio, también pasó por  Revista Q y Radio Pública del Ecuador. Los
+                                    temas que aborda desde el arte tienen que ver con la violencia de género, el
+                                    racismo, la discriminación y los derechos humanos.</p>
 
+                                <Row justify="space-around">
+                                    <Col align={'center' } span={4}><Text type="secondary">{totalproducts}</Text></Col>
+                                    <Col align={'center' } span={4}><Text type="secondary">{totalsales}</Text></Col>
+                                    <Col align={'center' }  span={4}><Text type="secondary">{totalproducts}</Text></Col>
+                                </Row>
+                                <Row justify="space-around">
+                                    <Col align={'center' }  span={4}><Text type="secondary">SEGUIDORES</Text></Col>
+                                    <Col align={'center' }  span={4}><Text type="secondary">VENTAS</Text></Col>
+                                    <Col align={'center' }  span={4}><Text type="secondary">PRODUCTOS</Text></Col>
+                                </Row>
                                 <br/>
                             </Col>
 
-                            <Col align={'center' } span={10}>
-                                <p>Compartir</p>
-                                <p>PROPIETARIO DE LA TIENDA</p>
+
+                            <Col align={'center' } span={7}>
+                                <Button type="primary" onClick={showModal} >
+                                    <ForkOutlined rotate={90} />
+                                </Button>
+                                <Modal title="Compartir" visible={isModalVisible} onCancel={handleCancel}>
+                                    <Row justify="space-around">
+                                        <Col align={'center' }  span={4}><Button
+                                            type={'primary'} href={`https://www.facebook.com/sharer/sharer.php?u=wocking.com/${match.url}`}>
+                                            <FacebookOutlined />
+                                        </Button></Col>
+                                        <Col align={'center' }  span={4}><Button
+                                            type={'primary'} href={`https://twitter.com/intent/tweet?text=&url=localhost:3000${match.url}`} >
+
+                                            <TwitterOutlined  />
+                                        </Button></Col>
+                                        <Col align={'center' }  span={4}><Button
+                                            type={'primary'} href={`https://api.whatsapp.com/send?text=https://wocking.com/${match.url}|`}>
+                                            <WhatsAppOutlined />
+                                        </Button></Col>
+                                    </Row>
+
+
+                                </Modal>
+
+
+                                <p><Text type="secondary">Compartir</Text></p>
+
+                                <h5>PROPIETARIO DE LA TIENDA</h5>
                                 {<Avatar
                                     size={50}
                                     alt={ user.user.name }
                                     src={ `http://localhost:8000/storage/${ user.user.profile_picture }` }
                                 />}
-                                <p>{ user.user.name }</p>
-                                <p>Desde { moment( user.user.created_at ).format( 'YYYY' ) }-{ user.user.location } </p>
-                                <p>Contacto:</p>
+                                <p><Text type="secondary">{ user.user.name }</Text></p>
+                                <p><Text type="secondary">Desde { moment( user.user.created_at ).format( 'YYYY' ) }-{ user.user.location }</Text></p>
+                                <p><Text type="secondary">Contacto:</Text></p>
                                 <Col >
                                     <a href='https://www.facebook.com' target='_blank'>
-                                        <FacebookOutlined twoToneColor="red" />
+                                        <FacebookOutlined />
                                     </a>
                                 </Col>
                                 <Col >
@@ -117,7 +181,7 @@ const Artist = () => {
                                     </a>
 
                                 </Col>
-                                <Col twoToneColor="red">
+                                <Col >
                                     < a href='https://www.twitter.com' target='_blank' >
                                         <TwitterOutlined  />
                                     </a>
@@ -127,13 +191,10 @@ const Artist = () => {
 
                         </Row>
 
+                        <Divider orientation="center"></Divider>
 
-
-
-
-
-
-                        <Col span={24}>
+                    </Card>
+                <Col span={24}>
                             Información de usuario
                         </Col>
                         <br/>
