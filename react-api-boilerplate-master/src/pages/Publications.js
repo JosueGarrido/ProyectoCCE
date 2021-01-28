@@ -333,6 +333,8 @@ const Publications = ( {
                                 )
                             }
                         </Select>
+
+
                     </Form.Item>
 
 
@@ -340,9 +342,16 @@ const Publications = ( {
                         noStyle
                         shouldUpdate={(prevValues, currentValues) => prevValues.category_id !== currentValues.category_id}
                     >
+
+
                         {({ getFieldValue }) => {
-                            return getFieldValue('category_id') === 'Artes plasticas' ? (
-                                <Form.Item name='category_id'
+
+
+                            return getFieldValue('category_id' ) === categories.id ?
+                                (
+                                    null
+                                ):
+                                <Form.Item name='category2_id'
                                            label="Categoria 2"
                                            rules={ [
                                                {
@@ -363,11 +372,86 @@ const Publications = ( {
 
                                     </Select>
                                 </Form.Item>
-                            ) : null;
+                        }}
+                    </Form.Item>
+
+                    <Form.Item
+                        noStyle
+                        shouldUpdate={(prevValues, currentValues) => prevValues.category2_id !== currentValues.category2_id}
+                    >
+
+
+                        {({ getFieldValue }) => {
+
+
+                            return getFieldValue('category2_id' ) === categories2.id ?
+                                (
+                                    null
+                                ):
+                                <Form.Item name='category3_id'
+                                           label="Categoria 3"
+                                           rules={ [
+                                               {
+                                                   required: true,
+                                                   message: 'Seleccione'
+                                               }
+                                           ] }
+                                           hasFeedback
+                                >
+                                    <Select
+                                        placeholder="Selecciona "
+                                    >
+                                        {
+                                            categories3 && categories3.map( ( category3, index ) =>
+                                                <Option value={ category3.id } key={ index }>{` ${ category3.name } `}</Option>
+                                            )
+                                        }
+
+                                    </Select>
+                                </Form.Item>
+                        }}
+                    </Form.Item>
+
+                    <Form.Item
+                        noStyle
+                        shouldUpdate={(prevValues, currentValues) => prevValues.category3_id !== currentValues.category3_id}
+                    >
+
+
+                        {({ getFieldValue }) => {
+
+
+                            return getFieldValue('category3_id' ) === categories3.id ?
+                                (
+                                    null
+                                ):
+                                <Form.Item name='category4_id'
+                                           label="Categoria 4"
+                                           rules={ [
+                                               {
+                                                   required: true,
+                                                   message: 'Seleccione'
+                                               }
+                                           ] }
+                                           hasFeedback
+                                >
+                                    <Select
+                                        placeholder="Selecciona "
+                                    >
+                                        {
+                                            categories4 && categories4.map( ( category4, index ) =>
+                                                <Option value={ category4.id } key={ index }>{` ${ category4.name } `}</Option>
+                                            )
+                                        }
+
+                                    </Select>
+                                </Form.Item>
                         }}
                     </Form.Item>
 
                 </Form>
+
+
             </Modal>
 
 

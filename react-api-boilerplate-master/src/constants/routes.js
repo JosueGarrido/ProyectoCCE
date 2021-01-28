@@ -26,6 +26,7 @@ const publicRoutes = {
   SALEPAGE:'/como-vender',
   QUESTIONPAGE:'/preguntas-frecuentes',
   PRODUCT:'/producto/:id',
+  PREPURCHASE:'/pre-compra/:id/',
 
   //Dashboard Configuración
   DASHBOARD_MY_DATA: '/dashboard-mis-datos',
