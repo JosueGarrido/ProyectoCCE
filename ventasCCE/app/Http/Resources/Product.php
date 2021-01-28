@@ -22,8 +22,6 @@ class Product extends JsonResource
             'price' => $this ->price,
             'stock' => $this ->stock,
             'image' => $this ->image,
-            'reputations_data' => "/api/reputations/",
-            'comment' => $this->reputation,
             'questions_data' => "/api/questions/",
             'questions' => $this->question,
             'sales' => $this->sales,
@@ -32,8 +30,6 @@ class Product extends JsonResource
             'location' => $this ->location,
             'user_id' => $this ->user_id,
             'created_at' => $this->created_at,
-
-
         ];
     }
 }

@@ -55,6 +55,9 @@ const Navigation2 = ( props ) => {
                     isAuthenticated
                     ?<Menu.SubMenu icon={ <UserOutlined /> } title={ currentUser && currentUser.name } style={linkStyle} className='scale-up-bottom'>
                         <Menu.ItemGroup className='sub-menu' style={linkStyle}>
+                            {
+                            currentUser.userable_type === 'App\\Artist'
+                                ?
                             <Menu.Item key={ Routes.ARTIST_DASHBOARD } className='scale-up-bottom'>
                                 <Link to={ Routes.ARTIST_DASHBOARD } style={linkStyle}>
                                     {
@@ -64,6 +67,17 @@ const Navigation2 = ( props ) => {
                                     }
                                 </Link>
                             </Menu.Item>
+                                :
+                                <Menu.Item key={ Routes.CLIENT_DASHBOARD } className='scale-up-bottom'>
+                                    <Link to={ Routes.CLIENT_DASHBOARD } style={linkStyle}>
+                                        {
+                                            isCheckingAuth
+                                                ? <LoadingOutlined />
+                                                : <><LogoutOutlined /> Dashboard</>
+                                        }
+                                    </Link>
+                                </Menu.Item>
+                                }
                             <Menu.Item key={ Routes.LOGOUT } className='scale-up-bottom'>
                                 <Link to={ Routes.LOGOUT } className='logout-link'>
                                     {
@@ -78,7 +92,7 @@ const Navigation2 = ( props ) => {
                     </Menu.SubMenu>
                     :<>
                     <Menu.Item key={ Routes.ABOUT } className='scale-up-bottom'>
-                        <Link to={ Routes.LOGIN } style={linkStyle}>
+                        <Link to={ Routes.LOGIN_CLIENT } style={linkStyle}>
                             Comprar
                         </Link>
                     </Menu.Item>

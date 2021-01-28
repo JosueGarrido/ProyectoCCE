@@ -1,4 +1,4 @@
-import { Form, Input, Button, message, Rate } from 'antd';
+import {Form, Input, Button, message, Rate, Row, Col, Card} from 'antd';
 import moment from 'moment';
 import React, { useState } from 'react';
 import API from '../data/index';
@@ -9,9 +9,9 @@ import { Link } from 'react-router-dom';
 
 const { TextArea } = Input;
 
-const NewComment = ( { user, products} ) => {
+const NewComment = ( { reputations, userId} ) => {
 
-    console.log( 'props', user );
+    console.log( 'props', reputations );
     const [ submitting, setSubmitting ] = useState( false );
 
     const handleSubmit = async( values ) => {
@@ -21,29 +21,18 @@ const NewComment = ( { user, products} ) => {
         try {
 
             // setValue( '' );
-            user.mutate( {
-                data: [
-                    {}, // to show the skeleton for new comment
-                    ...user.comments,
-                ]
-            }, false );
-            await API.post( `/reputations`, {
+
+            await API.post( `/users/${userId}/reputations`, {
                 comment: values.comment,
                 score: values.score,
-                user_id: user,
-                product_id: products,
+                user_id_2: userId
             } );
-            user.mutate(); // get updated data
+            reputations.mutate(); // get updated data
             setSubmitting( false );
         } catch( error ) {
             console.log( 'error', error );
             setSubmitting( false );
-            const errorList = error.response.error_list && <ErrorList errors={ error.response.error_list } />;
 
-            message.error( <>
-                { translateMessage( error.message ) }
-                { errorList }
-            </> );
         }
     };
 
@@ -51,6 +40,10 @@ const NewComment = ( { user, products} ) => {
         const [ form ] = Form.useForm();
 
         return (
+            <Card hoverable
+                  style={{borderRadius: 10}}>
+                <Row>
+                    <Col span={22}>
             <Form
                 form={ form }
                 name='form_comment'
@@ -62,7 +55,7 @@ const NewComment = ( { user, products} ) => {
                                    message: 'Ingresa el texto de tu comentario'
                                }
                            ] }>
-                    <TextArea rows={ 4 } />
+                    <TextArea rows={ 2 } />
                 </Form.Item>
                 <Form.Item name='score'
                            rules={ [
@@ -79,8 +72,18 @@ const NewComment = ( { user, products} ) => {
                     </Button>
                 </Form.Item>
             </Form>
+                    </Col>
+                </Row>
+            </Card>
         );
     };
+
+    return (
+        <>
+            <Editor onSubmit={ handleSubmit } submitting={ submitting } />
+
+        </>
+    )
 };
 
 export default NewComment;
