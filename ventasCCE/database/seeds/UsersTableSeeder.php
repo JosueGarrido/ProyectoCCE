@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder
 
         $password = Hash::make('123456');
 
-        $image_name = $faker->image('./public/storage/user', 200, 200, null, false);
+        $image_name = $faker->image('public/storage/user', 400, 300, null, false);
         User::create([
             'name'=> 'Administrador',
             'last_name' => 'Jaramillo',
@@ -28,12 +28,13 @@ class UsersTableSeeder extends Seeder
             'identity' => '1754488524',
             'birthday' => '1996-10-10',
             'phone' => '993731322',
-            'profile_picture' => 'public/user/' . $image_name,
+            'profile_picture' => 'user/' . $image_name,
             'location' => 'Quito-Ecuador',
             'password'=> $password,
             ]);
 
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 10; $i++) {
+            $image_name = $faker->image('public/storage/user', 400, 300, null, false);
             $artist = Artist::create([
                 'culture' => $faker->word,
                 'disability' => $faker->boolean,
@@ -55,7 +56,7 @@ class UsersTableSeeder extends Seeder
                 'identity' => $faker->numberBetween(1712654897, 1794879546),
                 'birthday' => $faker->date("Y-m-d"),
                 'phone' => $faker->numberBetween(911111111, 999999999),
-                'profile_picture' => 'public/user/' . $image_name,
+                'profile_picture' => 'user/' . $image_name,
                 'location' => $faker->country,
 
 
@@ -65,8 +66,8 @@ class UsersTableSeeder extends Seeder
         }
 
 
-        for ($i = 0; $i < 10; $i++) {
-            $image_name = $faker->image('./public/storage/user', 200, 200, null, false);
+        for ($i = 0; $i < 5; $i++) {
+            $image_name = $faker->image('public/storage/user', 400, 300, null, false);
             User::create([
                 'name' => $faker->firstName,
                 'last_name' => $faker->lastName,
@@ -75,9 +76,8 @@ class UsersTableSeeder extends Seeder
                 'identity' => $faker->numberBetween(1712654897, 1794879546),
                 'birthday' => $faker->date("Y-m-d"),
                 'phone' => $faker->numberBetween(911111111, 999999999),
-                'profile_picture' => 'public/user/' . $image_name,
+                'profile_picture' => 'user/' . $image_name,
                 'location' => $faker->country,
-
 
             ]);
 

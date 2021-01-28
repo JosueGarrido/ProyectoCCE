@@ -31,13 +31,11 @@ class CreateAnswersTable extends Migration
     }
     public function down(){
         Schema::disableForeignKeyConstraints();
+        Schema::table('answers', function (Blueprint $table) {
+            $table->dropForeign(['user_id']);
+            $table->dropForeign(['question_id']);
+        });
         Schema::dropIfExists('answers');
-        Schema::table('answers', function (Blueprint $table) {
-            $table->dropForeign('user_id');
-        });
-        Schema::table('answers', function (Blueprint $table) {
-            $table->dropForeign('question_id');
-        });
         Schema::enableForeignKeyConstraints();
     }
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Skeleton, Card, Col, Row, Radio, Typography, Button, Avatar, Rate } from 'antd';
-import { useProductsList } from '../data/useProductsList';
+import { useReputationList} from '../data/useReputationList';
 import { useUserList } from '../data/useUserList';
 import ShowError from './ShowError';
 import {LoadingOutlined, LogoutOutlined} from "@ant-design/icons";
@@ -13,37 +13,24 @@ const ReputationList = ( props ) => {
 
     const {currentUser} = useAuth();
 
-        const { products, isLoading, isError, mutate } = useProductsList(currentUser && currentUser.id);
+        const { reputations, isLoading, isError, mutate } = useReputationList(currentUser && currentUser.id);
         const { users } = useUserList();
-
-
-    //console.log('productos', products);
-    const commentsconcat = [];
-    const comments = [];
-
-
-
-    if (products !== undefined) {
-        for (var i=0; i< (products.length); i++ ){
-            commentsconcat.push(products[i].comment);
-        }
-    }
-
-    for (var n = 0; n < commentsconcat.length; n++ ){
-        Array.prototype.push.apply(comments, commentsconcat[n]);
-    }
-
+        const [ visible, setVisible ] = useState( 4 );
 
 
     if (users !== undefined) {
         console.log('usuarios', users);
     }
 
-    console.log('comentarios', comments);
+    console.log('comentarios', reputations);
+
+    const handleloadmore = () => {
+        setVisible(visible+3);
+    }
 
 
 
-        // const [ articles, setArticles ] = useState( props.articles );
+    // const [ articles, setArticles ] = useState( props.articles );
 
         // useEffect( () => {
         //   console.log( 'props.articles', props.articles );
@@ -74,7 +61,7 @@ const ReputationList = ( props ) => {
 
                 <Row justify='center' gutter={ 30 }>
                     {
-                        comments.map( ( reputations, i ) => (
+                        reputations.slice(0,visible).map( ( reputations, i ) => (
                             <Col xs={ 24 } sm={ 18 } md={ 24 } style={ { marginBottom: 20 } } key={ i }>
                                 { reputations.comment
                                     ? <Card hoverable
@@ -114,6 +101,21 @@ const ReputationList = ( props ) => {
                                 }
                             </Col>
                         ) )
+                    }
+                    {
+                        visible < reputations.length
+                            ?
+                            <Col span={22}>
+                                <hr/>
+                                <div style={ { textAlign: 'center' } }>
+                                    <Button
+                                        type={'primary'} onClick={handleloadmore}>
+                                        Ver más
+                                    </Button>
+                                </div>
+                            </Col>
+                            :<>
+                            </>
                     }
 
                 </Row>

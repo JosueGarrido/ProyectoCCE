@@ -8,11 +8,13 @@ import { Link, useLocation } from 'react-router-dom';
 import '../styles/navigation.css';
 import {useCategories} from "../data/useCategories";
 const { SubMenu } = Menu;
+
 const linkStyle = {
     color: 'white',
 };
 
 const Navigation = ( props ) => {
+
   let location = useLocation();
 
   const [ menuState, setMenuState ] = useState( {
@@ -20,8 +22,10 @@ const Navigation = ( props ) => {
     collapsed: false,
     openKeys: []
   } );
+
   const { isAuthenticated, isCheckingAuth, currentUser } = useAuth();
   const { categories, isLoading, isError } = useCategories();
+
 
   React.useEffect( () => {
     setMenuState( {

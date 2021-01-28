@@ -19,9 +19,11 @@ Route::group(['middleware' => ['cors']], function () {
     Route::post('login', 'UserController@authenticate');
     Route::post('logout', 'UserController@logout');
     Route::post('register', 'UserController@register');
+    Route::post('register-client', 'UserController@registerClient');
     Route::get('users', 'UserController@index');
     Route::delete('users/{user}', 'UserController@delete');
     Route::get('users/{user}/profile_picture', 'UserController@image');
+    Route::get('products/{product}/image', 'ProductController@image');
     Route::get('products', 'ProductController@indexall');
     Route::get('category1', 'CategoryLevel1Controller@index');
     Route::get('user', 'UserController@getAuthenticatedUser');
@@ -144,9 +146,9 @@ Route::group(['middleware' => ['cors']], function () {
         Route::delete('answers/{id}', 'AnswersController@delete');
 
         //reputation
-        Route::get('reputations', 'ReputationController@index');
+        Route::get('users/{user}/reputations', 'ReputationController@index');
         Route::get('reputations/{id}', 'ReputationController@show');
-        Route::post('reputations', 'ReputationController@store');
+        Route::post('users/{user}/reputations', 'ReputationController@store');
         Route::put('reputations/{id}', 'ReputationController@update');
         Route::delete('reputations/{id}', 'ReputationController@delete');
 

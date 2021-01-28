@@ -22,6 +22,7 @@ const loadableOptions = { fallback: <Loading /> };
 
 const AsyncHome = loadable( () => import( '../pages/Index' ), loadableOptions );
 const AsyncLogin = loadable( () => import( '../pages/Login' ), loadableOptions );
+const AsyncLoginClient = loadable( () => import( '../pages/LoginClient' ), loadableOptions );
 
 //const AsyncDashboardArtist = loadable( () => import( '../pages/ArtistDashboard' ), loadableOptions );
 const AsyncPublications = loadable( () => import( '../pages/Publications' ), loadableOptions );
@@ -36,6 +37,14 @@ const AsyncDashboardSellArtist = loadable( () => import( '../pages/ArtistSellDas
 const AsyncDashboardSell2Artist = loadable( () => import( '../pages/ArtistSellDashboard2' ), loadableOptions );
 const AsyncDashboardMetricsArtist = loadable( () => import( '../pages/ArtistMetricsDashboard' ), loadableOptions );
 const AsyncDashboardReputationArtist = loadable( () => import( '../pages/ArtistReputationDashboard' ), loadableOptions );
+
+//Dashboard Artista
+const AsyncDashboardClient = loadable( () => import( '../pages/ClientResumeDashboard' ), loadableOptions );
+const AsyncDashboardQuestionsClient = loadable( () => import( '../pages/ClientQuestionsDashboard' ), loadableOptions );
+const AsyncDashboardBuyClient = loadable( () => import( '../pages/ClientBuyDashboard1' ), loadableOptions );
+const AsyncDashboardBuyClient2 = loadable( () => import( '../pages/ClientBuyDashboard2' ), loadableOptions );
+const AsyncDashboardReputationClient = loadable( () => import( '../pages/ClientReputationDashboard' ), loadableOptions );
+
 //Dashboard Configuración
 const AsyncDashboardMyData = loadable( () => import( '../pages/DashboardMyData' ), loadableOptions );
 const AsyncDashboardSecurity = loadable( () => import( '../pages/DashboardSecurity' ), loadableOptions );
@@ -46,8 +55,11 @@ const AsyncDashboardAlerts = loadable( () => import( '../pages/DashboardAlerts' 
 const AsyncArtists = loadable( () => import( '../pages/Artists' ), loadableOptions );
 const AsyncArtist = loadable( () => import( '../pages/Artist' ), loadableOptions );
 
+//Pagina Productos
+const AsyncProduct = loadable( () => import( '../pages/Product' ), loadableOptions );
 
 const AsyncRegister = loadable( () => import( '../pages/Register' ), loadableOptions );
+const AsyncRegisterClient = loadable( () => import( '../pages/RegisterClient' ), loadableOptions );
 const AsyncPrivate = loadable( () => import( '../pages/Private' ), loadableOptions );
 const AsyncArticles = loadable( () => import( '../pages/Articles' ), loadableOptions );
 const AsyncArticle = loadable( () => import( '../pages/Article' ), loadableOptions );
@@ -71,7 +83,9 @@ const AppRouter = () => (
   <Switch>
     <PublicRoute exact path={ Routes.HOME } component={ AsyncHome } />
     <PublicRoute path={ Routes.LOGIN } component={ AsyncLogin } />
+    <PublicRoute path={ Routes.LOGIN_CLIENT } component={ AsyncLoginClient } />
     <PublicRoute path={ Routes.REGISTER } component={ AsyncRegister } />
+    <PublicRoute path={ Routes.REGISTER_CLIENT } component={ AsyncRegisterClient } />
     <PublicRoute path={ Routes.PUBLICATIONS } component={ AsyncPublications } />
     <PublicRoute path={ Routes.SALEPAGE } component={ AsyncSalePage } />
     <PublicRoute path={ Routes.QUESTIONPAGE } component={ AsyncFrequentQuestions } />
@@ -81,11 +95,12 @@ const AppRouter = () => (
     <PublicRoute path={ Routes.HOW_TO_BUY } component={ AsyncHowToBuy } />
     <PublicRoute path={ Routes.ARTISTS } component={ AsyncArtists } />
     <PublicRoute path={ Routes.ARTIST } component={ AsyncArtist } />
-
+    <PublicRoute path={ Routes.PRODUCT } component={ AsyncProduct } />
 
     <PrivateRoute path={ Routes.PRIVATE } component={ AsyncPrivate } />
     <PrivateRoute path={ Routes.ARTICLE_ID } component={ AsyncArticle } />
     <PrivateRoute path={ Routes.LOGOUT } component={ AsyncLogout } />
+
     <PrivateRoute path={ Routes.ARTIST_DASHBOARD } component={ AsyncDashboardArtist } />
     <PrivateRoute path={ Routes.ARTIST_PUBLICATIONS_DASHBOARD } component={ AsyncDashboardPublicationsArtist } />
     <PrivateRoute path={ Routes.ARTIST_QUESTIONS_DASHBOARD } component={ AsyncDashboardQuestionsArtist } />
@@ -93,6 +108,13 @@ const AppRouter = () => (
     <PrivateRoute path={ Routes.ARTIST_SELL_DASHBOARD_ID } component={ AsyncDashboardSell2Artist } />
     <PrivateRoute path={ Routes.ARTIST_METRICS_DASHBOARD } component={ AsyncDashboardMetricsArtist } />
     <PrivateRoute path={ Routes.ARTIST_REPUTATION_DASHBOARD } component={ AsyncDashboardReputationArtist } />
+
+    <PrivateRoute path={ Routes.CLIENT_DASHBOARD } component={ AsyncDashboardClient } />
+    <PrivateRoute path={ Routes.CLIENT_QUESTIONS_DASHBOARD } component={ AsyncDashboardQuestionsClient } />
+    <PrivateRoute path={ Routes.CLIENT_BUY_DASHBOARD } component={ AsyncDashboardBuyClient } />
+    <PrivateRoute path={ Routes.CLIENT_BUY_DASHBOARD_ID } component={ AsyncDashboardBuyClient2 } />
+    <PrivateRoute path={ Routes.CLIENT_REPUTATION_DASHBOARD } component={ AsyncDashboardReputationClient } />
+
     <PrivateRoute path={ Routes.DASHBOARD_MY_DATA } component={ AsyncDashboardMyData } />
     <PrivateRoute path={ Routes.DASHBOARD_SECURITY } component={ AsyncDashboardSecurity } />
     <PrivateRoute path={ Routes.DASHBOARD_PRIVACY } component={ AsyncDashboardPrivacy } />
