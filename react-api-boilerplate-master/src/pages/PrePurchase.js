@@ -119,7 +119,7 @@ console.log(products)
 
 
                     <h1>esta es la compra</h1>
-                    <Button>Comprar</Button>
+                    <Button >Comprar</Button>
 
 
                 </div>
