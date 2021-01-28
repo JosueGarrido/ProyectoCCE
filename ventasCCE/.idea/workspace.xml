@@ -19,10 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33b01b25-7452-4012-b36b-7f16a70ad837" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Artist.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Artist.js" afterDir="false" />
+    <list default="true" id="8d90a661-b235-46da-af91-2e4351a288f5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +62,6 @@
       <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
       <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
       <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
       <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
       <path value="$PROJECT_DIR$/vendor/laravel/framework" />
       <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
@@ -134,6 +132,7 @@
       <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
       <path value="$PROJECT_DIR$/vendor/namshi/jose" />
       <path value="$PROJECT_DIR$/vendor/tymon/jwt-auth" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
     </include_path>
   </component>
   <component name="ProjectId" id="1h3MU0FUjnKYAVS3D3mEsZfaG3T" />
@@ -147,7 +146,6 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../react-api-boilerplate-master" />
     <property name="last_opened_file_path" value="$USER_HOME$/xampp/htdocs/proyecto base/blog" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -173,13 +171,13 @@
       <method v="2" />
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="dee636f5-9ae4-40ae-8a91-f469f5577560" name="Default Changelist" comment="" />
+      <changelist id="8d90a661-b235-46da-af91-2e4351a288f5" name="Default Changelist" comment="" />
       <created>1599235334002</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -251,11 +249,12 @@
       <workItem from="1611614070075" duration="666000" />
       <workItem from="1611705013871" duration="2305000" />
       <workItem from="1611803141045" duration="1571000" />
+      <workItem from="1611867299097" duration="1422000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
