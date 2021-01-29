@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\Product;
 use App\Reputation;
 use App\User;
 use App\Http\Resources\Reputation as ReputationResource;
@@ -29,7 +30,7 @@ class ReputationController extends Controller
         return response()->json( new ReputationResource($id), 200);
     }
 
-    public function store(Request $request, User $user)
+    public function store(Request $request, Product $user)
     {
         $request->validate([
             'score' => 'required|int',
