@@ -29,7 +29,7 @@ class AnswersController extends Controller
     }
     public function store(Request $request)
     {
-        $this->authorize('create', Answers::class);
+        //$this->authorize('create', Answers::class);
         $request->validate(self::$rules,self::$messages);
         return Answers::create($request->all());
     }

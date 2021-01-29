@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\Sale;
+use App\User;
 use App\Http\Resources\Sale as SaleResource;
 use App\Http\Resources\SaleCollection;
 use Illuminate\Http\Request;
@@ -37,11 +38,15 @@ class SaleController extends Controller
         $this->authorize('view', $id);
         return response()->json( new SaleResource($id), 200);
     }
-    public function store(Request $request)
+    public function store(Request $request, Product $product)
     {
-        $this->authorize('create', Sale::class);
-        $request->validate(self::$rules,self::$messages);
-        return Sale::create($request->all());
+        //$this->authorize('create', Sale::class);
+        $request->validate([]);
+        //return Sale::create($request->all());
+
+        $sale = $product->sale()->save(new Sale($request->all()));
+
+        return response()->json(new SaleResource($sale), 201);
     }
     public function update(Request $request, $id)
     {
