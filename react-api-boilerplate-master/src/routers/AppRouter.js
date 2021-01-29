@@ -58,6 +58,8 @@ const AsyncArtist = loadable( () => import( '../pages/Artist' ), loadableOptions
 //Pagina Productos
 const AsyncProduct = loadable( () => import( '../pages/Product' ), loadableOptions );
 
+const AsyncPrePurchase = loadable( () => import( '../pages/PrePurchase' ), loadableOptions );
+
 const AsyncRegister = loadable( () => import( '../pages/Register' ), loadableOptions );
 const AsyncRegisterClient = loadable( () => import( '../pages/RegisterClient' ), loadableOptions );
 const AsyncPrivate = loadable( () => import( '../pages/Private' ), loadableOptions );
@@ -96,6 +98,7 @@ const AppRouter = () => (
     <PublicRoute path={ Routes.ARTISTS } component={ AsyncArtists } />
     <PublicRoute path={ Routes.ARTIST } component={ AsyncArtist } />
     <PublicRoute path={ Routes.PRODUCT } component={ AsyncProduct } />
+    <PublicRoute path={ Routes.PREPURCHASE } component={ AsyncPrePurchase } />
 
     <PrivateRoute path={ Routes.PRIVATE } component={ AsyncPrivate } />
     <PrivateRoute path={ Routes.ARTICLE_ID } component={ AsyncArticle } />

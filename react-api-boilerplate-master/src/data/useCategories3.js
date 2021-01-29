@@ -8,8 +8,8 @@ export const useCategories3 = () => {
     const { data, error } = useSWR( `/category3`, API.fetcher );
 
     return {
-        categories: data && data.data,
-        isLoading: !error && !data,
-        isError: error
+        categories3: data && data.data,
+        isLoading3: !error && !data,
+        isError3: error
     };
 };
