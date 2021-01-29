@@ -114,8 +114,8 @@ const Product = () => {
                     ? <div>Cargando...</div>
                     : product.isError
                     ? <ShowError error={product.isError}/>
-                    : <Link to={Routes.PREPURCHASE.replace(':id', product.product.id)}><Button
-                        type="primary">Comprar</Button></Link>
+                    : <Button href={Routes.PREPURCHASE.replace(':id', product.product.id)} type="primary">Comprar</Button>
+
             }
 
         </>
