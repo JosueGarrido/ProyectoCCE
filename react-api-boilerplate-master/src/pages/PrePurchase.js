@@ -37,21 +37,16 @@ console.log(products)
     const handleSubmit = async( values ) => {
         console.log( 'values', values );
 
-
         try {
-
             // setValue( '' );
 
             await API.post( `/products/${product.product.id}/sales`, {
                // product_id: product.product.id,
-
             } );
             sales.mutate(); // get updated data
 
         } catch( error ) {
             console.log( 'error', error );
-
-
         }
     };
     return (
@@ -148,7 +143,7 @@ console.log(products)
 
 
                     <h2>Asegure su compra</h2>
-                    <Button id="boton" onclick={handleSubmit()} href={Routes.HOME}>Asegura tu Comprar</Button>
+                    <Button id="boton" onclick={handleSubmit()} href={Routes.HOME} >Asegura tu Comprar</Button>
 
 
 
