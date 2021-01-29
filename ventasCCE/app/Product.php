@@ -33,6 +33,6 @@ class Product extends Model
     }
     public function sale()
     {
-        return $this->hasMany('App\Sale');
+        return $this->hasMany('App\Sale', 'product_id');
     }
 }

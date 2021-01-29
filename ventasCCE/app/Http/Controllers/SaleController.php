@@ -37,11 +37,16 @@ class SaleController extends Controller
         $this->authorize('view', $id);
         return response()->json( new SaleResource($id), 200);
     }
-    public function store(Request $request)
+    public function store(Request $request, Product $product)
     {
-        $this->authorize('create', Sale::class);
-        $request->validate(self::$rules,self::$messages);
-        return Sale::create($request->all());
+        $request->validate([
+            'score' => 'required|int',
+            'comment' => 'required|string',
+        ]);
+
+        $sale = $product->sale()->save(new Sale($request->all()));
+
+        return response()->json(new SaleResource($sale), 201);
     }
     public function update(Request $request, $id)
     {
