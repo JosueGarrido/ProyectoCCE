@@ -1,7 +1,7 @@
 import React from 'react';
 import Routes from '../constants/routes';
 import { useAuth } from '../providers/Auth';
-import { Checkbox, Col, Form, Input, Row, Button, message } from 'antd';
+import {Checkbox, Col, Form, Input, Row, Button, message, Layout} from 'antd';
 import { LockOutlined, UserOutlined, EyeTwoTone, EyeInvisibleOutlined } from '@ant-design/icons/lib';
 import API from '../data';
 import withoutAuth from '../hocs/withoutAuth';
@@ -10,7 +10,9 @@ import { translateMessage } from '../utils/translateMessage';
 import { Link } from 'react-router-dom';
 import '../styles/login.css';
 import ErrorList from '../components/ErrorList';
-
+import  a from "../images/home_images/explicacion.png";
+import letraVender from "../images/ImgPages/vender-letras.png";
+const {  Content, Sider } = Layout;
 const LoginClient = () => {
     const { setAuthenticated, setCurrentUser } = useAuth();
 
@@ -36,11 +38,23 @@ const LoginClient = () => {
         }
     };
 
+
     return (
         <>
+
             {
-                <Row style={{marginTop:20}} justify='center' className='login'>
-                    <Col span={ 8 }>
+
+                <Content className="margin">
+
+                    <img src={a} className="imagesPageBG" />
+
+                    <Row type='flex' justify='center' className='login' style={{position:"relative"}}>
+                        <Col span={10} align='center'>
+                            <a href={Routes.HOME}>
+                                <img className='logoPages' src={letraVender}/>
+                            </a>
+                        </Col>
+                    <Col span={ 5} >
                         <Form
                             name='login-form'
                             className='login-form'
@@ -51,6 +65,7 @@ const LoginClient = () => {
                             } }
                             onFinish={ onFinish }
                         >
+                            <Col span={20}  >
                             <Form.Item
                                 name='username'
                                 rules={ [
@@ -64,9 +79,12 @@ const LoginClient = () => {
                                     }
                                 ] }
                             >
+
                                 <Input prefix={ <UserOutlined className='site-form-item-icon' /> }
                                        placeholder='Email'
                                        autoComplete='email' />
+
+
                             </Form.Item>
 
                             <Form.Item
@@ -82,9 +100,10 @@ const LoginClient = () => {
                                     prefix={ <LockOutlined className='site-form-item-icon' /> }
                                     iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
                                     placeholder='Password' autoComplete='password'
+
                                 />
                             </Form.Item>
-
+                            </Col>
                             <Form.Item name='remember' valuePropName='checked' noStyle>
                                 <Checkbox>Recordarme</Checkbox>
                             </Form.Item>
@@ -96,14 +115,23 @@ const LoginClient = () => {
                             </Form.Item>
 
                             <Form.Item>
-                                <Button type='primary' htmlType='submit' className='login-form-button'>
+
+                                <Button style={{textAlign:'center'}} type='primary' htmlType='submit' className='login-form-button'>
                                     Ingresar
                                 </Button>
                                 <div>Soy nuevo, <Link to={ Routes.REGISTER_CLIENT }>registrarme</Link></div>
                             </Form.Item>
+
+                            <Col span={8} justify='left'>
+                                col-8
+                            </Col>
+
+
+
                         </Form>
                     </Col>
                 </Row>
+                </Content>
             }
         </>
     );

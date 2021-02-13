@@ -1,7 +1,14 @@
-/*.login {*/
-/*    max-width: 340px;*/
-/*    margin: 0 auto;*/
-/*    padding: 1rem;*/
-/*    border: 1px solid #ccc;*/
-/*    border-radius: 4px;*/
-/*}*/
+
+.imgPageBG{
+    background-image: url("../images/home_images/explicacion.png");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: auto;
+    width: auto ;
+
+}
+
+
+

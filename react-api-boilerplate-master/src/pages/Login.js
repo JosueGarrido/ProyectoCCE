@@ -1,7 +1,7 @@
 import React from 'react';
 import Routes from '../constants/routes';
 import { useAuth } from '../providers/Auth';
-import { Checkbox, Col, Form, Input, Row, Button, message } from 'antd';
+import {Checkbox, Col, Form, Input, Row, Button, message, Layout} from 'antd';
 import { LockOutlined, UserOutlined, EyeTwoTone, EyeInvisibleOutlined } from '@ant-design/icons/lib';
 import API from '../data';
 import withoutAuth from '../hocs/withoutAuth';
@@ -10,7 +10,8 @@ import { translateMessage } from '../utils/translateMessage';
 import { Link } from 'react-router-dom';
 import '../styles/login.css';
 import ErrorList from '../components/ErrorList';
-
+import  a from "../images/home_images/explicacion.png";
+const {  Content, Sider } = Layout;
 const Login = () => {
   const { setAuthenticated, setCurrentUser } = useAuth();
 
@@ -39,6 +40,8 @@ const Login = () => {
   return (
     <>
       {
+        <Content className="margin">
+          <img src={a} className="imagesPageBG" />
         <Row style={{marginTop:20}} justify='center' className='login'>
           <Col span={ 8 }>
             <Form
@@ -104,6 +107,8 @@ const Login = () => {
             </Form>
           </Col>
         </Row>
+        </Content>
+
       }
     </>
   );
