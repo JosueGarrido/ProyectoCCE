@@ -55,40 +55,51 @@ const HomePage = () => {
               <h1 className="subtitle2">CATEGORÍAS</h1>
               <div>
                   <Row>
-                      <Col span={4} align='center'>
-                          <a href={Routes.HOME} >
-                              <img className='categories' src={ musicales }  />
-                              <h1 className="btnCategories"><span className="btnCategories-text">Artes Musicales</span></h1>
+                      <Col span={4} align='center' >
+                          {/*<a href={Routes.HOME}>
+                              <img className='categories' src={musicales}/>
+                              <h1 className="btnCategories"><span className="btnCategories-text">Artes Musicales</span>
+                              </h1>
+                          </a>*/}
+                          <a href={Routes.HOME}>
+                              <label  className="image-categories imageMusicales"></label>
+                              <h1 className="btnCategories"><span className="btn-General">Artes Musicales</span>
+                              </h1>
                           </a>
                       </Col>
                       <Col span={4} align='center'>
-                          <a href={Routes.HOME} >
-                              <img className='categories' src={ literarias }  />
-                              <h1 className="btnCategories"><span className="btnCategories-text">Artes Literarias</span></h1>
+                          <a href={Routes.HOME}>
+                              <label  className="image-categories imageLiterarias"></label>
+                              <h1 className="btnCategories"><span className="btn-General">Artes Literarias</span>
+                              </h1>
                           </a>
                       </Col>
                       <Col span={4} align='center'>
-                          <a href={Routes.HOME} >
-                              <img className='categories' src={ escénicas }  />
-                              <h1 className="btnCategories"><span className="btnCategories-text">Artes Escénicas</span></h1>
+                          <a href={Routes.HOME}>
+                              <label  className="image-categories imageEscenicas" ></label>
+                              <h1 className="btnCategories"><span className="btn-General">Artes Escénicas</span>
+                              </h1>
                           </a>
                       </Col>
                       <Col span={4} align='center'>
-                          <a href={Routes.HOME}  >
-                              <img className='categories' src={ plasticas }  />
-                              <h1 className="btnCategories"><span className="btnCategories-text">Artes Plásticas</span></h1>
+                          <a href={Routes.HOME}>
+                              <label  className="image-categories imagesPlasticas"></label>
+                              <h1 className="btnCategories"><span className="btn-General">Artes Plásticas</span>
+                              </h1>
                           </a>
                       </Col>
                       <Col span={4} align='center'>
-                          <a href={Routes.HOME} >
-                              <img className='categories' src={ visuales }  />
-                              <h1 className="btnCategories"><span className="btnCategories-text">Artes Visuales</span></h1>
+                          <a href={Routes.HOME}>
+                              <label  className="image-categories imagesVisuales"></label>
+                              <h1 className="btnCategories"><span className="btn-General">Artes Visuales</span>
+                              </h1>
                           </a>
                       </Col>
                       <Col span={4} align='center'>
-                          <a href={Routes.HOME} >
-                              <img className='categories' src={ artesanias }  />
-                              <h1 className="btnCategories"><span className="btnCategories-text">Artesanías</span></h1>
+                          <a href={Routes.HOME}>
+                              <label  className="image-categories imageArtesanias"></label>
+                              <h1 className="btnCategories"><span className="btn-General">Artes Artesanías</span>
+                              </h1>
                           </a>
                       </Col>
 
