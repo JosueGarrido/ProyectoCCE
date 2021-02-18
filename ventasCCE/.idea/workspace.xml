@@ -20,14 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d90a661-b235-46da-af91-2e4351a288f5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/seeds/FollowersTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/LoginClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/LoginClient.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/styles/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/styles/login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_28_160810_create_followers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_28_160810_create_followers_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,7 +260,8 @@
       <workItem from="1613004770624" duration="2800000" />
       <workItem from="1613009480575" duration="6117000" />
       <workItem from="1613021660918" duration="4656000" />
-      <workItem from="1613175044061" duration="1222000" />
+      <workItem from="1613175044061" duration="1443000" />
+      <workItem from="1613183261886" duration="612000" />
     </task>
     <servers />
   </component>
