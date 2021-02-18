@@ -75,7 +75,7 @@ function carousel2()  {
 
                                                         <div style={{textAlign:'center'}}>
                                                             <a href={`${item.page}`} >
-                                                                <button type="button" className="btn-verMas" > VER MÁS</button>
+                                                                <button type="button" className="btn-General" > VER MÁS</button>
                                                             </a>
 
                                                         </div><br/><br/><br/><br/>
@@ -92,7 +92,7 @@ function carousel2()  {
 
                                 );
                             })
-                                }
+                            }
                         </Carousel>
                     </div>
                 </div>

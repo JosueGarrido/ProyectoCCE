@@ -1,20 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Routes from '../constants/routes';
 import Navigation from './Navigation';
 import Navigation2 from './Navigation2';
-import { Layout, Row, Col, Button, Popover, Input } from 'antd';
+import { Layout, Row, Col, Button, Popover, Input, TreeSelect } from 'antd';
 import { FacebookFilled, InstagramFilled, TwitterCircleFilled, GithubOutlined, MailOutlined, WhatsAppOutlined } from '@ant-design/icons';
-import logoW from '../images/logoW.png';
+import logoWV from '../images/logoVertical.png';
 import logo from '../images/logo-menta.png';
 import moment from 'moment';
 import { AudioOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import '../styles/navigation.css';
 import logoCCE from '../images/cce-logo.png';
+import SearchCores from '../components/SearchCores';
 const Header = Layout.Header;
 const Content = Layout.Content;
 const Footer = Layout.Footer;
 const { Search } = Input;
+const { TreeNode } = TreeSelect;
 
 /**
  * Este componente renderiza los elementos comunes para toda la aplicación
@@ -25,8 +27,11 @@ const { Search } = Input;
  * @returns {JSX.Element}
  * @constructor
  */
+
+
 const MainLayout = props => {
   console.log( 'props', props );
+
   return (
       <div className='app'>
         <Layout>
@@ -78,15 +83,16 @@ const MainLayout = props => {
           <Footer className='footer'>
             <Row>
               <Col span={8} className='logo-w'>
-                <img src={logoW}  height={ 50 }/>
+                <img src={logoWV}  height={ 120 }/>
               </Col>
 
               <Col span={8}
                    className='footerTitle'>
                 Encuéntranos en: <br /><br />
-                <input className="search__input" type="text" placeholder="Encuentranos"/><br/><br/>
+                {/*<input className="search__input" type="text" placeholder="Encuentranos"/>*/}
+                <SearchCores/>
                <Row className='redes' >
-                 <Col span={8}>
+                 <Col span={8}><br/>
                    <a href='https://www.facebook.com'
                       target='_blank'
                       rel='noopener noreferrer' >
@@ -94,12 +100,12 @@ const MainLayout = props => {
                      <FacebookFilled  style={{textAlign:'right'}}/>
                    </a>
                  </Col>
-                 <Col span={8}>
+                 <Col span={8}><br/>
                    <a href='https://www.instagram.com' target='_blank' rel='noopener noreferrer'>
                      <InstagramFilled style={{textAlign:'center'}}/>
                    </a>
                  </Col>
-                 <Col span={8}>
+                 <Col span={8}><br/>
                    <a href='https://www.twitter.com' target='_blank' rel='noopener noreferrer'>
                      <TwitterCircleFilled style={{textAlign:'left'}}/>
                    </a>
@@ -114,24 +120,28 @@ const MainLayout = props => {
               </Col>
 
               <Col span={8} align='right'>
+                <br/>
                 <Link to={ Routes.ABOUT }  style={ {
                   marginLeft: 70,
                   marginRight: 10,
                   textDecoration: 'none',
                   textAlign:'right',
                 } }  className='questions'>¿Quiénes Somos? </Link>
+                <br/>
                 <Link to={ Routes.ABOUT }  style={ {
                   marginLeft: 70,
                   marginRight: 10,
                   textDecoration: 'none',
                   textAlign:'right',
                 } }  className='questions'>Términos y Condiciones </Link>
+                <br/>
                 <Link to={ Routes.QUESTIONPAGE }  style={ {
                   marginLeft: 70,
                   marginRight: 10,
                   textDecoration: 'none',
                   textAlign:'right',
                 } }  className='questions'>Preguntas Frecuentes </Link>
+                <br/>
                 <Link to={ Routes.QUESTIONPAGE }  style={ {
                   marginLeft: 70,
                   marginRight: 10,
