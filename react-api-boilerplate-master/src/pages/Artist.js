@@ -9,9 +9,9 @@ import {useUser} from "../data/useUser";
 import {useUserList} from "../data/useUserList";
 import ProductsList from '../components/ProductsList';
 import NewComment from "../components/NewComment";
-import moment from "moment"; 
+import moment from "moment";
 import {FacebookOutlined, InstagramFilled, TwitterOutlined, UserAddOutlined,ForkOutlined,WhatsAppOutlined} from "@ant-design/icons";
-
+import Header2 from '../components/Header2';
 import CommentsList from "../components/CommentsList";
 
 const { Text, Title } = Typography;
@@ -89,6 +89,7 @@ const Artist = (props) => {
 
     return (
         <>
+            <Header2/>
             <img
                 height={550}
                 width={1450}

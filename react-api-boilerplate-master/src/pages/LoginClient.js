@@ -10,7 +10,7 @@ import { translateMessage } from '../utils/translateMessage';
 import { Link } from 'react-router-dom';
 import '../styles/login.css';
 import ErrorList from '../components/ErrorList';
-
+import Header2 from '../components/Header2';
 const LoginClient = () => {
     const { setAuthenticated, setCurrentUser } = useAuth();
 
@@ -38,9 +38,13 @@ const LoginClient = () => {
 
     return (
         <>
-            {
+
+
+                <Header2/>
+
                 <Row style={{marginTop:20}} justify='center' className='login'>
                     <Col span={ 8 }>
+                        <br/><br/><br/>
                         <Form
                             name='login-form'
                             className='login-form'
@@ -104,7 +108,7 @@ const LoginClient = () => {
                         </Form>
                     </Col>
                 </Row>
-            }
+
         </>
     );
 };
