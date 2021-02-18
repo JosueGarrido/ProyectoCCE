@@ -38,6 +38,9 @@ class ProductTableSeeder extends Seeder
                     'image' => 'products/' . $image_name,
                     'location' => $faker->word,
                     'category_id' => $faker->numberBetween(1,6),
+                    'category_id2' => $faker->numberBetween(1,58),
+                    'category_id3' => $faker->numberBetween(1,2),
+                    'category_id4' => $faker->numberBetween(1,2),
                 ]);
             }
         }

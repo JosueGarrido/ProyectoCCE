@@ -59,15 +59,16 @@ const Navigation = ( props ) => {
 
 
 
-            <SubMenu  key={ Routes.ABOUT } className='scale-up-bottom' style={ linkStyle } title="Categorías">
-                <Menu.ItemGroup className='sub-menu' >
+            <Menu.Item  key={ Routes.CATEGORIESPAGE } style={ linkStyle } className='scale-up-bottom'>Categoría
+                <Link to={ Routes.CATEGORIESPAGE } />
+                <Menu.ItemGroup className='sub-menu'>
                         {
                         categories && categories.map( ( category, index ) =>
                             <Menu.Item className='scale-up-bottom' value={ category.id } key={ index }>{` ${ category.name } `}</Menu.Item>
                         )
                     }
                 </Menu.ItemGroup>
-            </SubMenu>
+            </Menu.Item>
 
 
 

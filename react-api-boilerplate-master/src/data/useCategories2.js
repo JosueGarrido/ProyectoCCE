@@ -9,7 +9,7 @@ export const useCategories2 = () => {
 
     return {
         categories2: data && data.data,
-        isLoading2: !error && !data,
-        isError2: error
+        isLoading: !error && !data,
+        isError: error
     };
 };

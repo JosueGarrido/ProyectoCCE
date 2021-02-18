@@ -37,6 +37,7 @@ const publicRoutes = {
   QUESTIONPAGE:'/preguntas-frecuentes',
   PRODUCT:'/producto/:id',
   PREPURCHASE:'/pre-compra/:id/',
+  CATEGORIESPAGE:'/categorias',
 
   //Dashboard Configuración
   DASHBOARD_MY_DATA: '/dashboard-mis-datos',
