@@ -125,12 +125,8 @@ const Artist = (props) => {
 
                                 />}
 
-                                <Col   align={'center' }>
-                                    <a href='https://www.instagram.com' target='_blank'>
-                                        <UserAddOutlined/>
-                                    </a>
-                                </Col>
-                                <Col align={'center' }  span={4}>
+                                
+                                <Col align={'center' }  span={10}>
                                     <Button  >Seguir </Button >
 
                                 </Col>

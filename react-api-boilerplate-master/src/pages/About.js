@@ -66,12 +66,23 @@ const AboutPage = props => {
                 </Col>
 
             </Row>
+
+
+
+
+
+
+
+
+
+
+
             <Content className="margin">
                 <img src={HowSale} className="imagesPageHB" />
 
                 <div className="imgPage">
                     <Col span={24} >
-                        <Row  >
+                        <Row >
                             <Col span={2}>
                             </Col>
 
