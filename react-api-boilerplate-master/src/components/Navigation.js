@@ -59,7 +59,7 @@ const Navigation = ( props ) => {
 
 
 
-            <Menu.Item  key={ Routes.CATEGORIESPAGE } style={ linkStyle } className='scale-up-bottom'>Categoría
+            <SubMenu  key={ Routes.CATEGORIESPAGE } style={ linkStyle } className='scale-up-bottom'>Categoría
                 <Link to={ Routes.CATEGORIESPAGE } />
                 <Menu.ItemGroup className='sub-menu'>
                         {
@@ -68,7 +68,7 @@ const Navigation = ( props ) => {
                         )
                     }
                 </Menu.ItemGroup>
-            </Menu.Item>
+            </SubMenu>
 
 
 
