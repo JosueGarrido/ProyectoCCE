@@ -37,6 +37,7 @@ const publicRoutes = {
   QUESTIONPAGE:'/preguntas-frecuentes',
   PRODUCT:'/producto/:id',
   CATEGORY:'/categoria/:id',
+  CATEGORY1:'/categoriap/:id',
   PREPURCHASE:'/pre-compra/:id/',
   CATEGORIESPAGE:'/categorias',
 

@@ -33,7 +33,8 @@ Route::group(['middleware' => ['cors']], function () {
     //Productos de un usuario
     Route::get('users/{user}/products/', 'ProductController@index');
     //Productos de una categoria
-    Route::get('category2/{category2}/products/', 'ProductController@indexcat');
+    Route::get('category2/{category2}/products/', 'ProductController@indexcat2');
+    Route::get('category1/{category1}/products/', 'ProductController@indexcat1');
 
     Route::group(['middleware' => ['jwt.verify']], function() {
 

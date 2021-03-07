@@ -82,10 +82,10 @@ const ProductsList = () => {
                                                         <p>Stock: {product.stock} </p>
                                                         <p>Venta: {product.sales} </p>
                                                         <p>Ubicación: {product.location} </p>
-                                                        <iframe
+                                                        {  /*     <iframe
                                                             src={product.description}
                                                             frameBorder="0" allowFullScreen="true" scrolling="no"
-                                                            height="378" width="620"></iframe>
+                                                            height="378" width="620"></iframe>  */ }
                                                     </Col>
 
 
