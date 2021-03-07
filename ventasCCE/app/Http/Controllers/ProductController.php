@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\CategoryLevel2;
 use App\Product;
 use App\User;
 use App\Http\Resources\Product as ProductResource;
@@ -29,6 +30,12 @@ class ProductController extends Controller
         // $this->authorize('viewAny', Product::class);
 
         return response()->json(ProductResource::collection($user->products->sortByDesc('created_at')), 200);
+    }
+
+    public function indexcat(CategoryLevel2 $category2)
+    {
+
+        return response()->json(ProductResource::collection($category2->product->sortByDesc('created_at')), 200);
     }
 
     public function indexall()

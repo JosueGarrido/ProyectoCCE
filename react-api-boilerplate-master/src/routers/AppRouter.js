@@ -29,6 +29,7 @@ const AsyncPublications = loadable( () => import( '../pages/Publications' ), loa
 const AsyncSalePage = loadable( () => import( '../pages/HowToSale' ), loadableOptions );
 const AsyncFrequentQuestions = loadable( () => import( '../pages/FrequentQuestions' ), loadableOptions );
 const AsyncCategoriesPage = loadable( () => import( '../pages/CategoriesPage' ), loadableOptions );
+const AsyncCategory = loadable( () => import( '../pages/Category' ), loadableOptions );
 
 //Dashboard Artista
 const AsyncDashboardArtist = loadable( () => import( '../pages/ArtistResumeDashboard' ), loadableOptions );
@@ -93,6 +94,7 @@ const AppRouter = () => (
     <PublicRoute path={ Routes.SALEPAGE } component={ AsyncSalePage } />
     <PublicRoute path={ Routes.QUESTIONPAGE } component={ AsyncFrequentQuestions } />
     <PublicRoute path={ Routes.CATEGORIESPAGE } component={ AsyncCategoriesPage } />
+    <PublicRoute path={ Routes.CATEGORY } component={ AsyncCategory } />
 
     <PublicRoute path={ Routes.ARTICLES } component={ AsyncArticles } />
     <PublicRoute path={ Routes.ABOUT } component={ AsyncAbout } />
