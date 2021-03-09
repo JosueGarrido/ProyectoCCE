@@ -142,7 +142,7 @@ const MainLayout = props => {
                   textAlign:'right',
                 } }  className='questions'>Preguntas Frecuentes </Link>
                 <br/>
-                <Link to={ Routes.QUESTIONPAGE }  style={ {
+                <Link to={ Routes.POLITICS }  style={ {
                   marginLeft: 70,
                   marginRight: 10,
                   textDecoration: 'none',
