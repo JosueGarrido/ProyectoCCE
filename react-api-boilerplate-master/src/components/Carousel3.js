@@ -2,39 +2,41 @@ import React from 'react';
 import {Carousel, Row, Col} from "antd";
 
 import '../styles/carousel.css';
-import img1 from  '../images/home_images/como-comprar.png';
-import img2 from  '../images/home_images/como-vender.png';
-import img3 from  '../images/home_images/como-funciona.png';
+import img1 from  '../images/home_images/banner-promociones.png';
+import img2 from  '../images/home_images/banner-streaming.png';
+import img3 from  '../images/home_images/banner-subastas.png';
 
-
-const contentStyle2 = {
+const contentStyle3 = {
     height: '471px',
     color: '#ffffff',
     width: '100%'
 
 };
 
-function carousel2()  {
+
+
+
+function carousel3()  {
     const items = [
         {
             key: '1',
-            title: '¿CÓMO COMPRAR?',
-            content: '¡Comprar una obra de arte o artesanía hecha en Ecuador es muy sencillo con Wasi Wallpay! Crea tu cuenta personal de forma gratuita y contáctate con los creadores directamente. Acuerda el pago y la entrega del producto. ',
+            title: 'VISITA NUESTRAS',
+            content: 'PROMOCIONES',
             image: img1,
             page: '/como-comprar',
 
         },
         {
             key: '2',
-            title: '¿CÓMO VENDER?',
-            content: '¡Wasi Wallpay fomenta el comercio electrónico de obras de arte y artesanías hechas en Ecuador! Si eres un creador y deseas comercializar tus productos, regístrate como vendedor sin costo, ni comisiones, ni recargos. ',
+            title: 'ESTE ES EL TEXTO PARA',
+            content: 'STREAMING',
             image: img2,
             page: '/como-vender',
         },
         {
             key: '3',
-            title: '¿CÓMO FUNCIONA?',
-            content: 'An vim odio ocurreret consetetur, justo constituto ex mea. Quidam facilisis vituperata pri ne. Id nostrud gubergren urbanitas sed, quo summo animal qualisque ut, cu nostro dissentias consectetuer mel. ',
+            title: 'ESTE ES EL TEXTO PARA',
+            content: 'SUBASTAS',
             image: img3,
             page: '/como-comprar',
         },
@@ -51,20 +53,20 @@ function carousel2()  {
                             {items.map(item => {
                                 return (
                                     <div key={item.key}>
-                                        <div  style={contentStyle2}>
+                                        <div  style={contentStyle3}>
                                             <div key={item.key} style={{backgroundImage: `url(${item.image})`}} className="images" >
                                                 <Row>
-                                                    <Col span={13}>
+                                                    <Col span={1}>
                                                     </Col>
                                                     <Col span={10}>
-                                                        <div><br/><br/><br/>
-                                                            <h1 className="title1">
-                                                                {item.title}
+                                                        <div><br/><br/><br/><br/><br/>
+                                                            <h1 className="title12">
+                                                                <b>{item.title}</b>
                                                             </h1>
 
                                                         </div>
                                                         <div>
-                                                            <p className="text">
+                                                            <p className="title13">
                                                                 {item.content}
                                                             </p>
                                                         </div>
@@ -76,7 +78,7 @@ function carousel2()  {
 
                                                         </div><br/><br/><br/><br/>
                                                     </Col>
-                                                    <Col span={1}>
+                                                    <Col span={13}>
 
                                                     </Col>
                                                 </Row>
@@ -97,4 +99,4 @@ function carousel2()  {
     );
 };
 
-export default carousel2;
+export default carousel3;

@@ -418,7 +418,21 @@ code {
     font-family: Geometos;
     font-size: 50pt;
     text-align: right;
-    color: black;
+    color: white;
+    line-height: 50pt;
+}
+.title12{
+    font-family: Kiona;
+    font-size: 30pt;
+    text-align: left;
+    color: white;
+    line-height: 50pt;
+}
+.title13{
+    font-family: Geometos;
+    font-size: 40pt;
+    text-align: left;
+    color: white;
     line-height: 50pt;
 }
 .subtitle{
@@ -469,7 +483,7 @@ code {
     border: none;
     color: white;
     padding: 15px 32px;
-    text-align: right;
+    text-align: center;
     align-content: end;
     text-decoration: none;
     display: inline-block;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Carousel2 from '../components/Carousel2';
 import Carousel from '../components/Carousel';
-
+import Carousel3 from '../components/Carousel3';
 import '../styles/app.css';
 import {Row, Col, Button} from "antd";
 import Routes from "../constants/routes";
@@ -143,7 +143,7 @@ const HomePage = () => {
 
             <br/><br/><br/>
             <Carousel2/>
-
+            <Carousel3/>
 
         </div>
 

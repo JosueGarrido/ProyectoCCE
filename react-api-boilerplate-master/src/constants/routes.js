@@ -40,6 +40,7 @@ const publicRoutes = {
   CATEGORY1:'/categoriap/:id',
   PREPURCHASE:'/pre-compra/:id/',
   CATEGORIESPAGE:'/categorias',
+  POLITICS:'/politica-privacidad',
 
   //Dashboard Configuración
   DASHBOARD_MY_DATA: '/dashboard-mis-datos',
