@@ -15,6 +15,7 @@ import letracomprar from '../images/ImgPages/comprar-letras.png';
 import logoVertical from "../images/logoVertical.png";
 import HowSale from "../images/home_images/explicacion.png";
 import '../styles/loginclient.css';
+import letraComprar from "../images/ImgPages/comprar-letras.png";
 const Header = Layout.Header;
 const {Content, Sider} = Layout;
 const LoginClient = () => {
@@ -78,7 +79,9 @@ const LoginClient = () => {
                             </nav>
                         </Col>
                         <Col span={3}>
-                            <img src={logoVertical} className='logoPages'/>
+                            <a href={Routes.HOME}>
+                                <img src={logoVertical} className='logoPages'/>
+                            </a>
                         </Col>
                     </Row>
 
