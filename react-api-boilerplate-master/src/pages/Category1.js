@@ -7,7 +7,7 @@ import {FacebookOutlined, InstagramFilled, TwitterOutlined, UserAddOutlined,Fork
 import Routes from "../constants/routes";
 import {useCat1Products} from "../data/useCat1Products";
 import Category1Products from "../components/Category1Products";
-import CategoryFilter from "../components/CategoryFilter";
+import Category1Filter from "../components/Category1Filter";
 
 const { Text, Title } = Typography;
 const {Meta} = Card;
@@ -24,7 +24,9 @@ const Category1 = (props) => {
         <>
 
             <Row>
-                <CategoryFilter/>
+                <Col span={ 6 }>
+                <Category1Filter/>
+                </Col>
 
                 <Col span={ 18 } >
 

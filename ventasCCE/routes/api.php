@@ -28,7 +28,7 @@ Route::group(['middleware' => ['cors']], function () {
     Route::get('category1', 'CategoryLevel1Controller@index');
     Route::get('category2', 'CategoryLevel2Controller@index');
     Route::get('user', 'UserController@getAuthenticatedUser');
-
+    Route::get('products/{id}', 'ProductController@show');
 
     //Productos de un usuario
     Route::get('users/{user}/products/', 'ProductController@index');
@@ -95,7 +95,7 @@ Route::group(['middleware' => ['cors']], function () {
 
         //Productos
 
-        Route::get('products/{id}', 'ProductController@show');
+
         Route::post('products', 'ProductController@store');
         Route::put('products/{id}', 'ProductController@update');
         Route::delete('products/{id}', 'ProductController@delete');

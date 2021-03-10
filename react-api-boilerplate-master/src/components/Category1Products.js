@@ -13,7 +13,9 @@ const Category1Products = (props) => {
     let { id } = useParams();
     const category1 = useCat1Products( id );
 
+
     console.log('category1', category1.cat1);
+
 
     return (
         <>
