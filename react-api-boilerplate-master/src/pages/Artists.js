@@ -4,13 +4,15 @@ import { Divider, Row, Col, Layout, Typography } from 'antd';
 import {SettingOutlined, ShoppingOutlined} from '@ant-design/icons';
 import SellList1 from "../components/SellList1";
 import ArtistsList from "../components/ArtistsList";
-
+import Header2 from '../components/Header2';
 const { Title } = Typography;
 const {  Content, Sider } = Layout;
 
 
 const Artists = () => (
     <>
+        <Header2/>
+
         <Row>
             <ArtistMenuDashboard/>
 

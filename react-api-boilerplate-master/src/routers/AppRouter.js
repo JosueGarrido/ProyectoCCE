@@ -28,7 +28,10 @@ const AsyncLoginClient = loadable( () => import( '../pages/LoginClient' ), loada
 const AsyncPublications = loadable( () => import( '../pages/Publications' ), loadableOptions );
 const AsyncSalePage = loadable( () => import( '../pages/HowToSale' ), loadableOptions );
 const AsyncFrequentQuestions = loadable( () => import( '../pages/FrequentQuestions' ), loadableOptions );
-
+const AsyncCategoriesPage = loadable( () => import( '../pages/CategoriesPage' ), loadableOptions );
+const AsyncCategory = loadable( () => import( '../pages/Category' ), loadableOptions );
+const AsyncCategoryp = loadable( () => import( '../pages/Category1' ), loadableOptions );
+const AsyncPolitics = loadable( () => import( '../pages/Politics' ), loadableOptions );
 //Dashboard Artista
 const AsyncDashboardArtist = loadable( () => import( '../pages/ArtistResumeDashboard' ), loadableOptions );
 const AsyncDashboardPublicationsArtist = loadable( () => import( '../pages/ArtistPublicationsDashboard' ), loadableOptions );
@@ -91,6 +94,10 @@ const AppRouter = () => (
     <PublicRoute path={ Routes.PUBLICATIONS } component={ AsyncPublications } />
     <PublicRoute path={ Routes.SALEPAGE } component={ AsyncSalePage } />
     <PublicRoute path={ Routes.QUESTIONPAGE } component={ AsyncFrequentQuestions } />
+    <PublicRoute path={ Routes.CATEGORIESPAGE } component={ AsyncCategoriesPage } />
+    <PublicRoute path={ Routes.CATEGORY } component={ AsyncCategory } />
+    <PublicRoute path={ Routes.CATEGORY1 } component={ AsyncCategoryp } />
+    <PublicRoute path={ Routes.POLITICS } component={ AsyncPolitics } />
 
     <PublicRoute path={ Routes.ARTICLES } component={ AsyncArticles } />
     <PublicRoute path={ Routes.ABOUT } component={ AsyncAbout } />

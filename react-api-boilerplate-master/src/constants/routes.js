@@ -36,7 +36,11 @@ const publicRoutes = {
   SALEPAGE:'/como-vender',
   QUESTIONPAGE:'/preguntas-frecuentes',
   PRODUCT:'/producto/:id',
+  CATEGORY:'/categoria/:id',
+  CATEGORY1:'/categoriap/:id',
   PREPURCHASE:'/pre-compra/:id/',
+  CATEGORIESPAGE:'/categorias',
+  POLITICS:'/politica-privacidad',
 
   //Dashboard Configuración
   DASHBOARD_MY_DATA: '/dashboard-mis-datos',

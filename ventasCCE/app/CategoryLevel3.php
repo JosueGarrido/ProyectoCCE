@@ -16,4 +16,8 @@ class CategoryLevel3 extends Model
     {
         return $this->belongsTo('App\CategoryLevel2');
     }
+    public function product()
+    {
+        return $this->hasMany('App\Product');
+    }
 }
