@@ -154,7 +154,7 @@ const Artist = (props) => {
                                     <Col align={'center' }  span={4}><Text type="secondary">VENTAS</Text></Col>
                                     <Col align={'center' }  span={4}><Text type="secondary">PRODUCTOS</Text></Col>
                                 </Row>
-                                <Rate disabled defaultValue={totalscore}/>
+                                <Rate disabled defaultValue={user}/>
                                 <br/>
                             </Col>
 
@@ -244,8 +244,7 @@ const Artist = (props) => {
                         <Col md={18}>
                             <Col md={24}>
                                 {
-                                    reputations.isLoading
-                                        ? <Skeleton loading={reputations.isLoading} active avatar/>
+                                    reputations.isLoading ? <Skeleton loading={reputations.isLoading} active avatar/>
                                         : reputations.isError
                                         ? <ShowError error={reputations.isError}/>
                                         : user.user && <NewComment userId={id} reputations={reputations}/>
