@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Routes from '../constants/routes';
 import API from '../data/index';
-import {Slider, Upload, Switch, Button, Col, Form, Input, message, Row, Typography, Card, Select, DatePicker, Table, Modal, Space } from 'antd';
+import {Slider, Upload, Switch, Button, Col, Form, Input, message, Row, Typography, Card, Select, DatePicker, Table, Modal, Space, Checkbox } from 'antd';
 import {
     LockOutlined,
     UserOutlined,
@@ -354,7 +354,9 @@ const Register = () => {
     function onCheck(checked) {
         console.log(`switch to ${checked}`);
     }
-
+    function onChange(e) {
+        console.log(`checked = ${e.target.checked}`);
+    }
     const onFinish = async( userData ) => {
         console.log( 'Received values of form: ', userData );
 
@@ -373,6 +375,7 @@ const Register = () => {
         data.append( 'province', userData.province );
         data.append( 'city', userData.city );
         data.append( 'town', userData.town );
+        data.append('live',userData.live)
         data.append( 'culture', userData.culture );
         data.append( 'disability', userData.disability === true ? 1 : 0);
         data.append( 'stage_name', userData.stage_name );
@@ -401,6 +404,8 @@ const Register = () => {
             message.error( <>{ translateMessage( e.message ) }{ errorList }</> );
         }
     };
+
+
 
     return (
 
@@ -1166,12 +1171,12 @@ const Register = () => {
                                     </Form.Item>
 
                                     <Form.Item
-                                        name='link_type'
+                                        name='live'
                                         label='Enlace web'
                                         rules={ [
                                             {
                                                 required: true,
-                                                message: 'Ingresa enlace web'
+                                                message: 'Ingresa enlace de video en vivo'
                                             }
                                         ] }>
                                         <Input type='textarea' />
@@ -1280,8 +1285,14 @@ const Register = () => {
 
                             </Card>
 
+                            <div>
+                               <a href="">
+                                   <Checkbox onChange={onChange}>Terminos y Condiciones</Checkbox>
+                               </a>
+                            </div>
 
                             <Form.Item>
+
                                 <Button type='primary' htmlType='submit' className='login-form-button'>
                                     Registrarme
                                 </Button>
@@ -1291,6 +1302,8 @@ const Register = () => {
 
                         </Form>
                     </Card>
+
+
                 </Col>
             </Row>
 

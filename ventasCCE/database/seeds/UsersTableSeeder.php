@@ -30,6 +30,7 @@ class UsersTableSeeder extends Seeder
             'phone' => '993731322',
             'profile_picture' => 'user/' . $image_name,
             'location' => 'Quito-Ecuador',
+            'live' => 'https://player.twitch.tv/?channel=nosoyunytuber&parent=localhost',
             'password'=> $password,
             ]);
 
@@ -58,6 +59,7 @@ class UsersTableSeeder extends Seeder
                 'phone' => $faker->numberBetween(911111111, 999999999),
                 'profile_picture' => 'user/' . $image_name,
                 'location' => $faker->country,
+                'live' => $faker->word
 
 
 
@@ -78,6 +80,7 @@ class UsersTableSeeder extends Seeder
                 'phone' => $faker->numberBetween(911111111, 999999999),
                 'profile_picture' => 'user/' . $image_name,
                 'location' => $faker->country,
+                'live'=>$faker->word
 
             ]);
 
