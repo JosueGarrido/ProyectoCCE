@@ -9,6 +9,7 @@ import {useCat2Products} from "../data/useCat2Products";
 import Category2Products from "../components/Category2Products";
 import CategoryFilter from "../components/CategoryFilter";
 
+
 const { Text, Title } = Typography;
 const {Meta} = Card;
 const {  Content, Sider } = Layout;
@@ -17,8 +18,11 @@ const {  Content, Sider } = Layout;
 const Category = (props) => {
     let { id } = useParams();
     const category2 = useCat2Products( id );
+    const c3 = props.cat3;
 
     console.log('category2', category2.cat2);
+    console.log('category3dddddd', c3);
+
 
     return (
         <>

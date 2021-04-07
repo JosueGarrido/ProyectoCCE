@@ -6,6 +6,7 @@ import {Avatar, Card, Col, Rate, Row, Skeleton, Typography, Image,Button,Modal, 
 import Routes from "../constants/routes";
 import {useCat2Products} from "../data/useCat2Products";
 
+
 const { Text, Title } = Typography;
 const {Meta} = Card;
 
@@ -13,7 +14,12 @@ const Category2Products = (props) => {
     let { id } = useParams();
     const category2 = useCat2Products( id );
 
+
     console.log('category2', category2.cat2);
+
+
+
+
 
     return (
         <>

@@ -27,14 +27,6 @@ const Category1Filter = (props) => {
         console.log('catexdd', categories2.category1_id === categories[id-1].id)
     }
 
-    const data = [
-        'Racing car sprays burning fuel into crowd.',
-        'Japanese princess to wed commoner.',
-        'Australian walks 100km after outback crash.',
-        'Man charged over missing wedding girl.',
-        'Los Angeles battles huge wildfires.',
-    ];
-
     return (
         <>
             <Row>
@@ -78,94 +70,6 @@ const Category1Filter = (props) => {
                                         </div>
                                     }
 
-                                </Col>
-
-                                <Col>
-                                    <Select
-                                        showSearch
-                                        style={{width: 200}}
-                                        placeholder="Search to Select"
-                                        optionFilterProp="children"
-                                        filterOption={(input, option) =>
-                                            option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                                        }
-                                        filterSort={(optionA, optionB) =>
-                                            optionA.children.toLowerCase().localeCompare(optionB.children.toLowerCase())
-                                        }
-                                    >
-                                        <Option value="1">Not Identified</Option>
-                                        <Option value="2">Closed</Option>
-                                        <Option value="3">Communicated</Option>
-                                        <Option value="4">Identified</Option>
-                                        <Option value="5">Resolved</Option>
-                                        <Option value="6">Cancelled</Option>
-                                    </Select>
-                                </Col>
-
-                                <Col>
-                                    <Select
-                                        showSearch
-                                        style={{width: 200}}
-                                        placeholder="Search to Select"
-                                        optionFilterProp="children"
-                                        filterOption={(input, option) =>
-                                            option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                                        }
-                                        filterSort={(optionA, optionB) =>
-                                            optionA.children.toLowerCase().localeCompare(optionB.children.toLowerCase())
-                                        }
-                                    >
-                                        <Option value="1">Not Identified</Option>
-                                        <Option value="2">Closed</Option>
-                                        <Option value="3">Communicated</Option>
-                                        <Option value="4">Identified</Option>
-                                        <Option value="5">Resolved</Option>
-                                        <Option value="6">Cancelled</Option>
-                                    </Select>
-                                </Col>
-
-                                <Col>
-                                    <Select
-                                        showSearch
-                                        style={{width: 200}}
-                                        placeholder="Search to Select"
-                                        optionFilterProp="children"
-                                        filterOption={(input, option) =>
-                                            option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                                        }
-                                        filterSort={(optionA, optionB) =>
-                                            optionA.children.toLowerCase().localeCompare(optionB.children.toLowerCase())
-                                        }
-                                    >
-                                        <Option value="1">Not Identified</Option>
-                                        <Option value="2">Closed</Option>
-                                        <Option value="3">Communicated</Option>
-                                        <Option value="4">Identified</Option>
-                                        <Option value="5">Resolved</Option>
-                                        <Option value="6">Cancelled</Option>
-                                    </Select>
-                                </Col>
-
-                                <Col>
-                                    <Select
-                                        showSearch
-                                        style={{width: 200}}
-                                        placeholder="Search to Select"
-                                        optionFilterProp="children"
-                                        filterOption={(input, option) =>
-                                            option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                                        }
-                                        filterSort={(optionA, optionB) =>
-                                            optionA.children.toLowerCase().localeCompare(optionB.children.toLowerCase())
-                                        }
-                                    >
-                                        <Option value="1">Not Identified</Option>
-                                        <Option value="2">Closed</Option>
-                                        <Option value="3">Communicated</Option>
-                                        <Option value="4">Identified</Option>
-                                        <Option value="5">Resolved</Option>
-                                        <Option value="6">Cancelled</Option>
-                                    </Select>
                                 </Col>
 
                             </div>
