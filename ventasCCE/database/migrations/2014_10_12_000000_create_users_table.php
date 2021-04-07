@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->integer('phone');
             $table->string('profile_picture')->nullable();
             $table->string('location');
+            $table->string('live')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
