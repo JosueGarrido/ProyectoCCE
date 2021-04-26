@@ -15,20 +15,25 @@ const {Meta} = Card;
 const {  Content, Sider } = Layout;
 
 
+
 const Category = (props) => {
     let { id } = useParams();
     const category2 = useCat2Products( id );
-    const c3 = props.cat3;
+    const [Cat3,setCat3]= useState('');
+
 
     console.log('category2', category2.cat2);
-    console.log('category3dddddd', c3);
 
+    const handleCat3 = (cat3) => {
+        console.log('valorcat3', cat3);
+        setCat3(cat3);
+    }
 
     return (
         <>
 
             <Row>
-                <CategoryFilter/>
+                <CategoryFilter handleCat3={handleCat3}/>
 
                 <Col span={ 18 } >
 
@@ -37,7 +42,7 @@ const Category = (props) => {
 
                             <Title style={ { marginTop:15, textAlign: 'center' } }>Productos</Title>
 
-                            <Category2Products/>
+                            <Category2Products cat3={Cat3}/>
 
                         </div>
                     </Content>

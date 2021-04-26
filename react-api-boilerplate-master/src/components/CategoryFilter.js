@@ -5,7 +5,7 @@ import Routes from "../constants/routes";
 import {Link, useParams} from "react-router-dom";
 import {useCategories3} from "../data/useCategories3";
 import {useCategories2} from "../data/useCategories2";
-import Category from "../pages/Category";
+
 
 const { SubMenu } = Menu;
 const { Title } = Typography;
@@ -17,11 +17,11 @@ const CategoryFilter = (props) => {
     let {id} = useParams();
     const {categories2, isLoading, isError} = useCategories2();
     const {categories3} = useCategories3();
-    const [currentCat3,setCurrentCat3]= useState('');
+ //   const [currentCat3,setCurrentCat3]= useState('');
 
 
 
-
+/*
     const handleChangeCat3 = ( cat3 ) => {
 
         const currcat3 = cat3;
@@ -29,6 +29,9 @@ const CategoryFilter = (props) => {
         setCurrentCat3( currcat3 );
 
     };
+*/
+    const { handleCat3 } = props
+
 
     console.log('cat2', categories2);
 
@@ -65,7 +68,7 @@ const CategoryFilter = (props) => {
                                     <Select
                                         showSearch
                                     placeholder="Selecciona el Estilo"
-                                    onChange={handleChangeCat3}
+                                    onChange={handleCat3}
                                     style={{width: 200}}
                                         optionFilterProp="children"
                                         filterOption={(input, option) =>
@@ -202,11 +205,9 @@ const CategoryFilter = (props) => {
 
             </Row>
 
-                <Category cat3={currentCat3}/>
-
         </>
     );
 }
-export default {CategoryFilter};
+export default CategoryFilter;
 
 

@@ -16,9 +16,7 @@ const Category2Products = (props) => {
 
 
     console.log('category2', category2.cat2);
-
-
-
+    console.log('c3', props.cat3);
 
 
     return (
