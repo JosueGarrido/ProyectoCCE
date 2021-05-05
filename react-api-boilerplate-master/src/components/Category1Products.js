@@ -14,13 +14,8 @@ const { Text, Title } = Typography;
 const {Meta} = Card;
 
 const Category1Products = (props) => {
-
-
     let { id } = useParams();
     const category1 = useCat1Products( id );
-
-
-<<<<<<< HEAD
 //pagination
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -41,12 +36,9 @@ const Category1Products = (props) => {
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = products.slice(indexOfFirstPost, indexOfLastPost);
-
     // Change page
     const paginate = pageNumber => setCurrentPage(pageNumber);
-=======
     console.log('category1', category1.cat1);
->>>>>>> d3070b7f1d344fcb4547e65a36febc662496b33d
 
 
     return (

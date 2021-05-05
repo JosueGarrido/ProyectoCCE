@@ -10,12 +10,7 @@ import Category2Products from "../components/Category2Products";
 import CategoryFilter from "../components/CategoryFilter";
 import letraComprar from '../images/ImgPages/comprar-letras.png';
 import logoVertical from "../images/logoVertical.png";
-
-<<<<<<< HEAD
 const Header = Layout.Header;
-=======
-
->>>>>>> d3070b7f1d344fcb4547e65a36febc662496b33d
 const { Text, Title } = Typography;
 const {Meta} = Card;
 const {  Content, Sider } = Layout;
