@@ -61,6 +61,7 @@ nav ul ul {
     display: none;
     position: absolute;
     top: 70px; /* the height of the main nav */
+
 }
 
 /* Display Dropdowns on Hover */
@@ -74,6 +75,7 @@ nav ul ul li {
     float: none;
     display: list-item;
     position: relative;
+    z-index: 1;
 }
 
 /* Second, Third and more Tiers	*/

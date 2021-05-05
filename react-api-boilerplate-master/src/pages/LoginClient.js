@@ -64,7 +64,7 @@ const LoginClient = () => {
                         <Col span={3}>
                             <nav>
                                 <ul>
-                                    <li><a href="#"> <i className="down"></i></a>
+                                    <li><a href="#"> <i className="down1"></i></a>
 
                                         <ul style={{textAlign: "center"}}>
                                             <li><a href="#">Categorias</a></li>
@@ -258,7 +258,7 @@ const LoginClient = () => {
                         <br/> <br/><br/> <br/><br/> <br/>
                         <p className={"tex"}>Considera tu grado de reputación dentro de la plataforma,
                             serás calificado y comentado por tus compradores en cada
-                            transacción realizada
+                            transacción realizada.
                         </p>
 
                     </Col>

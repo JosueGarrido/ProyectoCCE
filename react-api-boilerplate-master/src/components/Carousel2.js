@@ -21,7 +21,7 @@ function carousel2()  {
             title: '¿CÓMO COMPRAR?',
             content: '¡Comprar una obra de arte o artesanía hecha en Ecuador es muy sencillo con Wasi Wallpay! Crea tu cuenta personal de forma gratuita y contáctate con los creadores directamente. Acuerda el pago y la entrega del producto. ',
             image: img1,
-            page: '/como-comprar',
+            page: '/ingreso-cliente',
 
         },
         {
@@ -29,7 +29,7 @@ function carousel2()  {
             title: '¿CÓMO VENDER?',
             content: '¡Wasi Wallpay fomenta el comercio electrónico de obras de arte y artesanías hechas en Ecuador! Si eres un creador y deseas comercializar tus productos, regístrate como vendedor sin costo, ni comisiones, ni recargos. ',
             image: img2,
-            page: '/como-vender',
+            page: '/ingreso',
         },
         {
             key: '3',
