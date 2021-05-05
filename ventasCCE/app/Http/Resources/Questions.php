@@ -20,6 +20,8 @@ class Questions extends JsonResource
             'question' => $this ->question,
             'user_data' => 'api/users'.$this -> user_id,
             'user' => $this -> user,
+            'product_id' => "/api/products/" . $this->product_id,
+            'product_id' => $this ->product_id,
             'created_at' => $this ->created_at,
         ];
     }

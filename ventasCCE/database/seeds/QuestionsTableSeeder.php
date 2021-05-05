@@ -21,15 +21,16 @@ class QuestionsTableSeeder extends Seeder
         // iteramos sobre cada uno y simulamos un inicio de
         // sesión con cada uno para crear productos en su nombre
         $users = App\User::all();
+        $products = App\Product::all();
         foreach ($users as $user) {
             // iniciamos sesión con este usuario
             JWTAuth::attempt(['email' => $user->email, 'password' => '123456']);
             // Y ahora con este usuario creamos algunos productos
-            $num_questions = 10;
-            for ($j = 0; $j < $num_questions; $j++) {
+            foreach ($products as $product) {
                 Questions::create([
+
                     'question' => $faker->sentence,
-                    'product_id' => $faker->numberBetween(1,55),
+                    'product_id' => $product->id,
                 ]);
             }
         }
