@@ -50,7 +50,7 @@ nav ul {
 
 nav ul li {
     display:inline-block;
-    background-color: #650f2f;
+    background-color: #cb0a3c;
 }
 
 nav a {
@@ -105,4 +105,8 @@ i {
 .down {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
+}
+.capa1{
+    position: relative;
+    z-index: 0;
 }

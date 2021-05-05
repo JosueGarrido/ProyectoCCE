@@ -17,12 +17,12 @@ const CategoryFilter = () => (
 
             <Col span={ 24 } >
 
-                <Content style={{ margin: '2px 18px 0' }}>
-                    <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
+                <Content style={{ margin: '0 0 0' }}>
+                    <div className="header-wrapper" style={{ padding: 24, minHeight: 360 }}>
 
                         <Col>
 
-                        <Title style={ { marginTop:15, textAlign: 'center' } }>Filtro</Title>
+                        <Title style={ { marginTop:15, textAlign: 'center', color:"white" } }>Filtro</Title>
                         <Select
                             showSearch
                             style={{ width: 200 }}

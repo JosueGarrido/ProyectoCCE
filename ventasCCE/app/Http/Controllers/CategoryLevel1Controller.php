@@ -20,7 +20,7 @@ class CategoryLevel1Controller extends Controller
     public function index()
     {
      //   $this->authorize('viewAny', CategoryLevel1::class);
-        return new CategoryLevel1Collection(CategoryLevel1::paginate (25));
+        return new CategoryLevel1Collection(CategoryLevel1::paginate (5));
     }
     public function show(CategoryLevel1 $id)
     {

@@ -75,7 +75,9 @@ const Login = () => {
                             </nav>
                         </Col>
                         <Col span={3}>
+                            <a href={Routes.HOME}>
                             <img src={logoVertical} className='logoPages'/>
+                            </a>
                         </Col>
                     </Row>
 
@@ -167,7 +169,7 @@ const Login = () => {
 
                                         </Button>
 
-                                        <div className={registro}>Soy nuevo. <Link
+                                        <div className={registro} style={{color:"white"}}>Soy nuevo. <Link
                                             to={Routes.REGISTER}>Registrarse</Link></div>
 
 
@@ -262,7 +264,7 @@ const Login = () => {
                         <br/> <br/><br/> <br/><br/> <br/>
                         <p className={"tex"}>Considera tu grado de reputación dentro de la plataforma,
                             serás calificado y comentado por tus compradores en cada
-                            transacción realizada
+                            transacción realizada.
                         </p>
 
                     </Col>

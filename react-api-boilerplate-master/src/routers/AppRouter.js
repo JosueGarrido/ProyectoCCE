@@ -32,6 +32,7 @@ const AsyncCategoriesPage = loadable( () => import( '../pages/CategoriesPage' ),
 const AsyncCategory = loadable( () => import( '../pages/Category' ), loadableOptions );
 const AsyncCategoryp = loadable( () => import( '../pages/Category1' ), loadableOptions );
 const AsyncPolitics = loadable( () => import( '../pages/Politics' ), loadableOptions );
+const AsyncTerms = loadable( () => import( '../pages/TermsConditions' ), loadableOptions );
 //Dashboard Artista
 const AsyncDashboardArtist = loadable( () => import( '../pages/ArtistResumeDashboard' ), loadableOptions );
 const AsyncDashboardPublicationsArtist = loadable( () => import( '../pages/ArtistPublicationsDashboard' ), loadableOptions );
@@ -98,6 +99,7 @@ const AppRouter = () => (
     <PublicRoute path={ Routes.CATEGORY } component={ AsyncCategory } />
     <PublicRoute path={ Routes.CATEGORY1 } component={ AsyncCategoryp } />
     <PublicRoute path={ Routes.POLITICS } component={ AsyncPolitics } />
+    <PublicRoute path={ Routes.TERMS } component={ AsyncTerms } />
 
     <PublicRoute path={ Routes.ARTICLES } component={ AsyncArticles } />
     <PublicRoute path={ Routes.ABOUT } component={ AsyncAbout } />
