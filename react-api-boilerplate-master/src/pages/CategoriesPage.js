@@ -1,12 +1,18 @@
 import React from 'react';
 import '../styles/InfoPages.css'
-import {Divider, Row, Col, Layout, Typography, Card, Avatar, Rate} from 'antd';
+import {Divider, Row, Col, Layout, Typography, Card, Avatar, Rate, Skeleton} from 'antd';
 import {SettingOutlined, ShoppingOutlined} from '@ant-design/icons';
 import {useCategories} from "../data/useCategories";
 import {useCategories2} from "../data/useCategories2";
 import Routes from "../constants/routes";
+import CategoryList from '../components/CategoryList';
 import {Link} from "react-router-dom";
-
+import logoVertical from "../images/logoVertical.png";
+import Category1Products from "../components/Category1Products";
+import Category2Products from "../components/Category2Products";
+const { Text, Title } = Typography;
+const Header = Layout.Header;
+const {  Content } = Layout;
 const CategoriesPage = () => {
 
     const { categories, isLoading, isError } = useCategories();
@@ -19,73 +25,59 @@ const CategoriesPage = () => {
         <>
 
             <Row type='flex' justify='center' className='header-wrapper' style={{position:"relative"}}>
+                <Col span={24}>
+                    <Header className='headerPage'>
+                        <Row type='flex' justify='space-between' align='bottom'>
+
+
+                            <Col span={7} align='left' className='main-menu'>
+
+
+                            </Col>
+                            <Col span={10} align='center'>
+                                <a href={Routes.HOME}>
+                                    <h1 className="title2">Categorias</h1>
+                                </a>
+                            </Col>
 
 
 
-                            <h1 className="titlePageInfo">
-                                Página Categorías
-                            </h1>
+                            <Col span={1}>
 
-                    </Row>
+                            </Col>
+                            <Col span={3}>
+                                <nav>
+                                    <ul>
+                                        <li><a href="#"> <i className="down"></i></a>
 
-            <Row>
-                { categories !== undefined
-                    ?
-                    categories.map((categories, i) => (
-                        <Col xs={24} sm={18} md={24} style={{marginBottom: 20}} key={i}>
-                            {categories.id
-                                ? <Card hoverable
-                                        style={{borderRadius: 10}}>
-                                    <Row>
-                                        <Col span={24}>
-                                            {categories.name}
-                                            <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-                                                {  categories2 !== undefined
-                                                    ?
-                                                    categories2.map((categories2, i) => {
-                                                        if(categories2.category1_id === categories.id) {
-                                                            return (
-                                                                <Col span={6} style={{marginBottom: 20}}
-                                                                     key={i}>
-                                                                    {categories2.id
-                                                                        ? <Card hoverable
-                                                                                style={{borderRadius: 10}}>
-                                                                            <Row>
-                                                                                <Col className="gutter-row" span={6}>
-                                                                                    <Link to={ Routes.CATEGORY.replace( ':id', categories2.id ) }>{categories2.name}</Link>
-                                                                                </Col>
-                                                                            </Row>
+                                            <ul style={{textAlign:"center"}}>
+                                                <li><a href={Routes.CATEGORIESPAGE }>Categorias</a></li>
+                                                <li><a href={Routes.ARTISTS }>Artistas</a></li>
+                                                <li><a href="#">Comprar</a></li>
+                                                <li><a href="#">Vender</a></li>
+                                            </ul>
+                                        </li>
 
-                                                                        </Card>
-                                                                        : <div style={{textAlign: 'center'}}>
-                                                                            <Card title='' extra='' cover='' loading/>
-                                                                        </div>
-                                                                    }
-                                                                </Col>
-                                                            )
-                                                        }
-                                                    })
-                                                    :<div style={{textAlign: 'center'}}>
-                                                        <Card title='' extra='' cover='' loading/>
-                                                    </div>
-                                                }
+                                    </ul>
+                                </nav>
+                            </Col>
+                            <Col span={3}>
+                                <img src={logoVertical} className='logoPages'/>
+                            </Col>
 
-                                            </Row>
-                                        </Col>
-                                    </Row>
 
-                                </Card>
-                                : <div style={{textAlign: 'center'}}>
-                                    <Card title='' extra='' cover='' loading/>
-                                </div>
-                            }
-                        </Col>
-                    )) : <div style={{textAlign: 'center'}}>
-                        <Card title='' extra='' cover='' loading/>
-                    </div>
 
-                }
-        </Row>
+                        </Row>
+
+                    </Header>
+
+                </Col>
+
+            </Row>
+
+            <CategoryList/>
+
+
             </>
     );
 };

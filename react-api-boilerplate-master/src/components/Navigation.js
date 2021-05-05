@@ -59,8 +59,8 @@ const Navigation = ( props ) => {
 
 
 
-            <SubMenu  key={ Routes.CATEGORIESPAGE } style={ linkStyle } className='scale-up-bottom' title="Categorías">
-                <Link to={ Routes.CATEGORY1 }/>
+            <SubMenu  key={ Routes.CATEGORIESPAGE } style={ linkStyle } className='scale-up-bottom' title="Categorías"
+            >
                 <Menu.ItemGroup className='sub-menu'>
                         {
                         categories && categories.map( ( category, index ) =>

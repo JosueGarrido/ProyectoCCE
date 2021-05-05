@@ -30,7 +30,7 @@ const HomePage = () => {
                       </Col>
                       <Col span={10}>
                           <div><br/><br/><br/>
-                              <h1  className="title">
+                              <h1  className="title2">
                                   EXPLICACIÓN
                               </h1>
 
@@ -61,42 +61,42 @@ const HomePage = () => {
                               <h1 className="btnCategories"><span className="btnCategories-text">Artes Musicales</span>
                               </h1>
                           </a>*/}
-                          <a href={Routes.HOME}>
+                          <a href={Routes.CATEGORY1.replace( ':id', 3 )}>
                               <label  className="image-categories imageMusicales"></label>
                               <h1 className="btnCategories"><span className="btn-General">Artes Musicales</span>
                               </h1>
                           </a>
                       </Col>
                       <Col span={4} align='center'>
-                          <a href={Routes.HOME}>
+                          <a href={Routes.CATEGORY1.replace( ':id', 2 )}>
                               <label  className="image-categories imageLiterarias"></label>
                               <h1 className="btnCategories"><span className="btn-General">Artes Literarias</span>
                               </h1>
                           </a>
                       </Col>
                       <Col span={4} align='center'>
-                          <a href={Routes.HOME}>
+                          <a href={Routes.CATEGORY1.replace( ':id', 4 )}>
                               <label  className="image-categories imageEscenicas" ></label>
                               <h1 className="btnCategories"><span className="btn-General">Artes Escénicas</span>
                               </h1>
                           </a>
                       </Col>
                       <Col span={4} align='center'>
-                          <a href={Routes.HOME}>
+                          <a href={Routes.CATEGORY1.replace( ':id', 1 )}>
                               <label  className="image-categories imagesPlasticas"></label>
                               <h1 className="btnCategories"><span className="btn-General">Artes Plásticas</span>
                               </h1>
                           </a>
                       </Col>
                       <Col span={4} align='center'>
-                          <a href={Routes.HOME}>
+                          <a href={Routes.CATEGORY1.replace( ':id', 5 )}>
                               <label  className="image-categories imagesVisuales"></label>
                               <h1 className="btnCategories"><span className="btn-General">Artes Visuales</span>
                               </h1>
                           </a>
                       </Col>
                       <Col span={4} align='center'>
-                          <a href={Routes.HOME}>
+                          <a href={Routes.CATEGORY1.replace( ':id', 6 )}>
                               <label  className="image-categories imageArtesanias"></label>
                               <h1 className="btnCategories"><span className="btn-General">Artes Artesanías</span>
                               </h1>

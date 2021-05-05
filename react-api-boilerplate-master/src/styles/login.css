@@ -74,6 +74,7 @@ nav ul ul li {
     float: none;
     display: list-item;
     position: relative;
+    z-index: 1;
 }
 
 /* Second, Third and more Tiers	*/
@@ -92,6 +93,7 @@ i {
 .down {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
+    z-index: 1;
 }
 
 .boton-login-entrar {

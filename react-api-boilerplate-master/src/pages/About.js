@@ -91,7 +91,7 @@ const AboutPage = props => {
                             </Col>
 
                             <Col span={9}><br/><br/><br/><br/><br/><br/>
-                                <p className="text">
+                                <p className="text3">
                                     Wasi Wallpay es una plataforma online que incentiva y fomenta el e-commerce de productos culturales a nivel artístico y artesanal dentro de Ecuador. Según cifras oficiales del año 2019, la “economía naranja” de nuestro país apenas alcanza el 1,93% del PIB. Esta es una de las razones, entre otras, que justifican la necesidad a escala nacional de fortalecer el consumo de este tipo de productos.
                                     En este contexto, la Casa de la Cultura Ecuatoriana Benjamín Carrión apela también al crecimiento de las industrias creativas al considerarse, según la Ley Orgánica de Cultura, como un espacio de encuentro común, de convivencia y de ejercicio de los derechos culturales en diversidad cultural, artística, memoria social e interculturalidad, que procura la circulación, promoción y difusión de las obras de los creadores, gestores y colectivos culturales en diferentes artes, letras y expresiones de la cultura en su Sede Nacional ubicada en Quito y en sus 24 núcleos provinciales.
                                 </p>
