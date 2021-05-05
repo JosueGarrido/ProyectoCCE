@@ -42,7 +42,7 @@ class Product extends Model
     }
     public function question()
     {
-        return $this->hasMany('App\Questions');
+        return $this->hasMany('App\Questions', 'product_id');
     }
     public function sale()
     {

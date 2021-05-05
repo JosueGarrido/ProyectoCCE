@@ -135,9 +135,9 @@ Route::group(['middleware' => ['cors']], function () {
         Route::delete('trajectories/{id}', 'TrajectoryController@delete');
 
         //questions
-        Route::get('questions', 'QuestionsController@index');
+        Route::get('products/{product}/questions', 'QuestionsController@index');
         Route::get('questions/{id}', 'QuestionsController@show');
-        Route::post('questions', 'QuestionsController@store');
+        Route::post('products/{product}/questions', 'QuestionsController@store');
         Route::put('questions/{id}', 'QuestionsController@update');
         Route::delete('questions/{id}', 'QuestionsController@delete');
 

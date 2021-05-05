@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import CommentsList from '../components/CommentsList';
 import ShowError from '../components/ShowError';
 import {Link, useParams} from 'react-router-dom';
@@ -14,6 +14,10 @@ import Routes from "../constants/routes";
 import letraVender from "../images/ImgPages/vender-letras.png";
 import logoVertical from "../images/logoVertical.png";
 import '../styles/product.css';
+import { useQuestionComments } from '../data/useQuestionComments';
+import QuestionsList from "../components/QuestionsList";
+import NewComment from "../components/NewComment";
+import QuestionList from "../components/QuestionsList";
 
 const {TabPane} = Tabs;
 const {Text, Title} = Typography;
@@ -28,9 +32,16 @@ const Product = () => {
     let {id} = useParams();
     const product = useProduct(id);
     const category = useCategories(id);
-    const products = useProductsList(id);
+    const user = useUser( id );
+    const {products} = useProductsList(id);
+    const {questions} = useQuestionComments(id);
+    const { users } = useUserList();
+    const [ visible, setVisible ] = useState( 2 );
 
 
+    const handleloadmore = () => {
+        setVisible(visible+3);
+    }
     return (
         <>
             {
@@ -242,7 +253,83 @@ const Product = () => {
                 </Row>
             }
 
+            {
+                questions === undefined
+                    ? <Text>No cargan los datos</Text>
+                    :
+                    <Row gutter={30}>
+                        <Col align='center' md={6}>
+                            <Title level={3}>Preguntas: </Title>
+                        </Col>
+                        <Col md={18}>
+                            <Col md={24}>
+                                {
+                                    questions.isLoading
+                                        ? <Skeleton loading={questions.isLoading} active avatar/>
+                                        : questions.isError
+                                        ? <ShowError error={questions.isError}/>
+                                        : user.user && <QuestionsList productId={id} questions={questions}/>
+                                }
+                            </Col>
+                            <br/>
+                            {
+                                questions.slice(0, visible).map((questions, i) => (
+                                    <Col xs={24} sm={18} md={24} style={{marginBottom: 20}} key={i}>
+                                        {questions.question
+                                            ? <Card hoverable
+                                                    style={{borderRadius: 10}}>
+                                                <Row>
+                                                    <Col span={14}>
+                                                        {
+                                                          /*  users === undefined
+                                                                ? <Text>No cargan los datos</Text>
+                                                                :
+                                                                <Meta
+                                                                    avatar={<Avatar
+                                                                        size={100}
+                                                                        alt={users[questions.user_id - 1].name}
+                                                                        src={`http://localhost:8000/storage/${users[questions.user_id - 1].profile_picture}`}
+                                                                    />}
 
+
+                                                                    title={`Nombre del Comprador: ${users[questions.user_id - 1].name} ${users[questions.user_id - 1].last_name}`}
+                                                                    description={`Pregunta: ${questions.question}`}
+                                                                />*/
+                                                        }
+                                                    </Col>
+
+                                                </Row>
+
+                                            </Card>
+                                            : <div style={{textAlign: 'center'}}>
+                                                <Card title='' extra='' cover='' loading/>
+                                            </div>
+                                        }
+                                    </Col>
+                                ))
+                            }
+
+                            {
+
+                                visible < questions.length
+                                    ?
+                                    <Col span={22}>
+                                        <hr/>
+                                        <div style={{textAlign: 'center'}}>
+                                            <Button
+                                                type={'primary'} onClick={handleloadmore}>
+                                                Ver más
+                                            </Button>
+                                        </div>
+                                    </Col>
+                                    : <>
+                                    </>
+                            }
+                            <br/>
+                        </Col>
+
+                    </Row>
+            }
         </>
     );
 
