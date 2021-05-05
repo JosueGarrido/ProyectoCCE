@@ -20,7 +20,7 @@ class CategoryLevel3Controller extends Controller
     public function index()
     {
         //$this->authorize('viewAny', CategoryLevel3::class);
-        return new CategoryLevel3Collection(CategoryLevel3::paginate (25));
+        return new CategoryLevel3Collection(CategoryLevel3::paginate (200));
     }
     public function show(CategoryLevel3 $id)
     {

@@ -68,7 +68,7 @@ const ArtistsList = ( props ) => {
                                             <Text type='primary' className="subtitle">
                                                     <b>{ users.name }</b>
                                             </Text>
-                                            <br/>
+                                                <br/>
                                             <Text type='secondary'>Creado desde: { users.created_at }</Text>
 
 

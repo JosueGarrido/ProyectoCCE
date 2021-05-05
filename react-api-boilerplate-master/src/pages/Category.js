@@ -11,17 +11,29 @@ import CategoryFilter from "../components/CategoryFilter";
 import letraComprar from '../images/ImgPages/comprar-letras.png';
 import logoVertical from "../images/logoVertical.png";
 
+<<<<<<< HEAD
 const Header = Layout.Header;
+=======
+
+>>>>>>> d3070b7f1d344fcb4547e65a36febc662496b33d
 const { Text, Title } = Typography;
 const {Meta} = Card;
 const {  Content, Sider } = Layout;
 
 
+
 const Category = (props) => {
     let { id } = useParams();
     const category2 = useCat2Products( id );
+    const [Cat3,setCat3]= useState('');
+
 
     console.log('category2', category2.cat2);
+
+    const handleCat3 = (cat3) => {
+        console.log('valorcat3', cat3);
+        setCat3(cat3);
+    }
 
     return (
         <>
@@ -76,7 +88,7 @@ const Category = (props) => {
 
             </Row>
             <Row>
-                <CategoryFilter/>
+                <CategoryFilter handleCat3={handleCat3}/>
 
                 <Col span={ 18 } style={{position: "relative" }}>
 
@@ -85,7 +97,7 @@ const Category = (props) => {
 
                             <Title style={ { marginTop:15, textAlign: 'center' } }>Productos</Title>
 
-                            <Category2Products/>
+                            <Category2Products cat3={Cat3}/>
 
                         </div>
                     </Content>

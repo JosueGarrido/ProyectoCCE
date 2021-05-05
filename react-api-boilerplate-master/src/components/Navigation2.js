@@ -90,9 +90,9 @@ const Navigation2 = ( props ) => {
                         </Menu.ItemGroup>
 
                     </Menu.SubMenu>
-                    :<>
+                        :<>
                     <Menu.Item key={ Routes.ABOUT } className='scale-up-bottom'>
-                        <Link to={ Routes.LOGIN_CLIENT } style={linkStyle}>
+                        <Link to={ Routes.HOW_TO_BUY } style={linkStyle}>
                             Comprar
                         </Link>
                     </Menu.Item>

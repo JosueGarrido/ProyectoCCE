@@ -15,7 +15,6 @@ import letracomprar from '../images/ImgPages/comprar-letras.png';
 import logoVertical from "../images/logoVertical.png";
 import HowSale from "../images/home_images/explicacion.png";
 import '../styles/loginclient.css';
-import letraComprar from "../images/ImgPages/comprar-letras.png";
 const Header = Layout.Header;
 const {Content, Sider} = Layout;
 const LoginClient = () => {
@@ -79,9 +78,7 @@ const LoginClient = () => {
                             </nav>
                         </Col>
                         <Col span={3}>
-                            <a href={Routes.HOME}>
-                                <img src={logoVertical} className='logoPages'/>
-                            </a>
+                            <img src={logoVertical} className='logoPages'/>
                         </Col>
                     </Row>
 
@@ -193,13 +190,13 @@ const LoginClient = () => {
             </div>
 
             <div >
-            <div id="uno" className="carta">
-                <img className={"borde-imagen"}
-                     height={720}
-                     width={500}
-                     src='https://sergimateo.com/wp-content/2012/11/portadas-twitter-1.jpg'
-                />
-            </div>
+                <div id="uno" className="carta">
+                    <img className={"borde-imagen"}
+                         height={720}
+                         width={500}
+                         src='https://sergimateo.com/wp-content/2012/11/portadas-twitter-1.jpg'
+                    />
+                </div>
 
                 <Row>
                     <Col span={10} align={'center'}>
@@ -246,7 +243,7 @@ const LoginClient = () => {
                             luego espera la confirmación enviada a tu correo electrónico.
                         </p>
                         <Form.Item>
-                        <Link className={"boton-login-registro"} to={Routes.REGISTER_CLIENT}>REGISTRARSE </Link>
+                            <Link className={"boton-login-registro"} to={Routes.REGISTER_CLIENT}>REGISTRARSE </Link>
                         </Form.Item>
                     </Col>
 

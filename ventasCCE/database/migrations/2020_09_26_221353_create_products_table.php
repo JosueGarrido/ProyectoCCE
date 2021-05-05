@@ -21,7 +21,6 @@ class CreateProductsTable extends Migration
             $table->integer('stock');
             $table->integer('sales')->nullable();
             $table->string('image');
-            $table->string('location',50);
             $table->timestamps();
         });
     }

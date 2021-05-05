@@ -7,10 +7,15 @@ import {FacebookOutlined, InstagramFilled, TwitterOutlined, UserAddOutlined,Fork
 import Routes from "../constants/routes";
 import {useCat1Products} from "../data/useCat1Products";
 import Category1Products from "../components/Category1Products";
+<<<<<<< HEAD
 import CategoryFilter from "../components/CategoryFilter";
 import letraComprar from "../images/ImgPages/comprar-letras.png";
 import logoVertical from "../images/logoVertical.png";
 import {useCategories} from "../data/useCategories";
+=======
+import Category1Filter from "../components/Category1Filter";
+
+>>>>>>> d3070b7f1d344fcb4547e65a36febc662496b33d
 const { Text, Title } = Typography;
 const {Meta} = Card;
 const {  Content } = Layout;
@@ -76,7 +81,9 @@ const Category1 = (props) => {
 
             </Row>
             <Row>
-                <CategoryFilter/>
+                <Col span={ 6 }>
+                <Category1Filter/>
+                </Col>
 
                 <Col span={ 18 } >
 
