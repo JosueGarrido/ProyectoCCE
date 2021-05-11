@@ -128,7 +128,7 @@ const MainLayout = props => {
                   textAlign:'right',
                 } }  className='questions'>¿Quiénes Somos? </Link>
                 <br/>
-                <Link to={ Routes.ABOUT }  style={ {
+                <Link to={ Routes.TERMS }  style={ {
                   marginLeft: 70,
                   marginRight: 10,
                   textDecoration: 'none',

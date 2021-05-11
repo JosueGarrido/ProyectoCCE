@@ -4,7 +4,7 @@ import Routes from '../constants/routes';
 import { Link } from 'react-router-dom';
 import { useUserList } from '../data/useUserList';
 import ShowError from './ShowError';
-
+import penguin from '../images/others/penguin.svg';
 const { Text } = Typography;
 
 const ArtistsList = ( props ) => {
@@ -51,23 +51,30 @@ const ArtistsList = ( props ) => {
                         artist.map( ( users, i ) => (
                             <Col xs={ 24 } sm={ 12 } md={ 8 } style={ { marginBottom: 30 } } key={ i }>
                                 { users.name
-                                    ? <Card
-                                        title={ users.name }
-                                        extra={ <Link to={ Routes.ARTIST.replace( ':id', users.id ) }>Más</Link> }
-                                        cover={
-                                            <Avatar
-                                                size={100}
-                                                alt={ users.name }
-                                                src={ `http://localhost:8000/storage/${ users.profile_picture }` }
-                                            /> }
-                                    >
-                                        <Text type='secondary'>Creado desde: { users.created_at }</Text>
-                                        <br/>
-                                        <Text type='secondary'>
-                                            <Link to={ Routes.ARTIST.replace( ':id', users.id ) }>
-                                                { users.name }</Link>
-                                        </Text>
-                                    </Card>
+                                    ?<a href={Routes.ARTIST.replace( ':id', users.id )}>
+                                        <Card
+                                            hoverable
+                                            style={{textAlign:"center"}}
+                                        >
+                                            <div>
+                                                <Avatar
+                                                    size={100}
+                                                    alt={ users.name }
+                                                    src={penguin}
+                                                    style={{textAlign:"center"}}
+                                                />
+                                            </div>
+                                            <br/>
+                                            <Text type='primary' className="subtitle">
+                                                    <b>{ users.name }</b>
+                                            </Text>
+                                                <br/>
+                                            <Text type='secondary'>Creado desde: { users.created_at }</Text>
+
+
+                                        </Card>
+                                    </a>
+
                                     : <div style={ { textAlign: 'center' } }>
                                         <Skeleton.Image style={ { width: 200 } } />
                                         <Card title='' extra='' cover='' loading />

@@ -29,47 +29,53 @@ const Category2Products = (props) => {
                     ? <ShowError error={ category2.isError } />
                     : <Row justify='center' gutter={ 30 }>
                         {
-                            category2.cat2.map( ( product, i ) => (
-                                <Col xs={ 24 } sm={ 18 } md={ 24 } style={ { marginBottom: 10 } } key={ i }>
-                                    { product.name
-                                        ? <Card
-                                            title={ product.name }
-                                            extra={ <Link to={ Routes.PRODUCT.replace( ':id', product.id ) }>Más</Link> }
-                                            style={{
-                                                width: 1000,
-                                                marginRight: 20,
-                                                marginBottom: 30,
-                                                background: '#fffff'
+                            category2.cat2.map((product, i) => {
+                                if (category2.cat2.category_id3 === props.cat3) {
+                                    return (
+                                        <Col xs={24} sm={18} md={24} style={{marginBottom: 10}} key={i}>
+                                            {product.name
+                                                ? <Card
+                                                    title={product.name}
+                                                    extra={<Link
+                                                        to={Routes.PRODUCT.replace(':id', product.id)}>Más</Link>}
+                                                    style={{
+                                                        width: 1000,
+                                                        marginRight: 20,
+                                                        marginBottom: 30,
+                                                        background: '#fffff'
 
-                                            }}
-                                        >
-                                            <Row >
-                                                <Col span={14}>
-                                                    <Meta
-                                                        avatar={<Avatar size={150} src={ `http://localhost:8000/storage/${ product.image }` }/>}
-                                                        title={`Autor: ${product.name}`}
-                                                        description={`Descripción: ${product.description}
+                                                    }}
+                                                >
+                                                    <Row>
+                                                        <Col span={14}>
+                                                            <Meta
+                                                                avatar={<Avatar size={150}
+                                                                                src={`http://localhost:8000/storage/${product.image}`}/>}
+                                                                title={`Autor: ${product.name}`}
+                                                                description={`Descripción: ${product.description}
                                             `}
 
-                                                    />
-                                                </Col>
+                                                            />
+                                                        </Col>
 
-                                                <Col span={8} align='center'>
-                                                    <p>user_id: {product.user_id}</p>
-                                                    <p>Precio: ${product.price} </p>
-                                                    <p>Stock: {product.stock} </p>
-                                                    <p>Venta: {product.sales} </p>
-                                                    <p>Ubicación: {product.location} </p>
+                                                        <Col span={8} align='center'>
+                                                            <p>user_id: {product.user_id}</p>
+                                                            <p>Precio: ${product.price} </p>
+                                                            <p>Stock: {product.stock} </p>
+                                                            <p>Venta: {product.sales} </p>
+                                                            <p>Ubicación: {product.location} </p>
 
-                                                </Col>
-                                            </Row>
-                                        </Card>
-                                        : <div style={ { textAlign: 'center' } }>
-                                            <Card title='' extra='' cover='' loading />
-                                        </div>
-                                    }
-                                </Col>
-                            ) )
+                                                        </Col>
+                                                    </Row>
+                                                </Card>
+                                                : <div style={{textAlign: 'center'}}>
+                                                    <Card title='' extra='' cover='' loading/>
+                                                </div>
+                                            }
+                                        </Col>
+                                    )
+                                }
+                            })
                         }
 
                     </Row>

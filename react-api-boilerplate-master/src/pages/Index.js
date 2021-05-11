@@ -30,7 +30,7 @@ const HomePage = () => {
                       </Col>
                       <Col span={10}>
                           <div><br/><br/><br/>
-                              <h1  className="title">
+                              <h1  className="title2">
                                   EXPLICACIÓN
                               </h1>
 

@@ -1,10 +1,13 @@
 import React from 'react';
 import ClientMenuDashboard from "../components/ClientMenuDashboard";
 import {Divider, Row, Col, Layout, Typography, } from 'antd';
-import {LoadingOutlined, LogoutOutlined, SettingOutlined, ShoppingOutlined} from '@ant-design/icons';
+import {MenuUnfoldOutlined} from '@ant-design/icons';
 import {useAuth} from "../providers/Auth";
 import Routes from "../constants/routes";
-
+import letraComprar from "../images/ImgPages/comprar-letras.png";
+import "../styles/clientResumeDash.css"
+import logoVertical from "../images/logoVertical.png";
+const Header = Layout.Header;
 const { Title, Link } = Typography;
 const {  Content, Sider } = Layout;
 
@@ -16,6 +19,56 @@ const ClientResumeDashboard = () => {
 
     return (
         <>
+            <Row type='flex' justify='center' className='header-wrapper' style={{position:"relative"}}>
+                <Col span={24}>
+                    <Header className='headerPage'>
+                        <Row type='flex' justify='space-between' align='bottom'>
+
+
+                            <Col span={7} align='left' className='main-menu'>
+
+
+                            </Col>
+                            <Col span={10} align='center'>
+                                <a href={Routes.HOME}>
+                                    <img className='logoPages' src={letraComprar}/>
+                                </a>
+                            </Col>
+
+
+
+                            <Col span={1}>
+
+                            </Col>
+                            <Col span={3}>
+                                <nav>
+                                    <ul>
+                                        <li><a href="#"> <i className="down"></i></a>
+
+                                            <ul style={{textAlign: "center"}}>
+                                                <li><a href="#">Categorias</a></li>
+                                                <li><a href="#">Artistas</a></li>
+                                                <li><a href="#">Comprar</a></li>
+                                                <li><a href="#">Vender</a></li>
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+                                </nav>
+                            </Col>
+                            <Col span={3}>
+                                <img src={logoVertical} className='logoPages'/>
+                            </Col>
+
+
+
+                        </Row>
+
+                    </Header>
+
+                </Col>
+
+            </Row>
             <Row>
                 <ClientMenuDashboard/>
 
