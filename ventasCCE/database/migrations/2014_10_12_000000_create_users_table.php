@@ -23,9 +23,8 @@ class CreateUsersTable extends Migration
             $table->string('identity')->unique();
             $table->dateTime('birthday');
             $table->integer('phone');
-            $table->string('profile_picture')->nullable();
+            $table->string('profile_picture');
             $table->string('location');
-            $table->string('live')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
