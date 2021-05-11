@@ -136,7 +136,7 @@ import { Link } from 'react-router-dom';
 
 const { TextArea } = Input;
 
-const QuestionList = ( { questions, productId} ) => {
+const QuestionsList = ( { questions, productId} ) => {
 
     console.log( 'props', questions );
     const [ submitting, setSubmitting ] = useState( false );
@@ -172,7 +172,7 @@ const QuestionList = ( { questions, productId} ) => {
                     <Col span={22}>
                         <Form
                             form={ form }
-                            name='form_comment'
+                            name='form_question'
                             onFinish={ handleSubmit }>
                             <Form.Item name='question'
                                        rules={ [
@@ -204,5 +204,5 @@ const QuestionList = ( { questions, productId} ) => {
     )
 };
 
-export default QuestionList;
+export default QuestionsList;
 
