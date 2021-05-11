@@ -19,7 +19,230 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e60e72b3-ccd3-470c-9dfd-6bed47741995" name="Default Changelist" comment="" />
+    <list default="true" id="e60e72b3-ccd3-470c-9dfd-6bed47741995" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ventasCCE/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/.styleci.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Answers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Artist.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/AudioVideoFormat.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/CategoryLevel1.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/CategoryLevel2.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/CategoryLevel3.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/CategoryLevel4.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Client.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Console/Kernel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Cultural_Projects.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Exceptions/Handler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Follower.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/AnswersController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/AudioVideoFormatController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/Auth/ConfirmPasswordController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/Auth/ForgotPasswordController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/Auth/ResetPasswordController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/Auth/VerificationController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/CategoryLevel1Controller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/CategoryLevel2Controller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/CategoryLevel3Controller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/CategoryLevel4Controller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/Cultural_ProjectsController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/PhotoFormatController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/QuestionsController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/RecognitionController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/ReputationController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/SaleController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/TrajectoryController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Controllers/Web_LinksController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Kernel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Middleware/Authenticate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Middleware/CheckForMaintenanceMode.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Middleware/Cors.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Middleware/EncryptCookies.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Middleware/JwtMiddleware.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Middleware/TrimStrings.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Middleware/TrustProxies.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/Answers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/AnswersCollection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/AudioVideoFormat.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/AudioVideoFormatCollection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/CategoryLevel1.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/CategoryLevel1Collection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/CategoryLevel2.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/CategoryLevel2Collection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/CategoryLevel3.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/CategoryLevel3Collection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/CategoryLevel4.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/CategoryLevel4Collection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/Cultural_Project.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/Cultural_ProjectCollection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/Follower.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/PhotoFormat.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/PhotoFormatCollection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/Product.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/ProductCollection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/Questions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/QuestionsCollection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/Recognition.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/RecognitionCollection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/Reputation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/ReputationCollection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/Sale.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/SaleCollection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/Trajectory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/TrajectoryCollection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/UserCollection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/Web_Link.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Http/Resources/Web_LinkCollection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/PhotoFormat.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/AudioVideoFormatPolicy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/CategoryLevel1Policy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/CategoryLevel2Policy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/CategoryLevel3Policy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/CategoryLevel4Policy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/Cultural_ProjectsPolicy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/PhotoFormatPolicy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/ProductPolicy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/RecognitionPolicy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/SalePolicy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/UserPolicy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Policies/Web_LinksPolicy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Product.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Providers/BroadcastServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Providers/EventServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Questions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Recognition.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Reputation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Sale.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Trajectory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/app/Web_Links.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/artisan" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/bootstrap/app.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/bootstrap/cache/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/composer.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/config/app.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/config/auth.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/config/broadcasting.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/config/cache.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/config/database.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/config/filesystems.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/config/hashing.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/config/jwt.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/config/logging.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/config/mail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/config/queue.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/config/services.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/config/session.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/config/view.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/factories/UserFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_09_26_173929_create_cultural__projects_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_09_26_175207_create_web__links_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_09_26_175407_create_recognitions_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_09_26_181752_create_sales_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_09_26_215241_create_category_level1s_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_09_26_215837_create_category_level2s_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_09_26_220053_create_category_level3s_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_09_26_220147_create_category_level4s_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_09_26_220459_create_audio_video_formats_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_09_26_221256_create_photo_formats_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_09_26_221353_create_products_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_11_09_160125_add_user_id_column_recognition.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_11_09_161852_add_user_id_column_web_links.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_11_09_162223_add_user_id_column_cultural_projects.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_11_09_162239_add_user_id_column_sale.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_11_09_162304_add_user_id_column_product.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_11_09_164246_add_category_id_column_product.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_11_09_173529_add_category_id_column_audiovideoformat.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_11_09_173614_add_category_id_column_photoformat.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_11_09_173643_add_category_id_column_category_level_2.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_11_09_173713_add_category2_id_column_category_level_3.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_11_09_173726_add_category3_id_column_category_level_4.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_11_11_004507_add_role_column_user.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_11_18_210347_create_trajectories_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_12_11_194547_add_user_id_column_trajectories.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_12_11_201554_create_questions_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_12_12_011748_create_answers_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_12_12_011833_create_reputations_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_12_14_123204_add_userable_columns_users.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_12_14_132730_create_artists_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2020_12_14_132824_create_clients_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/migrations/2021_01_28_160810_create_followers_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/seeds/AnswersTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/seeds/Audio_Video_FormatsTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/seeds/Category1TableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/seeds/Category2TableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/seeds/Category3TableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/seeds/Category4TableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/seeds/CulturalProyectsTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/seeds/Photo_FormatsTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/seeds/ProductTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/seeds/QuestionsTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/seeds/RecognitionsTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/seeds/ReputationTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/seeds/SalesTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/seeds/TrayectoryTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/seeds/UsersTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/database/seeds/WebLinksTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/phpunit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/public/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/public/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/public/web.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/resources/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/resources/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/resources/lang/en/auth.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/resources/lang/en/pagination.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/resources/lang/en/passwords.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/resources/lang/en/validation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/resources/sass/app.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/resources/views/welcome.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/routes/api.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/routes/channels.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/routes/console.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/routes/web.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/server.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/storage/app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/storage/app/public/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/storage/framework/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/storage/framework/cache/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/storage/framework/cache/data/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/storage/framework/sessions/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/storage/framework/testing/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/storage/framework/views/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/storage/logs/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/tests/CreatesApplication.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/tests/Feature/ExampleTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/tests/TestCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/tests/Unit/ExampleTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ventasCCE/webpack.mix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ProyectoCCE.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ProyectoCCE.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-api-boilerplate-master/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/react-api-boilerplate-master/package-lock.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,7 +253,7 @@
     <execution />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/ventasCCE" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/ventasCCE/app/Policies/Web_LinksPolicy.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
@@ -42,42 +265,33 @@
       <path value="$PROJECT_DIR$/ventasCCE/vendor/sebastian/version" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/sebastian/object-reflector" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/sebastian/comparator" />
-      <path value="$PROJECT_DIR$/ventasCCE/vendor/sebastian/environment" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/sebastian/object-enumerator" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/sebastian/exporter" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/sebastian/diff" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/sebastian/global-state" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/sebastian/recursion-context" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/sebastian/resource-operations" />
-      <path value="$PROJECT_DIR$/ventasCCE/vendor/scrivo/highlight.php" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/phpoption/phpoption" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/monolog/monolog" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/paragonie/random_compat" />
-      <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/polyfill-intl-normalizer" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/var-dumper" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/console" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/fideloper/proxy" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/debug" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/polyfill-php70" />
-      <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/event-dispatcher-contracts" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/polyfill-php56" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/http-kernel" />
-      <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/polyfill-intl-idn" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/namshi/jose" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/polyfill-php72" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/error-handler" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/polyfill-util" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/finder" />
-      <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/mime" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/service-contracts" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/polyfill-ctype" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/css-selector" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/event-dispatcher" />
-      <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/routing" />
-      <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/http-client-contracts" />
-      <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/http-foundation" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/process" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/hamcrest/hamcrest-php" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/ramsey/uuid" />
@@ -92,7 +306,6 @@
       <path value="$PROJECT_DIR$/ventasCCE/vendor/swiftmailer/swiftmailer" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/laravel/tinker" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/phar-io/manifest" />
-      <path value="$PROJECT_DIR$/ventasCCE/vendor/phar-io/version" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/league/flysystem" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/league/commonmark" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/nunomaduro/collision" />
@@ -112,14 +325,11 @@
       <path value="$PROJECT_DIR$/ventasCCE/vendor/nikic/php-parser" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/webmozart/assert" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/theseer/tokenizer" />
-      <path value="$PROJECT_DIR$/ventasCCE/vendor/egulias/email-validator" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/mockery/mockery" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/dragonmantank/cron-expression" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/dnoegel/php-xdg-base-dir" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/psr/log" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/psr/container" />
-      <path value="$PROJECT_DIR$/ventasCCE/vendor/psr/simple-cache" />
-      <path value="$PROJECT_DIR$/ventasCCE/vendor/tijsverkoyen/css-to-inline-styles" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/opis/closure" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/laravel/framework" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/phpspec/prophecy" />
@@ -131,8 +341,21 @@
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/polyfill-php80" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/translation" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/league/mime-type-detection" />
-      <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/polyfill-iconv" />
       <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/ventasCCE/vendor/scrivo/highlight.php" />
+      <path value="$PROJECT_DIR$/ventasCCE/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/ventasCCE/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/ventasCCE/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/ventasCCE/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/ventasCCE/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/ventasCCE/vendor/phar-io/version" />
     </include_path>
   </component>
   <component name="ProjectId" id="1k7f5Km5g7Y6gMbeADAEC8TLvRd" />
@@ -144,8 +367,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ventasCCE" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -158,6 +382,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ProyectoCCE\ventasCCE" />
       <recent name="C:\xampp\htdocs\ProyectoCCE\ProyectoCCE\ventasCCE" />
       <recent name="C:\xampp\htdocs\Proyecto CCE\ProyectoCCE\ventasCCE\app\Http\Controllers\Auth" />
       <recent name="C:\xampp\htdocs\Proyecto CCE\ProyectoCCE\ventasCCE" />
@@ -189,6 +414,9 @@
       <workItem from="1607912836906" duration="210000" />
       <workItem from="1607993841842" duration="405000" />
       <workItem from="1613612732466" duration="9000" />
+      <workItem from="1619724101253" duration="427000" />
+      <workItem from="1619724541932" duration="381000" />
+      <workItem from="1619725202528" duration="1472000" />
     </task>
     <servers />
   </component>
@@ -206,32 +434,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="446" y="31" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605754123868">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="446" y="31" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824/1920.70.1440.860@0.0.1536.824" timestamp="1605754123868" />
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605753636804">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/1920.70.1440.860@0.0.1536.824" timestamp="1605753636804" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1607993856982">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/1920.70.1440.860@0.0.1536.824" timestamp="1607993856982" />
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1607449217478" />
-    <state x="277" y="57" key="SettingsEditor" timestamp="1605754285896">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="277" y="57" key="SettingsEditor/0.0.1536.824/1920.70.1440.860@0.0.1536.824" timestamp="1605754285896" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1605069729686">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824/1920.70.1440.860@0.0.1536.824" timestamp="1605069729686" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1605754638501">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.70.1440.860@0.0.1536.824" timestamp="1605754638501" />
   </component>
 </project>

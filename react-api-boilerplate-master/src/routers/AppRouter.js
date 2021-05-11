@@ -70,7 +70,7 @@ const AsyncArticles = loadable( () => import( '../pages/Articles' ), loadableOpt
 const AsyncArticle = loadable( () => import( '../pages/Article' ), loadableOptions );
 const AsyncAbout = loadable( () => import( '../pages/About' ), loadableOptions );
 const AsyncLogout = loadable( () => import( '../pages/Logout' ), loadableOptions );
-const AsyncHowToBuy = loadable( () => import( '../pages/HowToBuy' ), loadableOptions );
+const AsyncHowToBuy = loadable( () => import( '../pages/LoginClient' ), loadableOptions );
 
 
 /**

@@ -20,7 +20,7 @@ class User extends Authenticatable  implements JWTSubject
 //agregar profile picture y birthday
     protected $fillable = [
 
-        'name','last_name', 'email', 'password','identity','birthday','phone','location','live'
+        'name','last_name', 'email', 'password','identity','birthday','phone','location'
 
     ];
     const ROLE_SUPERADMIN = 'ROLE_SUPERADMIN';
