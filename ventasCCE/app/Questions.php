@@ -23,7 +23,7 @@ class Questions extends Model
     }
     public function Product()
     {
-        return $this->belongsTo('App\Product');
+        return $this->belongsTo('App\Product', 'product_id');
     }
     public function answer()
     {

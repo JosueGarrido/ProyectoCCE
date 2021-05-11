@@ -17,7 +17,7 @@ class CategoryLevel2 extends JsonResource
         return [
             'id' => $this ->id,
             'name' => $this ->name,
-
+            'category1_id' => $this ->category1_id,
 
         ];
     }

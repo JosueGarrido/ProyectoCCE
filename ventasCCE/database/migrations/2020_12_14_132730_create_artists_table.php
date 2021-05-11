@@ -24,7 +24,13 @@ class CreateArtistsTable extends Migration
             $table->string('education_level');
             $table->string('career_name');
             $table->string('studies_institution');
-            $table->string('social_networks');
+            $table->string('live')->nullable();
+            $table->string('instagram',255);
+            $table->string('facebook',255);
+            $table->string('whatsapp',255);
+            $table->string('picture')->nullable();
+
+
         });
     }
 

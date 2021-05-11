@@ -29,6 +29,10 @@ class Product extends JsonResource
             'sales_data' => "/api/sales/",
             'location' => $this ->location,
             'user_id' => $this ->user_id,
+            'category_id' => $this ->category_id,
+            'category_id2' => $this ->category_id2,
+            'category_id3' => $this ->category_id3,
+            'category_id4' => $this ->category_id4,
             'created_at' => $this->created_at,
         ];
     }

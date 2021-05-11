@@ -1,22 +1,18 @@
 import React from 'react';
-import {Carousel, Row, Col, Input, Layout} from "antd";
+import {Carousel, Row, Col} from "antd";
 
 import '../styles/carousel.css';
 import img1 from  '../images/home_images/como-comprar.png';
 import img2 from  '../images/home_images/como-vender.png';
 import img3 from  '../images/home_images/como-funciona.png';
-import Routes from "../constants/routes";
-import {Link} from "react-router-dom";
+
 
 const contentStyle2 = {
     height: '471px',
-    color: '#000000',
+    color: '#ffffff',
     width: '100%'
 
 };
-
-
-
 
 function carousel2()  {
     const items = [
@@ -24,22 +20,22 @@ function carousel2()  {
             key: '1',
             title: '¿CÓMO COMPRAR?',
             content: '¡Comprar una obra de arte o artesanía hecha en Ecuador es muy sencillo con Wasi Wallpay! Crea tu cuenta personal de forma gratuita y contáctate con los creadores directamente. Acuerda el pago y la entrega del producto. ',
-            image: require("../images/home_images/como-comprar.png"),
-            page: '/como-comprar',
+            image: img1,
+            page: '/ingreso-cliente',
 
         },
         {
             key: '2',
             title: '¿CÓMO VENDER?',
             content: '¡Wasi Wallpay fomenta el comercio electrónico de obras de arte y artesanías hechas en Ecuador! Si eres un creador y deseas comercializar tus productos, regístrate como vendedor sin costo, ni comisiones, ni recargos. ',
-            image: require("../images/home_images/como-vender.png"),
-            page: '/como-vender',
+            image: img2,
+            page: '/ingreso',
         },
         {
             key: '3',
             title: '¿CÓMO FUNCIONA?',
             content: 'An vim odio ocurreret consetetur, justo constituto ex mea. Quidam facilisis vituperata pri ne. Id nostrud gubergren urbanitas sed, quo summo animal qualisque ut, cu nostro dissentias consectetuer mel. ',
-            image: require("../images/home_images/como-funciona.png"),
+            image: img3,
             page: '/como-comprar',
         },
     ]
@@ -75,7 +71,7 @@ function carousel2()  {
 
                                                         <div style={{textAlign:'center'}}>
                                                             <a href={`${item.page}`} >
-                                                                <button type="button" className="btn-verMas" > VER MÁS</button>
+                                                                <button type="button" className="btn-General" > VER MÁS</button>
                                                             </a>
 
                                                         </div><br/><br/><br/><br/>
@@ -92,7 +88,7 @@ function carousel2()  {
 
                                 );
                             })
-                                }
+                            }
                         </Carousel>
                     </div>
                 </div>

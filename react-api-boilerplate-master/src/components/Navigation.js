@@ -59,11 +59,14 @@ const Navigation = ( props ) => {
 
 
 
-            <SubMenu  key={ Routes.ABOUT } className='scale-up-bottom' style={ linkStyle } title="Categorías">
-                <Menu.ItemGroup className='sub-menu' >
+            <SubMenu  key={ Routes.CATEGORIESPAGE } style={ linkStyle } className='scale-up-bottom' title="Categorías"
+            >
+                <Menu.ItemGroup className='sub-menu'>
                         {
                         categories && categories.map( ( category, index ) =>
-                            <Menu.Item className='scale-up-bottom' value={ category.id } key={ index }>{` ${ category.name } `}</Menu.Item>
+                            <Menu.Item className='scale-up-bottom' value={ category.id } key={ index }>{` ${ category.name } `}
+                                <Link to={ Routes.CATEGORY1.replace( ':id', category.id ) }/>
+                            </Menu.Item>
                         )
                     }
                 </Menu.ItemGroup>
@@ -81,7 +84,6 @@ const Navigation = ( props ) => {
           isAuthenticated
             ? <Menu.SubMenu icon={ <UserOutlined /> } title={ currentUser && currentUser.name }>
 */}
-
       </>
   );
 };

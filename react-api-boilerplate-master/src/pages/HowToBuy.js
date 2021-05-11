@@ -9,7 +9,6 @@ import letraComprar from '../images/ImgPages/comprar-letras.png';
 import logoVertical from '../images/logoVertical.png';
 const { Title } = Typography;
 const {  Content, Sider } = Layout;
-
 const Header = Layout.Header;
 
 const HowToBuy = props => {
@@ -54,7 +53,9 @@ return(
                                 </nav>
                             </Col>
                             <Col span={3}>
-                                <img src={logoVertical} className='logoPages'/>
+                                <a href={Routes.HOME}>
+                                    <img src={logoVertical} className='logoPages'/>
+                                </a>
                             </Col>
 
 
@@ -67,6 +68,7 @@ return(
 
         </Row>
         <Content className="margin">
+
             <img src={HowBuy} className="imagesPageHB"/>
 
             <div className="imgPage">
