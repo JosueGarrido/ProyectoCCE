@@ -2,7 +2,25 @@
 import React, {useEffect, useState} from 'react';
 import Routes from '../constants/routes';
 import API from '../data/index';
-import {Slider, Upload, Switch, Button, Col, Form, Input, message, Row, Typography, Card, Select, DatePicker, Table, Modal, Space } from 'antd';
+import {
+    Slider,
+    Upload,
+    Switch,
+    Button,
+    Col,
+    Form,
+    Input,
+    message,
+    Row,
+    Typography,
+    Card,
+    Select,
+    DatePicker,
+    Table,
+    Modal,
+    Space,
+    Checkbox
+} from 'antd';
 import {
     LockOutlined,
     UserOutlined,
@@ -70,6 +88,8 @@ const Register = () => {
     const [city,setCity]= useState([]);
     const [currentCity,setCurrentCity]= useState('');
     const [town,setTown]= useState([]);
+
+    const [botonActivo, setBotonActivo] = useState(false);
 
     const formItemLayout = {
         labelCol: {
@@ -200,6 +220,11 @@ const Register = () => {
 
     function onCheck(checked) {
         console.log(`switch to ${checked}`);
+    }
+
+    function onChange(e) {
+        console.log(`checked = ${e.target.value}`);
+        setBotonActivo(true);
     }
 
     const onFinish = async( userData ) => {
@@ -722,9 +747,18 @@ const Register = () => {
 
                             </Card>
 
+                            <div>
+                                <a href="">
+                                    <Checkbox onChange={onChange}>Terminos y Condiciones</Checkbox>
+                                </a>
+                            </div>
+
 
                             <Form.Item>
-                                <Button type='primary' htmlType='submit' className='login-form-button'>
+                                <Button type='primary'
+                                        htmlType='submit'
+                                        className='login-form-button'
+                                        disabled={!botonActivo}>
                                     Registrarme
                                 </Button>
                                 <div><Link to={ Routes.LOGIN }>Ya tengo una cuenta</Link></div>

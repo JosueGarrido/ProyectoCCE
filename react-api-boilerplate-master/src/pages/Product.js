@@ -13,6 +13,8 @@ import { Tabs, Button } from 'antd';
 import Routes from "../constants/routes";
 import NewComment from "../components/NewComment";
 import {useReputationList} from "../data/useReputationList";
+import {useQuestionsList} from "../data/UseQuestion";
+
 
 const { TabPane } = Tabs;
 const { Text, Title } = Typography;
@@ -30,6 +32,7 @@ const Product = () => {
 
     const { reputations } = useReputationList( id );
     const [ visible, setVisible ] = useState( 2 );
+    const { questions } = useQuestionsList(id);
     const user = useUser( id );
     const { users } = useUserList();
     let totalscore=0;
@@ -67,7 +70,7 @@ const Product = () => {
                                         Obra: { product.product.name }
                                     </h1>
                                     <h1>
-                                        $ {product.product.price}
+                                        Precio: $ {product.product.price}
                                     </h1>
                                     <h1>
                                         En inventarío: {product.product.stock}
@@ -110,7 +113,7 @@ const Product = () => {
                                             Tamaño: 50 x 70 cm
                                         </h2>
                                         <h2>
-                                            Color: café
+
                                         </h2>
                                     </>
                                 }
@@ -135,7 +138,7 @@ const Product = () => {
                     : <Button href={Routes.PREPURCHASE.replace(':id', product.product.id)} type="primary">Comprar</Button>
 
             }
-
+            <br/>
 
             {
                 reputations === undefined
