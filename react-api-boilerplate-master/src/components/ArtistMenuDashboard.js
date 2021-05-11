@@ -36,6 +36,9 @@ const ArtistMenuDashboard = () => (
                         <Menu.Item key="Preguntas">Preguntas
                             <Link to={ Routes.ARTIST_QUESTIONS_DASHBOARD } className='artist-questions-dashboard'/>
                         </Menu.Item>
+                        <Menu.Item key="Streaming">Streaming
+                            <Link to={ Routes.ARTIST_STREAMING_DASHBOARD } className='artist-streaming-dashboard'/>
+                        </Menu.Item>
                         <Menu.Item key="Ventas">Ventas
                             <Link to={ Routes.ARTIST_SELL_DASHBOARD } className='artist-sell-dashboard'/>
                         </Menu.Item>

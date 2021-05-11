@@ -11,13 +11,10 @@ import {useProduct} from "../data/useProduct";
 import {useCategories} from "../data/useCategories";
 import {Tabs, Button} from 'antd';
 import Routes from "../constants/routes";
-import letraVender from "../images/ImgPages/vender-letras.png";
-import logoVertical from "../images/logoVertical.png";
-import '../styles/product.css';
-import { useQuestionComments } from '../data/useQuestionComments';
-import QuestionsList from "../components/QuestionsList";
 import NewComment from "../components/NewComment";
-import QuestionList from "../components/QuestionsList";
+import {useReputationList} from "../data/useReputationList";
+import {useQuestionsList} from "../data/UseQuestion";
+
 
 const {TabPane} = Tabs;
 const {Text, Title} = Typography;
@@ -38,63 +35,58 @@ const Product = () => {
     const { users } = useUserList();
     const [ visible, setVisible ] = useState( 2 );
 
+    const { reputations } = useReputationList( id );
+    const [ visible, setVisible ] = useState( 2 );
+    const { questions } = useQuestionsList(id);
+    const user = useUser( id );
+    const { users } = useUserList();
+    let totalscore=0;
+
+
+    if (reputations !== undefined) {
+        for (let i=0; i< (reputations.length); i++ ){
+            totalscore += reputations[i].score;
+        }
+        totalscore = (totalscore/reputations.length)
+    }
 
     const handleloadmore = () => {
         setVisible(visible+3);
     }
 
-    /*console.log("nombre de usuario", users[0].name)
-    if(questions !==undefined){
-        console.log("questions", questions.user_id)
-    }
-*/
     return (
         <>
             {
-                <Row type='flex' justify='center' className='header-wrapper' style={{position: "relative"}}>
-                    <Col span={24}>
-                        <Header className='headerPage'>
-                            <Row type='flex' justify='space-between' align='bottom'>
+                <Row >
+                    <Col span={6}>
+                        <img
+                            height={350}
+                            width={350}
+                            src='https://sergimateo.com/wp-content/2012/11/portadas-twitter-1.jpg'
+                        />
+                    </Col>
+                    <Col span={12}>
+                        {
+                            product.isLoading
+                                ? <div>Cargando...</div>
+                                : product.isError
+                                ? <ShowError error={ product.isError } />
+                                : <>
+                                    <h1 >
+                                        Obra: { product.product.name }
+                                    </h1>
+                                    <h1>
+                                        Precio: $ {product.product.price}
+                                    </h1>
+                                    <h1>
+                                        En inventarío: {product.product.stock}
+                                    </h1>
+                                    <h1>
+                                        Descripción: {product.product.description}
+                                    </h1>
 
-
-                                <Col span={7} align='left' className='main-menu'>
-
-
-                                </Col>
-                                <Col span={10} align='center'>
-                                    <a href={Routes.HOME}>
-
-                                    </a>
-                                </Col>
-
-
-                                <Col span={1}>
-
-                                </Col>
-                                <Col span={3}>
-                                    <nav>
-                                        <ul>
-                                            <li><a href="#"> <i className="down"></i></a>
-
-                                                <ul style={{textAlign: "center"}}>
-                                                    <li><a href="#">Categorias</a></li>
-                                                    <li><a href="#">Artistas</a></li>
-                                                    <li><a href="#">Comprar</a></li>
-                                                    <li><a href="#">Vender</a></li>
-                                                </ul>
-                                            </li>
-
-                                        </ul>
-                                    </nav>
-                                </Col>
-                                <Col span={3}>
-                                    <img src={logoVertical} className='logoPages'/>
-                                </Col>
-
-
-                            </Row>
-
-                        </Header>
+                                </>
+                        }
 
                     </Col>
 
@@ -191,52 +183,19 @@ const Product = () => {
                                         </p>
                                         <p className={"texto"}>
                                             Tamaño: 50 x 70 cm
-                                        </p>
-                                        <p className={"texto"}>
-                                            Color: café
-                                        </p>
 
-                                    </Col>
+                                        </h2>
+                                        <h2>
 
-                                    <h2 className={"subtitulo"}>
-                                        DESCRIPCIÓN
-                                    </h2>
-                                    <p className={"texto"}>
-                                        {product.product.description}
-                                    </p>
+                                        </h2>
+                                    </>
+                                }
+                            </TabPane>
+                            <TabPane tab="Valoraciones" key="2">
+                                <div>Cargando...</div>
+                            </TabPane>
+                        </Tabs>
 
-                                </Col>
-                                <Col>
-
-                                </Col>
-
-
-                                <Col span={3} align={'left'}>
-
-                                    <strong className={"precio"}>
-                                        $ {product.product.price}
-                                    </strong>
-                                    <p align={'center'} className={"texto"}>
-                                        Stock: {product.product.stock}
-                                    </p>
-
-
-                                </Col>
-
-                                <Col span={13} align={'center'}>
-
-                                </Col>
-
-                                <Col span={7} align={'center'}>
-                                    <br/> <br/>
-                                    <Button className={"boton-comprar"}
-                                            href={Routes.PREPURCHASE.replace(':id', product.product.id)}>COMPRAR</Button>
-
-
-                                </Col>
-
-                            </>
-                    }
 
 
                 </Row>
@@ -257,6 +216,90 @@ const Product = () => {
                         <strong>Preguntas del producto </strong>
                     </Col>
                 </Row>
+            }
+            <br/>
+
+            {
+                reputations === undefined
+                    ? <Text>No cargan los datos</Text>
+                    :
+                    <Row gutter={30}>
+                        <Col align='center' md={6}>
+                            <Title level={3}>Reputación: </Title>
+                        </Col>
+                        <Col md={18}>
+                            <Col md={24}>
+                                {
+                                    reputations.isLoading ? <Skeleton loading={reputations.isLoading} active avatar/>
+                                        : reputations.isError
+                                        ? <ShowError error={reputations.isError}/>
+                                        : user.user && <NewComment userId={id} reputations={reputations}/>
+                                }
+                            </Col>
+                            <br/>
+                            {
+                                reputations.slice(0, visible).map((reputations, i) => (
+                                    <Col xs={24} sm={18} md={24} style={{marginBottom: 20}} key={i}>
+                                        {reputations.comment
+                                            ? <Card hoverable
+                                                    style={{borderRadius: 10}}>
+                                                <Row>
+                                                    <Col span={14}>
+                                                        {
+                                                            users === undefined
+                                                                ? <Text>No cargan los datos</Text>
+                                                                :
+                                                                <Meta
+                                                                    avatar={<Avatar
+                                                                        size={100}
+                                                                        alt={users[reputations.user_id - 1].name}
+                                                                        src={`http://localhost:8000/storage/${users[reputations.user_id - 1].profile_picture}`}
+                                                                    />}
+
+
+                                                                    title={`Nombre del Comprador: ${users[reputations.user_id - 1].name} ${users[reputations.user_id - 1].last_name}`}
+                                                                    description={`Comentario: ${reputations.comment}`}
+                                                                />
+                                                        }
+                                                    </Col>
+                                                    <Col span={8} align='end'>
+
+                                                        <Text type='secondary'><Text strong>Valoración: </Text>
+                                                            <Rate disabled defaultValue={reputations.score}/>
+
+                                                        </Text>
+                                                    </Col>
+                                                </Row>
+
+                                            </Card>
+                                            : <div style={{textAlign: 'center'}}>
+                                                <Card title='' extra='' cover='' loading/>
+                                            </div>
+                                        }
+                                    </Col>
+                                ))
+                            }
+
+                            {
+
+                                visible < reputations.length
+                                    ?
+                                    <Col span={22}>
+                                        <hr/>
+                                        <div style={{textAlign: 'center'}}>
+                                            <Button
+                                                type={'primary'} onClick={handleloadmore}>
+                                                Ver más
+                                            </Button>
+                                        </div>
+                                    </Col>
+                                    : <>
+                                    </>
+                            }
+                            <br/>
+                        </Col>
+
+                    </Row>
             }
 
             {

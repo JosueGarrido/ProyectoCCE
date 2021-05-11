@@ -95,6 +95,10 @@ const Register = () => {
     const [ visible5, setVisible5 ] = useState( false );
     const [ visible6, setVisible6 ] = useState( false );
 
+    const [botonActivo, setBotonActivo] = useState(false);
+    const [checkBoxSelected, setCheckBoxSelected]= useState();
+
+
     const [ form ] = Form.useForm();
     const { setAuthenticated, setCurrentUser } = useAuth();
     const [countries,setCountries]= useState([]);
@@ -360,8 +364,10 @@ const Register = () => {
         console.log(`switch to ${checked}`);
     }
     function onChange(e) {
-        console.log(`checked = ${e.target.checked}`);
+        console.log(`checked = ${e.target.value}`);
+        setBotonActivo(true);
     }
+
     const onFinish = async( userData ) => {
         console.log( 'Received values of form: ', userData );
 
@@ -1296,14 +1302,22 @@ const Register = () => {
                                    <Checkbox onChange={onChange}>Terminos y Condiciones</Checkbox>
                                </a>
                             </div>
+                            <br/>
 
                             <Form.Item>
 
-                                <Button type='primary' htmlType='submit' className='login-form-button'>
+                                <Button
+                                    type='primary'
+                                    htmlType='submit'
+                                    className='login-form-button'
+                                    disabled={!botonActivo}>
                                     Registrarme
+
                                 </Button>
+                                <br/>
                                 <div><Link to={ Routes.LOGIN }>Ya tengo una cuenta</Link></div>
                             </Form.Item>
+                            <br/>
 
 
                         </Form>

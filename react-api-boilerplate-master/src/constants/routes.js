@@ -12,6 +12,7 @@ const publicRoutes = {
   ARTIST_SELL_DASHBOARD: '/dashboard-ventas-artista',
   ARTIST_METRICS_DASHBOARD: '/dashboard-metricas-artista',
   ARTIST_REPUTATION_DASHBOARD: '/dashboard-reputación-artista',
+  ARTIST_STREAMING_DASHBOARD: '/dashboard-streaming-artista',
 
   //Dashboard Clientes Compras
   CLIENT_DASHBOARD: '/dashboard-cliente',
@@ -61,6 +62,7 @@ const privateRoutes = {
 };
 
 const Routes = {
+
   ...publicRoutes,
   ...privateRoutes
 };
