@@ -42,6 +42,12 @@ const Product = () => {
     const handleloadmore = () => {
         setVisible(visible+3);
     }
+
+    /*console.log("nombre de usuario", users[0].name)
+    if(questions !==undefined){
+        console.log("questions", questions.user_id)
+    }
+*/
     return (
         <>
             {
@@ -254,7 +260,8 @@ const Product = () => {
             }
 
             {
-                questions === undefined
+
+               questions === undefined
                     ? <Text>No cargan los datos</Text>
                     :
                     <Row gutter={30}>
@@ -268,7 +275,8 @@ const Product = () => {
                                         ? <Skeleton loading={questions.isLoading} active avatar/>
                                         : questions.isError
                                         ? <ShowError error={questions.isError}/>
-                                        : user.user && <QuestionsList productId={id} questions={questions}/>
+                                        :  <QuestionsList productId={id} questions={questions}/>
+
                                 }
                             </Col>
                             <br/>
@@ -281,7 +289,7 @@ const Product = () => {
                                                 <Row>
                                                     <Col span={14}>
                                                         {
-                                                          /*  users === undefined
+                                                           users === undefined
                                                                 ? <Text>No cargan los datos</Text>
                                                                 :
                                                                 <Meta
@@ -292,9 +300,9 @@ const Product = () => {
                                                                     />}
 
 
-                                                                    title={`Nombre del Comprador: ${users[questions.user_id - 1].name} ${users[questions.user_id - 1].last_name}`}
+                                                                    title={`Nombre de Usuario: ${users[questions.user_id - 1].name} ${users[questions.user_id - 1].last_name}`}
                                                                     description={`Pregunta: ${questions.question}`}
-                                                                />*/
+                                                                />
                                                         }
                                                     </Col>
 
