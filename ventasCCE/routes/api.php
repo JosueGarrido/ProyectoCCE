@@ -30,6 +30,8 @@ Route::group(['middleware' => ['cors']], function () {
     Route::get('category3', 'CategoryLevel3Controller@index');
     Route::get('user', 'UserController@getAuthenticatedUser');
     Route::get('products/{id}', 'ProductController@show');
+    Route::get('products/{product}/questions', 'QuestionsController@index');
+    Route::get('questions/{id}', 'QuestionsController@show');
 
     //Productos de un usuario
     Route::get('users/{user}/products/', 'ProductController@index');

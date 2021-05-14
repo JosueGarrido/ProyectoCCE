@@ -9,7 +9,7 @@ import Routes from "../constants/routes";
 import {useCat1Products} from "../data/useCat1Products";
 import imagen12 from "../images/logo-menta.png";
 
-import ReactPaginate from "react-paginate";
+//import ReactPaginate from "react-paginate";
 const { Text, Title } = Typography;
 const {Meta} = Card;
 

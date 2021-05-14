@@ -14,7 +14,8 @@ import Routes from "../constants/routes";
 import NewComment from "../components/NewComment";
 import {useReputationList} from "../data/useReputationList";
 import {useQuestionsList} from "../data/UseQuestion";
-
+import {useQuestionComments} from "../data/useQuestionComments";
+import QuestionsList from "../components/QuestionsList";
 
 const {TabPane} = Tabs;
 const {Text, Title} = Typography;
@@ -32,13 +33,12 @@ const Product = () => {
     const user = useUser( id );
     const {products} = useProductsList(id);
     const {questions} = useQuestionComments(id);
-    const { users } = useUserList();
-    const [ visible, setVisible ] = useState( 2 );
+
+
 
     const { reputations } = useReputationList( id );
     const [ visible, setVisible ] = useState( 2 );
-    const { questions } = useQuestionsList(id);
-    const user = useUser( id );
+    const { questions2 } = useQuestionsList(id);
     const { users } = useUserList();
     let totalscore=0;
 
@@ -183,18 +183,20 @@ const Product = () => {
                                         </p>
                                         <p className={"texto"}>
                                             Tamaño: 50 x 70 cm
+                                        </p>
 
-                                        </h2>
                                         <h2>
 
                                         </h2>
+                                            </Col>
+                                </Col>
                                     </>
                                 }
-                            </TabPane>
+
                             <TabPane tab="Valoraciones" key="2">
                                 <div>Cargando...</div>
                             </TabPane>
-                        </Tabs>
+
 
 
 
