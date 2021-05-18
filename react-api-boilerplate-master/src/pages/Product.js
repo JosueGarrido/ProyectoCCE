@@ -38,7 +38,7 @@ const Product = () => {
 
     const { reputations } = useReputationList( id );
     const [ visible, setVisible ] = useState( 2 );
-    const { questions2 } = useQuestionsList(id);
+
     const { users } = useUserList();
     let totalscore=0;
 
@@ -56,43 +56,7 @@ const Product = () => {
 
     return (
         <>
-            {
-                <Row >
-                    <Col span={6}>
-                        <img
-                            height={350}
-                            width={350}
-                            src='https://sergimateo.com/wp-content/2012/11/portadas-twitter-1.jpg'
-                        />
-                    </Col>
-                    <Col span={12}>
-                        {
-                            product.isLoading
-                                ? <div>Cargando...</div>
-                                : product.isError
-                                ? <ShowError error={ product.isError } />
-                                : <>
-                                    <h1 >
-                                        Obra: { product.product.name }
-                                    </h1>
-                                    <h1>
-                                        Precio: $ {product.product.price}
-                                    </h1>
-                                    <h1>
-                                        En inventarío: {product.product.stock}
-                                    </h1>
-                                    <h1>
-                                        Descripción: {product.product.description}
-                                    </h1>
 
-                                </>
-                        }
-
-                    </Col>
-
-                </Row>
-
-            }
             <br/><br/><br/><br/>
             {
 

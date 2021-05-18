@@ -54,7 +54,7 @@ class ProductController extends Controller
     }
     public function show(Product $id)
     {
-        $this->authorize('view', $id);
+        //$this->authorize('view', $id);
         return response()->json( new ProductResource($id), 200);
     }
     public function image(Product $product)

@@ -43,7 +43,6 @@ const Category1Filter = (props) => {
 
                                     <Title style={{marginTop: 15, textAlign: 'center'}}>{categories[id-1].name}</Title>
 
-
                                     {  categories2 !== undefined
                                         ?
                                         categories2.map((categories2, i) => {
