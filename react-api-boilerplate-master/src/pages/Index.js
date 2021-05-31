@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Carousel2 from '../components/Carousel2';
 import Carousel from '../components/Carousel';
-
+import Carousel3 from '../components/Carousel3';
 import '../styles/app.css';
 import {Row, Col, Button} from "antd";
 import Routes from "../constants/routes";
@@ -30,7 +30,7 @@ const HomePage = () => {
                       </Col>
                       <Col span={10}>
                           <div><br/><br/><br/>
-                              <h1  className="title">
+                              <h1  className="title2">
                                   EXPLICACIÓN
                               </h1>
 
@@ -55,40 +55,51 @@ const HomePage = () => {
               <h1 className="subtitle2">CATEGORÍAS</h1>
               <div>
                   <Row>
-                      <Col span={4} align='center'>
-                          <a href={Routes.HOME} >
-                              <img className='categories' src={ musicales }  />
-                              <h1 className="btnCategories"><span className="btnCategories-text">Artes Musicales</span></h1>
+                      <Col span={4} align='center' >
+                          {/*<a href={Routes.HOME}>
+                              <img className='categories' src={musicales}/>
+                              <h1 className="btnCategories"><span className="btnCategories-text">Artes Musicales</span>
+                              </h1>
+                          </a>*/}
+                          <a href={Routes.CATEGORY1.replace( ':id', 3 )}>
+                              <label  className="image-categories imageMusicales"></label>
+                              <h1 className="btnCategories"><span className="btn-General">Artes Musicales</span>
+                              </h1>
                           </a>
                       </Col>
                       <Col span={4} align='center'>
-                          <a href={Routes.HOME} >
-                              <img className='categories' src={ literarias }  />
-                              <h1 className="btnCategories"><span className="btnCategories-text">Artes Literarias</span></h1>
+                          <a href={Routes.CATEGORY1.replace( ':id', 2 )}>
+                              <label  className="image-categories imageLiterarias"></label>
+                              <h1 className="btnCategories"><span className="btn-General">Artes Literarias</span>
+                              </h1>
                           </a>
                       </Col>
                       <Col span={4} align='center'>
-                          <a href={Routes.HOME} >
-                              <img className='categories' src={ escénicas }  />
-                              <h1 className="btnCategories"><span className="btnCategories-text">Artes Escénicas</span></h1>
+                          <a href={Routes.CATEGORY1.replace( ':id', 4 )}>
+                              <label  className="image-categories imageEscenicas" ></label>
+                              <h1 className="btnCategories"><span className="btn-General">Artes Escénicas</span>
+                              </h1>
                           </a>
                       </Col>
                       <Col span={4} align='center'>
-                          <a href={Routes.HOME}  >
-                              <img className='categories' src={ plasticas }  />
-                              <h1 className="btnCategories"><span className="btnCategories-text">Artes Plásticas</span></h1>
+                          <a href={Routes.CATEGORY1.replace( ':id', 1 )}>
+                              <label  className="image-categories imagesPlasticas"></label>
+                              <h1 className="btnCategories"><span className="btn-General">Artes Plásticas</span>
+                              </h1>
                           </a>
                       </Col>
                       <Col span={4} align='center'>
-                          <a href={Routes.HOME} >
-                              <img className='categories' src={ visuales }  />
-                              <h1 className="btnCategories"><span className="btnCategories-text">Artes Visuales</span></h1>
+                          <a href={Routes.CATEGORY1.replace( ':id', 5 )}>
+                              <label  className="image-categories imagesVisuales"></label>
+                              <h1 className="btnCategories"><span className="btn-General">Artes Visuales</span>
+                              </h1>
                           </a>
                       </Col>
                       <Col span={4} align='center'>
-                          <a href={Routes.HOME} >
-                              <img className='categories' src={ artesanias }  />
-                              <h1 className="btnCategories"><span className="btnCategories-text">Artesanías</span></h1>
+                          <a href={Routes.CATEGORY1.replace( ':id', 6 )}>
+                              <label  className="image-categories imageArtesanias"></label>
+                              <h1 className="btnCategories"><span className="btn-General">Artes Artesanías</span>
+                              </h1>
                           </a>
                       </Col>
 
@@ -132,7 +143,7 @@ const HomePage = () => {
 
             <br/><br/><br/>
             <Carousel2/>
-
+            <Carousel3/>
 
         </div>
 

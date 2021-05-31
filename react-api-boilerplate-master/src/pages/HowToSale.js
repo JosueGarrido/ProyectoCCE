@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/InfoPages.css'
+import '../styles/InfoPages.css';
 import ArtistMenuDashboard from "../components/ArtistMenuDashboard";
 import { Divider, Row, Col, Layout, Typography } from 'antd';
 import {SettingOutlined, ShoppingOutlined} from '@ant-design/icons';
@@ -54,7 +54,9 @@ const HowToSale = props => {
                                 </nav>
                             </Col>
                             <Col span={3}>
+                                <a href={Routes.HOME}>
                                 <img src={logoVertical} className='logoPages'/>
+                                </a>
                             </Col>
 
 

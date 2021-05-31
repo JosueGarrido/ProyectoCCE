@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\QuestionsCollection;
-use App\Http\Resources\QuestionsCollection as QuestionsResource;
+use App\Http\Resources\Questions as QuestionsResource;
 use App\Questions;
+use App\Product;
 use Illuminate\Http\Request;
 
 class QuestionsController extends Controller
@@ -17,21 +18,21 @@ class QuestionsController extends Controller
         'required' => 'El campo :attribute es obligatorio.',
 
     ];
-    public function index()
+    public function index(Product $product)
     {
 
-        return new QuestionsCollection(Questions::paginate (25));
+        return response()->json(QuestionsResource::collection($product->question->sortByDesc('created_at')), 200);
     }
     public function show(Questions $id)
     {
         $this->authorize('view', $id);
         return response()->json( new QuestionsResource($id), 200);
     }
-    public function store(Request $request)
+    public function store(Request $request, Product $product)
     {
-        $this->authorize('create', Questions::class);
-        $request->validate(self::$rules,self::$messages);
-        return Questions::create($request->all());
+        $question = $product->question()->save(new Questions($request->all()));
+
+        return response()->json(new QuestionsResource($question), 201);
     }
     public function update(Request $request, $id)
     {

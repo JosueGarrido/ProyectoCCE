@@ -1,7 +1,3 @@
-/**
- * Created by chalosalvador on 17/01/2019.
- */
-
 const publicRoutes = {
   LOGIN: '/ingreso',
   LOGIN_CLIENT: '/ingreso-cliente',
@@ -37,7 +33,12 @@ const publicRoutes = {
   SALEPAGE:'/como-vender',
   QUESTIONPAGE:'/preguntas-frecuentes',
   PRODUCT:'/producto/:id',
+  CATEGORY:'/categoria/:id',
+  CATEGORY1:'/categoria1/:id',
   PREPURCHASE:'/pre-compra/:id/',
+  CATEGORIESPAGE:'/categorias',
+  POLITICS:'/politica-privacidad',
+  TERMS:'/terminos-condiciones',
 
   //Dashboard Configuración
   DASHBOARD_MY_DATA: '/dashboard-mis-datos',

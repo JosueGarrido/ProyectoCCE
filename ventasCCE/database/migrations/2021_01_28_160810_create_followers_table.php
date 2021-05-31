@@ -17,6 +17,11 @@ class CreateFollowersTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
         });
+        Schema::table('followers', function (Blueprint $table) {
+            $table->unsignedBigInteger('user_id_2')->nullable();
+            $table->foreign('user_id_2')->references('id')->on('users')->onDelete('restrict');
+        });
+
     }
 
     /**
@@ -26,6 +31,10 @@ class CreateFollowersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('followers');
+        Schema::disableForeignKeyConstraints();
+        Schema::table('followers', function (Blueprint $table) {
+            $table->dropForeign(['user_id']);
+            $table->dropForeign(['user_id_2']);
+        });
     }
 }

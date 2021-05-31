@@ -1,7 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import Routes from '../constants/routes';
+
 import API from '../data/index';
 import {Slider, Upload, Switch, Button, Col, Form, Input, message, Row, Typography, Card, Select, DatePicker, Table, Modal, Space, Checkbox } from 'antd';
+import Header2 from '../components/Header2';
+
 import {
     LockOutlined,
     UserOutlined,
@@ -23,6 +26,8 @@ import Cookies from 'js-cookie';
 import { useAuth } from '../providers/Auth';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons/lib';
 import 'moment/locale/zh-cn';
+
+
 
 //import ImgCrop from 'antd-img-crop';
 
@@ -416,6 +421,7 @@ const Register = () => {
     return (
 
         <>
+           <Header2/>
 
             <Title style={ {marginTop:15, textAlign: 'center' } }>REGISTRO DE ARTISTAS</Title>
 

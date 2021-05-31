@@ -16,4 +16,8 @@ class CategoryLevel2 extends Model
     {
         return $this->belongsTo('App\CategoryLevel1');
     }
+    public function product()
+    {
+        return $this->hasMany('App\Product','category_id2');
+    }
 }

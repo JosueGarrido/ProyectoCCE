@@ -96,11 +96,11 @@ const Navigation2 = ( props ) => {
                             Comprar
                         </Link>
                     </Menu.Item>
-                        <Menu.Item key={ Routes.ABOUT } className='scale-up-bottom'>
-                            <Link to={ Routes.LOGIN } style={linkStyle}>
-                                Vender
-                            </Link>
-                        </Menu.Item>
+                    <Menu.Item key={ Routes.ABOUT } className='scale-up-bottom'>
+                        <Link to={ Routes.LOGIN } style={linkStyle}>
+                            Vender
+                        </Link>
+                    </Menu.Item>
                     </>
                 }
 
