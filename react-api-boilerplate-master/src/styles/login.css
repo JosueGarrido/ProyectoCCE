@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 .imagesPageHBVender {
     background-image: url("../images/ImgPages/vender-img.png");
     -webkit-background-size: cover;
@@ -169,16 +169,14 @@ i {
 
 .fondo-paginas {
     background-image: url("../images/ImgPages/fondo-paginas.png");
-=======
-
+}
 .imgPageBG{
     background-image: url("../images/home_images/explicacion.png");
->>>>>>> eb87115ea829e16b60c128cc370590daf262d276
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-<<<<<<< HEAD
+
     height: 600px;
     width: auto;
 
@@ -231,12 +229,7 @@ i {
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
 
 }
-=======
-    height: auto;
-    width: auto ;
 
-}
 
->>>>>>> eb87115ea829e16b60c128cc370590daf262d276
 
 
