@@ -64,6 +64,7 @@ const LoginClient = () => {
                                 <img className='logoPages' src={letraVender}/>
                             </a>
                         </Col>
+<<<<<<< HEAD
                         <Col span={ 5} >
                             <Form
                                 name='login-form'
@@ -143,6 +144,33 @@ const LoginClient = () => {
                         </Col>
 
                     </Row>
+=======
+                    <Col span={ 5} >
+                        <Form
+                            name='login-form'
+                            className='login-form'
+                            initialValues={ {
+                                remember: true,
+                                username: '',
+                                password: ''
+                            } }
+                            onFinish={ onFinish }
+                        >
+                            <Col span={20}  >
+                            <Form.Item
+                                name='username'
+                                rules={ [
+                                    {
+                                        required: true,
+                                        message: 'Ingresa tu nombre de usuario'
+                                    },
+                                    {
+                                        type: 'email',
+                                        message: 'Ingresa un correo válido'
+                                    }
+                                ] }
+                            >
+>>>>>>> 1beb51dd211358c8fedec804f514059b780272c4
 
                     <br/><br/><br/>
 
@@ -192,12 +220,67 @@ const LoginClient = () => {
 
                             </Col>
 
+<<<<<<< HEAD
                         </Row>
+=======
+
+                        </Form>
+
+                    </Col>
+
+                </Row>
+
+                <br/><br/><br/>
+
+
+
+            <div className={"fondo-paginas"}>
+                <div id="dos" className="carta">
+                    <img className={"borde-imagen"}
+                         height={480}
+                         width={400}
+                         src='https://sergimateo.com/wp-content/2012/11/portadas-twitter-1.jpg'
+                    />
+                </div>
+                <br/> <br/> <br/> <br/> <br/>
+                <Row>
+                    <Col span={24} align={'center'}>
+                        <strong className={"texto-eres-nuevo"}>¿ERES NUEVO EN WASI WALLPAY?</strong>
+                        <br/> <br/> <br/>
+                        <p className={"para-comprar"}>Para comprar a través de Wasi Wallpay crea una cuenta personal de
+                            comprador,<br/>
+                            sin costo. Llena los campos solicitados en el regisstro de forma correcta y
+                            verídica,<br/>
+                            luego espera la confirmación enviada a tu correo electrónico.
+                        </p>
+                        <Form.Item>
+                            <Link className={"boton-login-registro"} to={Routes.REGISTER_CLIENT}>REGISTRARSE </Link>
+                        </Form.Item>
+                    </Col>
+
+                </Row>
+                <br/> <br/>
+
+            </div>
+            <div>
+                <Row>
+
+                    <Col span={14} align={'left'}>
+>>>>>>> 1beb51dd211358c8fedec804f514059b780272c4
                         <br/> <br/><br/> <br/><br/> <br/>
                     </div>
 
 
 
+<<<<<<< HEAD
+=======
+                </Row>
+                <br/> <br/><br/> <br/><br/> <br/>
+            </div>
+
+
+
+>>>>>>> 1beb51dd211358c8fedec804f514059b780272c4
                 </Content>
             }
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Follower;
 use App\Http\Resources\Product;
 use App\Reputation;
 use App\User;
@@ -11,13 +12,9 @@ use Illuminate\Http\Request;
 
 class FollowerController extends Controller
 {
-    public function store(Request $request, Product $user)
+    public function store(Request $request, User $user)
     {
-
-
-        $follower = $user->follower()->save(new Follower($request->all()));
-
+        $follower = $user->followers()->save(new Follower($request->all()));
         return response()->json(new FollowerResource($follower), 201);
-
     }
 }
