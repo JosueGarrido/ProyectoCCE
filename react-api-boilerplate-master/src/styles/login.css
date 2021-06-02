@@ -171,9 +171,13 @@ i {
 }
 
 
+
 .imgPageBG{
     background-image: url("../images/home_images/explicacion.png");
 
+
+.imgPageBG{
+    background-image: url("../images/home_images/explicacion.png");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -231,8 +235,6 @@ i {
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
 
 }
-
-
 
 
 
