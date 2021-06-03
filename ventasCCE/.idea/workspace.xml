@@ -34,6 +34,7 @@
       <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryLevel4Controller.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Cultural_ProjectsController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/FollowerController.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PhotoFormatController.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/Http/Controllers/QuestionsController.php" afterDir="false" />
@@ -167,6 +168,8 @@
       <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_14_123204_add_userable_columns_users.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_14_132730_create_artists_table.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_14_132824_create_clients_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_28_160810_create_followers_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_03_191653_add_user_id_column_follower.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/database/migrations/2021_05_05_192619_create_followers_table.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/database/seeds/AnswersTableSeeder.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/database/seeds/Audio_Video_FormatsTableSeeder.php" afterDir="false" />
@@ -361,7 +364,10 @@
       <workItem from="1620253871289" duration="5858000" />
       <workItem from="1620698439558" duration="454000" />
       <workItem from="1621994906709" duration="2406000" />
-      <workItem from="1622075688432" duration="2397000" />
+      <workItem from="1622075688432" duration="3950000" />
+      <workItem from="1622149603866" duration="1000" />
+      <workItem from="1622602778347" duration="825000" />
+      <workItem from="1622684163476" duration="2841000" />
     </task>
     <servers />
   </component>
