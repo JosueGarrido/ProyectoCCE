@@ -18,17 +18,17 @@ class FollowerController extends Controller
     ];
     public function index(User $user)
     {
-        return response()->json(FollowerResource::collection($user->follower->sortByDesc('created_at')), 200);
+        return response()->json(FollowerResource::collection($user->followers->sortByDesc('created_at')), 200);
     }
     public function show(Follower $id)
     {
         $this->authorize('view', $id);
         return response()->json( new FollowerResource($id), 200);
     }
-    public function store(Request $request, Product $user)
+    public function store(Request $request, User $user)
     {
 
-        $follower = $user->follower()->save(new Follower($request->all()));
+        $follower = $user->followers()->save(new Follower($request->all()));
 
         return response()->json(new FollowerResource($follower), 201);
     }
