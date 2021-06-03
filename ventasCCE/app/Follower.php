@@ -14,10 +14,12 @@ class Follower extends Model
             $follower->user_id = Auth::id();
         });
     }
-public function user ()
-{
-    return $this -> belongsTo ('App\User', 'user_id_2');
-}
 
+
+
+    public function user()
+    {
+        return $this->belongsTo('App\User', 'user_id_2');
+    }
 
 }

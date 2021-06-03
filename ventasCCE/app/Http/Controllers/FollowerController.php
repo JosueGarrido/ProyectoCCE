@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 
 class FollowerController extends Controller
 {
+
     private static $messages =[
         'required' => 'El campo :attribute es obligatorio.',
 
@@ -30,7 +31,6 @@ class FollowerController extends Controller
         $follower = $user->follower()->save(new Follower($request->all()));
 
         return response()->json(new FollowerResource($follower), 201);
-
     }
     public function update(Request $request, $id)
     {

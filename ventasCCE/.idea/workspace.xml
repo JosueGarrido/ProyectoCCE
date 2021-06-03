@@ -224,6 +224,7 @@
       <change afterPath="$PROJECT_DIR$/tests/TestCase.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tests/Unit/ExampleTest.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +236,7 @@
     <execution />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -368,6 +369,7 @@
       <workItem from="1622149603866" duration="1000" />
       <workItem from="1622602778347" duration="825000" />
       <workItem from="1622684163476" duration="2841000" />
+
     </task>
     <servers />
   </component>
