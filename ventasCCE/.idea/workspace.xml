@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f1a5ffaf-5ec1-430b-801d-83b9fc175da7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/LoginClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/LoginClient.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/styles/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/styles/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/yarn.lock" afterDir="false" />
-    </list>
+    <list default="true" id="f1a5ffaf-5ec1-430b-801d-83b9fc175da7" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -147,7 +143,8 @@
       <workItem from="1621994906709" duration="2406000" />
       <workItem from="1622075688432" duration="2397000" />
       <workItem from="1622172929090" duration="632000" />
-      <workItem from="1622392448597" duration="2358000" />
+      <workItem from="1622392448597" duration="4059000" />
+      <workItem from="1622600460850" duration="1631000" />
     </task>
     <servers />
   </component>

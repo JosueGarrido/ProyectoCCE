@@ -158,6 +158,12 @@ Route::group(['middleware' => ['cors']], function () {
         Route::put('reputations/{id}', 'ReputationController@update');
         Route::delete('reputations/{id}', 'ReputationController@delete');
 
+        //followers
+        Route::get('users/{user}/followers', 'FollowerController@index');
+        Route::get('reputations/{id}', 'ReputationController@show');
+        Route::post('users/{user}/reputations', 'ReputationController@store');
+        Route::put('reputations/{id}', 'ReputationController@update');
+        Route::delete('reputations/{id}', 'ReputationController@delete');
 
     });
 });
