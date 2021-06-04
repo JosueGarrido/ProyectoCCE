@@ -13,6 +13,7 @@ import moment from "moment";
 import {FacebookOutlined, InstagramFilled, TwitterOutlined, UserAddOutlined,ForkOutlined,WhatsAppOutlined} from "@ant-design/icons";
 import Header2 from '../components/Header2';
 import CommentsList from "../components/CommentsList";
+import {useFollowers} from "../data/useFollowers";
 
 const { Text, Title } = Typography;
 const {Meta} = Card;
@@ -21,6 +22,7 @@ const Artist = (props) => {
     let { id } = useParams();
     const user = useUser( id );
     const products = useProductsList( id );
+    const followers = useFollowers( id );
 
     const {location, match} = props;
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -49,16 +51,24 @@ const Artist = (props) => {
     console.log('users', users);
 
     const sales =[];
+    const follower=[];
     let totalsales =0;
     let totalproducts;
     let totalscore=0;
+    let totalfollowers=0;
 
 
     if (products.products !== undefined) {
         for (let i=0; i< (products.products.length); i++ ){
-            sales.push(products.products[i].sale);
+            sales.push(products.products[i].sales);
         }
         totalproducts = products.products.length;
+    }
+    if (followers.followers !== undefined) {
+        for (let i=0; i< (followers.followers.length); i++ ){
+            follower.push(followers.followers[i].follower);
+        }
+        totalfollowers = followers.followers.length;
     }
 
     if (reputations !== undefined) {
@@ -68,10 +78,11 @@ const Artist = (props) => {
         totalscore = (totalscore/reputations.length)
     }
 
+
     console.log('ventas', sales);
 
     console.log('total products', totalproducts);
-
+    console.log('total seguidores', totalfollowers);
 
     for (let n = 0; n < sales.length; n++ ){
         totalsales +=  sales[n].length
@@ -142,7 +153,7 @@ const Artist = (props) => {
                                     racismo, la discriminación y los derechos humanos.</p>
 
                                 <Row justify="space-around">
-                                    <Col align={'center' } span={4}><Text type="secondary">{totalproducts}</Text></Col>
+                                    <Col align={'center' } span={4}><Text type="secondary">{totalfollowers}</Text></Col>
                                     <Col align={'center' } span={4}><Text type="secondary">{totalsales}</Text></Col>
                                     <Col align={'center' }  span={4}><Text type="secondary">{totalproducts}</Text></Col>
                                 </Row>
