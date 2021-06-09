@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 1beb51dd211358c8fedec804f514059b780272c4
 .imagesPageHBVender {
     background-image: url("../images/ImgPages/vender-img.png");
     -webkit-background-size: cover;
@@ -173,16 +169,15 @@ i {
 .fondo-paginas {
     background-image: url("../images/ImgPages/fondo-paginas.png");
 }
-<<<<<<< HEAD
 
 
+
+.imgPageBG {
+    background-image: url("../images/home_images/explicacion.png");
+}
 .imgPageBG{
     background-image: url("../images/home_images/explicacion.png");
 
-=======
-.imgPageBG{
-    background-image: url("../images/home_images/explicacion.png");
->>>>>>> 1beb51dd211358c8fedec804f514059b780272c4
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -240,11 +235,5 @@ i {
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
 
 }
-
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 1beb51dd211358c8fedec804f514059b780272c4
 
 

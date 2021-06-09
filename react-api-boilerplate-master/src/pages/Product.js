@@ -14,6 +14,7 @@ import Routes from "../constants/routes";
 import NewComment from "../components/NewComment";
 import {useReputationList} from "../data/useReputationList";
 import {useQuestionsList} from "../data/UseQuestion";
+import '../styles/product.css';
 import {useQuestionComments} from "../data/useQuestionComments";
 import QuestionsList from "../components/QuestionsList";
 
@@ -154,7 +155,14 @@ const Product = () => {
                                         </h2>
                                             </Col>
                                 </Col>
+
+                                <Col span={7} align={'center'}>
+                                    <br/> <br/>
+                                    <Button className={"boton-comprar"}
+                                            href={Routes.PREPURCHASE.replace(':id', product.product.id)}>COMPRAR</Button>
+                                </Col>
                                     </>
+
                                 }
 
                             <TabPane tab="Valoraciones" key="2">
@@ -174,6 +182,8 @@ const Product = () => {
             }
             <br/><br/><br/>
             {
+
+            }
 
                 <Row>
                     <Col span={24} align={'center'}>
@@ -228,6 +238,7 @@ const Product = () => {
                                                                 />
                                                         }
                                                     </Col>
+
                                                     <Col span={8} align='end'>
 
                                                         <Text type='secondary'><Text strong>Valoración: </Text>
