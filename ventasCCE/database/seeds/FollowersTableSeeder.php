@@ -3,7 +3,6 @@
 
 use Illuminate\Database\Seeder;
 use App\Follower;
-use Tymon\JWTAuth\Facades\JWTAuth;
 
 class FollowersTableSeeder extends Seeder
 {
@@ -35,7 +34,6 @@ class FollowersTableSeeder extends Seeder
             foreach ($users as $user) {
 
                 Follower::create([
-
                     'user_id_2' => $user->id,
                 ]);
             }

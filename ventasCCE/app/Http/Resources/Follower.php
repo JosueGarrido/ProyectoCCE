@@ -16,8 +16,11 @@ class Follower extends JsonResource
     {
         return [
             'id' => $this ->id,
-            'name' => $this ->name,
-            'last_name' => $this ->last_name,
+            'user_data' => "/api/users/" . $this->user_id,
+            'user_id' => $this ->user_id,
+            'user2' => "/api/users/" . $this->user_id_2,
+            'user_id_2' => $this ->user_id_2,
+            'created_at' => $this ->created_at,
         ];
     }
 }
