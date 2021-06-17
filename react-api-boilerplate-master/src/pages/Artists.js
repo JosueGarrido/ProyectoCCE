@@ -11,6 +11,7 @@ const {  Content, Sider } = Layout;
 
 const Artists = () => (
     <>
+
         <Header2/>
 
         <Row>
