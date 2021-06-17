@@ -14,6 +14,9 @@ import {FacebookOutlined, InstagramFilled, TwitterOutlined, UserAddOutlined,Fork
 import Header2 from '../components/Header2';
 import CommentsList from "../components/CommentsList";
 import {useFollowers} from "../data/useFollowers";
+import Routes from "../constants/routes";
+import API from "../data";
+import {useAuth} from "../providers/Auth";
 
 const { Text, Title } = Typography;
 const {Meta} = Card;
@@ -34,7 +37,21 @@ const Artist = (props) => {
     const handleCancel = () => {
         setIsModalVisible(false);
     };
+    const {currentUser} = useAuth();
+    const handleSubmit = async (values) => {
+        console.log('values', values);
 
+        try {
+
+
+            await API.post(`/users/${ id }/follower`, {
+
+            });
+            sales.mutate();
+        } catch (error) {
+            console.log('error', error);
+        }
+    };
     const { reputations } = useReputationList( id );
 
 
@@ -138,7 +155,8 @@ const Artist = (props) => {
 
                                 
                                 <Col align={'center' }  span={10}>
-                                    <Button  >Seguir </Button >
+                                    <Button className={"boton-seguir"} id="boton" onclick={handleSubmit()}
+                                           >SEGUIR</Button><br/><br/>
 
                                 </Col>
 
