@@ -58,7 +58,7 @@ const LoginClient = () => {
                                 <img className='logo' src={letracomprar}/>
                             </a>
                         </Col>
-<<<<<<< HEAD
+
                         <Col span={1}>
 
                         </Col>
@@ -223,7 +223,7 @@ const LoginClient = () => {
                 <br/><br/><br/>
 
             </div>
-=======
+
                         <Col span={ 5} >
                             <Form
                                 name='login-form'
@@ -351,28 +351,13 @@ const LoginClient = () => {
                                 <p>IMAGEN</p>
 
                             </Col>
->>>>>>> 3ec34fd0af36b98d0d718c241dbfa8b5afc969a9
+
 
                         </Row>
                         <br/> <br/><br/> <br/><br/> <br/>
-<<<<<<< HEAD
-                        <p className={"tex"}>Considera tu grado de reputación dentro de la plataforma,
-                            serás calificado y comentado por tus compradores en cada
-                            transacción realizada
-                        </p>
 
-                    </Col>
-                    <Col span={10}  align={'center'}>
-                        <p>IMAGEN</p>
-
-                    </Col>
-
-                </Row>
-                <br/> <br/><br/> <br/><br/> <br/>
-            </div>
-=======
                     </div>
->>>>>>> 3ec34fd0af36b98d0d718c241dbfa8b5afc969a9
+
 
 
         </>
