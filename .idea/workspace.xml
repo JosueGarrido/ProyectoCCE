@@ -20,6 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e60e72b3-ccd3-470c-9dfd-6bed47741995" name="Default Changelist" comment="">
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
 
 
       <change beforePath="$PROJECT_DIR$/react-api-boilerplate-master/package-lock.json" beforeDir="false" />
@@ -28,6 +31,7 @@
       <change beforePath="$PROJECT_DIR$/react-api-boilerplate-master/src/pages/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-api-boilerplate-master/src/pages/Product.js" afterDir="false" />
 
 
+>>>>>>> 11813d5b1b857d507a32849395fee44ad8de0bac
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -231,7 +235,12 @@
       <workItem from="1618259374196" duration="578000" />
       <workItem from="1619653882503" duration="7326000" />
       <workItem from="1620177609822" duration="9190000" />
+<<<<<<< HEAD
+      <workItem from="1620700491398" duration="342000" />
+      <workItem from="1622246208961" duration="519000" />
+=======
 
+>>>>>>> 11813d5b1b857d507a32849395fee44ad8de0bac
     </task>
     <servers />
   </component>

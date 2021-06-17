@@ -58,6 +58,7 @@ const LoginClient = () => {
                                 <img className='logo' src={letracomprar}/>
                             </a>
                         </Col>
+<<<<<<< HEAD
                         <Col span={1}>
 
                         </Col>
@@ -222,40 +223,139 @@ const LoginClient = () => {
                 <br/><br/><br/>
 
             </div>
+=======
+                        <Col span={ 5} >
+                            <Form
+                                name='login-form'
+                                className='login-form'
+                                initialValues={ {
+                                    remember: true,
+                                    username: '',
+                                    password: ''
+                                } }
+                                onFinish={ onFinish }
+                            >
+                                <Col span={20}  >
+                                    <Form.Item
+                                        name='username'
+                                        rules={ [
+                                            {
+                                                required: true,
+                                                message: 'Ingresa tu nombre de usuario'
+                                            },
+                                            {
+                                                type: 'email',
+                                                message: 'Ingresa un correo válido'
+                                            }
+                                        ] }
+                                    >
 
-            <div className={"fondo-paginas"}>
-                <div id="dos" className="carta">
-                    <img className={"borde-imagen"}
-                         height={480}
-                         width={400}
-                         src='https://sergimateo.com/wp-content/2012/11/portadas-twitter-1.jpg'
-                    />
-                </div>
-                <br/> <br/> <br/> <br/> <br/>
-                <Row>
-                    <Col span={24} align={'center'}>
-                        <strong className={"texto-eres-nuevo"}>¿ERES NUEVO EN WASI WALLPAY?</strong>
-                        <br/> <br/> <br/>
-                        <p className={"para-comprar"}>Para comprar a través de Wasi Wallpay crea una cuenta personal de
-                            comprador,<br/>
-                            sin costo. Llena los campos solicitados en el regisstro de forma correcta y
-                            verídica,<br/>
-                            luego espera la confirmación enviada a tu correo electrónico.
-                        </p>
-                        <Form.Item>
-                            <Link className={"boton-login-registro"} to={Routes.REGISTER_CLIENT}>REGISTRARSE </Link>
-                        </Form.Item>
-                    </Col>
+                                        <Input prefix={ <UserOutlined className='site-form-item-icon' /> }
+                                               placeholder='Email'
+                                               autoComplete='email' />
 
-                </Row>
-                <br/> <br/>
 
-            </div>
-            <div>
-                <Row>
+                                    </Form.Item>
 
-                    <Col span={14} align={'left'}>
+                                    <Form.Item
+                                        name='password'
+                                        rules={ [
+                                            {
+                                                required: true,
+                                                message: 'Ingresa tu clave'
+                                            }
+                                        ] }
+                                    >
+                                        <Input.Password
+                                            prefix={ <LockOutlined className='site-form-item-icon' /> }
+                                            iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
+                                            placeholder='Password' autoComplete='password'
+
+                                        />
+                                    </Form.Item>
+                                </Col>
+                                <Form.Item name='remember' valuePropName='checked' noStyle>
+                                    <Checkbox>Recordarme</Checkbox>
+                                </Form.Item>
+
+                                <Form.Item>
+                                    <Link className='login-form-forgot' to=''>
+                                        ¡Olvidé mi clave!
+                                    </Link>
+                                </Form.Item>
+
+                                <Form.Item>
+
+                                    <Button style={{textAlign:'center'}} type='primary' htmlType='submit' className='login-form-button'>
+                                        Ingresar
+                                    </Button>
+                                    <div>Soy nuevo, <Link to={ Routes.REGISTER_CLIENT }>registrarme</Link></div>
+                                </Form.Item>
+
+                                <Col span={8} justify='left'>
+                                    col-8
+                                </Col>
+
+
+
+                            </Form>
+
+                        </Col>
+
+                    </Row>
+
+                    <br/><br/><br/>
+
+
+
+                    <div className={"fondo-paginas"}>
+                        <div id="dos" className="carta">
+                            <img className={"borde-imagen"}
+                                 height={480}
+                                 width={400}
+                                 src='https://sergimateo.com/wp-content/2012/11/portadas-twitter-1.jpg'
+                            />
+                        </div>
+                        <br/> <br/> <br/> <br/> <br/>
+                        <Row>
+                            <Col span={24} align={'center'}>
+                                <strong className={"texto-eres-nuevo"}>¿ERES NUEVO EN WASI WALLPAY?</strong>
+                                <br/> <br/> <br/>
+                                <p className={"para-comprar"}>Para comprar a través de Wasi Wallpay crea una cuenta personal de
+                                    comprador,<br/>
+                                    sin costo. Llena los campos solicitados en el regisstro de forma correcta y
+                                    verídica,<br/>
+                                    luego espera la confirmación enviada a tu correo electrónico.
+                                </p>
+                                <Form.Item>
+                                    <Link className={"boton-login-registro"} to={Routes.REGISTER_CLIENT}>REGISTRARSE </Link>
+                                </Form.Item>
+                            </Col>
+
+                        </Row>
+                        <br/> <br/>
+
+                    </div>
+                    <div>
+                        <Row>
+
+                            <Col span={14} align={'left'}>
+                                <br/> <br/><br/> <br/><br/> <br/>
+                                <p className={"tex"}>Considera tu grado de reputación dentro de la plataforma,
+                                    serás calificado y comentado por tus compradores en cada
+                                    transacción realizada.
+                                </p>
+
+                            </Col>
+                            <Col span={10}  align={'center'}>
+                                <p>IMAGEN</p>
+
+                            </Col>
+>>>>>>> 3ec34fd0af36b98d0d718c241dbfa8b5afc969a9
+
+                        </Row>
                         <br/> <br/><br/> <br/><br/> <br/>
+<<<<<<< HEAD
                         <p className={"tex"}>Considera tu grado de reputación dentro de la plataforma,
                             serás calificado y comentado por tus compradores en cada
                             transacción realizada
@@ -270,6 +370,9 @@ const LoginClient = () => {
                 </Row>
                 <br/> <br/><br/> <br/><br/> <br/>
             </div>
+=======
+                    </div>
+>>>>>>> 3ec34fd0af36b98d0d718c241dbfa8b5afc969a9
 
 
         </>

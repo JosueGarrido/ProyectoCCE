@@ -98,7 +98,6 @@ i {
 }
 
 .boton-comprar {
-
     text-decoration: none;
     padding: 40px;
     font-family: Geosans;
@@ -109,7 +108,6 @@ i {
     font-size: 25px;
     color: white;
     background-color: #A41C4D;
-
 }
 
 .boton-comprar:hover {
