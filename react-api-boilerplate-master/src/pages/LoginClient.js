@@ -302,7 +302,8 @@ const LoginClient = () => {
 
                         </Col>
 
-                    </Row>
+
+
 
                     <br/><br/><br/>
 
