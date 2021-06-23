@@ -77,7 +77,7 @@ const Login = () => {
                         </Col>
                         <Col span={3}>
                             <a href={Routes.HOME}>
-                            <img src={logoVertical} className='logoPages'/>
+                                <img src={logoVertical} className='logoPages'/>
                             </a>
                         </Col>
                     </Row>
