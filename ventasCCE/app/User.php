@@ -129,7 +129,8 @@ class User extends Authenticatable  implements JWTSubject
         return $this->hasMany('App\Follower', 'user_id_2');
     }
 
-    public function userable(){
+    public function userable()
+    {
         return $this->morphTo();
     }
 

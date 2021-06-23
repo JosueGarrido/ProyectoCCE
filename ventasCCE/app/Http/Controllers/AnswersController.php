@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Resources\AnswersCollection;
 use App\Http\Resources\AnswersCollection as AnswersResource;
 use App\Answers;
+use App\Questions;
 use Illuminate\Http\Request;
 
 class AnswersController extends Controller
@@ -17,10 +18,10 @@ class AnswersController extends Controller
         'required' => 'El campo :attribute es obligatorio.',
 
     ];
-    public function index()
+    public function index(Questions $question)
     {
-
-        return new AnswersCollection(Answers::paginate (25));
+        return response()->json(new AnswersResource($question->answer->sortByDesc('created_at')), 200);
+        //return new AnswersCollection(Answers::paginate (25));
     }
     public function show(Answers $id)
     {
