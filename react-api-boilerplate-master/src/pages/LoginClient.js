@@ -45,338 +45,247 @@ const LoginClient = () => {
     let registro;
     return (
         <>
-            <div className="imagesPageHB">
-                <Row className='header-wrapper-comprar'>
+        <div className="imagesPageHB">
+            <Row className='header-wrapper-comprar'>
 
-                    <Row type='flex' justify='space-between' align='bottom'>
-                        <Col span={7} align='left' className='main-menu'>
+                <Row type='flex' justify='space-between' align='bottom'>
+                    <Col span={7} align='left' className='main-menu'>
 
 
-                        </Col>
-                        <Col span={10} align='center'>
-                            <a href={Routes.HOME}>
-                                <img className='logo' src={letracomprar}/>
-                            </a>
-                        </Col>
-<<<<<<< HEAD
-                        <Col span={1}>
+                    </Col>
+                    <Col span={10} align='center'>
+                        <a href={Routes.HOME}>
+                            <img className='logo' src={letracomprar}/>
+                        </a>
+                    </Col>
 
-                        </Col>
-                        <Col span={3}>
-                            <nav>
-                                <ul>
-                                    <li><a href="#"> <i className="down"></i></a>
+                    <Col span={1}>
 
-                                        <ul style={{textAlign: "center"}}>
-                                            <li><a href="#">Categorias</a></li>
-                                            <li><a href="#">Artistas</a></li>
-                                            <li><a href="#">Comprar</a></li>
-                                            <li><a href="#">Vender</a></li>
-                                        </ul>
-                                    </li>
+                    </Col>
+                    <Col span={3}>
+                        <nav>
+                            <ul>
+                                <li><a href="#"> <i className="down"></i></a>
 
-                                </ul>
-                            </nav>
-                        </Col>
-                        <Col span={3}>
-                            <img src={logoVertical} className='logoPages'/>
-                        </Col>
-                    </Row>
+                                    <ul style={{textAlign: "center"}}>
+                                        <li><a href="#">Categorias</a></li>
+                                        <li><a href="#">Artistas</a></li>
+                                        <li><a href="#">Comprar</a></li>
+                                        <li><a href="#">Vender</a></li>
+                                    </ul>
+                                </li>
 
+                            </ul>
+                        </nav>
+                    </Col>
+                    <Col span={3}>
+                        <img src={logoVertical} className='logoPages'/>
+                    </Col>
                 </Row>
-                <Form
 
-                    name='login-form'
-                    className='login-form'
-                    initialValues={{
-                        remember: true,
-                        username: '',
-                        password: ''
-                    }}
-                    onFinish={onFinish}
-                >
+            </Row>
+            <Form
+
+                name='login-form'
+                className='login-form'
+                initialValues={{
+                    remember: true,
+                    username: '',
+                    password: ''
+                }}
+                onFinish={onFinish}
+            >
 
 
-                    <br/><br/><br/><br/>
-                    <Row>
-
-                        <Col span={10} align={'center'}>
-
-                            <Col className="text">
-                                <p align={'center'}> INICIAR SESIÓN</p>
-                            </Col>
-                            <br/>
-                            <Col className="text" align={'center'} span={12} md={14}>
-                                <Form.Item
-
-                                    name='username'
-                                    rules={[
-                                        {
-                                            required: true,
-                                            message: 'Ingresa tu nombre de usuario'
-                                        },
-                                        {
-                                            type: 'email',
-                                            message: 'Ingresa un correo válido'
-                                        }
-                                    ]}
-                                >
-                                    <Input prefix={<UserOutlined className='site-form-item-icon'/>}
-                                           placeholder='Dirección de Email'
-                                           autoComplete='email'/>
-                                </Form.Item>
-
-                                <Form.Item
-                                    name='password'
-                                    rules={[
-                                        {
-                                            required: true,
-                                            message: 'Ingresa tu clave'
-                                        }
-                                    ]}
-                                >
-                                    <Input.Password
-                                        prefix={<LockOutlined className='site-form-item-icon'/>}
-                                        iconRender={visible => (visible ? <EyeTwoTone/> : <EyeInvisibleOutlined/>)}
-                                        placeholder='Contraseña' autoComplete='password'
-                                    />
-                                </Form.Item>
-                            </Col>
-
-                            <Row>
-                                <Col align={'right'} span={4} md={19}>
-                                    <Form.Item>
-                                        <Link className="texto-olvide-clave">
-                                            ¿Olvidaste tu contraseña?
-                                        </Link>
-                                    </Form.Item>
-                                </Col>
-                            </Row>
-
-                            <Row>
-                                <Col align={'center'} span={14}>
-
-                                    <Form.Item name='remember' valuePropName='checked' noStyle>
-                                        <Checkbox className="text">Recordarme</Checkbox>
-                                    </Form.Item>
-                                </Col>
-                            </Row>
-                            <br/>
-
-                            <Row>
-                                <Col align={'center'} span={24}>
-                                    <Form.Item>
-                                        <Button type='primary' htmlType='submit' className='boton-login-entrar'>
-
-                                            ENTRAR
-
-                                        </Button>
-                                        <div className={registro}>Soy nuevo. <Link
-                                            to={Routes.REGISTER_CLIENT}>Registrarse</Link></div>
-                                    </Form.Item>
-
-                                </Col>
-                            </Row>
-                        </Col>
-
-                        <Col className="para-comprar" align={'right'} span={11}>
-                            <p align={'right'}> Crea tu cuenta personal <br/>de forma gratuita y contáctate <br/>
-                                con los creadores. Acuerda <br/>
-                                el pago y la entrega</p>
-                        </Col>
-
-                    </Row>
-                </Form>
-                <br/><br/><br/><br/> <br/><br/><br/><br/> <br/><br/><br/><br/>
-            </div>
-
-            <div >
-                <div id="uno" className="carta">
-                    <img className={"borde-imagen"}
-                         height={720}
-                         width={500}
-                         src='https://sergimateo.com/wp-content/2012/11/portadas-twitter-1.jpg'
-                    />
-                </div>
-
+                <br/><br/><br/><br/>
                 <Row>
+
                     <Col span={10} align={'center'}>
-                        <p>AQUI VA IMAGEN
-                        </p>
-                    </Col>
 
-                    <Col span={14} align={'left'}>
-                        <br/><br/><br/><br/>
-                        <strong className={"texto-compra"}>COMPRA ARTE O ARTESANÍAS<br/>
-                            Y CONTRIBUYE CON MILES<br/>
-                            DE CREADORES
-                        </strong>
-                        <p className={"texto-compra2"}>
-                            Encuentra el producto que deseas y acuerda con el vendedor
-                            la entra y el pago. Recuerda que los datos de las contrapartes
-                            se revelarán mutuamente, elevando los niveles de seguridad y
-                            confiabilidad al momento de la compra-venta.
-                        </p>
-                    </Col>
+                        <Col className="text">
+                            <p align={'center'}> INICIAR SESIÓN</p>
+                        </Col>
+                        <br/>
+                        <Col className="text" align={'center'} span={12} md={14}>
+                            <Form.Item
 
-                </Row>
-                <br/><br/><br/>
-
-            </div>
-=======
-                        <Col span={ 5} >
-                            <Form
-                                name='login-form'
-                                className='login-form'
-                                initialValues={ {
-                                    remember: true,
-                                    username: '',
-                                    password: ''
-                                } }
-                                onFinish={ onFinish }
+                                name='username'
+                                rules={[
+                                    {
+                                        required: true,
+                                        message: 'Ingresa tu nombre de usuario'
+                                    },
+                                    {
+                                        type: 'email',
+                                        message: 'Ingresa un correo válido'
+                                    }
+                                ]}
                             >
-                                <Col span={20}  >
-                                    <Form.Item
-                                        name='username'
-                                        rules={ [
-                                            {
-                                                required: true,
-                                                message: 'Ingresa tu nombre de usuario'
-                                            },
-                                            {
-                                                type: 'email',
-                                                message: 'Ingresa un correo válido'
-                                            }
-                                        ] }
-                                    >
+                                <Input prefix={<UserOutlined className='site-form-item-icon'/>}
+                                       placeholder='Dirección de Email'
+                                       autoComplete='email'/>
+                            </Form.Item>
 
-                                        <Input prefix={ <UserOutlined className='site-form-item-icon' /> }
-                                               placeholder='Email'
-                                               autoComplete='email' />
+                            <Form.Item
+                                name='password'
+                                rules={[
+                                    {
+                                        required: true,
+                                        message: 'Ingresa tu clave'
+                                    }
+                                ]}
+                            >
+                                <Input.Password
+                                    prefix={<LockOutlined className='site-form-item-icon'/>}
+                                    iconRender={visible => (visible ? <EyeTwoTone/> : <EyeInvisibleOutlined/>)}
+                                    placeholder='Contraseña' autoComplete='password'
+                                />
+                            </Form.Item>
+                        </Col>
 
-
-                                    </Form.Item>
-
-                                    <Form.Item
-                                        name='password'
-                                        rules={ [
-                                            {
-                                                required: true,
-                                                message: 'Ingresa tu clave'
-                                            }
-                                        ] }
-                                    >
-                                        <Input.Password
-                                            prefix={ <LockOutlined className='site-form-item-icon' /> }
-                                            iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
-                                            placeholder='Password' autoComplete='password'
-
-                                        />
-                                    </Form.Item>
-                                </Col>
-                                <Form.Item name='remember' valuePropName='checked' noStyle>
-                                    <Checkbox>Recordarme</Checkbox>
-                                </Form.Item>
-
+                        <Row>
+                            <Col align={'right'} span={4} md={19}>
                                 <Form.Item>
-                                    <Link className='login-form-forgot' to=''>
-                                        ¡Olvidé mi clave!
+                                    <Link className="texto-olvide-clave">
+                                        ¿Olvidaste tu contraseña?
                                     </Link>
                                 </Form.Item>
+                            </Col>
+                        </Row>
 
+                        <Row>
+                            <Col align={'center'} span={14}>
+
+                                <Form.Item name='remember' valuePropName='checked' noStyle>
+                                    <Checkbox className="text">Recordarme</Checkbox>
+                                </Form.Item>
+                            </Col>
+                        </Row>
+                        <br/>
+
+                        <Row>
+                            <Col align={'center'} span={24}>
                                 <Form.Item>
+                                    <Button type='primary' htmlType='submit' className='boton-login-entrar'>
 
-                                    <Button style={{textAlign:'center'}} type='primary' htmlType='submit' className='login-form-button'>
-                                        Ingresar
+                                        ENTRAR
+
                                     </Button>
-                                    <div>Soy nuevo, <Link to={ Routes.REGISTER_CLIENT }>registrarme</Link></div>
+                                    <div className={registro}>Soy nuevo. <Link
+                                        to={Routes.REGISTER_CLIENT}>Registrarse</Link></div>
                                 </Form.Item>
 
-                                <Col span={8} justify='left'>
-                                    col-8
-                                </Col>
-
-
-
-                            </Form>
-
-                        </Col>
-
-                    </Row>
-
-                    <br/><br/><br/>
-
-
-
-                    <div className={"fondo-paginas"}>
-                        <div id="dos" className="carta">
-                            <img className={"borde-imagen"}
-                                 height={480}
-                                 width={400}
-                                 src='https://sergimateo.com/wp-content/2012/11/portadas-twitter-1.jpg'
-                            />
-                        </div>
-                        <br/> <br/> <br/> <br/> <br/>
-                        <Row>
-                            <Col span={24} align={'center'}>
-                                <strong className={"texto-eres-nuevo"}>¿ERES NUEVO EN WASI WALLPAY?</strong>
-                                <br/> <br/> <br/>
-                                <p className={"para-comprar"}>Para comprar a través de Wasi Wallpay crea una cuenta personal de
-                                    comprador,<br/>
-                                    sin costo. Llena los campos solicitados en el regisstro de forma correcta y
-                                    verídica,<br/>
-                                    luego espera la confirmación enviada a tu correo electrónico.
-                                </p>
-                                <Form.Item>
-                                    <Link className={"boton-login-registro"} to={Routes.REGISTER_CLIENT}>REGISTRARSE </Link>
-                                </Form.Item>
                             </Col>
-
                         </Row>
-                        <br/> <br/>
-
-                    </div>
-                    <div>
-                        <Row>
-
-                            <Col span={14} align={'left'}>
-                                <br/> <br/><br/> <br/><br/> <br/>
-                                <p className={"tex"}>Considera tu grado de reputación dentro de la plataforma,
-                                    serás calificado y comentado por tus compradores en cada
-                                    transacción realizada.
-                                </p>
-
-                            </Col>
-                            <Col span={10}  align={'center'}>
-                                <p>IMAGEN</p>
-
-                            </Col>
->>>>>>> 3ec34fd0af36b98d0d718c241dbfa8b5afc969a9
-
-                        </Row>
-                        <br/> <br/><br/> <br/><br/> <br/>
-<<<<<<< HEAD
-                        <p className={"tex"}>Considera tu grado de reputación dentro de la plataforma,
-                            serás calificado y comentado por tus compradores en cada
-                            transacción realizada
-                        </p>
-
                     </Col>
-                    <Col span={10}  align={'center'}>
-                        <p>IMAGEN</p>
 
+                    <Col className="para-comprar" align={'right'} span={11}>
+                        <p align={'right'}> Crea tu cuenta personal <br/>de forma gratuita y contáctate <br/>
+                            con los creadores. Acuerda <br/>
+                            el pago y la entrega</p>
                     </Col>
 
                 </Row>
-                <br/> <br/><br/> <br/><br/> <br/>
+            </Form>
+            <br/><br/><br/><br/> <br/><br/><br/><br/> <br/><br/><br/><br/>
+        </div>
+
+        <div >
+            <div id="uno" className="carta">
+                <img className={"borde-imagen"}
+                     height={720}
+                     width={500}
+                     src='https://sergimateo.com/wp-content/2012/11/portadas-twitter-1.jpg'
+                />
             </div>
-=======
-                    </div>
->>>>>>> 3ec34fd0af36b98d0d718c241dbfa8b5afc969a9
+
+            <Row>
+                <Col span={10} align={'center'}>
+                    <p>AQUI VA IMAGEN
+                    </p>
+                </Col>
+
+                <Col span={14} align={'left'}>
+                    <br/><br/><br/><br/>
+                    <strong className={"texto-compra"}>COMPRA ARTE O ARTESANÍAS<br/>
+                        Y CONTRIBUYE CON MILES<br/>
+                        DE CREADORES
+                    </strong>
+                    <p className={"texto-compra2"}>
+                        Encuentra el producto que deseas y acuerda con el vendedor
+                        la entra y el pago. Recuerda que los datos de las contrapartes
+                        se revelarán mutuamente, elevando los niveles de seguridad y
+                        confiabilidad al momento de la compra-venta.
+                    </p>
+                </Col>
+
+            </Row>
+            <br/><br/><br/>
+
+        </div>
 
 
-        </>
-    );
+
+
+
+    <br/><br/><br/>
+
+
+
+    <div className={"fondo-paginas"}>
+        <div id="dos" className="carta">
+            <img className={"borde-imagen"}
+                 height={480}
+                 width={400}
+                 src='https://sergimateo.com/wp-content/2012/11/portadas-twitter-1.jpg'
+            />
+        </div>
+        <br/> <br/> <br/> <br/> <br/>
+        <Row>
+            <Col span={24} align={'center'}>
+                <strong className={"texto-eres-nuevo"}>¿ERES NUEVO EN WASI WALLPAY?</strong>
+                <br/> <br/> <br/>
+                <p className={"para-comprar"}>Para comprar a través de Wasi Wallpay crea una cuenta personal de
+                    comprador,<br/>
+                    sin costo. Llena los campos solicitados en el regisstro de forma correcta y
+                    verídica,<br/>
+                    luego espera la confirmación enviada a tu correo electrónico.
+                </p>
+                <Form.Item>
+                    <Link className={"boton-login-registro"} to={Routes.REGISTER_CLIENT}>REGISTRARSE </Link>
+                </Form.Item>
+            </Col>
+
+        </Row>
+        <br/> <br/>
+
+    </div>
+    <div>
+        <Row>
+
+            <Col span={14} align={'left'}>
+                <br/> <br/><br/> <br/><br/> <br/>
+                <p className={"tex"}>Considera tu grado de reputación dentro de la plataforma,
+                    serás calificado y comentado por tus compradores en cada
+                    transacción realizada.
+                </p>
+
+            </Col>
+            <Col span={10}  align={'center'}>
+                <p>IMAGEN</p>
+
+            </Col>
+
+
+        </Row>
+        <br/> <br/><br/> <br/><br/> <br/>
+
+    </div>
+
+
+
+</>
+);
 };
 
 export default withoutAuth(LoginClient);
