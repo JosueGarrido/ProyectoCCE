@@ -7,6 +7,8 @@ import {useParams, Link} from "react-router-dom";
 import {useProduct} from "../data/useProduct";
 import {useCategories} from "../data/useCategories";
 import {useProductsList} from "../data/useProductsList";
+import {useUser} from "../data/useUser";
+import {useUserList} from "../data/useUserList";
 import {DeleteOutlined, EditOutlined} from "@ant-design/icons";
 import {useReputationList} from "../data/useReputationList";
 import Routes from '../constants/routes';
@@ -24,15 +26,19 @@ const PrePurchase = (props) => {
 
 
     let {id} = useParams();
+    const user = useUser( id );
     const product = useProduct(id);
     const category = useCategories(id);
     const products = useProductsList(id);
+
+    const { users } = useUserList();
 
     const {sales} = useProductSell(id);
     const [submitting, setSubmitting] = useState(false);
 
 
-    console.log(products)
+    console.log(products);
+    console.log('user', user);
 
     const handleSubmit = async (values) => {
         console.log('values', values);
@@ -143,15 +149,24 @@ const PrePurchase = (props) => {
                                     <p>TOTAL: ${product.product.price} </p>
 
                                 </Col>
+                                <Col>
+                                    <p>Datos del vendedor:</p>
+                                    <p>Nombre: { user.user.name } </p>
+                                    <p>Apellido: {user.user.last_name} </p>
+                                    <p>Teléfono: {user.user.phone} </p>
+                                </Col>
                                 <Col span={15} align='center'>
-                                    <Button className={"boton-comprar"} id="boton" onclick={handleSubmit()}
-                                            href={Routes.HOME}>CONFIRMA TU
-                                        COMPRA</Button><br/><br/>
+                                    <Button className={"boton-comprar"}
+                                            href={Routes.PURCHASE.replace(':id', user.user.id)}>CONFIRMA TU
+                                        COMPRA</Button>
+
+                                    <br/><br/>
                                     <Col span={20} align='left' className={"texto"}>
                                         <p>Al confirmar tu compra, Wasi Wallpay mostrará tus datos
                                             personales y los del vendedor.</p>
                                     </Col>
                                 </Col>
+
                             </div>
 
                     }
