@@ -81,6 +81,7 @@ const Artist = (props) => {
         }
         totalproducts = products.products.length;
     }
+
     if (followers.followers !== undefined) {
         for (let i=0; i< (followers.followers.length); i++ ){
             follower.push(followers.followers[i].follower);
@@ -155,7 +156,7 @@ const Artist = (props) => {
 
                                 
                                 <Col align={'center' }  span={10}>
-                                    <Button className={"boton-seguir"} id="boton" onclick={handleSubmit()}
+                                    <Button className={"boton-seguir"} id="boton" onclick={handleSubmit}
                                            >SEGUIR</Button><br/><br/>
 
                                 </Col>

@@ -17,6 +17,7 @@ import {useProductSell} from "../data/useProductSell";
 import logoVertical from "../images/logoVertical.png";
 import PrePurchase from "./PrePurchase";
 
+
 const {TabPane} = Tabs;
 const {Text, Title} = Typography;
 const {Meta} = Card;
@@ -28,7 +29,11 @@ const Purchase = ( props) => {
     const user = useUser( id );
     const { users } = useUserList();
 
+    const product = useProduct(id);
+
+
     console.log('user', user);
+
 
     return(
         <>
@@ -80,41 +85,92 @@ const Purchase = ( props) => {
                 </Col>
 
             </Row>
+
+
             <br/><br/><br/><br/>
-            <Col span={3} align={'right'}>
-                <img className={"borde-imagen"}
-                     height={200}
-                     width={200}
-                     src='https://sergimateo.com/wp-content/2012/11/portadas-twitter-1.jpg'
-                />
-            </Col>
-
-            <br/><br/>
-
-            {
-                user.isLoading
-                    ? <div>Cargando...</div>
-                    : user.isError
-                    ? <ShowError error={user.isError}/>
-                    :
-                    <Col span={15} align='center' className={"texto"}>
-                        <p>Datos del vendedor:</p>
-
-                        <p>Nombre: { user.user.name } </p>
-                        <p>Apellido: {user.user.last_name} </p>
-                        <p>Teléfono: {user.user.phone} </p>
-                        <img src={user.user.profile_picture}/>
-
-                        <Button className={"boton-comprar"}
-                                href={Routes.HOME}>ACEPTAR</Button>
-                    </Col>
-            }
+<Row>
 
 
 
+    < Col span={16} align='center'>
+
+        <Col >
+
+            <h2 className={"subtitulo"} >
+             CONTÁCTATE CON TU VENDEDOR
+            </h2>
+                <br/>
+
+                {
+                    user.isLoading
+                        ? <div>Cargando...</div>
+                        : user.isError
+                        ? <ShowError error={user.isError}/>
+                        :
+                        <Col span={16} align='left'  className={"texto-iz"}>
+                            <h4>Datos del vendedor:</h4>
+
+                            <p>Nombre: { user.user.name } {user.user.last_name} </p>
+                            <p>E-mail: { user.user.email }</p>
+                            <p>Teléfono: {user.user.phone} </p>
+                            <br/>
+                            <img src={user.user.profile_picture}/>
+                            <br/>    <br/>    <br/>
+
+                        </Col>
+
+                }
+
+
+        </Col>
+        <br/>     <br/>       <br/>     <br/>
+        <Col span={16} align='right'  >
+            <Button className={"boton-comprar"}
+                    href={Routes.HOME}>ACEPTAR</Button>
+        </Col>
+    </Col>
+
+
+    <Col span={8} align='center'  >
+        <br/>
+        <h3>CONFIRMASTE LO SIGUIENTE</h3>
+        <br/>
+        <img className={"borde-imagen"}
+             height={450}
+             width={425}
+             src='https://sergimateo.com/wp-content/2012/11/portadas-twitter-1.jpg'
+        />
+        <br/>     <br/>
+        {
+            product.isLoading
+                ? <div>Cargando...</div>
+                : product.isError
+                ? <ShowError error={product.isError}/>
+                :
+
+
+                <Col span={15} align='center' className={"texto"}>
+                    <p>NOMBRE DEL PRODUCTO: {product.product.name}  </p>
+                    <p>STOCK: {product.product.stock}</p>
+                    <p>Cantidad</p>
+                    <Divider orientation="center"></Divider>
+
+                    <p>TOTAL: ${product.product.price} </p>
+
+                </Col>
+
+
+        }
+    </Col>
+
+
+
+</Row>
 
 
        </>
+
+
     );
 
 
