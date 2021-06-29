@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\AnswersCollection;
-use App\Http\Resources\AnswersCollection as AnswersResource;
+use App\Http\Resources\Answers as AnswersResource;
 use App\Answers;
 use App\Questions;
 use Illuminate\Http\Request;
@@ -28,11 +28,11 @@ class AnswersController extends Controller
         $this->authorize('view', $id);
         return response()->json( new AnswersResource($id), 200);
     }
-    public function store(Request $request)
+    public function store(Request $request, Questions $question)
     {
-        //$this->authorize('create', Answers::class);
-        $request->validate(self::$rules,self::$messages);
-        return Answers::create($request->all());
+        $answer = $question->answer()->save(new Answers($request->all()));
+
+        return response()->json(new AnswersResource($answer), 201);
     }
     public function update(Request $request, $id)
     {

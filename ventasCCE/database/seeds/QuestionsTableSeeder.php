@@ -25,7 +25,7 @@ class QuestionsTableSeeder extends Seeder
         foreach ($users as $user) {
             // iniciamos sesión con este usuario
             JWTAuth::attempt(['email' => $user->email, 'password' => '123456']);
-            // Y ahora con este usuario creamos algunos productos
+            // Y ahora con este usuario creamos algunas preguntas
             foreach ($products as $product) {
                 Questions::create([
 

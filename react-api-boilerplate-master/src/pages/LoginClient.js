@@ -300,8 +300,8 @@ const LoginClient = () => {
 
                 </Form>
 
-            </Col>
 
+            </Col>
 
 
 
@@ -340,8 +340,11 @@ const LoginClient = () => {
             <div>
                 <Row>
 
+
+
                     <Col span={14} align={'left'}>
                         <br/> <br/><br/> <br/><br/> <br/>
+
                         <p className={"tex"}>Considera tu grado de reputación dentro de la plataforma,
                             serás calificado y comentado por tus compradores en cada
                             transacción realizada.
@@ -358,7 +361,6 @@ const LoginClient = () => {
                 <br/> <br/><br/> <br/><br/> <br/>
 
             </div>
-
 
 
         </>

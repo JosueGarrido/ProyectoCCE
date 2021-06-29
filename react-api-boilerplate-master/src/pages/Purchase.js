@@ -28,6 +28,7 @@ const Purchase = ( props) => {
     let {id} = useParams();
     const user = useUser( id );
     const { users } = useUserList();
+
     const product = useProduct(id);
 
 
@@ -84,6 +85,7 @@ const Purchase = ( props) => {
                 </Col>
 
             </Row>
+
 
             <br/><br/><br/><br/>
 <Row>
@@ -167,6 +169,7 @@ const Purchase = ( props) => {
 
 
        </>
+
 
     );
 
