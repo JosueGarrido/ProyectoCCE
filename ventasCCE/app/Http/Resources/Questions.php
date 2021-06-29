@@ -22,6 +22,7 @@ class Questions extends JsonResource
             'user_id' => $this -> user_id,
             'product' => "/api/products/" . $this->product_id,
             'product_id' => $this ->product_id,
+            'answers' => $this -> answer,
             'created_at' => $this ->created_at,
         ];
     }

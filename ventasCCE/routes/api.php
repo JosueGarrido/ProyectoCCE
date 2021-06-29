@@ -21,6 +21,7 @@ Route::group(['middleware' => ['cors']], function () {
     Route::post('register', 'UserController@register');
     Route::post('register-client', 'UserController@registerClient');
     Route::get('users', 'UserController@index');
+    Route::get('artist', 'UserController@indexartist');
     Route::delete('users/{user}', 'UserController@delete');
     Route::get('users/{user}/profile_picture', 'UserController@image');
     Route::get('products/{product}/image', 'ProductController@image');
@@ -145,7 +146,7 @@ Route::group(['middleware' => ['cors']], function () {
         Route::delete('questions/{id}', 'QuestionsController@delete');
 
         //answers
-        Route::get('answers', 'AnswersController@index');
+        Route::get('questions/{question}/answers', 'AnswersController@index');
         Route::get('answers/{id}', 'AnswersController@show');
         Route::post('answers', 'AnswersController@store');
         Route::put('answers/{id}', 'AnswersController@update');

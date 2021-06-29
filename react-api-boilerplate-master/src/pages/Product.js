@@ -36,7 +36,6 @@ const Product = () => {
     const {questions} = useQuestionComments(id);
 
 
-
     const { reputations } = useReputationList( id );
     const [ visible, setVisible ] = useState( 2 );
 
@@ -327,6 +326,42 @@ const Product = () => {
                                                     </Col>
 
                                                 </Row>
+                                                {
+                                                    questions.answers.slice(0, visible).map((answers, i) => (
+                                                        <Col xs={24} sm={18} md={24} style={{marginBottom: 20}} key={i}>
+                                                            {answers
+                                                                ?
+                                                                <Card hoverable
+                                                                      style={{borderRadius: 10}}>
+                                                                    <Row>
+                                                                        <Col span={14}>
+                                                                            {
+                                                                                users === undefined
+                                                                                    ? <Text>No cargan los datos</Text>
+                                                                                    :
+                                                                                    <Meta
+                                                                                        avatar={<Avatar
+                                                                                            size={100}
+                                                                                            alt={users[answers.user_id - 1].name}
+                                                                                            src={`http://localhost:8000/storage/${users[answers.user_id - 1].profile_picture}`}
+                                                                                        />}
+
+
+                                                                                        title={`Nombre de Usuario: ${users[answers.user_id - 1].name} ${users[answers.user_id - 1].last_name}`}
+                                                                                        description={`Pregunta: ${answers.answer}`}
+                                                                                    />
+                                                                            }
+                                                                        </Col>
+
+                                                                    </Row>
+
+                                                                </Card> : <div style={{textAlign: 'center'}}>
+                                                                    <Card title='' extra='' cover='' loading/>
+                                                                </div>
+                                                            }
+                                                        </Col>
+                                                    ))
+                                                }
 
                                             </Card>
                                             : <div style={{textAlign: 'center'}}>

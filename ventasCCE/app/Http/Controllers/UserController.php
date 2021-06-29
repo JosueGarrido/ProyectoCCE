@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 
 //use App\Http\Resources\UserCollection;
+use App\Artist;
 use App\User;
 use App\Http\Resources\User as UserResource;
 use Illuminate\Http\Request;
@@ -44,6 +45,14 @@ class UserController extends Controller{
         return User::all();
         //return new UserCollection(User::paginate (25));
     }
+
+    public function indexartist()
+    {
+        // $this->authorize('viewAny', User::class);
+        return Artist::all();
+        //return new UserCollection(User::paginate (25));
+    }
+
     public function show(User $user)
     {
         $this->authorize('view', $user);

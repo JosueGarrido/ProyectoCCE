@@ -36,6 +36,7 @@ const publicRoutes = {
   CATEGORY:'/categoria/:id',
   CATEGORY1:'/categoria1/:id',
   PREPURCHASE:'/pre-compra/:id/',
+  PURCHASE:'/compra/:id/',
   CATEGORIESPAGE:'/categorias',
   POLITICS:'/politica-privacidad',
   TERMS:'/terminos-condiciones',

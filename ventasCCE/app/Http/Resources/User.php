@@ -25,19 +25,8 @@ class User extends JsonResource
             'birthday' => $this ->birthday,
             'phone' => $this ->phone,
             'profile_picture' => $this ->profile_picture,
+            'artist' => $this -> userable,
             'location' => $this ->location,
-            'live' => $this -> live,
-            'culture' => $this ->culture,
-            'disability' => $this ->disability,
-            'disability_porcentage' => $this ->disability,
-            'stage_name' => $this ->stage_name,
-            'shop_name' => $this ->shop_name,
-            'field_cultural' => $this ->field_cultural,
-            'secondary_activity' => $this ->secondary_activity,
-            'education_level' => $this ->education_level,
-            'career_name' => $this ->career_name,
-            'studies_institution' => $this ->studies_institution,
-            'social_networks' => $this ->social_networks,
 
         ];
 
