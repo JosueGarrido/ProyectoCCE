@@ -148,7 +148,7 @@ Route::group(['middleware' => ['cors']], function () {
         //answers
         Route::get('questions/{question}/answers', 'AnswersController@index');
         Route::get('answers/{id}', 'AnswersController@show');
-        Route::post('answers', 'AnswersController@store');
+        Route::post('questions/{question}/answers', 'AnswersController@store');
         Route::put('answers/{id}', 'AnswersController@update');
         Route::delete('answers/{id}', 'AnswersController@delete');
 
