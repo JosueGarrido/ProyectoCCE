@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="35d6fe6a-58fc-41fb-a90f-ee1d08da7dab" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/QuestionsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/QuestionsList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Product.js" afterDir="false" />
-    </list>
+    <list default="true" id="35d6fe6a-58fc-41fb-a90f-ee1d08da7dab" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -170,7 +167,11 @@
       <workItem from="1624391768385" duration="1262000" />
       <workItem from="1624461562834" duration="7394000" />
       <workItem from="1624637073716" duration="6521000" />
-      <workItem from="1624910236251" duration="2434000" />
+      <workItem from="1624910236251" duration="3538000" />
+      <workItem from="1625075207871" duration="4555000" />
+      <workItem from="1625149991273" duration="1871000" />
+      <workItem from="1625534732930" duration="659000" />
+      <workItem from="1625604229020" duration="729000" />
     </task>
     <servers />
   </component>
@@ -182,9 +183,9 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="80" y="142" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.768@0.0.1366.768" timestamp="1624676140807" />
-    <state x="463" y="139" key="FileChooserDialogImpl" timestamp="1624649188680">
+    <state x="463" y="139" key="FileChooserDialogImpl" timestamp="1625534828240">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1624649188680" />
+    <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1625534828240" />
   </component>
 </project>

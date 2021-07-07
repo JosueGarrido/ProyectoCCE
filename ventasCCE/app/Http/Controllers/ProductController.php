@@ -21,6 +21,7 @@ class ProductController extends Controller
         'description' => 'required|string|max:150',
         'price' => 'required|float',
         'stock' => 'required|int',
+        'discount' => 'required|int',
         'image' => 'required',
         'location' => 'required',
 
@@ -73,6 +74,7 @@ class ProductController extends Controller
             'description' => 'required|string|max:150',
             'price' => 'required',
             'stock' => 'required',
+            'discount' => 'required',
             'image' => 'required|image|dimensions:min_width=200,min_height=200',
             'location' => 'required',
             'category_id' => 'required'
