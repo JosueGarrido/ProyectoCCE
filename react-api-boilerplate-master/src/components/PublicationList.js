@@ -77,6 +77,7 @@ const PublicationList = (props ) => {
                 data.append( 'description', values.description );
                 data.append( 'price', values.price );
                 data.append( 'stock', values.stock );
+                data.append('discount',values.discount);
                 data.append( 'sales', values.sales );
                 data.append( 'image', values.image[ 0 ] );
                 data.append( 'location', values.location );

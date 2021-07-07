@@ -15,10 +15,10 @@ import {
     Row,
     Col,
     Divider,
-    Select
+    Select, Switch
 } from 'antd';
 import { useAuth } from '../providers/Auth';
-import {CarryOutOutlined, PlusOutlined} from '@ant-design/icons';
+import {CarryOutOutlined, PlusOutlined, UserOutlined} from '@ant-design/icons';
 import { mutate } from 'swr';
 import Cookies from "js-cookie";
 import ErrorList from "../components/ErrorList";
@@ -84,6 +84,7 @@ const Publications = ( {
                 data.append( 'description', values.description );
                 data.append( 'price', values.price );
                 data.append( 'stock', values.stock );
+                data.append( 'discount', values.discount)
                 data.append( 'sales', values.sales );
                 data.append( 'image', values.image[ 0 ] );
                 data.append( 'location', values.location );
@@ -265,6 +266,36 @@ const Publications = ( {
                         <Input />
                     </Form.Item>
 
+                    <Form.Item name='check_discount'
+                               initialValue='0'
+                               label="Ofertas del producto"
+                               extra="Indique el porcentaje de descuento de su producto"
+                               hasFeedback
+                    >
+                        <Switch checkedChildren="SI" unCheckedChildren="NO"/>
+                    </Form.Item>
+
+                    <Form.Item
+                        noStyle
+                        shouldUpdate={(prevValues, currentValues) => prevValues.check_discount !== currentValues.check_discount}
+                    >
+                        {({ getFieldValue }) => {
+                            return getFieldValue('check_discount') === true ? (
+                                <Form.Item name='discount'
+                                           label="Descuento del producto"
+                                           rules={ [
+                                               {
+                                                   required: true,
+                                                   message: 'Ingrese la cantidad de porcentaje de su producto'
+                                               }
+                                           ] }
+                                           hasFeedback
+                                >
+                                    <Input  placeholder='Ingresa el descuento del producto' />
+                                </Form.Item>
+                            ) : null;
+                        }}
+                    </Form.Item>
                     <Form.Item name='sales'
                                label="Sales"
                                rules={ [
