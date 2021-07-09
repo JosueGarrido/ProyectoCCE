@@ -9,9 +9,9 @@ import { Link } from 'react-router-dom';
 
 const { TextArea } = Input;
 
-const QuestionsList = ( { questions, productId} ) => {
+const AnswerList = ( {  questionId} ) => {
 
-    console.log( 'props', questions );
+    //console.log( 'props', answers );
     const [ submitting, setSubmitting ] = useState( false );
 
     const handleSubmit = async( values ) => {
@@ -22,11 +22,11 @@ const QuestionsList = ( { questions, productId} ) => {
 
             // setValue( '' );
 
-            await API.post( `/products/${ productId }/questions`, {
-                question: values.question,
-                product_id: productId
+            await API.post( `/questions/${ questionId }/answers`, {
+                answer: values.answer,
+                question_id: questionId
             } );
-            questions.mutate(); // get updated data
+            //answers.mutate(); // get updated data
             setSubmitting( false );
         } catch( error ) {
             console.log( 'error', error );
@@ -45,13 +45,13 @@ const QuestionsList = ( { questions, productId} ) => {
                     <Col span={22}>
                         <Form
                             form={ form }
-                            name='form_question'
+                            name='form_answer'
                             onFinish={ handleSubmit }>
-                            <Form.Item name='question'
+                            <Form.Item name='answer'
                                        rules={ [
                                            {
                                                required: true,
-                                               message: 'Ingrese su pregunta'
+                                               message: 'Ingrese su respuesta'
                                            }
                                        ] }>
                                 <TextArea rows={ 2 } />
@@ -59,7 +59,7 @@ const QuestionsList = ( { questions, productId} ) => {
 
                             <Form.Item>
                                 <Button htmlType='submit' loading={ submitting } type='primary'>
-                                    Enviar pregunta
+                                    Enviar respuesta
                                 </Button>
                             </Form.Item>
                         </Form>
@@ -77,4 +77,4 @@ const QuestionsList = ( { questions, productId} ) => {
     )
 };
 
-export default QuestionsList;
+export default AnswerList;

@@ -56,7 +56,7 @@ const PublicationList = (props ) => {
         const [edit, setEdit]= useState(false);
 
 
-    const {Option} = Select;
+        const {Option} = Select;
 
         // const [ articles, setArticles ] = useState( props.articles );
 
@@ -65,50 +65,51 @@ const PublicationList = (props ) => {
         //   setArticles( props.articles );
         // }, [ props.articles ] );
 
-    const onUpdate = async values => {
-        console.log( 'Received values of form: ', values );
+        const onUpdate = async values => {
+            console.log( 'Received values of form: ', values );
 
-        form.validateFields()
-            .then( async( values ) => {
-                setIsSaving( true );
-                const data = new FormData();
+            form.validateFields()
+                .then( async( values ) => {
+                    setIsSaving( true );
+                    const data = new FormData();
 
-                data.append( 'name', values.name );
-                data.append( 'description', values.description );
-                data.append( 'price', values.price );
-                data.append( 'stock', values.stock );
-                data.append( 'sales', values.sales );
-                data.append( 'image', values.image[ 0 ] );
-                data.append( 'location', values.location );
-                data.append('category_id', values.category_id)
+                    data.append( 'name', values.name );
+                    data.append( 'description', values.description );
+                    data.append( 'price', values.price );
+                    data.append( 'stock', values.stock );
+                    data.append('discount',values.discount);
+                    data.append( 'sales', values.sales );
+                    data.append( 'image', values.image[ 0 ] );
+                    data.append( 'location', values.location );
+                    data.append('category_id', values.category_id)
 
 
-                try {
-                    await API.put( `/products/${ values }`,{
+                    try {
+                        await API.put( `/products/${ values }`,{
 
-                    }); // post data to server
-                    form.resetFields();
-                    setFileList( [] );
-                    setImageUrl( null );
-                    setIsSaving( false );
-                    await mutate('/products');
-                    //onSubmit();
-                } catch( error ) {
-                    setIsSaving( false );
-                    console.error(
-                        'You have an error in your code or there are Network issues.',
-                        error
-                    );
+                        }); // post data to server
+                        form.resetFields();
+                        setFileList( [] );
+                        setImageUrl( null );
+                        setIsSaving( false );
+                        await mutate('/products');
+                        //onSubmit();
+                    } catch( error ) {
+                        setIsSaving( false );
+                        console.error(
+                            'You have an error in your code or there are Network issues.',
+                            error
+                        );
 
-                    message.error( translateMessage( error.message ) );
-                }
-            } )
-            .catch( info => {
-                console.log( 'Validate Failed:', info );
-                console.log('values', values);
-            } );
+                        message.error( translateMessage( error.message ) );
+                    }
+                } )
+                .catch( info => {
+                    console.log( 'Validate Failed:', info );
+                    console.log('values', values);
+                } );
 
-    };
+        };
 
 
         const handleChangeCategory = ( e ) => {
@@ -163,16 +164,16 @@ const PublicationList = (props ) => {
         }
 
 
-    const handleViewDetails = () => {
-        setShowModal(true);
+        const handleViewDetails = () => {
+            setShowModal(true);
 
 
-    }
+        }
 
-    const layout = {
-        labelCol: { span: 8 },
-        wrapperCol: { span: 16 },
-    };
+        const layout = {
+            labelCol: { span: 8 },
+            wrapperCol: { span: 16 },
+        };
 
 
         return (
@@ -314,7 +315,7 @@ const PublicationList = (props ) => {
                         <Form.Item name='image'
                                    label='Upload'
                                    valuePropName='fileList'
-                                   //getValueFromEvent={ normPhotoFile }
+                            //getValueFromEvent={ normPhotoFile }
                                    rules={ [
                                        {
                                            required: true,
