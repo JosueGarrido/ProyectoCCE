@@ -82,6 +82,7 @@ const Artist = (props) => {
         }
         totalproducts = products.products.length;
     }
+
     if (followers.followers !== undefined) {
         for (let i=0; i< (followers.followers.length); i++ ){
             follower.push(followers.followers[i].follower);

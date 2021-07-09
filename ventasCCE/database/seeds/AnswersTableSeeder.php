@@ -22,15 +22,17 @@ class AnswersTableSeeder extends Seeder
         // sesión con cada uno para crear productos en su nombre
 
         $users = App\User::all();
+        $questions = App\Questions::all();
         foreach ($users as $user) {
             // iniciamos sesión con este usuario
             JWTAuth::attempt(['email' => $user->email, 'password' => '123456']);
-            // Y ahora con este usuario creamos algunos productos
-            $num_answers = 2;
-            for ($j = 0; $j < $num_answers; $j++) {
+            // Y ahora con este usuario creamos algunass respuestas
+
+            foreach ($questions as $question) {
                 Answers::create([
+
                     'answer' => $faker->sentence,
-                    'question_id' => $faker->numberBetween(1,22),
+                    'question_id' => $question->id,
                 ]);
             }
         }

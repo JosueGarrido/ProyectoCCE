@@ -43,6 +43,9 @@ Route::group(['middleware' => ['cors']], function () {
     Route::get('category2/{category2}/products/', 'ProductController@indexcat2');
     Route::get('category1/{category1}/products/', 'ProductController@indexcat1');
 
+    //artist
+    Route::get('artist', 'ArtistController@index');
+
     Route::group(['middleware' => ['jwt.verify']], function() {
 
 
@@ -151,7 +154,7 @@ Route::group(['middleware' => ['cors']], function () {
         //answers
         Route::get('questions/{question}/answers', 'AnswersController@index');
         Route::get('answers/{id}', 'AnswersController@show');
-        Route::post('answers', 'AnswersController@store');
+        Route::post('questions/{question}/answers', 'AnswersController@store');
         Route::put('answers/{id}', 'AnswersController@update');
         Route::delete('answers/{id}', 'AnswersController@delete');
 
