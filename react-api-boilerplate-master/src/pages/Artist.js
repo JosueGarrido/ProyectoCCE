@@ -29,6 +29,7 @@ const Artist = (props) => {
 
     const {location, match} = props;
     const [isModalVisible, setIsModalVisible] = useState(false);
+    const [ submitting, setSubmitting ] = useState( false );
 
     const showModal = () => {
         setIsModalVisible(true);
@@ -42,14 +43,14 @@ const Artist = (props) => {
         console.log('values', values);
 
         try {
-
-
             await API.post(`/users/${ id }/follower`, {
 
             });
-            sales.mutate();
+            followers.mutate();
+            setSubmitting( false );
         } catch (error) {
             console.log('error', error);
+            setSubmitting( false );
         }
     };
     const { reputations } = useReputationList( id );
@@ -155,7 +156,7 @@ const Artist = (props) => {
 
                                 
                                 <Col align={'center' }  span={10}>
-                                    <Button className={"boton-seguir"} id="boton" onclick={handleSubmit()}
+                                    <Button className={"boton-seguir"} id="boton" onclick={handleSubmit}
                                            >SEGUIR</Button><br/><br/>
 
                                 </Col>

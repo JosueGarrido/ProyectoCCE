@@ -34,6 +34,9 @@ Route::group(['middleware' => ['cors']], function () {
     Route::get('products/{product}/questions', 'QuestionsController@index');
     Route::get('questions/{id}', 'QuestionsController@show');
 
+    //Reputación
+    Route::get('users/{user}/reputations', 'ReputationController@index');
+
     //Productos de un usuario
     Route::get('users/{user}/products/', 'ProductController@index');
     //Productos de una categoria
