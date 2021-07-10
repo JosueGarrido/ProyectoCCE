@@ -17,7 +17,7 @@ import {useQuestionsList} from "../data/UseQuestion";
 import '../styles/product.css';
 import {useQuestionComments} from "../data/useQuestionComments";
 import QuestionsList from "../components/QuestionsList";
-
+import '../styles/product.css';
 const {TabPane} = Tabs;
 const {Text, Title} = Typography;
 const {Meta} = Card;
@@ -155,7 +155,7 @@ const Product = () => {
                                             </Col>
                                 </Col>
 
-                                <Col span={7} align={'center'}>
+                                <Col span={16} align={'right'}>
                                     <br/> <br/>
                                     <Button className={"boton-comprar"}
                                             href={Routes.PREPURCHASE.replace(':id', product.product.id)}>COMPRAR</Button>
@@ -164,18 +164,8 @@ const Product = () => {
 
                                 }
 
-                            <TabPane tab="Valoraciones" key="2">
-                                <div>Cargando...</div>
-                            </TabPane>
-
-
-
-
                 </Row>
 
-            }
-
-            {
 
 
             }
@@ -185,110 +175,28 @@ const Product = () => {
             }
 
                 <Row>
-                    <Col span={24} align={'center'}>
+                    <Col span={16} align={'center'}>
 
 
-                        <strong>Preguntas del producto </strong>
+                        <h3>Preguntas del producto </h3>
                     </Col>
                 </Row>
             }
             <br/>
 
-            {
-                reputations === undefined
-                    ? <Text>No cargan los datos</Text>
-                    :
-                    <Row gutter={30}>
-                        <Col align='center' md={6}>
-                            <Title level={3}>Reputación: </Title>
-                        </Col>
-                        <Col md={18}>
-                            <Col md={24}>
-                                {
-                                    reputations.isLoading ? <Skeleton loading={reputations.isLoading} active avatar/>
-                                        : reputations.isError
-                                        ? <ShowError error={reputations.isError}/>
-                                        : user.user && <NewComment userId={id} reputations={reputations}/>
-                                }
-                            </Col>
-                            <br/>
-                            {
-                                reputations.slice(0, visible).map((reputations, i) => (
-                                    <Col xs={24} sm={18} md={24} style={{marginBottom: 20}} key={i}>
-                                        {reputations.comment
-                                            ? <Card hoverable
-                                                    style={{borderRadius: 10}}>
-                                                <Row>
-                                                    <Col span={14}>
-                                                        {
-                                                            users === undefined
-                                                                ? <Text>No cargan los datos</Text>
-                                                                :
-                                                                <Meta
-                                                                    avatar={<Avatar
-                                                                        size={100}
-                                                                        alt={users[reputations.user_id - 1].name}
-                                                                        src={`http://localhost:8000/storage/${users[reputations.user_id - 1].profile_picture}`}
-                                                                    />}
-
-
-                                                                    title={`Nombre del Comprador: ${users[reputations.user_id - 1].name} ${users[reputations.user_id - 1].last_name}`}
-                                                                    description={`Comentario: ${reputations.comment}`}
-                                                                />
-                                                        }
-                                                    </Col>
-
-                                                    <Col span={8} align='end'>
-
-                                                        <Text type='secondary'><Text strong>Valoración: </Text>
-                                                            <Rate disabled defaultValue={reputations.score}/>
-
-                                                        </Text>
-                                                    </Col>
-                                                </Row>
-
-                                            </Card>
-                                            : <div style={{textAlign: 'center'}}>
-                                                <Card title='' extra='' cover='' loading/>
-                                            </div>
-                                        }
-                                    </Col>
-                                ))
-                            }
-
-                            {
-
-                                visible < reputations.length
-                                    ?
-                                    <Col span={22}>
-                                        <hr/>
-                                        <div style={{textAlign: 'center'}}>
-                                            <Button
-                                                type={'primary'} onClick={handleloadmore}>
-                                                Ver más
-                                            </Button>
-                                        </div>
-                                    </Col>
-                                    : <>
-                                    </>
-                            }
-                            <br/>
-                        </Col>
-
-                    </Row>
-            }
 
             {
 
                questions === undefined
                     ? <Text>No cargan los datos</Text>
                     :
-                    <Row gutter={30}>
+                    <Row gutter={30} >
                         <Col align='center' md={6}>
                             <Title level={3}>Preguntas: </Title>
                         </Col>
-                        <Col md={18}>
-                            <Col md={24}>
+                        <Col md={18}  >
+                            <Col md={24} >
+
                                 {
                                     questions.isLoading
                                         ? <Skeleton loading={questions.isLoading} active avatar/>
@@ -297,17 +205,20 @@ const Product = () => {
                                         :  <QuestionsList productId={id} questions={questions}/>
 
                                 }
+
                             </Col>
+
                             <br/>
                             {
+
                                 questions.slice(0, visible).map((questions, i) => (
-                                    <Col xs={24} sm={18} md={24} style={{marginBottom: 20}} key={i}>
+                                    <Col xs={24} sm={18} md={24} style={{marginBottom: 20}} key={i}  >
                                         {questions.question
-                                            ? <Card hoverable
-                                                    style={{borderRadius: 10}}>
+                                            ? <Card className={'cuadro'}>
                                                 <Row>
                                                     <Col span={14}>
                                                         {
+
                                                            users === undefined
                                                                 ? <Text>No cargan los datos</Text>
                                                                 :
@@ -331,8 +242,7 @@ const Product = () => {
                                                         <Col xs={24} sm={18} md={24} style={{marginBottom: 20}} key={i}>
                                                             {answers
                                                                 ?
-                                                                <Card hoverable
-                                                                      style={{borderRadius: 10}}>
+                                                                <Card className={'cuadro'}>
                                                                     <Row>
                                                                         <Col span={14}>
                                                                             {
@@ -380,7 +290,7 @@ const Product = () => {
                                         <hr/>
                                         <div style={{textAlign: 'center'}}>
                                             <Button
-                                                type={'primary'} onClick={handleloadmore}>
+                                                type={'primary'} onClick={handleloadmore} className={'boton-ver-mas'}>
                                                 Ver más
                                             </Button>
                                         </div>

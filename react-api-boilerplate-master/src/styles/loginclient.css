@@ -22,8 +22,8 @@
 /*button*/
 nav {
     margin: 5px 90px;
-    background-color: #000000;
-    box-shadow: 0px 3px 20px 3px #162433;
+    background-color: rgba(245, 245, 245, 0.4);
+    box-shadow: rgba(245, 245, 245, 0.4);
 
 }
 
@@ -33,11 +33,12 @@ nav ul {
     list-style: none;
     position: relative;
     text-align: left;
+
 }
 
 nav ul li {
-    display:inline-block;
-    background-color: #F7A40A;
+    display: grid ;
+    background-color: rgba(245, 245, 245, 0.4);
 
 
 }
@@ -45,7 +46,7 @@ nav ul li {
 nav a {
     display: block;
     padding: 5px 10px;
-    color: #FFF;
+    color: black;
     font-size: 16px;
     line-height: 60px;
     text-decoration: none;
@@ -53,7 +54,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #000000;
+    background-color: rgba(245, 245, 245, 0.4);
 }
 
 /* Hide Dropdowns by Default */
@@ -61,7 +62,6 @@ nav ul ul {
     display: none;
     position: absolute;
     top: 70px; /* the height of the main nav */
-
 }
 
 /* Display Dropdowns on Hover */
@@ -80,22 +80,25 @@ nav ul ul li {
 
 /* Second, Third and more Tiers	*/
 
-
 i {
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 4px;
-    margin: -7px 0 0px 7px;
-    vertical-align: middle;
+
+    position: relative;
+    padding-left: 1.25em;
+
 }
 
-
-.down {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
+.down-shadow-menu:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.25em;
+    width: 1em;
+    height: 0.15em;
+    background: white;
+    box-shadow:
+            0 0.25em 0 0 white,
+            0 0.5em 0 0 white;
 }
-
 .boton-login-entrar {
     background-size: cover;
     background-position: center;

@@ -133,7 +133,7 @@ import { translateMessage } from '../utils/translateMessage';
 import ErrorList from './ErrorList';
 import Routes from '../constants/routes';
 import { Link } from 'react-router-dom';
-
+import '../styles/product.css';
 const { TextArea } = Input;
 
 const QuestionsList = ( { questions, productId} ) => {
@@ -185,7 +185,7 @@ const QuestionsList = ( { questions, productId} ) => {
                             </Form.Item>
 
                             <Form.Item>
-                                <Button htmlType='submit' loading={ submitting } type='primary'>
+                                <Button htmlType='submit' loading={ submitting } className={'boton-enviar-pregunta'}>
                                     Enviar pregunta
                                 </Button>
                             </Form.Item>

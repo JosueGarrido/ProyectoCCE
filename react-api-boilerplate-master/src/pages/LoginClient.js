@@ -65,13 +65,14 @@ const LoginClient = () => {
                         <Col span={3}>
                             <nav>
                                 <ul>
-                                    <li><a href="#"> <i className="down"></i></a>
+
+                                    <li><a href="#"> <i className="down-shadow-menu"></i></a>
 
                                         <ul style={{textAlign: "center"}}>
-                                            <li><a href="#">Categorias</a></li>
-                                            <li><a href="#">Artistas</a></li>
-                                            <li><a href="#">Comprar</a></li>
-                                            <li><a href="#">Vender</a></li>
+                                            <li><a href="#menu">Categorias</a></li>
+                                            <li><a href="#menu">Artistas</a></li>
+                                            <li><a href="#menu">Comprar</a></li>
+                                            <li><a href="#menu">Vender</a></li>
                                         </ul>
                                     </li>
 
