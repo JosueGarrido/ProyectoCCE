@@ -160,7 +160,7 @@ const Product = () => {
                                     </Col>
                                 </Col>
 
-                                <Col span={7} align={'center'}>
+                                <Col span={16} align={'right'}>
                                     <br/> <br/>
                                     <Button className={"boton-comprar"}
                                             href={Routes.PREPURCHASE.replace(':id', product.product.id)}>COMPRAR</Button>
@@ -173,14 +173,8 @@ const Product = () => {
                         <div>Cargando...</div>
                     </TabPane>
 
-
-
-
                 </Row>
 
-            }
-
-            {
 
 
             }
@@ -189,13 +183,14 @@ const Product = () => {
 
             }
 
-            <Row>
-                <Col span={24} align={'center'}>
+
+                <Row>
+                    <Col span={16} align={'center'}>
 
 
-                    <strong>Preguntas del producto </strong>
-                </Col>
-            </Row>
+                        <h3>Preguntas del producto </h3>
+                    </Col>
+                </Row>
             }
             <br/>
 
@@ -206,12 +201,13 @@ const Product = () => {
                 questions === undefined
                     ? <Text>No cargan los datos</Text>
                     :
-                    <Row gutter={30}>
+                    <Row gutter={30} >
                         <Col align='center' md={6}>
                             <Title level={3}>Preguntas: </Title>
                         </Col>
-                        <Col md={18}>
-                            <Col md={24}>
+                        <Col md={18}  >
+                            <Col md={24} >
+
                                 {
                                     questions.isLoading
                                         ? <Skeleton loading={questions.isLoading} active avatar/>
@@ -220,18 +216,22 @@ const Product = () => {
                                         :  <QuestionsList productId={id} questions={questions}/>
 
                                 }
+
                             </Col>
+
                             <br/>
                             {
+
                                 questions.slice(0, visible).map((questions, i) => (
-                                    <Col xs={24} sm={18} md={24} style={{marginBottom: 20}} key={i}>
+                                    <Col xs={24} sm={18} md={24} style={{marginBottom: 20}} key={i}  >
                                         {questions.question
-                                            ? <Card hoverable
-                                                    style={{borderRadius: 10}}>
+                                            ? <Card className={'cuadro'}>
                                                 <Row>
                                                     <Col span={14}>
                                                         {
+
                                                             users === undefined
+
                                                                 ? <Text>No cargan los datos</Text>
                                                                 :
                                                                 <Meta
@@ -264,8 +264,7 @@ const Product = () => {
                                                         <Col xs={24} sm={18} md={24} style={{marginBottom: 20}} key={i}>
                                                             {answers
                                                                 ?
-                                                                <Card hoverable
-                                                                      style={{borderRadius: 10}}>
+                                                                <Card className={'cuadro'}>
                                                                     <Row>
                                                                         <Col span={14}>
                                                                             {
@@ -317,7 +316,7 @@ const Product = () => {
                                         <hr/>
                                         <div style={{textAlign: 'center'}}>
                                             <Button
-                                                type={'primary'} onClick={handleloadmore}>
+                                                type={'primary'} onClick={handleloadmore} className={'boton-ver-mas'}>
                                                 Ver más
                                             </Button>
                                         </div>
