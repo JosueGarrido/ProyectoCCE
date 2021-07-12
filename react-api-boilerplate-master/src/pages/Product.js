@@ -17,7 +17,9 @@ import {useQuestionsList} from "../data/UseQuestion";
 import '../styles/product.css';
 import {useQuestionComments} from "../data/useQuestionComments";
 import QuestionsList from "../components/QuestionsList";
-import '../styles/product.css';
+import AnswerList from "../components/AnswerList";
+import {useQuestionAnswer} from "../data/useQuestionAnswer";
+
 const {TabPane} = Tabs;
 const {Text, Title} = Typography;
 const {Meta} = Card;
@@ -29,11 +31,13 @@ function callback(key) {
 
 const Product = () => {
     let {id} = useParams();
+    let {questionId} = useParams();
     const product = useProduct(id);
     const category = useCategories(id);
     const user = useUser( id );
     const {products} = useProductsList(id);
     const {questions} = useQuestionComments(id);
+    const {answers} = useQuestionAnswer(questionId);
 
 
     const { reputations } = useReputationList( id );
@@ -54,6 +58,7 @@ const Product = () => {
         setVisible(visible+3);
     }
 
+    console.log(questions)
     return (
         <>
 
@@ -152,7 +157,7 @@ const Product = () => {
                                         <h2>
 
                                         </h2>
-                                            </Col>
+                                    </Col>
                                 </Col>
 
                                 <Col span={16} align={'right'}>
@@ -160,9 +165,13 @@ const Product = () => {
                                     <Button className={"boton-comprar"}
                                             href={Routes.PREPURCHASE.replace(':id', product.product.id)}>COMPRAR</Button>
                                 </Col>
-                                    </>
+                            </>
 
-                                }
+                    }
+
+                    <TabPane tab="Valoraciones" key="2">
+                        <div>Cargando...</div>
+                    </TabPane>
 
                 </Row>
 
@@ -173,6 +182,7 @@ const Product = () => {
             {
 
             }
+
 
                 <Row>
                     <Col span={16} align={'center'}>
@@ -185,9 +195,10 @@ const Product = () => {
             <br/>
 
 
+
             {
 
-               questions === undefined
+                questions === undefined
                     ? <Text>No cargan los datos</Text>
                     :
                     <Row gutter={30} >
@@ -219,7 +230,8 @@ const Product = () => {
                                                     <Col span={14}>
                                                         {
 
-                                                           users === undefined
+                                                            users === undefined
+
                                                                 ? <Text>No cargan los datos</Text>
                                                                 :
                                                                 <Meta
@@ -233,9 +245,19 @@ const Product = () => {
                                                                     title={`Nombre de Usuario: ${users[questions.user_id - 1].name} ${users[questions.user_id - 1].last_name}`}
                                                                     description={`Pregunta: ${questions.question}`}
                                                                 />
+
                                                         }
                                                     </Col>
+                                                    <Col md={24}>
+                                                        {
+                                                            questions.isLoading
+                                                                ? <Skeleton loading={questions.isLoading} active avatar/>
+                                                                : questions.isError
+                                                                ? <ShowError error={questions.isError}/>
+                                                                :  <AnswerList questionId={questions.id} />
 
+                                                        }
+                                                    </Col>
                                                 </Row>
                                                 {
                                                     questions.answers.slice(0, visible).map((answers, i) => (
@@ -258,10 +280,14 @@ const Product = () => {
 
 
                                                                                         title={`Nombre de Usuario: ${users[answers.user_id - 1].name} ${users[answers.user_id - 1].last_name}`}
-                                                                                        description={`Pregunta: ${answers.answer}`}
+                                                                                        description={`Respuesta: ${answers.answer}`}
                                                                                     />
                                                                             }
+
+
                                                                         </Col>
+
+
 
                                                                     </Row>
 

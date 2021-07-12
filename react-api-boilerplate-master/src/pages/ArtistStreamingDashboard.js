@@ -22,7 +22,7 @@ const ArtistStreamingDashboard = () => {
     let { id } = useParams();
     const artist = useArtist( id );
 
-    console.log('artis:', artist);
+    console.log('artist:', artist);
 
     return (
         <>
@@ -37,7 +37,7 @@ const ArtistStreamingDashboard = () => {
                             <Title style={{marginTop: 15, textAlign: 'center'}}>Bienvenido Streaming</Title>
 
 
-                            {<iframe //src= {artist.artists.live}
+                            {<iframe src= {artist.artists.live}
                                      frameBorder="0"
                                      allowFullScreen="true"
                                      scrolling="no"
