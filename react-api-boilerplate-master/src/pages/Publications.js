@@ -63,10 +63,14 @@ const Publications = ( {
 
     const [ submitting, setSubmitting ] = useState( false );
     const { categories, isLoading, isError } = useCategories();
-    const { categories2, isLoading2, isError2 } = useCategories2();
-    const { categories3, isLoading3, isError3 } = useCategories3();
-    const { categories4, isLoading4, isError4 } = useCategories4();
+    const { categories2 } = useCategories2();
+    const { categories3 } = useCategories3();
+    const { categories4 } = useCategories4();
     const [ form ] = Form.useForm();
+    const [currentCat1,setCurrentCat1]= useState('');
+    const [currentCat2,setCurrentCat2]= useState('');
+    const [currentCat3,setCurrentCat3]= useState('');
+    const [currentCat4,setCurrentCat4]= useState('');
     const [ isSaving, setIsSaving ] = useState( false );
     const [ imageUrl, setImageUrl ] = useState( null );
     const [ fileList, setFileList ] = useState( [] );
@@ -90,7 +94,6 @@ const Publications = ( {
                 data.append('category_id2', values.category_id2);
                 data.append('category_id3', values.category_id3);
                 data.append('category_id4', values.category_id4);
-
 
 
                 try {
@@ -195,6 +198,30 @@ const Publications = ( {
     // const handleOk = () => {
     //     htmlType='submit' loading={ submitting }
     // }
+
+    const handleChangeCat1 = ( cat1 ) => {
+
+        const example2 = cat1;
+        console.log('example2',( cat1 ));
+        setCurrentCat1( example2 );
+
+    };
+
+    const handleChangeCat2 = ( cat2 ) => {
+
+        const example2 = cat2;
+        console.log('example2',( cat2 ));
+        setCurrentCat2( example2 );
+
+    };
+
+    const handleChangeCat3 = ( cat3 ) => {
+
+        const example2 = cat3;
+        console.log('example2',( cat3 ));
+        setCurrentCat3( example2 );
+
+    };
 
 
     const layout = {
@@ -317,7 +344,8 @@ const Publications = ( {
                                    }
                                ] }
                     >
-                        <Select placeholder="Selecciona la categoria">
+                        <Select placeholder="Selecciona la categoria"
+                                onChange={handleChangeCat1}>
                             {
                                 categories && categories.map( ( category, index ) =>
                                     <Option value={ category.id } key={ index } >{` ${ category.name } `}</Option>
@@ -336,7 +364,7 @@ const Publications = ( {
 
                         {({ getFieldValue }) => {
 
-                            return getFieldValue('category_id' ) === (categories.id) ?
+                            return getFieldValue('category_id' ) === (currentCat1) ?
                                 (
                                 <Form.Item name='category_id2'
                                            label="Categoria 2"
@@ -350,7 +378,7 @@ const Publications = ( {
                                 >
                                     <Select
                                         placeholder="Selecciona "
-                                    >
+                                        onChange={handleChangeCat2}>
                                         {
                                             categories2 && categories2.map( ( category2, index ) =>
                                                 <Option value={ category2.id } key={ index }>{` ${ category2.name } `}</Option>
@@ -370,7 +398,7 @@ const Publications = ( {
 
                         {({ getFieldValue }) => {
 
-                            return getFieldValue('category_id2' ) === categories2.id?
+                            return getFieldValue('category_id2' ) === currentCat2 ?
                                 (
                                 <Form.Item name='category_id3'
                                            label="Categoria 3"
@@ -384,6 +412,7 @@ const Publications = ( {
                                 >
                                     <Select
                                         placeholder="Selecciona "
+                                        onChange={handleChangeCat3}
                                     >
                                         {
                                             categories3 && categories3.map( ( category3, index ) =>
@@ -403,7 +432,7 @@ const Publications = ( {
                     >
 
                         {({ getFieldValue }) => {
-                            return getFieldValue('category_id3' ) === categories3.id ?
+                            return getFieldValue('category_id3' ) === currentCat3 ?
                                 (
                                 <Form.Item name='category_id4'
                                            label="Categoria 4"
