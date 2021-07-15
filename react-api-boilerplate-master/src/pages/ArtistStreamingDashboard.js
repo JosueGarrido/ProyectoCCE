@@ -13,15 +13,17 @@ import {useProduct} from "../data/useProduct";
 import {useCat1Products} from "../data/useCat1Products";
 import {useCategories} from "../data/useCategories";
 import ShowError from "../components/ShowError";
+import {useAuth} from "../providers/Auth";
 
 
 const { Title } = Typography;
-
 const {  Content, Sider } = Layout;
 
 const ArtistStreamingDashboard = () => {
-    let { id } = useParams();
-    const artist = useArtist(id);
+
+    const {currentUser} = useAuth();
+    console.log('id artista:', currentUser.userable_id);
+    const artist = useArtist(currentUser.userable_id);
 
     console.log('artista:', artist);
 
