@@ -80,7 +80,7 @@ const PrePurchase = (props) => {
                             <Col span={3}>
                                 <nav>
                                     <ul>
-                                        <li><a href="#"> <i className="down"></i></a>
+                                        <li><a href="#"> <i className="down-shadow-menu"></i></a>
 
                                             <ul style={{textAlign: "center"}}>
                                                 <li><a href="#">Categorias</a></li>
@@ -140,6 +140,7 @@ const PrePurchase = (props) => {
 
                                 </Col>
                                 <br/>
+
                                 <Col span={15} align='center' className={"texto"}>
                                     <p>NOMBRE DEL PRODUCTO: {product.product.name}  </p>
                                     <p>STOCK: {product.product.stock}</p>
@@ -149,12 +150,20 @@ const PrePurchase = (props) => {
                                     <p>TOTAL: ${product.product.price} </p>
 
                                 </Col>
-                                <Col>
-                                    <p>Datos del vendedor:</p>
-                                    <p>Nombre: { user.user.name } </p>
-                                    <p>Apellido: {user.user.last_name} </p>
-                                    <p>Teléfono: {user.user.phone} </p>
-                                </Col>
+                                {
+                                    user.isLoading
+                                        ? <div>Cargando...</div>
+                                        : user.isError
+                                        ? <ShowError error={user.isError}/>
+                                        :
+                                        <Col>
+
+                                            <p>Datos del vendedor:</p>
+                                            <p>Nombre: {user.user.name} </p>
+                                            <p>Apellido: {user.user.last_name} </p>
+                                            <p>Teléfono: {user.user.phone} </p>
+                                        </Col>
+                                }
                                 <Col span={15} align='center'>
                                     <Button className={"boton-comprar"}
                                             href={Routes.PURCHASE.replace(':id', user.user.id)}>CONFIRMA TU

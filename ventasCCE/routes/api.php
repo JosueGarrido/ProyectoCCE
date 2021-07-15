@@ -44,7 +44,7 @@ Route::group(['middleware' => ['cors']], function () {
     Route::get('category1/{category1}/products/', 'ProductController@indexcat1');
 
     //artist
-    Route::get('artist', 'ArtistController@index');
+    Route::get('artists/{id}', 'ArtistController@index');
 
     Route::group(['middleware' => ['jwt.verify']], function() {
 

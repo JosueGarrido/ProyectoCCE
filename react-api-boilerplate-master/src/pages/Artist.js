@@ -248,6 +248,10 @@ const Artist = (props) => {
                         <Divider orientation="center"></Divider>
 
                     </Card>
+
+                        <Row>
+
+                        </Row>
                 <Col span={24}>
                             Información de usuario
 
@@ -261,6 +265,12 @@ const Artist = (props) => {
 
                     </>
             }
+
+
+
+
+
+
             {
                 reputations === undefined
                     ? <Text>No cargan los datos</Text>

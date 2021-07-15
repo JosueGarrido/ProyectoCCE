@@ -11,10 +11,10 @@ import API from "../data";
 import ErrorList from "./ErrorList";
 import {useUser} from "../data/useUser";
 import {useUserList} from "../data/useUserList";
-
+import '../styles/ProductList.css';
 const { Text } = Typography;
 const {Meta} = Card;
-
+const style = { background: '#0092ff', padding: '8px 0' };
 const ProductsList = () => {
         let { id } = useParams();
         const user = useUser( id );
@@ -44,7 +44,7 @@ const ProductsList = () => {
         return (
             <>
 
-                <Row justify='center' gutter={ 30 }>
+                <Row gutter={[16, 24]}  >
                     {
                         users === undefined
                             ? <Text>No cargan los datos</Text>
@@ -53,30 +53,31 @@ const ProductsList = () => {
                                 if(product.user_id===user.user.id){
                                     return (
 
-                                        <Col xs={ 24 } sm={ 18 } md={ 24 } style={ { marginBottom: 20 } } >
+                                        <Col  className="gutter-row" span={6}  align='center'     >
                                             <Card
                                                 title={ product.name }
                                                 extra={ <Link to={ Routes.PRODUCT.replace( ':id', product.id ) }>Más</Link> }
                                                 style={{
-                                                    width: 1000,
-                                                    marginRight: 20,
-                                                    marginBottom: 30,
-                                                    background: '#fffff'
+                                                    width: 300,
+                                                    marginRight: 5,
+                                                    marginBottom: 15,
+                                                    background: '#ffffff',
 
                                                 }}
                                             >
-                                                <Row >
-                                                    <Col span={14}>
-                                                        <Meta
-                                                            avatar={<Avatar size={150} src={ `http://localhost:8000/storage/${ product.image }` }/>}
+
+                                                    <Col className="gutter-row" span={24} >
+                                                        <Meta align='center'
+                                                              avatar={<Avatar size={75} src={ `http://localhost:8000/storage/${ product.image }` }/>}
                                                             title={`Autor: ${product.name}`}
-                                                            description={`Descripción: ${product.description}
-                                            `}
+                                                            description={`Descripción: ${product.description}`}
+
 
                                                         />
                                                     </Col>
 
-                                                    <Col span={8} align='center'>
+
+                                                    <Col className="gutter-row" span={24}  align='left'>
                                                         <p>user_id: {product.user_id}</p>
                                                         <p>Precio: ${product.price} </p>
                                                         <p>Stock: {product.stock} </p>
@@ -89,9 +90,10 @@ const ProductsList = () => {
                                                     </Col>
 
 
-                                                </Row>
+
                                             </Card>
                                         </Col>
+
                                     )
                                 }
 

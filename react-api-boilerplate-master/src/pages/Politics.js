@@ -46,7 +46,7 @@ const Politics = props => {
                             <Col span={3}>
                                 <nav>
                                     <ul>
-                                        <li><a href="#"> <i className="down"></i></a>
+                                        <li><a href="#"> <i className="down-shadow-menu"></i></a>
 
                                             <ul style={{textAlign:"center"}}>
                                                 <li><a href="#">Categorias</a></li>
