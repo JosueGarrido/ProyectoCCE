@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="35d6fe6a-58fc-41fb-a90f-ee1d08da7dab" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/QuestionsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/QuestionsList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Product.js" afterDir="false" />
-    </list>
+    <list default="true" id="35d6fe6a-58fc-41fb-a90f-ee1d08da7dab" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -129,7 +126,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -171,11 +170,12 @@
       <workItem from="1624461562834" duration="7394000" />
       <workItem from="1624637073716" duration="6521000" />
       <workItem from="1624910236251" duration="2434000" />
+      <workItem from="1626141827583" duration="1670000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
     <state x="80" y="142" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1624676140807">

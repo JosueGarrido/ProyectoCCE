@@ -17,12 +17,100 @@ class Category4TableSeeder extends Seeder
 
 
         CategoryLevel4::create([
-            'name'=> 'Fieltro',
-            'category3_id'=> '1',
+            'name'=> 'Abstracto',
+            'category1_id'=> '1',
+        ]);
+        CategoryLevel4::create([
+            'name'=> 'Arte conceptual',
+            'category1_id'=> '1',
+        ]);
+        CategoryLevel4::create([
+            'name'=> 'Arte en la calle',
+            'category1_id'=> '1',
+        ]);
+        CategoryLevel4::create([
+            'name'=> 'Arte espiritual',
+            'category1_id'=> '1',
+        ]);
+        CategoryLevel4::create([
+            'name'=> 'Arte Naif',
+            'category1_id'=> '1',
+        ]);
+        CategoryLevel4::create([
+            'name'=> 'Arte oriental',
+            'category1_id'=> '1',
+        ]);
+        CategoryLevel4::create([
+            'name'=> 'Arte outsider',
+            'category1_id'=> '1',
+        ]);
+        CategoryLevel4::create([
+            'name'=> 'Arte pop',
+            'category1_id'=> '1',
+        ]);
+        CategoryLevel4::create([
+            'name'=> 'Arte tribal',
+            'category1_id'=> '1',
+        ]);
+        CategoryLevel4::create([
+            'name'=> 'Caligrafía',
+            'category1_id'=> '1',
+        ]);
+        CategoryLevel4::create([
+            'name'=> 'Clasicismo',
+            'category1_id'=> '1',
+        ]);
+        CategoryLevel4::create([
+            'name'=> 'Cubismo',
+            'category1_id'=> '1',
+        ]);
+        CategoryLevel4::create([
+            'name'=> 'Expresionismo',
+            'category1_id'=> '1',
+        ]);
+        CategoryLevel4::create([
+            'name'=> 'Fauvismo',
+            'category1_id'=> '1',
+        ]);
+        CategoryLevel4::create([
+            'name'=> 'Figurativo',
+            'category1_id'=> '1',
+        ]);
+        CategoryLevel4::create([
+            'name'=> 'Geométrico',
+            'category1_id'=> '1',
+        ]);
+        CategoryLevel4::create([
+            'name'=> 'Hiperrealismo',
+            'category1_id'=> '1',
+        ]);
+        CategoryLevel4::create([
+            'name'=> 'Ilustración',
+            'category1_id'=> '1',
+        ]);
+        CategoryLevel4::create([
+            'name'=> 'Impresionismo',
+            'category1_id'=> '1',
+        ]);
+        CategoryLevel4::create([
+            'name'=> 'Land Art',
+            'category1_id'=> '1',
+        ]);
+        CategoryLevel4::create([
+            'name'=> 'Minimalismo',
+            'category1_id'=> '1',
+        ]);
+        CategoryLevel4::create([
+            'name'=> 'Simbolismo',
+            'category1_id'=> '1',
+        ]);
+        CategoryLevel4::create([
+            'name'=> 'Surrealismo',
+            'category1_id'=> '1',
         ]);
         CategoryLevel4::create([
             'name'=> 'Otros',
-            'category3_id'=> '2',
+            'category1_id'=> '1',
         ]);
 
     /*    $faker = \Faker\Factory::create();

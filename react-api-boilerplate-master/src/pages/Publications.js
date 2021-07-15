@@ -86,8 +86,10 @@ const Publications = ( {
                 data.append( 'stock', values.stock );
                 data.append( 'sales', values.sales );
                 data.append( 'image', values.image[ 0 ] );
-                data.append( 'location', values.location );
-                data.append('category_id', values.category_id)
+                data.append('category_id', values.category_id);
+                data.append('category_id2', values.category_id2);
+                data.append('category_id3', values.category_id3);
+                data.append('category_id4', values.category_id4);
 
 
 
@@ -305,17 +307,6 @@ const Publications = ( {
                                 </div> }
                         </Upload>
                     </Form.Item>
-                    <Form.Item name='location'
-                               label="Ubicación"
-                               rules={ [
-                                   {
-                                       required: true,
-                                       message: 'Ingrese la ciudad'
-                                   }
-                               ] }
-                               hasFeedback>
-                        <Input />
-                    </Form.Item>
 
                     <Form.Item name='category_id'
                                label='Categoria'
@@ -326,7 +317,7 @@ const Publications = ( {
                                    }
                                ] }
                     >
-                        <Select style={ { width: 315 } } onChange={ handleChangeCategory } loading={ !categories }>
+                        <Select placeholder="Selecciona la categoria">
                             {
                                 categories && categories.map( ( category, index ) =>
                                     <Option value={ category.id } key={ index } >{` ${ category.name } `}</Option>
@@ -343,15 +334,11 @@ const Publications = ( {
                         shouldUpdate={(prevValues, currentValues) => prevValues.category_id !== currentValues.category_id}
                     >
 
-
                         {({ getFieldValue }) => {
 
-
-                            return getFieldValue('category_id' ) === categories.id ?
+                            return getFieldValue('category_id' ) === (categories.id) ?
                                 (
-                                    null
-                                ):
-                                <Form.Item name='category2_id'
+                                <Form.Item name='category_id2'
                                            label="Categoria 2"
                                            rules={ [
                                                {
@@ -372,23 +359,20 @@ const Publications = ( {
 
                                     </Select>
                                 </Form.Item>
+                        ):null;
                         }}
                     </Form.Item>
 
                     <Form.Item
                         noStyle
-                        shouldUpdate={(prevValues, currentValues) => prevValues.category2_id !== currentValues.category2_id}
+                        shouldUpdate={(prevValues, currentValues) => prevValues.category_id2 !== currentValues.category_id2}
                     >
-
 
                         {({ getFieldValue }) => {
 
-
-                            return getFieldValue('category2_id' ) === categories2.id ?
+                            return getFieldValue('category_id2' ) === categories2.id?
                                 (
-                                    null
-                                ):
-                                <Form.Item name='category3_id'
+                                <Form.Item name='category_id3'
                                            label="Categoria 3"
                                            rules={ [
                                                {
@@ -409,23 +393,19 @@ const Publications = ( {
 
                                     </Select>
                                 </Form.Item>
+                                ):null;
                         }}
                     </Form.Item>
 
                     <Form.Item
                         noStyle
-                        shouldUpdate={(prevValues, currentValues) => prevValues.category3_id !== currentValues.category3_id}
+                        shouldUpdate={(prevValues, currentValues) => prevValues.category_id3 !== currentValues.category_id3}
                     >
 
-
                         {({ getFieldValue }) => {
-
-
-                            return getFieldValue('category3_id' ) === categories3.id ?
+                            return getFieldValue('category_id3' ) === categories3.id ?
                                 (
-                                    null
-                                ):
-                                <Form.Item name='category4_id'
+                                <Form.Item name='category_id4'
                                            label="Categoria 4"
                                            rules={ [
                                                {
@@ -446,6 +426,7 @@ const Publications = ( {
 
                                     </Select>
                                 </Form.Item>
+                                ):null;
                         }}
                     </Form.Item>
 
