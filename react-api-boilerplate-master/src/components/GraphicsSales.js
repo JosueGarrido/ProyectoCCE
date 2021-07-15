@@ -1,15 +1,43 @@
-import React from 'react';
-import { Divider, Row, Col, Layout, Typography, Tabs } from 'antd';
+import React, {useEffect, useState} from 'react';
+import { Divider, Row, Col, Layout, Typography, Tabs, Select } from 'antd';
 import {SettingOutlined, ShoppingOutlined} from '@ant-design/icons';
 import { Line } from '@ant-design/charts';
-
+import {useSalesList} from "../data/useSales";
+import {useDateSalesFilter} from "../data/useDateSalesFilter";
+import {Graphic} from "../components/Graphic";
+import {useParams} from "react-router-dom";
 const { Title, Text } = Typography;
 const { TabPane } = Tabs;
-
+const { Option, OptGroup } = Select;
+const data2= Graphic('data1');
+var first;
+var end;
+var ventaBruta=0;
+var numberSales=0;
 function callback(key) {
     console.log(key);
 }
 
+function HandleChange(value) {
+   /* if (value == 'date1') {
+        var pad = function (num) {
+            return ('00' + num).slice(-2)
+        };
+        first = new Date();
+        first = first.getUTCFullYear() + '-' +
+            pad(first.getUTCMonth() + 1) + '-' +
+            pad(first.getUTCDate()) + ' ' + '00:00:00';
+        end = new Date();
+        end=end.getUTCFullYear() + '-' +
+            pad(end.getUTCMonth() + 1) + '-' +
+            pad(end.getUTCDate()) + ' ' + '23:59:59';
+        console.log('del primero',first+' '+end);
+        //const datesales=useDateSalesFilter(first,end);
+        return first,end;
+    }*/
+    const data2= Graphic(value);
+    return data2;
+}
 const data = [
     { year: '1991', value1: 3 },
     { year: '1992', value: 4 },
@@ -22,8 +50,10 @@ const data = [
     { year: '1999', value: 13 },
 ];
 
+
+
 const config = {
-    data,
+    data2,
     xField: 'year',
     yField: 'value',
     point: {
@@ -37,15 +67,71 @@ const config = {
     },
 };
 
+const config2 = {
+    data,
+    xField: 'year',
+    yField: 'value',
+    point: {
+        size: 5,
+        shape: 'diamond',
+    },
+    label: {
+        style: {
+            fill: '#000000',
+        },
+    },
+};
 
-const GraphicsSales = () => (
+
+const GraphicsSales = (props) => {
+   /* var pad = function (num) {
+        return ('00' + num).slice(-2)
+    };
+    first = new Date();
+    first = first.getUTCFullYear() + '-' +
+        pad(first.getUTCMonth() + 1) + '-' +
+        pad(first.getUTCDate()) + ' ' + '00:00:00';
+    end = new Date();
+    end=end.getUTCFullYear() + '-' +
+        pad(end.getUTCMonth() + 1) + '-' +
+        pad(end.getUTCDate()) + ' ' + '23:59:59';
+    console.log('del primero',first+' '+end);
+    const datesales=useDateSalesFilter(first,end);*/
+    const { sales, isLoading, isError } = useSalesList();
+
+    //console.log('rango',datesales);
+    console.log('sales',sales);
+        if (isLoading) {
+            return <h2>Cargando...</h2>;
+        }
+    for (var i=0; i < sales.length; i++){
+        ventaBruta = ventaBruta + (sales[i].product.price * sales[i].product.sales)
+        console.log('result '+i,ventaBruta);
+    }
+    for(var j=0; j < sales.length; j++){
+        numberSales = numberSales + sales[j].product.sales
+    }
+    console.log('venta bruta ', ventaBruta);
+
+
+
+return(
     <>
+        <h2>Periodo:</h2>
+        <Select placeholder="Seleccionar" style={{ width: 200 }} onChange={HandleChange}>
+            <Option value="date1" >Hoy</Option>
+            <Option value="date2">Últimos 7 días</Option>
+            <Option value="date3">Últimos 15 días</Option>
+            <Option value="date4">Últimos 30 días</Option>
+        </Select>
+        <hr/>
+        <br/>
         <Tabs onChange={callback} type="card">
             <TabPane tab={
                 <>
-                <Text>Ventas Brutas</Text>
-                <br/>
-                <Title level={4}> U$S 0</Title>
+                    <Text><b>Ventas Brutas</b> </Text>
+                    <br/>
+                    <Title level={4}><b>U$S</b> {ventaBruta}</Title>
                 </>
             } key="1">
                 <Line style={{height: 400}} {...config} />
@@ -53,19 +139,19 @@ const GraphicsSales = () => (
 
             <TabPane tab={
                 <>
-                    <Text>Cantidad de Ventas</Text>
+                    <Text><b>Cantidad de Ventas</b></Text>
                     <br/>
-                    <Title level={4}>0</Title>
+                    <Title level={4} style={{textAlign:"center"}}>{sales.length}</Title>
                 </>
             } key="2">
-                <Line style={{height: 400}} {...config} />
+                <Line style={{height: 400}} {...config2} />
             </TabPane>
 
             <TabPane tab={
                 <>
-                    <Text>Unidades Vendidas</Text>
+                    <Text><b>Unidades Vendidas</b></Text>
                     <br/>
-                    <Title level={4}> U$S 0</Title>
+                    <Title level={4} style={{textAlign:"center"}}>{numberSales}</Title>
                 </>
             } key="3">
                 <Line style={{height: 400}} {...config} />
@@ -86,6 +172,8 @@ const GraphicsSales = () => (
 
     </>
 );
+
+}
 
 export default  GraphicsSales;
 

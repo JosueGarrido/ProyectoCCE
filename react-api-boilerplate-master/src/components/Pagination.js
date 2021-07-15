@@ -1,4 +1,7 @@
 import React from 'react';
+import {Menu} from "antd";
+import '../styles/Pagination.css';
+import Routes from "../constants/routes";
 
 const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
     const pageNumbers = [];
@@ -7,18 +10,37 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
         pageNumbers.push(i);
     }
 
+
     return (
-        <nav>
-            <ul className='pagination'>
+        <>
+
+            {/*<div className='paginationButtons'>
                 {pageNumbers.map(number => (
-                    <li key={number} className='page-item'>
-                        <a onClick={() => paginate(number)} href='!#' className='page-link'>
-                            {number}
-                        </a>
-                    </li>
+                    <h1 key={number} className='page-item paginationButtons'>
+                        <button>
+                            <a onClick={() => paginate(number)} className='page-link'>
+                                {number}
+                            </a>
+                        </button>
+                    </h1>
                 ))}
+            </div>*/}
+
+
+            <ul id="lista1">
+                    <span className="separador"> </span>
+                    {pageNumbers.map(number => (
+                        <li key={number} className='page-item paginationButtons'>
+                            <button onClick={() => paginate(number) }>
+
+                                <p  className='page-link'>
+                                   <span>{number}</span>
+                                </p>
+                            </button>
+                        </li>
+                    ))}
             </ul>
-        </nav>
+        </>
     );
 };
 

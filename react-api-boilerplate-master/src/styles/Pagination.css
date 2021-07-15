@@ -1,0 +1,25 @@
+.paginationButtons{
+
+    margin-right: 15px;
+    text-align: center;
+}
+
+
+#lista1 {
+
+    font-size:13px;
+}
+.separador {
+
+}
+#lista1 li {
+    display:inline;
+    padding-left:3px;
+    padding-right:3px;
+
+}
+.btn-pagination{
+    background-color: #650f2f;
+}
+
+
