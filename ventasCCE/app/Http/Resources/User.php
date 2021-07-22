@@ -27,6 +27,7 @@ class User extends JsonResource
             'profile_picture' => $this ->profile_picture,
             'artist' => $this -> userable,
             'location' => $this ->location,
+            'userable_id' => $this ->userable_id,
 
         ];
 

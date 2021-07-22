@@ -21,7 +21,8 @@ Route::group(['middleware' => ['cors']], function () {
     Route::post('register', 'UserController@register');
     Route::post('register-client', 'UserController@registerClient');
     Route::get('users', 'UserController@index');
-    Route::get('artist', 'UserController@indexartist');
+    Route::get('artists', 'UserController@index');
+    Route::get('artist/{artist}', 'ArtistController@show');
     Route::delete('users/{user}', 'UserController@delete');
     Route::get('users/{user}/profile_picture', 'UserController@image');
     Route::get('products/{product}/image', 'ProductController@image');
@@ -34,6 +35,9 @@ Route::group(['middleware' => ['cors']], function () {
     Route::get('products/{product}/questions', 'QuestionsController@index');
     Route::get('questions/{id}', 'QuestionsController@show');
 
+    //Reputación
+    Route::get('users/{user}/reputations', 'ReputationController@index');
+
     //Productos de un usuario
     Route::get('users/{user}/products/', 'ProductController@index');
     //Productos de una categoria
@@ -41,7 +45,7 @@ Route::group(['middleware' => ['cors']], function () {
     Route::get('category1/{category1}/products/', 'ProductController@indexcat1');
 
     //artist
-    Route::get('artist', 'ArtistController@index');
+
 
     Route::group(['middleware' => ['jwt.verify']], function() {
 

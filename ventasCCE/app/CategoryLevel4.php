@@ -8,9 +8,9 @@ class CategoryLevel4 extends Model
 {
     protected $fillable=['name'];
 
-    public function CategoryLevel3()
+    public function CategoryLevel1()
     {
-        return $this->belongsTo('App\CategoryLevel3');
+        return $this->belongsTo('App\CategoryLevel1');
     }
     public function product()
     {

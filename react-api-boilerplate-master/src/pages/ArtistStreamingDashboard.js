@@ -12,17 +12,21 @@ import { Line } from '@ant-design/charts';
 import {useProduct} from "../data/useProduct";
 import {useCat1Products} from "../data/useCat1Products";
 import {useCategories} from "../data/useCategories";
+import ShowError from "../components/ShowError";
+import {useAuth} from "../providers/Auth";
 
 
 const { Title } = Typography;
-
 const {  Content, Sider } = Layout;
 
 const ArtistStreamingDashboard = () => {
-    let { id } = useParams();
-    const artist = useArtist( id );
 
-    console.log('artist:', artist);
+    const {currentUser} = useAuth();
+    console.log('usuario:', currentUser);
+    console.log('id artista:', currentUser.userable_id);
+    const artist = useArtist(currentUser.userable_id);
+
+    console.log('artista:', artist);
 
     return (
         <>
@@ -34,21 +38,32 @@ const ArtistStreamingDashboard = () => {
                     <Content style={{margin: '2px 18px 0'}}>
                         <div className="site-layout-background" style={{padding: 24, minHeight: 360}}>
 
-                            <Title style={{marginTop: 15, textAlign: 'center'}}>Bienvenido Streaming</Title>
+                            <Title style={{marginTop: 15, textAlign: 'center'}}>Streaming</Title>
 
 
-                            {<iframe src= {artist.artists.live}
+                            {
+                                artist.isLoading
+                                    ?<div> Cargando</div>
+                                    : artist.isError
+                                    ? <ShowError error={artist.isError}/>
+                                    :
+                                <iframe src= {artist.artist.live}
                                      frameBorder="0"
                                      allowFullScreen="true"
                                      scrolling="no"
                                      height="550"
-                                     width="1050"/>}
+                                     width="1050"/>
+
+
+                            }
                             <br/><br/>
-                            {<center>
+                            {
+                                <center>
                                 <Button type="primary" danger>
                                     Iniciar Streaming
                                 </Button>
-                            </center>}
+                            </center>
+                            }
 
                         </div>
                     </Content>

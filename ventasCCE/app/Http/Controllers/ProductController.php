@@ -22,7 +22,7 @@ class ProductController extends Controller
         'price' => 'required|float',
         'stock' => 'required|int',
         'image' => 'required',
-        'location' => 'required',
+
 
     ];
 
@@ -74,7 +74,6 @@ class ProductController extends Controller
             'price' => 'required',
             'stock' => 'required',
             'image' => 'required|image|dimensions:min_width=200,min_height=200',
-            'location' => 'required',
             'category_id' => 'required'
         ],$messages);
 

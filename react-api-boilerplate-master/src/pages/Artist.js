@@ -29,6 +29,7 @@ const Artist = (props) => {
 
     const {location, match} = props;
     const [isModalVisible, setIsModalVisible] = useState(false);
+    const [ submitting, setSubmitting ] = useState( false );
 
     const showModal = () => {
         setIsModalVisible(true);
@@ -42,14 +43,14 @@ const Artist = (props) => {
         console.log('values', values);
 
         try {
-
-
             await API.post(`/users/${ id }/follower`, {
 
             });
-            sales.mutate();
+            followers.mutate();
+            setSubmitting( false );
         } catch (error) {
             console.log('error', error);
+            setSubmitting( false );
         }
     };
     const { reputations } = useReputationList( id );

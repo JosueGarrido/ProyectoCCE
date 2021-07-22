@@ -24,5 +24,9 @@ class CategoryLevel1 extends Model
     {
         return $this->hasMany('App\CategoryLevel2');
     }
+    public function CategoryLevel4()
+    {
+        return $this->hasMany('App\CategoryLevel4');
+    }
 }
 
