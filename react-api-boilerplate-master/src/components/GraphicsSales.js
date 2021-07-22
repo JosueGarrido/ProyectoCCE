@@ -1,15 +1,13 @@
-import React, {useEffect, useState} from 'react';
-import { Divider, Row, Col, Layout, Typography, Tabs, Select } from 'antd';
-import {SettingOutlined, ShoppingOutlined} from '@ant-design/icons';
-import { Line } from '@ant-design/charts';
+import React from 'react';
+import {Select, Tabs, Typography} from 'antd';
+import {Line} from '@ant-design/charts';
 import {useSalesList} from "../data/useSales";
-import {useDateSalesFilter} from "../data/useDateSalesFilter";
-import {Graphic} from "../components/Graphic";
-import {useParams} from "react-router-dom";
+import {Graphic} from "./Graphic";
+
 const { Title, Text } = Typography;
 const { TabPane } = Tabs;
 const { Option, OptGroup } = Select;
-const data2= Graphic('data1');
+const data2= '';
 var first;
 var end;
 var ventaBruta=0;
@@ -35,8 +33,7 @@ function HandleChange(value) {
         //const datesales=useDateSalesFilter(first,end);
         return first,end;
     }*/
-    const data2= Graphic(value);
-    return data2;
+    return Graphic(value);
 }
 const data = [
     { year: '1991', value1: 3 },

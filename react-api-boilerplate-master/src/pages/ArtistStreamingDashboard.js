@@ -22,6 +22,7 @@ const {  Content, Sider } = Layout;
 const ArtistStreamingDashboard = () => {
 
     const {currentUser} = useAuth();
+    console.log('usuario:', currentUser);
     console.log('id artista:', currentUser.userable_id);
     const artist = useArtist(currentUser.userable_id);
 

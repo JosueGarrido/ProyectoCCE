@@ -21,7 +21,7 @@ Route::group(['middleware' => ['cors']], function () {
     Route::post('register', 'UserController@register');
     Route::post('register-client', 'UserController@registerClient');
     Route::get('users', 'UserController@index');
-    Route::get('artist', 'UserController@index');
+    Route::get('artists', 'UserController@index');
     Route::get('artist/{artist}', 'ArtistController@show');
     Route::delete('users/{user}', 'UserController@delete');
     Route::get('users/{user}/profile_picture', 'UserController@image');
