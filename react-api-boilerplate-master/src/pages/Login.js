@@ -65,10 +65,10 @@ const Login = () => {
                                     <li><a href="#menu"> <i className="down-shadow-menu"></i></a>
 
                                         <ul style={{textAlign: "center"}} >
-                                            <li><a href="#menu">Categorias</a></li>
-                                            <li><a href="#menu">Artistas</a></li>
-                                            <li><a href="#menu">Comprar</a></li>
-                                            <li><a href="#menu">Vender</a></li>
+                                            <li><a href={Routes.CATEGORY1.replace( ':id', 1 )}>Categorias</a></li>
+                                            <li><a href={Routes.ARTIST.replace( ':id', 1 )}>Artistas</a></li>
+                                            <li><a href={Routes.LOGIN_CLIENT}>Comprar</a></li>
+                                            <li><a href={Routes.LOGIN}>Vender</a></li>
                                         </ul>
                                     </li>
 
