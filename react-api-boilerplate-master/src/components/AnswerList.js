@@ -13,11 +13,20 @@ const AnswerList = ( {  questionId} ) => {
 
     //console.log( 'props', answers );
     const [ submitting, setSubmitting ] = useState( false );
+    const [visible, setVisible] = useState(false);
 
+    const showAnswer = () => {
+        setVisible(true);
+    };
+    const onClose = () => {
+        setVisible(false);
+    };
     const handleSubmit = async( values ) => {
         console.log( 'values', values );
         setSubmitting( true );
-
+        const onClose = () => {
+            setVisible(false);
+        };
         try {
 
             // setValue( '' );
@@ -39,11 +48,18 @@ const AnswerList = ( {  questionId} ) => {
         const [ form ] = Form.useForm();
 
         return (
+
             <Card hoverable
-                  style={{borderRadius: 10}}>
-                <Row>
-                    <Col span={22}>
-                        <Form
+                  style={{borderRadius: 20}} className={'cuadro'}>
+
+
+                <Row >
+
+                    <Col span={22} >
+                        <Button type="primary" onClick={showAnswer}>
+                            Open
+                        </Button>
+                        <Form onClose={onClose} visible={visible} closable={false}
                             form={ form }
                             name='form_answer'
                             onFinish={ handleSubmit }>
@@ -56,13 +72,14 @@ const AnswerList = ( {  questionId} ) => {
                                        ] }>
                                 <TextArea rows={ 2 } />
                             </Form.Item>
-
                             <Form.Item>
-                                <Button htmlType='submit' loading={ submitting } type='primary'>
+
+                                <Button htmlType='submit' loading={ submitting } type='primary' className={'boton-enviar-pregunta'}>
                                     Enviar respuesta
                                 </Button>
                             </Form.Item>
                         </Form>
+
                     </Col>
                 </Row>
             </Card>

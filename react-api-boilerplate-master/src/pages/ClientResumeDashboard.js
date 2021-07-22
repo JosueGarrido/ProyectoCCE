@@ -45,11 +45,11 @@ const ClientResumeDashboard = () => {
                                     <ul>
                                         <li><a href="#"> <i className="down-shadow-menu"></i></a>
 
-                                            <ul style={{textAlign: "center"}}>
-                                                <li><a href="#">Categorias</a></li>
-                                                <li><a href="#">Artistas</a></li>
-                                                <li><a href="#">Comprar</a></li>
-                                                <li><a href="#">Vender</a></li>
+                                            <ul style={{textAlign: "center"}} >
+                                                <li><a href={Routes.CATEGORY1.replace( ':id', 1 )}>Categorias</a></li>
+                                                <li><a href={Routes.ARTIST.replace( ':id', 1 )}>Artistas</a></li>
+                                                <li><a href={Routes.LOGIN_CLIENT}>Comprar</a></li>
+                                                <li><a href={Routes.LOGIN}>Vender</a></li>
                                             </ul>
                                         </li>
 

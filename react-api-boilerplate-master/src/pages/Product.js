@@ -19,7 +19,8 @@ import {useQuestionComments} from "../data/useQuestionComments";
 import QuestionsList from "../components/QuestionsList";
 import AnswerList from "../components/AnswerList";
 import {useQuestionAnswer} from "../data/useQuestionAnswer";
-
+import { Switch } from 'antd';
+import { CloseOutlined, CheckOutlined } from '@ant-design/icons';
 const {TabPane} = Tabs;
 const {Text, Title} = Typography;
 const {Meta} = Card;
@@ -43,7 +44,14 @@ const Product = () => {
     const { reputations } = useReputationList( id );
     const [ visible, setVisible ] = useState( 2 );
 
+
+
+
+
     const { users } = useUserList();
+    const [disabled, setDisabled] = React.useState(true);
+
+
     let totalscore=0;
 
 
@@ -57,6 +65,9 @@ const Product = () => {
     const handleloadmore = () => {
         setVisible(visible+3);
     }
+    const toggle = () => {
+        setDisabled(!disabled);
+    };
 
     console.log(questions)
     return (
@@ -228,7 +239,10 @@ const Product = () => {
                                             ? <Card className={'cuadro'}>
                                                 <Row>
                                                     <Col span={14}>
+
+
                                                         {
+
 
                                                             users === undefined
 
@@ -248,34 +262,35 @@ const Product = () => {
 
                                                         }
                                                     </Col>
-                                                    <Col md={24}>
-                                                        {
-                                                            questions.isLoading
-                                                                ? <Skeleton loading={questions.isLoading} active avatar/>
-                                                                : questions.isError
-                                                                ? <ShowError error={questions.isError}/>
-                                                                :  <AnswerList questionId={questions.id} />
 
-                                                        }
-                                                    </Col>
+
+
                                                 </Row>
+
                                                 {
                                                     questions.answers.slice(0, visible).map((answers, i) => (
+
                                                         <Col xs={24} sm={18} md={24} style={{marginBottom: 20}} key={i}>
+
                                                             {answers
                                                                 ?
+
                                                                 <Card className={'cuadro'}>
                                                                     <Row>
+
                                                                         <Col span={14}>
+
                                                                             {
                                                                                 users === undefined
                                                                                     ? <Text>No cargan los datos</Text>
+
                                                                                     :
                                                                                     <Meta
                                                                                         avatar={<Avatar
                                                                                             size={100}
                                                                                             alt={users[answers.user_id - 1].name}
                                                                                             src={`http://localhost:8000/storage/${users[answers.user_id - 1].profile_picture}`}
+
                                                                                         />}
 
 
@@ -287,8 +302,6 @@ const Product = () => {
 
                                                                         </Col>
 
-
-
                                                                     </Row>
 
                                                                 </Card> : <div style={{textAlign: 'center'}}>
@@ -299,12 +312,36 @@ const Product = () => {
                                                     ))
                                                 }
 
+
+
+
+
+
+
+
+
+                                                <Col md={24} >
+
+
+
+                                                    {
+                                                        questions.isLoading
+                                                            ? <Skeleton loading={questions.isLoading} active avatar/>
+                                                            : questions.isError
+                                                            ? <ShowError error={questions.isError}/>
+                                                            :  <AnswerList questionId={questions.id} />
+
+                                                    }
+
+                                                </Col>
+
                                             </Card>
                                             : <div style={{textAlign: 'center'}}>
                                                 <Card title='' extra='' cover='' loading/>
                                             </div>
                                         }
                                     </Col>
+
                                 ))
                             }
 
@@ -319,6 +356,7 @@ const Product = () => {
                                                 type={'primary'} onClick={handleloadmore} className={'boton-ver-mas'}>
                                                 Ver más
                                             </Button>
+
                                         </div>
                                     </Col>
                                     : <>
