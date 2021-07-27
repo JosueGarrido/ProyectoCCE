@@ -52,8 +52,6 @@ const ArtistStreamingDashboard = () => {
                                      scrolling="no"
                                      height="550"
                                      width="1050"/>
-
-
                             }
                             <br/><br/>
                             {
