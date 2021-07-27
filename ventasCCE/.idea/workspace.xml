@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="35d6fe6a-58fc-41fb-a90f-ee1d08da7dab" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/QuestionsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/QuestionsList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Product.js" afterDir="false" />
-    </list>
+    <list default="true" id="35d6fe6a-58fc-41fb-a90f-ee1d08da7dab" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -127,7 +124,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../react-api-boilerplate-master" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="SvnConfiguration">
@@ -171,6 +168,12 @@
       <workItem from="1624461562834" duration="7394000" />
       <workItem from="1624637073716" duration="6521000" />
       <workItem from="1624910236251" duration="2434000" />
+      <workItem from="1625755332236" duration="1203000" />
+      <workItem from="1626829744405" duration="637000" />
+      <workItem from="1626973351912" duration="596000" />
+      <workItem from="1627004853786" duration="1228000" />
+      <workItem from="1627070981441" duration="1303000" />
+      <workItem from="1627340636220" duration="891000" />
     </task>
     <servers />
   </component>
@@ -182,9 +185,9 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="80" y="142" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.768@0.0.1366.768" timestamp="1624676140807" />
-    <state x="463" y="139" key="FileChooserDialogImpl" timestamp="1624649188680">
+    <state x="463" y="139" key="FileChooserDialogImpl" timestamp="1627340958808">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1624649188680" />
+    <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1627340958808" />
   </component>
 </project>
