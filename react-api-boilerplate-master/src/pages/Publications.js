@@ -121,7 +121,20 @@ const Publications = ( {
     const [ showModal, setShowModal ] = useState( false );
     // const doctors = DoctorList();
 
+    const cat2_1 = [];
+    const cat3_2 = [];
+    const cat4_1 = [];
 
+    console.log('cat2', categories2);
+
+
+    if (categories2 !== undefined) {
+        for (let i=0; i< (categories2.length); i++ ){
+            if (categories2[i].category1_id === currentCat1) {
+                cat2_1.push(categories2[i]);
+            }
+        }
+    }
 
     const auth = useAuth();
 
@@ -380,7 +393,7 @@ const Publications = ( {
                                         placeholder="Selecciona "
                                         onChange={handleChangeCat2}>
                                         {
-                                            categories2 && categories2.map( ( category2, index ) =>
+                                            cat2_1.map( ( category2, index ) =>
                                                 <Option value={ category2.id } key={ index }>{` ${ category2.name } `}</Option>
                                             )
                                         }
