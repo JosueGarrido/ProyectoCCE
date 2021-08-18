@@ -6,7 +6,7 @@ import { translateMessage } from '../utils/translateMessage';
 import ErrorList from './ErrorList';
 import Routes from '../constants/routes';
 import { Link } from 'react-router-dom';
-
+import '../styles/answer.css';
 const { TextArea } = Input;
 
 const AnswerList = ( {  questionId} ) => {
@@ -49,7 +49,11 @@ const AnswerList = ( {  questionId} ) => {
                     <Col span={22} >
 
 
-                        <Form
+                        <Button type="primary" onClick={showAnswer}>
+                            Open
+                        </Button>
+                        <Form onClose={onClose} visible={visible} closable={false}
+
                             form={ form }
                             name='form_answer'
                             onFinish={ handleSubmit }>
@@ -71,6 +75,7 @@ const AnswerList = ( {  questionId} ) => {
                         </Form>
 
                     </Col>
+
                 </Row>
             </Card>
         );

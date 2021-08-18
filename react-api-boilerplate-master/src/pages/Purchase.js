@@ -67,6 +67,7 @@ const Purchase = ( props) => {
                                                 <li><a href={Routes.ARTIST.replace( ':id', 1 )}>Artistas</a></li>
                                                 <li><a href={Routes.LOGIN_CLIENT}>Comprar</a></li>
                                                 <li><a href={Routes.LOGIN}>Vender</a></li>
+                                                <li><a href={Routes.LOGOUT}>Salir</a></li>
                                             </ul>
                                         </li>
 
