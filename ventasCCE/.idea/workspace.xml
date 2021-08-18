@@ -2,18 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35d6fe6a-58fc-41fb-a90f-ee1d08da7dab" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/styles/answer.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/AnswerList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/AnswerList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/About.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/CategoriesPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/CategoriesPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Category.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Category.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Category1.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Category1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/ClientResumeDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/ClientResumeDashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/FrequentQuestions.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/FrequentQuestions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/HowToBuy.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/HowToBuy.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/HowToSale.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/HowToSale.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/LoginClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/LoginClient.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Politics.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Politics.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/PrePurchase.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/PrePurchase.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Product.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Purchase.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Purchase.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/TermsConditions.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/TermsConditions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Follower.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Follower.php" afterDir="false" />
@@ -207,7 +208,9 @@
       <workItem from="1625882694864" duration="450000" />
       <workItem from="1626135269432" duration="821000" />
       <workItem from="1626141975565" duration="618000" />
-      <workItem from="1626833965575" duration="2136000" />
+      <workItem from="1626833965575" duration="3425000" />
+      <workItem from="1627351942391" duration="622000" />
+      <workItem from="1627956641273" duration="704000" />
     </task>
     <servers />
   </component>
