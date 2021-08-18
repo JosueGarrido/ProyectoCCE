@@ -43,6 +43,12 @@ const Product = () => {
 
     const { reputations } = useReputationList( id );
     const [ visible, setVisible ] = useState( 2 );
+    const [show, setShow] = React.useState(false);
+
+
+    const onChangeAnswer = () => {
+        setShow(!show);
+    }
 
 
 
@@ -318,18 +324,20 @@ const Product = () => {
 
 
 
+                                                <Button type="primary" onClick={onChangeAnswer}>
+                                                    Open
+                                                </Button>
 
-
-                                                <Col md={24} >
-
-
+                                                <Col
+                                                    show={show}
+                                                    md={24}>
 
                                                     {
                                                         questions.isLoading
                                                             ? <Skeleton loading={questions.isLoading} active avatar/>
                                                             : questions.isError
                                                             ? <ShowError error={questions.isError}/>
-                                                            :  <AnswerList questionId={questions.id} />
+                                                            : <AnswerList questionId={questions.id} />
 
                                                     }
 

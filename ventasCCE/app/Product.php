@@ -9,7 +9,7 @@ class Product extends Model
 {
 
     protected $fillable=['name','description','price','stock','sales', 'image','location',
-        'category_id'];
+        'category_id','category_id2','category_id3','category_id4'];
 
 
     public static function boot()

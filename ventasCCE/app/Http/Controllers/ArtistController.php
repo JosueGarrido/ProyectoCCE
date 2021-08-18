@@ -43,7 +43,7 @@ class ArtistController extends Controller{
 
         public function show(Artist $artist)
             {
-                $this->authorize('view', $artist);
+                //$this->authorize('view', $artist);
                 return response()->json( new ArtistResource($artist), 200);
             }
 

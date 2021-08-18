@@ -63,10 +63,14 @@ const Publications = ( {
 
     const [ submitting, setSubmitting ] = useState( false );
     const { categories, isLoading, isError } = useCategories();
-    const { categories2, isLoading2, isError2 } = useCategories2();
-    const { categories3, isLoading3, isError3 } = useCategories3();
-    const { categories4, isLoading4, isError4 } = useCategories4();
+    const { categories2 } = useCategories2();
+    const { categories3 } = useCategories3();
+    const { categories4 } = useCategories4();
     const [ form ] = Form.useForm();
+    const [currentCat1,setCurrentCat1]= useState('');
+    const [currentCat2,setCurrentCat2]= useState('');
+    const [currentCat3,setCurrentCat3]= useState('');
+    const [currentCat4,setCurrentCat4]= useState('');
     const [ isSaving, setIsSaving ] = useState( false );
     const [ imageUrl, setImageUrl ] = useState( null );
     const [ fileList, setFileList ] = useState( [] );
@@ -86,9 +90,10 @@ const Publications = ( {
                 data.append( 'stock', values.stock );
                 data.append( 'sales', values.sales );
                 data.append( 'image', values.image[ 0 ] );
-                data.append( 'location', values.location );
-                data.append('category_id', values.category_id)
-
+                data.append('category_id', values.category_id);
+                data.append('category_id2', values.category_id2);
+                data.append('category_id3', values.category_id3);
+                data.append('category_id4', values.category_id4);
 
 
                 try {
@@ -116,7 +121,20 @@ const Publications = ( {
     const [ showModal, setShowModal ] = useState( false );
     // const doctors = DoctorList();
 
+    const cat2_1 = [];
+    const cat3_2 = [];
+    const cat4_1 = [];
 
+    console.log('cat2', categories2);
+
+
+    if (categories2 !== undefined) {
+        for (let i=0; i< (categories2.length); i++ ){
+            if (categories2[i].category1_id === currentCat1) {
+                cat2_1.push(categories2[i]);
+            }
+        }
+    }
 
     const auth = useAuth();
 
@@ -193,6 +211,30 @@ const Publications = ( {
     // const handleOk = () => {
     //     htmlType='submit' loading={ submitting }
     // }
+
+    const handleChangeCat1 = ( cat1 ) => {
+
+        const example2 = cat1;
+        console.log('example2',( cat1 ));
+        setCurrentCat1( example2 );
+
+    };
+
+    const handleChangeCat2 = ( cat2 ) => {
+
+        const example2 = cat2;
+        console.log('example2',( cat2 ));
+        setCurrentCat2( example2 );
+
+    };
+
+    const handleChangeCat3 = ( cat3 ) => {
+
+        const example2 = cat3;
+        console.log('example2',( cat3 ));
+        setCurrentCat3( example2 );
+
+    };
 
 
     const layout = {
@@ -305,17 +347,6 @@ const Publications = ( {
                                 </div> }
                         </Upload>
                     </Form.Item>
-                    <Form.Item name='location'
-                               label="Ubicación"
-                               rules={ [
-                                   {
-                                       required: true,
-                                       message: 'Ingrese la ciudad'
-                                   }
-                               ] }
-                               hasFeedback>
-                        <Input />
-                    </Form.Item>
 
                     <Form.Item name='category_id'
                                label='Categoria'
@@ -326,7 +357,8 @@ const Publications = ( {
                                    }
                                ] }
                     >
-                        <Select style={ { width: 315 } } onChange={ handleChangeCategory } loading={ !categories }>
+                        <Select placeholder="Selecciona la categoria"
+                                onChange={handleChangeCat1}>
                             {
                                 categories && categories.map( ( category, index ) =>
                                     <Option value={ category.id } key={ index } >{` ${ category.name } `}</Option>
@@ -343,15 +375,11 @@ const Publications = ( {
                         shouldUpdate={(prevValues, currentValues) => prevValues.category_id !== currentValues.category_id}
                     >
 
-
                         {({ getFieldValue }) => {
 
-
-                            return getFieldValue('category_id' ) === categories.id ?
+                            return getFieldValue('category_id' ) === (currentCat1) ?
                                 (
-                                    null
-                                ):
-                                <Form.Item name='category2_id'
+                                <Form.Item name='category_id2'
                                            label="Categoria 2"
                                            rules={ [
                                                {
@@ -363,32 +391,29 @@ const Publications = ( {
                                 >
                                     <Select
                                         placeholder="Selecciona "
-                                    >
+                                        onChange={handleChangeCat2}>
                                         {
-                                            categories2 && categories2.map( ( category2, index ) =>
+                                            cat2_1.map( ( category2, index ) =>
                                                 <Option value={ category2.id } key={ index }>{` ${ category2.name } `}</Option>
                                             )
                                         }
 
                                     </Select>
                                 </Form.Item>
+                        ):null;
                         }}
                     </Form.Item>
 
                     <Form.Item
                         noStyle
-                        shouldUpdate={(prevValues, currentValues) => prevValues.category2_id !== currentValues.category2_id}
+                        shouldUpdate={(prevValues, currentValues) => prevValues.category_id2 !== currentValues.category_id2}
                     >
-
 
                         {({ getFieldValue }) => {
 
-
-                            return getFieldValue('category2_id' ) === categories2.id ?
+                            return getFieldValue('category_id2' ) === currentCat2 ?
                                 (
-                                    null
-                                ):
-                                <Form.Item name='category3_id'
+                                <Form.Item name='category_id3'
                                            label="Categoria 3"
                                            rules={ [
                                                {
@@ -400,6 +425,7 @@ const Publications = ( {
                                 >
                                     <Select
                                         placeholder="Selecciona "
+                                        onChange={handleChangeCat3}
                                     >
                                         {
                                             categories3 && categories3.map( ( category3, index ) =>
@@ -409,23 +435,19 @@ const Publications = ( {
 
                                     </Select>
                                 </Form.Item>
+                                ):null;
                         }}
                     </Form.Item>
 
                     <Form.Item
                         noStyle
-                        shouldUpdate={(prevValues, currentValues) => prevValues.category3_id !== currentValues.category3_id}
+                        shouldUpdate={(prevValues, currentValues) => prevValues.category_id3 !== currentValues.category_id3}
                     >
 
-
                         {({ getFieldValue }) => {
-
-
-                            return getFieldValue('category3_id' ) === categories3.id ?
+                            return getFieldValue('category_id3' ) === currentCat3 ?
                                 (
-                                    null
-                                ):
-                                <Form.Item name='category4_id'
+                                <Form.Item name='category_id4'
                                            label="Categoria 4"
                                            rules={ [
                                                {
@@ -446,6 +468,7 @@ const Publications = ( {
 
                                     </Select>
                                 </Form.Item>
+                                ):null;
                         }}
                     </Form.Item>
 

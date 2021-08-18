@@ -17,6 +17,8 @@ import {useFollowers} from "../data/useFollowers";
 import Routes from "../constants/routes";
 import API from "../data";
 import {useAuth} from "../providers/Auth";
+import { useArtist } from "../data/useArtist";
+import ArtistStreamingDashboard from "./ArtistStreamingDashboard";
 
 const { Text, Title } = Typography;
 const {Meta} = Card;
@@ -24,11 +26,14 @@ const {Meta} = Card;
 const Artist = (props) => {
     let { id } = useParams();
     const user = useUser( id );
+    const artist = useArtist(id);
     const products = useProductsList( id );
     const followers = useFollowers( id );
 
+
     const {location, match} = props;
     const [isModalVisible, setIsModalVisible] = useState(false);
+    const [ submitting, setSubmitting ] = useState( false );
 
     const showModal = () => {
         setIsModalVisible(true);
@@ -37,19 +42,18 @@ const Artist = (props) => {
     const handleCancel = () => {
         setIsModalVisible(false);
     };
-    const {currentUser} = useAuth();
     const handleSubmit = async (values) => {
         console.log('values', values);
 
         try {
-
-
             await API.post(`/users/${ id }/follower`, {
 
             });
-            sales.mutate();
+            followers.mutate();
+            setSubmitting( false );
         } catch (error) {
             console.log('error', error);
+            setSubmitting( false );
         }
     };
     const { reputations } = useReputationList( id );
@@ -257,11 +261,26 @@ const Artist = (props) => {
                         </Col>
                         <br/>
                         <Col span={24}>Productos</Col>
+
+                        <Row gutter={[16, 24]}  >
+
+                        {
+                            artist.isLoading
+                                ?<div> Cargando</div>
+                                : artist.isError
+                                ? <ShowError error={artist.isError}/>
+                                :
+                                <iframe src= {artist.artist.live}
+                                        frameBorder="0"
+                                        allowFullScreen="true"
+                                        scrolling="no"
+                                        height="450"
+                                        width="450"/>                        }
                         <ProductsList/>
                         <br/>
                         <p>{ user.last_name }</p>
                         <br/>
-
+                        </Row>
                     </>
             }
 

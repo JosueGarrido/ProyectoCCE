@@ -12,6 +12,8 @@ import ErrorList from "./ErrorList";
 import {useUser} from "../data/useUser";
 import {useUserList} from "../data/useUserList";
 import '../styles/ProductList.css';
+
+
 const { Text } = Typography;
 const {Meta} = Card;
 const style = { background: '#0092ff', padding: '8px 0' };
@@ -20,6 +22,7 @@ const ProductsList = () => {
         const user = useUser( id );
         const { products, isLoading, isError, mutate } = usePublicationList();
         const { users} = useUserList();
+
 
         const [loading, setLoading] = useState(true);
         if( isLoading ) {
@@ -45,6 +48,7 @@ const ProductsList = () => {
             <>
 
                 <Row gutter={[16, 24]}  >
+
                     {
                         users === undefined
                             ? <Text>No cargan los datos</Text>
@@ -54,6 +58,7 @@ const ProductsList = () => {
                                     return (
 
                                         <Col  className="gutter-row" span={6}  align='center'     >
+
                                             <Card
                                                 title={ product.name }
                                                 extra={ <Link to={ Routes.PRODUCT.replace( ':id', product.id ) }>Más</Link> }
