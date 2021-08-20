@@ -1,7 +1,7 @@
 import React from 'react';
 import ClientMenuDashboard from "../components/ClientMenuDashboard";
-import {Divider, Row, Col, Layout, Typography, } from 'antd';
-import {MenuUnfoldOutlined} from '@ant-design/icons';
+import {Divider, Row, Col, Layout, Typography, Menu,} from 'antd';
+import {LoadingOutlined, LogoutOutlined, MenuUnfoldOutlined} from '@ant-design/icons';
 import {useAuth} from "../providers/Auth";
 import Routes from "../constants/routes";
 import letraComprar from "../images/ImgPages/comprar-letras.png";
@@ -48,8 +48,8 @@ const ClientResumeDashboard = () => {
                                             <ul style={{textAlign: "center"}} >
                                                 <li><a href={Routes.CATEGORY1.replace( ':id', 1 )}>Categorias</a></li>
                                                 <li><a href={Routes.ARTIST.replace( ':id', 1 )}>Artistas</a></li>
-                                                <li><a href={Routes.LOGIN_CLIENT}>Comprar</a></li>
-                                                <li><a href={Routes.LOGIN}>Vender</a></li>
+                                                <li><a href={Routes.LOGOUT}>Salir</a></li>
+
                                             </ul>
                                         </li>
 

@@ -63,6 +63,7 @@ const Category = (props) => {
                                                 <li><a href="#">Artistas</a></li>
                                                 <li><a href="#">Comprar</a></li>
                                                 <li><a href="#">Vender</a></li>
+                                                <li><a href={Routes.LOGOUT}>Salir</a></li>
                                             </ul>
                                         </li>
 
