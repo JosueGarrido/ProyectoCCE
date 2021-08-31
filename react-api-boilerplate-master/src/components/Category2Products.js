@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import ShowError from '../components/ShowError';
 import { useParams, Link } from 'react-router-dom';
@@ -15,8 +15,14 @@ const Category2Products = (props) => {
     const category2 = useCat2Products( id );
 
 
+
+
     console.log('category2', category2.cat2);
     console.log('c3', props.cat3);
+    console.log('filter', props.filter);
+
+
+
 
 
     return (
@@ -29,9 +35,9 @@ const Category2Products = (props) => {
                     ? <ShowError error={ category2.isError } />
                     : <Row justify='center' gutter={ 30 }>
                         {
-                            category2.cat2.map((product, i) => {
-                                if (category2.cat2.category_id3 === props.cat3) {
-                                    return (
+                            category2.cat2
+                                .filter(product => (props.filter ? product.category_id3 === props.cat3: true))
+                                .map((product, i) => (
                                         <Col xs={24} sm={18} md={24} style={{marginBottom: 10}} key={i}>
                                             {product.name
                                                 ? <Card
@@ -73,9 +79,8 @@ const Category2Products = (props) => {
                                                 </div>
                                             }
                                         </Col>
-                                    )
-                                }
-                            })
+
+                            ))
                         }
 
                     </Row>

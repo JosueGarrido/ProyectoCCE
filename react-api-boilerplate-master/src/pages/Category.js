@@ -21,6 +21,7 @@ const Category = (props) => {
     let { id } = useParams();
     const category2 = useCat2Products( id );
     const [Cat3,setCat3]= useState('');
+    const [filter,setFilter]= useState(false);
 
 
     console.log('category2', category2.cat2);
@@ -28,6 +29,12 @@ const Category = (props) => {
     const handleCat3 = (cat3) => {
         console.log('valorcat3', cat3);
         setCat3(cat3);
+        if (cat3 !== ''){
+            setFilter(true);
+        }else {
+            setFilter(false);
+        }
+
     }
 
     return (
@@ -93,7 +100,7 @@ const Category = (props) => {
 
                             <Title style={ { marginTop:15, textAlign: 'center' } }>Productos</Title>
 
-                            <Category2Products cat3={Cat3}/>
+                            <Category2Products cat3={Cat3} filter={filter}/>
 
                         </div>
                     </Content>

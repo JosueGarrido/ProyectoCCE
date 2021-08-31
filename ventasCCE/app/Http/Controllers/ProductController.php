@@ -78,7 +78,7 @@ class ProductController extends Controller
         ],$messages);
 
         $product = Product::create($request->all());
-        $path = $request->image->store('public/products');
+        $path = $request->image->store('storage/products');
 
         $product->image = 'products/' . basename($path);
         $product->save();

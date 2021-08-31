@@ -87,7 +87,7 @@ const SellList1 = ( props ) => {
                                                                 shape="square"
                                                                 size={100}
                                                                 alt={ products.name }
-                                                                src="https://www.elcomercio.com/files/article_main/uploads/2017/08/06/5987d8614c821.jpeg"
+                                                                src={ `http://localhost:8000/storage/${ products.image }` }
                                                             />}
 
 

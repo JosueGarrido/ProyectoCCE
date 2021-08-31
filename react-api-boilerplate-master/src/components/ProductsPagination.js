@@ -41,15 +41,13 @@ const ProductsPagination = ({ products, loading, id }) => {
                                                 >
                                                     <Row >
 
-                                                        <img src={imagen12} style={{width:"150px",textAlign:'center'}}/>
+                                                        <img src={ `http://localhost:8000/storage/${ product.image }` } style={{width:"150px",textAlign:'center'}}/>
                                                         <Col span={24} align='center'>
                                                             <p>name: {product.name}</p>
-                                                            <p>user_id: {product.user_id}</p>
                                                             <p>Precio: ${product.price} </p>
                                                             <p>Stock: {product.stock} </p>
                                                             <p>Venta: {product.sales} </p>
                                                             <p>Ubicación: {product.location} </p>
-                                                            <p>category1id: {product.category_id} </p>
 
                                                         </Col>
                                                     </Row>

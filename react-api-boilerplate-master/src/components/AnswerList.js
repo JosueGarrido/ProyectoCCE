@@ -49,10 +49,8 @@ const AnswerList = ( {  questionId} ) => {
                     <Col span={22} >
 
 
-                        <Button type="primary" onClick={showAnswer}>
-                            Open
-                        </Button>
-                        <Form onClose={onClose} visible={visible} closable={false}
+
+                        <Form
 
                             form={ form }
                             name='form_answer'
