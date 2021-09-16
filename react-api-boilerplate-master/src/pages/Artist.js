@@ -81,10 +81,13 @@ const Artist = (props) => {
 
     if (products.products !== undefined) {
         for (let i=0; i< (products.products.length); i++ ){
-            sales.push(products.products[i].sales);
+            sales.push(products.products[i].sale);
+            totalsales += products.products[i].sale.length;
         }
         totalproducts = products.products.length;
     }
+
+
 
     if (followers.followers !== undefined) {
         for (let i=0; i< (followers.followers.length); i++ ){
@@ -106,9 +109,6 @@ const Artist = (props) => {
     console.log('total products', totalproducts);
     console.log('total seguidores', totalfollowers);
 
-    for (let n = 0; n < sales.length; n++ ){
-        totalsales +=  sales[n].length
-    }
 
     console.log('ventas totales', totalsales);
     console.log('score total', totalscore);

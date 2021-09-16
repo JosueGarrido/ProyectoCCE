@@ -25,7 +25,7 @@ const NewComment = ( { reputations, userId} ) => {
             await API.post( `/users/${userId}/reputations`, {
                 comment: values.comment,
                 score: values.score,
-                user_id_2: userId
+
             } );
             reputations.mutate(); // get updated data
             setSubmitting( false );

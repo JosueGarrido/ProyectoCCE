@@ -26,19 +26,18 @@ const PrePurchase = (props) => {
 
 
     let {id} = useParams();
-    const user = useUser( id );
+
     const product = useProduct(id);
     const category = useCategories(id);
-    const products = useProductsList(id);
-
-    const { users } = useUserList();
 
     const {sales} = useProductSell(id);
     const [submitting, setSubmitting] = useState(false);
 
 
-    console.log(products);
-    console.log('user', user);
+    console.log('product',product);
+
+
+
 
     const handleSubmit = async (values) => {
         console.log('values', values);
@@ -152,30 +151,34 @@ const PrePurchase = (props) => {
 
                                 </Col>
                                 {
-                                    user.isLoading
+                                    product.product.user.isLoading
                                         ? <div>Cargando...</div>
-                                        : user.isError
-                                        ? <ShowError error={user.isError}/>
+                                        : product.product.user.isError
+                                        ? <ShowError error={product.product.user.isError}/>
                                         :
+                                        <>
                                         <Col>
 
                                             <p>Datos del vendedor:</p>
-                                            <p>Nombre: {user.user.name} </p>
-                                            <p>Apellido: {user.user.last_name} </p>
-                                            <p>Teléfono: {user.user.phone} </p>
+                                            <p>Nombre: {product.product.user.name} </p>
+                                            <p>Apellido: {product.product.user.last_name} </p>
+                                            <p>Teléfono: {product.product.user.phone} </p>
                                         </Col>
-                                }
-                                <Col span={15} align='center'>
+
+                                    <Col span={15} align='center'>
                                     <Button className={"boton-comprar"}
-                                            href={Routes.PURCHASE.replace(':id', user.user.id)}>CONFIRMA TU
-                                        COMPRA</Button>
+                                    href={Routes.PURCHASE.replace(':id', product.product.user.id)} onClick={handleSubmit}>CONFIRMA TU
+                                    COMPRA</Button>
 
                                     <br/><br/>
                                     <Col span={20} align='left' className={"texto"}>
-                                        <p>Al confirmar tu compra, Wasi Wallpay mostrará tus datos
-                                            personales y los del vendedor.</p>
+                                    <p>Al confirmar tu compra, Wasi Wallpay mostrará tus datos
+                                    personales y los del vendedor.</p>
                                     </Col>
-                                </Col>
+                                    </Col>
+                                        </>
+                                }
+
 
                             </div>
 

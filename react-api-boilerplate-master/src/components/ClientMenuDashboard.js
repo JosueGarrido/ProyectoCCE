@@ -28,16 +28,16 @@ const ClientMenuDashboard = () => (
             >
 
                 <Menu.Item key="Resumen" >Resumen
-                    <Link to={ Routes.ABOUT } className='artist-dashboard'/>
+                    <Link to={ Routes.CLIENT_DASHBOARD } className='artist-dashboard'/>
                 </Menu.Item>
                 <Menu.Item key="Compras" >Compras
-                    <Link to={ Routes.ABOUT } className='artist-publications-dashboard'/>
+                    <Link to={ Routes.CLIENT_BUY_DASHBOARD } className='artist-publications-dashboard'/>
                 </Menu.Item>
                 <Menu.Item key="Preguntas">Preguntas
-                    <Link to={ Routes.ABOUT } className='artist-questions-dashboard'/>
+                    <Link to={ Routes.CLIENT_QUESTIONS_DASHBOARD } className='artist-questions-dashboard'/>
                 </Menu.Item>
                 <Menu.Item key="Reputacion">Reputación
-                    <Link to={ Routes.ABOUT } className='artist-sell-dashboard'/>
+                    <Link to={ Routes.CLIENT_REPUTATION_DASHBOARD } className='artist-sell-dashboard'/>
                 </Menu.Item>
             </SubMenu>
             <Divider/>
