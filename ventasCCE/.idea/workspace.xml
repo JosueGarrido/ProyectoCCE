@@ -1,17 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-<<<<<<< HEAD
+
     <list default="true" id="35d6fe6a-58fc-41fb-a90f-ee1d08da7dab" name="Default Changelist" comment="" />
-=======
-    <list default="true" id="35d6fe6a-58fc-41fb-a90f-ee1d08da7dab" name="Default Changelist" comment="">
+
+      <change beforePath="$PROJECT_DIR$/app/Follower.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Follower.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AnswersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AnswersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FollowerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FollowerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/Follower.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/Follower.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/Questions.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/Questions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Questions.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Questions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_28_160810_create_followers_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_03_191653_add_user_id_column_follower.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/AnswersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/AnswersTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/FollowersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/FollowersTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/QuestionsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/QuestionsTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/styles/answer.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/AnswerList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/AnswerList.js" afterDir="false" />
-
       <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Product.js" afterDir="false" />
 
+
     </list>
->>>>>>> d92a0fb1f0ea4d1e2439e542d577d67a70aa7115
+
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -182,14 +197,11 @@
       <workItem from="1624910236251" duration="2434000" />
       <workItem from="1627002502978" duration="778000" />
       <workItem from="1627020413313" duration="301000" />
-<<<<<<< HEAD
       <workItem from="1627353923084" duration="254000" />
       <workItem from="1627955928908" duration="592000" />
       <workItem from="1628256857154" duration="319000" />
       <workItem from="1628873848274" duration="452000" />
-=======
 
->>>>>>> d92a0fb1f0ea4d1e2439e542d577d67a70aa7115
     </task>
     <servers />
   </component>
