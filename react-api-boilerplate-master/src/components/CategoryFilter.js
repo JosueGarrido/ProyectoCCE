@@ -75,6 +75,7 @@ const CategoryFilter = (props) => {
                                             option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                                         }
                                     >
+                                        <Option value={''} >TODOS</Option>
                                         {
                                             categories3.map((categories3,i)=>{
                                                 if (categories3.category2_id === categories2[id - 1].id) {

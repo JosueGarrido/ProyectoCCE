@@ -16,16 +16,17 @@ const {Meta} = Card;
 const Category1Products = (props) => {
     let { id } = useParams();
     const category1 = useCat1Products( id );
+
 //pagination
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage] = useState(5);
+    const [postsPerPage] = useState(16);
 
     useEffect(() => {
         const fetchPosts = async () => {
             setLoading(true);
-            const res = await fetch('http://localhost:8000/api/category1/1/products');
+            const res = await fetch("http://localhost:8000/api/category1/"+id+"/products");
             const json=await res.json();
             setProducts(json);
             setLoading(false);
@@ -36,25 +37,25 @@ const Category1Products = (props) => {
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = products.slice(indexOfFirstPost, indexOfLastPost);
+    console.log('current de products', currentPosts);
+    console.log('solo de products', products);
     // Change page
     const paginate = pageNumber => setCurrentPage(pageNumber);
     console.log('category1', category1.cat1);
-
-
     return (
         <>
-            <ProductsPagination products={currentPosts} loading={loading} />
-            <Pagination
-                postsPerPage={postsPerPage}
-                totalPosts={products.length}
-                paginate={paginate}
-            />
+            <ProductsPagination products={currentPosts} loading={loading} id={id}/>
+            <div className='paginationButtons'>
+                <Pagination
+                    postsPerPage={postsPerPage}
+                    totalPosts={products.length}
+                    paginate={paginate}
+
+                />
+            </div>
         </>
-
     );
-
 };
-
 export default ( Category1Products );
 
 

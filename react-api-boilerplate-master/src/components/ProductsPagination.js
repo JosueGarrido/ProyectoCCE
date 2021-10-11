@@ -4,12 +4,14 @@ import ShowError from "./ShowError";
 import {Card, Col, Row} from "antd";
 import {Link} from "react-router-dom";
 import Routes from "../constants/routes";
-import imagen12 from "../images/logo-menta.png";
+import imagen12 from "../images/others/prodImage.png";
 
-const ProductsPagination = ({ products, loading }) => {
+const ProductsPagination = ({ products, loading, id }) => {
     if (loading) {
-        return <h2>Loading...</h2>;
+        return <h2>Cargando...</h2>;
     }
+    console.log('idcategoryen products',id);
+    //recibir id de acuerdo a la categoria para poner los productsos de dicha categoria
 
     return (
         <>
@@ -27,7 +29,7 @@ const ProductsPagination = ({ products, loading }) => {
                                             ?<a href={ Routes.PRODUCT.replace( ':id', product.id ) }>
                                                 <Card
                                                     hoverable
-                                                    extra={ <Link to={ Routes.PRODUCT.replace( ':id', product.id ) }></Link> }
+
                                                     style={{
                                                         width:200,
                                                         marginRight: 20,
@@ -39,15 +41,13 @@ const ProductsPagination = ({ products, loading }) => {
                                                 >
                                                     <Row >
 
-                                                        <img src={imagen12} style={{width:"100px"}}/>
+                                                        <img src={ `http://localhost:8000/storage/${ product.image }` } style={{width:"150px",textAlign:'center'}}/>
                                                         <Col span={24} align='center'>
                                                             <p>name: {product.name}</p>
-                                                            <p>user_id: {product.user_id}</p>
                                                             <p>Precio: ${product.price} </p>
                                                             <p>Stock: {product.stock} </p>
                                                             <p>Venta: {product.sales} </p>
                                                             <p>Ubicación: {product.location} </p>
-                                                            <p>category1id: {product.category_id} </p>
 
                                                         </Col>
                                                     </Row>

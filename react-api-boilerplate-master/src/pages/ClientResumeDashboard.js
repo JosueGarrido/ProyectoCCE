@@ -90,19 +90,19 @@ const ClientResumeDashboard = () => {
                                 <Row>
                                     <Col span={ 8 }>
                                         <Title style={{marginTop: 15, textAlign: 'center'}}  level={4}>Responde a tus compradores</Title>
-                                        <Link href={ Routes.CLIENT_QUESTIONS_DASHBOARD } className='artist-questions-dashboard'>
+                                        <Link href={ Routes.CLIENT_QUESTIONS_DASHBOARD } >
                                             Ver Preguntas
                                         </Link>
                                     </Col>
                                     <Col span={ 8 } >
                                         <Title style={{marginTop: 15, textAlign: 'center'}}  level={4}>Ventas</Title>
-                                        <Link href={ Routes.CLIENT_BUY_DASHBOARD } className='artist-sell-dashboard'>
+                                        <Link href={ Routes.CLIENT_BUY_DASHBOARD } >
                                             Ver ventas
                                         </Link>
                                     </Col>
                                     <Col span={ 8 } >
                                         <Title style={{marginTop: 15, textAlign: 'center'}}  level={4}>Reputación</Title>
-                                        <Link href={ Routes.CLIENT_REPUTATION_DASHBOARD } className='artist-metrics-dashboard'>
+                                        <Link href={ Routes.CLIENT_REPUTATION_DASHBOARD } >
                                             Ver más métricas
                                         </Link>
                                     </Col>

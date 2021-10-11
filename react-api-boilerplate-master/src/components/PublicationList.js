@@ -30,20 +30,15 @@ import {useCategories} from "../data/useCategories";
 import {useCategories2} from "../data/useCategories2";
 import {useCategories3} from "../data/useCategories3";
 import {useCategories4} from "../data/useCategories4";
+import {useProductsList} from "../data/useProductsList";
+import {useAuth} from "../providers/Auth";
 
 
 const { Text } = Typography;
 const {Meta} = Card;
 const PublicationList = (props ) => {
+        const {currentUser} = useAuth();
         const [ showModal, setShowModal ] = useState( false );
-        const [ currentPublicationId, setCurrentPublicationId ] = useState( null );
-        const [ currentPublicationName, setCurrentPublicationName ] = useState(null);
-        const [ currentPublicationDescription, setCurrentPublicationDescription ] = useState( null );
-        const [ currentPublicationPrice, setCurrentPublicationPrice ] = useState( null );
-        const [ currentPublicationStock, setCurrentPublicationStock ] = useState( null );
-        const [ currentPublicationLocation, setCurrentPublicationLocation ] = useState( null );
-        const [ currentPublicationScore, setCurrentPublicationScore ] = useState( null );
-        const { products, isLoading, isError, mutate } = usePublicationList();
         const [ isSaving, setIsSaving ] = useState( false );
         const [ form ] = Form.useForm();
         const [ imageUrl, setImageUrl ] = useState( null );
@@ -54,6 +49,7 @@ const PublicationList = (props ) => {
         const { categories4, isLoading4, isError4 } = useCategories4();
         const [idproduct, setIdProduct] = useState([]);
         const [edit, setEdit]= useState(false);
+        const { products, isLoading, isError, mutate } = useProductsList(currentUser && currentUser.id);
 
 
         const {Option} = Select;
@@ -112,12 +108,7 @@ const PublicationList = (props ) => {
         };
 
 
-        const handleChangeCategory = ( e ) => {
-            // setArticles( props.articles.filter( ( article ) => e.target.value === 'all' || article.category_data.id ===
-            // e.target.value ) );
-        };
 
-        const [loading, setLoading] = useState(true);
         if( isLoading ) {
             return <Row justify='center' gutter={ 30 }>
                 {
@@ -137,22 +128,6 @@ const PublicationList = (props ) => {
             return <ShowError error={ isError } />;
         }
 
-
-        const handleViewName = (name) => {
-            setCurrentPublicationName(name)
-        }
-        const handleViewDescription = (description) => {
-            setCurrentPublicationDescription(description)
-        }
-        const handleViewPrice = (price) => {
-            setCurrentPublicationPrice(price)
-        }
-        const handleViewStock = (stock) => {
-            setCurrentPublicationStock(stock)
-        }
-        const handleViewLocation = (location) => {
-            setCurrentPublicationLocation(location)
-        }
 
 
         const handleCancel = () => {
@@ -178,73 +153,63 @@ const PublicationList = (props ) => {
 
         return (
             <>
-
                 <Row justify='center' gutter={ 30 }>
                     {
-                        products.map((product, index)=>{
-                            return (
-                                <Col xs={ 24 } sm={ 18 } md={ 24 } style={ { marginBottom: 20 } } >
-                                    <Card
-
-                                        style={{
-                                            width: 1000,
-                                            marginRight: 20,
-                                            marginBottom: 30,
-                                            background: '#fffff'
-
-                                        }}
-
-
-
-                                    >
-
-                                        <Row >
-                                            <Col span={14}>
+                        products.map( ( products, i ) => (
+                            <Col xs={ 24 } sm={ 18 } md={ 24 } style={ { marginBottom: 10 } } key={ i }>
+                                { products.name
+                                    ? <Card
+                                        hoverable
+                                        style={{borderRadius: 10}}>
+                                        <Row>
+                                            <Col span={11}  style={ { marginRight: 20 } }>
                                                 <Meta
-                                                    avatar={<Avatar size={150} src={ `http://localhost:8000/storage/${ product.image }` }/>}
-                                                    title={`Autor: ${product.name}`}
-                                                    description={`Descripción: ${product.description}
-                                            `}
+                                                    avatar={<Avatar
+                                                        shape="square"
+                                                        size={100}
+                                                        alt={ products.name }
+                                                        src={ `http://localhost:8000/storage/${ products.image }` }
+                                                    />}
 
+
+                                                    title={`Nombre del Producto: ${products.name}`}
+                                                    description={`Descripción: ${products.description}`}
 
                                                 />
                                             </Col>
+                                            <Col span={5} style={ { marginRight: 15 } }>
+                                                <Text strong type="secondary">Precio: </Text>
+                                                <Text type="secondary">${products.price} </Text>
+                                                <br/>
+                                                <Text strong type="secondary">Stock: </Text>
+                                                <Text type="secondary">{products.stock} </Text>
+                                                <br/>
+                                                <Text strong type="secondary">Disponibles: </Text>
+                                                <Text type="secondary">{products.stock - products.sales}</Text>
 
-                                            <Col span={8} align='center'>
+                                            </Col>
 
-                                                <p>Precio: ${product.price} </p>
-                                                <p>Stock: {product.stock} </p>
-                                                <p>Venta: {product.sales} </p>
-                                                <p>Ubicación: {product.location} </p>
-
+                                            <Col span={6}>
                                                 <div>
-                                                    <Button icon ={<EditOutlined />}  onClick={ () => handleViewDetails()}type="primary" size={100}> Editar</Button>
+                                                    <Button icon ={<EditOutlined />}  onClick={ () => handleViewDetails()} type="primary" size={100}> Editar</Button>
 
 
                                                     <Button icon={<DeleteOutlined />} type="primary" danger>Eliminar</Button>
                                                 </div>
-
-
-
-
-
                                             </Col>
-
-
                                         </Row>
 
-
                                     </Card>
-
-
-                                </Col>
-
-
-                            )
-                        })
+                                    : <div style={ { textAlign: 'center' } }>
+                                        <Card title='' extra='' cover='' loading />
+                                    </div>
+                                }
+                            </Col>
+                        ) )
                     }
 
                 </Row>
+
 
                 <Modal
                     title="Editar Publicación"
@@ -361,7 +326,7 @@ const PublicationList = (props ) => {
                                        }
                                    ] }
                         >
-                            <Select style={ { width: 315 } } onChange={ handleChangeCategory } loading={ !categories }>
+                            <Select style={ { width: 315 } }  loading={ !categories }>
                                 {
                                     categories && categories.map( ( category, index ) =>
                                         <Option value={ category.id } key={ index } >{` ${ category.name } `}</Option>

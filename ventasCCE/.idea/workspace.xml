@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="35d6fe6a-58fc-41fb-a90f-ee1d08da7dab" name="Default Changelist" comment="">
+
+    <list default="true" id="35d6fe6a-58fc-41fb-a90f-ee1d08da7dab" name="Default Changelist" comment="" />
+
       <change beforePath="$PROJECT_DIR$/app/Follower.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Follower.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AnswersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AnswersController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FollowerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FollowerController.php" afterDir="false" />
@@ -18,7 +20,13 @@
       <change beforePath="$PROJECT_DIR$/database/seeds/FollowersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/FollowersTableSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/QuestionsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/QuestionsTableSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/styles/answer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/AnswerList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/components/AnswerList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-api-boilerplate-master/src/pages/Product.js" afterDir="false" />
+
+
     </list>
+
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,7 +37,7 @@
     <execution />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -187,22 +195,27 @@
       <workItem from="1624461562834" duration="7394000" />
       <workItem from="1624637073716" duration="6521000" />
       <workItem from="1624910236251" duration="2434000" />
-      <workItem from="1625191676372" duration="371000" />
-      <workItem from="1625710627355" duration="1399000" />
-      <workItem from="1625787877085" duration="661000" />
-      <workItem from="1625882694864" duration="450000" />
-      <workItem from="1626135269432" duration="821000" />
-      <workItem from="1626141975565" duration="618000" />
-      <workItem from="1626833965575" duration="3425000" />
-      <workItem from="1627351942391" duration="622000" />
-      <workItem from="1627956641273" duration="704000" />
-      <workItem from="1629255992829" duration="115000" />
-      <workItem from="1631145085009" duration="637000" />
-      <workItem from="1633743541835" duration="451000" />
+      <workItem from="1627002502978" duration="778000" />
+      <workItem from="1627020413313" duration="301000" />
+      <workItem from="1627353923084" duration="254000" />
+      <workItem from="1627955928908" duration="592000" />
+      <workItem from="1628256857154" duration="319000" />
+      <workItem from="1628873848274" duration="452000" />
+
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="80" y="142" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1624676140807">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="80" y="142" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.768@0.0.1366.768" timestamp="1624676140807" />
+    <state x="463" y="139" key="FileChooserDialogImpl" timestamp="1624649188680">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1624649188680" />
   </component>
 </project>

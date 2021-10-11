@@ -13,20 +13,11 @@ const AnswerList = ( {  questionId} ) => {
 
     //console.log( 'props', answers );
     const [ submitting, setSubmitting ] = useState( false );
-    const [visible, setVisible] = useState(false);
 
-    const showAnswer = () => {
-        setVisible(true);
-    };
-    const onClose = () => {
-        setVisible(false);
-    };
+
     const handleSubmit = async( values ) => {
         console.log( 'values', values );
         setSubmitting( true );
-        const onClose = () => {
-            setVisible(false);
-        };
         try {
 
             // setValue( '' );
@@ -59,10 +50,8 @@ const AnswerList = ( {  questionId} ) => {
 
 
 
-                        <Button type="primary" onClick={showAnswer}>
-                            Open
-                        </Button>
-                        <Form onClose={onClose} visible={visible} closable={false}
+                        <Form
+
                             form={ form }
                             name='form_answer'
                             onFinish={ handleSubmit }>
