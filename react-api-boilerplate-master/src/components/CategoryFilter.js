@@ -98,7 +98,7 @@ const CategoryFilter = (props) => {
                                     </div>
                                 }
                             </Col>
-
+                            {/*
                             <Col>
 
                                 <Title level={3} style={{width:200, marginTop: 15}}>Técnica</Title>
@@ -199,7 +199,7 @@ const CategoryFilter = (props) => {
                                     <Option value="6">Cancelled</Option>
                                 </Select>
                             </Col>
-
+*/}
                         </div>
                     </Content>
                 </Col>

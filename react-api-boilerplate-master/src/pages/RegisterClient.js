@@ -145,7 +145,7 @@ const Register = () => {
 
     useEffect(()=>{
         const getCountries = async () => {
-            const countriesResponse = await fetch('https://restcountries.eu/rest/v2/all');
+            const countriesResponse = await fetch('http://api.countrylayer.com/v2/all?access_key=9641ba19eda4e0f82641a30e50403968');
             const countriesJson = await countriesResponse.json();
 
             console.log('countriesJson', countriesJson);
