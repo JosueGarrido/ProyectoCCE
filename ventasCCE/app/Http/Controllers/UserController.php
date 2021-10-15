@@ -49,7 +49,7 @@ class UserController extends Controller{
     public function indexartist()
     {
         // $this->authorize('viewAny', User::class);
-        return Artist::all();
+        return User::where('userable_type','App\Artist')->get();
         //return new UserCollection(User::paginate (25));
     }
 

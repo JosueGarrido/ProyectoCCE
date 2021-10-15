@@ -30,7 +30,7 @@ class ReputationController extends Controller
         return response()->json( new ReputationResource($id), 200);
     }
 
-    public function store(Request $request, Product $user)
+    public function store(Request $request, User $user)
     {
         $request->validate([
             'score' => 'required|int',

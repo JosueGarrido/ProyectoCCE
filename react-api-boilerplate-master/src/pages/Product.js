@@ -83,46 +83,6 @@ const Product = () => {
             {
 
                 <Row>
-                    < Col span={3} align={'right'}>
-
-                        <Col>
-
-                            <img className={"borde-imagen"}
-                                 height={90}
-                                 width={90}
-                                 src='https://sergimateo.com/wp-content/2012/11/portadas-twitter-1.jpg'
-                            />
-                        </Col> <br/>
-
-
-                        <Col>
-
-                            <img className={"borde-imagen"}
-                                 height={90}
-                                 width={90}
-                                 src='https://sergimateo.com/wp-content/2012/11/portadas-twitter-1.jpg'
-                            />
-                        </Col> <br/>
-
-
-                        <Col>
-
-                            <img className={"borde-imagen"}
-                                 height={90}
-                                 width={90}
-                                 src='https://sergimateo.com/wp-content/2012/11/portadas-twitter-1.jpg'
-                            />
-                        </Col> <br/>
-                    </Col>
-
-                    <Col span={10} align={'center'}>
-
-                        <img className={"borde-imagen"}
-                             height={400}
-                             width={400}
-                             src='https://sergimateo.com/wp-content/2012/11/portadas-twitter-1.jpg'
-                        />
-                    </Col>
 
 
                     {
@@ -132,6 +92,47 @@ const Product = () => {
                             : product.isError
                             ? <ShowError error={product.isError}/>
                             : <>
+
+                                < Col span={3} align={'right'}>
+
+                                    <Col>
+
+                                        <img className={"borde-imagen"}
+                                             height={90}
+                                             width={90}
+                                             src={`http://localhost:8000/storage/${product.product.image}`}
+                                        />
+                                    </Col> <br/>
+
+
+                                    <Col>
+
+                                        <img className={"borde-imagen"}
+                                             height={90}
+                                             width={90}
+                                             src={`http://localhost:8000/storage/${product.product.image}`}
+                                        />
+                                    </Col> <br/>
+
+
+                                    <Col>
+
+                                        <img className={"borde-imagen"}
+                                             height={90}
+                                             width={90}
+                                             src={`http://localhost:8000/storage/${product.product.image}`}
+                                        />
+                                    </Col> <br/>
+                                </Col>
+
+                                <Col span={10} align={'center'}>
+
+                                    <img className={"borde-imagen"}
+                                         height={400}
+                                         width={400}
+                                         src={`http://localhost:8000/storage/${product.product.image}`}
+                                    />
+                                </Col>
 
                                 < Col span={7} align={'left'}>
 
